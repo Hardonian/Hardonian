@@ -1,3 +1,4 @@
+
 <!-- ========================================================= -->
 <!-- HERO -->
 <!-- ========================================================= -->
@@ -20,15 +21,15 @@
   ⚙️ SaaS & Automation
 </p>
 
-<!-- Typing animation (GitHub-safe endpoint) -->
+<!-- Typing animation (GitHub-safe) -->
 <p align="center">
   <img
-    src="https://readme-typing-svg.herokuapp.com?font=Inter&size=20&pause=1200&center=true&vCenter=true&width=900&lines=Product-first+technologist;Systems+thinking+with+execution;Automation+that+works+in+reality;Useful+%3E+Clever;Breadth+with+judgment.+Depth+where+it+matters."
+    src="https://readme-typing-svg.herokuapp.com?font=Inter&size=20&pause=1200&center=true&vCenter=true&width=900&lines=Product-first+technologist;Systems+thinking+with+execution;Automation+that+works+in+reality;Useful+%3E+Clever;Breadth+with+judgment.+Depth+where+it+matters.&cache_seconds=1800"
     alt="Typing SVG"
   />
 </p>
 
-<!-- Header banner -->
+<!-- Subtle header banner -->
 <p align="center">
   <img
     src="https://capsule-render.vercel.app/api?type=rect&color=0:0ea5e9,100:7c3aed&height=36&section=header&text=Systems%20%7C%20Product%20%7C%20Automation&fontSize=18&fontColor=ffffff"
@@ -44,34 +45,23 @@
   <img src="https://img.shields.io/badge/SaaS-Multi--Tenant-orange" />
 </p>
 
-<!-- Gradient divider -->
-<p align="center">
-<svg width="920" height="18" viewBox="0 0 920 18" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.1"/>
-      <stop offset="50%" stop-color="#7c3aed" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.1"/>
-    </linearGradient>
-  </defs>
-  <rect x="0" y="8" width="920" height="2" rx="1" fill="url(#grad1)"/>
-</svg>
-</p>
-
 ---
 
 <!-- ========================================================= -->
-<!-- GITHUB STATS -->
+<!-- GITHUB STATS (CLEAN + VERIFIED) -->
 <!-- ========================================================= -->
 
 <p align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api?username=Hardonian&show_icons=true&count_private=true&hide=issues,contribs&theme=transparent"
+    src="https://github-readme-stats.vercel.app/api?username=Hardonian&show_icons=true&count_private=true&hide=issues,contribs&theme=transparent&cache_seconds=1800"
     height="165"
     alt="GitHub Stats"
   />
+</p>
+
+<p align="center">
   <img
-    src="https://github-readme-streak-stats.herokuapp.com?user=Hardonian&theme=transparent"
+    src="https://github-readme-streak-stats.herokuapp.com?user=Hardonian&theme=transparent&cache_seconds=1800"
     height="165"
     alt="GitHub Streak"
   />
@@ -79,7 +69,7 @@
 
 <p align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hardonian&layout=compact&langs_count=8&theme=transparent"
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hardonian&layout=compact&langs_count=8&theme=transparent&cache_seconds=1800"
     height="150"
     alt="Top Languages"
   />
@@ -87,23 +77,9 @@
 
 <p align="center">
   <img
-    src="https://github-profile-trophy.vercel.app/?username=Hardonian&theme=flat&row=1&margin-w=8"
+    src="https://github-profile-trophy.vercel.app/?username=Hardonian&theme=flat&row=1&margin-w=8&no-frame=true&cache_seconds=1800"
     alt="Trophies"
   />
-</p>
-
-<!-- Divider -->
-<p align="center">
-<svg width="920" height="18" viewBox="0 0 920 18" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.08"/>
-      <stop offset="50%" stop-color="#0ea5e9" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.08"/>
-    </linearGradient>
-  </defs>
-  <rect x="0" y="8" width="920" height="2" rx="1" fill="url(#grad2)"/>
-</svg>
 </p>
 
 ---
@@ -130,10 +106,11 @@ I don’t chase novelty. I build systems that hold up.
 
 I sit at the overlap of **product**, **engineering**, and **operations**.
 
+My default principles:
 - 🧩 Reduce fragmentation before automation  
-- 🔍 Deterministic behavior over opaque “magic”  
+- 🔍 Prefer deterministic behavior over opaque “magic”  
 - 🧠 Human-in-the-loop by default  
-- 🚢 Optimize for real-world durability  
+- 🚢 Optimize for what survives contact with reality  
 
 If it can’t be explained, debugged, or governed — it doesn’t ship.
 
@@ -141,23 +118,43 @@ If it can’t be explained, debugged, or governed — it doesn’t ship.
 
 ## 🛠️ Technical Toolkit
 
-**Languages**  
-TypeScript • JavaScript • Python • SQL • Bash  
+### 💻 Languages & Runtimes
+- TypeScript / JavaScript (Node.js)
+- Python
+- SQL
+- Bash
 
-**Frontend**  
-Next.js • React • Tailwind CSS • Headless UI  
+### 🎨 Frontend & UX
+- Next.js (App Router)
+- React
+- Tailwind CSS
+- Headless UI
+- Conversion-focused UX patterns
 
-**Backend / Data**  
-Supabase (Postgres, RLS) • Edge Functions • APIs  
+### 🧱 Backend & Data
+- Supabase (Postgres, Row-Level Security)
+- Edge Functions
+- REST & webhook-driven APIs
+- Multi-tenant data boundaries
 
-**AI & Automation**  
-MindStudio • Agent orchestration • Deterministic AI  
+### 🤖 AI & Automation
+- Applied AI agents
+- Workflow orchestration
+- Human-in-the-loop systems
+- MindStudio & custom agent patterns
+- Deterministic fallbacks & auditability
 
-**Ecommerce**  
-Shopify • Stripe • Conversion optimization  
+### 🛒 Ecommerce & Payments
+- Shopify (Liquid + headless patterns)
+- Stripe (subscriptions, billing, metering)
+- Product feeds & inventory logic
+- Checkout & conversion optimization
 
-**Delivery**  
-GitHub Actions • CI/CD • Observability mindset  
+### 🚦 Delivery, QA & Ops
+- GitHub Actions (CI/CD)
+- Environment safety & rollout discipline
+- Failure-mode thinking
+- Observability-first mindset
 
 ---
 
@@ -172,22 +169,28 @@ GitHub Actions • CI/CD • Observability mindset
 
 ## 🧩 Product & Platform Work
 
-- **Settler** — automated reconciliation concepts  
-- **AI Automated Systems** — operational AI workflows  
-- **ReadyLayer** — quality & governance tooling  
-- **Keys** — usability & adoption-focused product concepts  
+Alongside public repositories, I’ve worked on internal and early-stage platforms including:
+
+- 🔐 **Settler** — automated reconciliation & data-matching concepts  
+- ⚙️ **AI Automated Systems** — applied AI workflows for operational review  
+- 🧪 **ReadyLayer** — tooling around software quality, review, and governance  
+- 🗝️ **Keys** — product concepts focused on usability, guardrails, and adoption  
+
+These efforts emphasize **system boundaries, product clarity, and operational reality** over speculative AI.
 
 ---
 
 ## 🧠 AI Agent Work (MindStudio)
 
-🏅 Selected as **1 of ~500** in the MindStudio AI Agent Certification Bootcamp.
+🏅 Selected as **1 of ~500 participants** in the MindStudio AI Agent Certification Bootcamp.
 
 Focus areas:
-- Summarization & synthesis  
-- Research aggregation  
-- Ecommerce support tooling  
+- Webpage & document summarization  
+- Research aggregation & synthesis  
+- Ecommerce & content support tooling  
 - Operational automation  
+
+Agents are designed to be **remixed, embedded, governed, and measured** — not treated as demos.
 
 ---
 
