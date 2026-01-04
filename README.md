@@ -53,27 +53,12 @@
 
 <p align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api?username=Hardonian&show_icons=true&count_private=true&hide=issues,contribs&theme=transparent&cache_seconds=1800"
-    height="165"
-    alt="GitHub Stats"
-  />
-</p>
-
-<p align="center">
-  <img
     src="https://github-readme-streak-stats.herokuapp.com?user=Hardonian&theme=transparent&cache_seconds=1800"
     height="165"
     alt="GitHub Streak"
   />
 </p>
 
-<p align="center">
-  <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hardonian&layout=compact&langs_count=8&theme=transparent&cache_seconds=1800"
-    height="150"
-    alt="Top Languages"
-  />
-</p>
 
 <p align="center">
   <img
