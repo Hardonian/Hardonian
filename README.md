@@ -53,7 +53,7 @@
 
 <p align="center">
   <img
-    src="https://github-readme-streak-stats.herokuapp.com?user=Hardonian&theme=transparent&cache_seconds=1800"
+    src="https://github-readme-streak-stats.herokuapp.com?user=Hardonian&theme=transparent""
     height="165"
     alt="GitHub Streak"
   />
