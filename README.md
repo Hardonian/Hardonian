@@ -45,28 +45,8 @@
   <img src="https://img.shields.io/badge/SaaS-Multi--Tenant-orange" />
 </p>
 
----
 
 <!-- ========================================================= -->
-<!-- GITHUB STATS (CLEAN + VERIFIED) -->
-<!-- ========================================================= -->
-
-<p align="center">
-  <img
-    src="https://github-readme-streak-stats.herokuapp.com?user=Hardonian&theme=transparent""
-    height="165"
-    alt="GitHub Streak"
-  />
-</p>
-
-
-<p align="center">
-  <img
-    src="https://github-profile-trophy.vercel.app/?username=Hardonian&theme=flat&row=1&margin-w=8&no-frame=true&cache_seconds=1800"
-    alt="Trophies"
-  />
-</p>
-
 ---
 
 ## 🧠 About Me
