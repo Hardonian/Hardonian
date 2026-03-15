@@ -202,8 +202,9 @@ Infra --> Obs
 Primary languages:
 
 - TypeScript / JavaScript
-- SQL
 - Python
+- SQL
+- Go
 - Bash
 
 Systems familiarity:
