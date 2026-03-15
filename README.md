@@ -205,12 +205,20 @@ Primary languages:
 - Python
 - SQL
 - Go
+- HTML
+- CSS
 - Bash
 
 Systems familiarity:
 
 - Rust
 - C++
+
+Execution environments
+- WebAssembly (WASM)
+- Node.js
+- Deno
+- Bun
 
 ---
 
