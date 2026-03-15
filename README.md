@@ -9,7 +9,7 @@ Technical Product Manager • Solutions Architect • Platform Systems
 </h3>
 
 <p align="center">
-<em>Designing operational platforms where product thinking, architecture, and automation meet.</em>
+<em>Designing operational platforms where architecture, product, and automation intersect.</em>
 </p>
 
 <p align="center">
@@ -45,31 +45,29 @@ Canada • Platform Architecture • SaaS Systems • Automation Infrastructure
 
 # Overview
 
-I work on systems that sit at the intersection of:
+I build systems that sit at the intersection of:
 
 **product direction → platform architecture → operational automation**
 
 These systems often involve:
 
-- distributed integrations  
-- SaaS platforms  
-- automation pipelines  
-- reconciliation and operational tooling  
+- distributed integrations
+- SaaS platforms
+- automation pipelines
+- reconciliation and operational tooling
 
 The goal is to build systems that remain:
 
-- **observable**
-- **reliable**
-- **traceable**
-- **operationally clear**
+- observable
+- reliable
+- traceable
+- operationally clear
 
-Many systems must function in **messy real-world environments**, not idealized demos.
+Many systems must function in **messy real-world environments**, not controlled demos.
 
 ---
 
 # Core Platform Systems
-
-Several projects explore different layers of operational infrastructure.
 
 | System | Role |
 |------|------|
@@ -84,12 +82,6 @@ Several projects explore different layers of operational infrastructure.
 ```mermaid
 flowchart TB
 
-classDef users fill:#f3f4f6,stroke:#6b7280,color:#111
-classDef ai fill:#dbeafe,stroke:#3b82f6,color:#111
-classDef kernel fill:#ede9fe,stroke:#7c3aed,color:#111
-classDef control fill:#dcfce7,stroke:#22c55e,color:#111
-classDef external fill:#fff7ed,stroke:#fb923c,color:#111
-
 Users["Operators\nProduct Systems"]
 AIAS["AIAS\nAI Workflow Architecture"]
 Requiem["Requiem\nExecution Kernel"]
@@ -100,30 +92,16 @@ Users --> AIAS
 AIAS --> Requiem
 Requiem --> Settler
 Settler --> External
-
-class Users users
-class AIAS ai
-class Requiem kernel
-class Settler control
-class External external
 ```
 
 ---
 
-# Settler
-
-**Reconciliation Control Plane**
+# Settler Architecture
 
 Settler explores how reconciliation workflows can move from manual processes toward deterministic automation.
 
 ```mermaid
 flowchart LR
-
-classDef data fill:#e0f2fe,stroke:#0284c7
-classDef process fill:#ede9fe,stroke:#7c3aed
-classDef human fill:#fef3c7,stroke:#f59e0b
-classDef ledger fill:#dcfce7,stroke:#16a34a
-classDef audit fill:#fee2e2,stroke:#ef4444
 
 Sources["Data Sources\nBank • ERP • Payment APIs"]
 Ingestion["Ingestion\nETL • Webhooks"]
@@ -137,37 +115,23 @@ Ingestion --> Matcher
 Matcher --> Review
 Review --> Ledger
 Ledger --> Audit
-
-class Sources data
-class Ingestion process
-class Matcher process
-class Review human
-class Ledger ledger
-class Audit audit
 ```
 
 Goals:
 
-- deterministic matching logic  
-- auditability  
-- traceable financial workflows  
-- human-review checkpoints  
+- deterministic matching logic
+- auditability
+- traceable financial workflows
+- human review checkpoints
 
 ---
 
-# Requiem
+# Requiem Architecture
 
-**Deterministic Execution Kernel**
-
-Explores traceable execution systems for automation and orchestration.
+Requiem explores traceable execution systems for automation and orchestration.
 
 ```mermaid
 flowchart TB
-
-classDef input fill:#e0f2fe,stroke:#0284c7
-classDef engine fill:#ede9fe,stroke:#7c3aed
-classDef policy fill:#fef3c7,stroke:#f59e0b
-classDef state fill:#dcfce7,stroke:#16a34a
 
 Inputs["Inputs\nEvents • Agents • Tasks"]
 Kernel["Execution Kernel"]
@@ -180,34 +144,21 @@ Kernel --> Trace
 Kernel --> Policy
 Trace --> State
 Policy --> State
-
-class Inputs input
-class Kernel engine
-class Trace engine
-class Policy policy
-class State state
 ```
 
 Focus areas:
 
-- deterministic workflows  
-- execution traceability  
-- governance layers  
-- reproducible automation  
+- deterministic workflows
+- execution traceability
+- governance layers
+- reproducible automation
 
 ---
 
-# AIAS
-
-**Applied AI Workflow Architecture**
+# AIAS Architecture
 
 ```mermaid
 flowchart LR
-
-classDef data fill:#e0f2fe,stroke:#0284c7
-classDef ai fill:#ede9fe,stroke:#7c3aed
-classDef human fill:#fef3c7,stroke:#f59e0b
-classDef output fill:#dcfce7,stroke:#16a34a
 
 Docs["Documents\nWeb Data"]
 Agents["AI Agents"]
@@ -217,11 +168,6 @@ Output["Operational Systems"]
 Docs --> Agents
 Agents --> Review
 Review --> Output
-
-class Docs data
-class Agents ai
-class Review human
-class Output output
 ```
 
 Goal:
@@ -235,13 +181,6 @@ AI systems that remain **observable, governable, and operationally safe**.
 ```mermaid
 flowchart LR
 
-classDef ui fill:#dbeafe,stroke:#3b82f6
-classDef api fill:#ede9fe,stroke:#7c3aed
-classDef middleware fill:#fef3c7,stroke:#f59e0b
-classDef data fill:#dcfce7,stroke:#16a34a
-classDef infra fill:#fee2e2,stroke:#ef4444
-classDef obs fill:#e0f2fe,stroke:#0284c7
-
 UI["UI\nReact • Next.js • Tailwind"]
 API["API\nNode.js • REST • Webhooks"]
 Middleware["Middleware\nAuth • SDKs"]
@@ -254,13 +193,6 @@ API --> Middleware
 Middleware --> Data
 API --> Infra
 Infra --> Obs
-
-class UI ui
-class API api
-class Middleware middleware
-class Data data
-class Infra infra
-class Obs obs
 ```
 
 ---
@@ -269,15 +201,15 @@ class Obs obs
 
 Primary languages:
 
-- TypeScript / JavaScript  
-- SQL  
-- Python  
-- Bash  
+- TypeScript / JavaScript
+- SQL
+- Python
+- Bash
 
 Systems familiarity:
 
-- Rust  
-- C++  
+- Rust
+- C++
 
 ---
 
@@ -302,12 +234,12 @@ Systems familiarity:
 
 Operational systems require attention to:
 
-- authentication boundaries  
-- tenant isolation  
-- webhook verification  
-- secrets management  
-- audit logging  
-- failure visibility  
+- authentication boundaries
+- tenant isolation
+- webhook verification
+- secrets management
+- audit logging
+- failure visibility
 
 Systems should **fail predictably and recover safely**.
 
@@ -317,21 +249,21 @@ Systems should **fail predictably and recover safely**.
 
 Delivery workflows typically include:
 
-- CI pipelines  
-- regression testing  
-- smoke tests  
-- reproducible builds  
-- staged deployments  
+- CI pipelines
+- regression testing
+- smoke tests
+- reproducible builds
+- staged deployments
 
-Operational reliability is treated as **part of product quality**.
+Operational reliability is treated as **product quality**.
 
 ---
 
 # Additional Projects
 
-- Hardonia — ecommerce automation experiments  
-- AI-Agent-Portfolio — applied AI workflow systems  
-- hardonia-intel-scraper — research automation  
+- Hardonia — ecommerce automation experiments
+- AI-Agent-Portfolio — applied AI workflow systems
+- hardonia-intel-scraper — research automation
 
 ---
 
@@ -339,11 +271,11 @@ Operational reliability is treated as **part of product quality**.
 
 Guidelines that shape most systems I design:
 
-- reduce complexity before automating it  
-- prefer observable systems over opaque abstractions  
-- design for degraded states  
-- keep humans in the loop where judgment matters  
-- build systems that survive real-world conditions  
+- reduce complexity before automating it
+- prefer observable systems over opaque abstractions
+- design for degraded states
+- keep humans in the loop where judgment matters
+- build systems that survive real-world conditions
 
 If a system cannot be **debugged, explained, or recovered**, it probably is not ready to ship.
 
