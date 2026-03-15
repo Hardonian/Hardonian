@@ -63,7 +63,7 @@ The goal is to build systems that remain:
 - traceable
 - operationally clear
 
-Many systems must function in **messy real-world environments**, not controlled demos.
+Many systems must function in messy real-world environments, not controlled demos.
 
 ---
 
@@ -82,11 +82,11 @@ Many systems must function in **messy real-world environments**, not controlled 
 ```mermaid
 flowchart TB
 
-Users["Operators\nProduct Systems"]
-AIAS["AIAS\nAI Workflow Architecture"]
-Requiem["Requiem\nExecution Kernel"]
-Settler["Settler\nReconciliation Control Plane"]
-External["External Systems\nPayments • APIs • SaaS"]
+Users["Operators<br/>Product Systems"]
+AIAS["AIAS<br/>AI Workflow Architecture"]
+Requiem["Requiem<br/>Execution Kernel"]
+Settler["Settler<br/>Reconciliation Control Plane"]
+External["External Systems<br/>Payments • APIs • SaaS"]
 
 Users --> AIAS
 AIAS --> Requiem
@@ -103,8 +103,8 @@ Settler explores how reconciliation workflows can move from manual processes tow
 ```mermaid
 flowchart LR
 
-Sources["Data Sources\nBank • ERP • Payment APIs"]
-Ingestion["Ingestion\nETL • Webhooks"]
+Sources["Data Sources<br/>Bank • ERP • Payment APIs"]
+Ingestion["Ingestion<br/>ETL • Webhooks"]
 Matcher["Matching Engine"]
 Review["Human Review"]
 Ledger["Verified Ledger"]
@@ -133,7 +133,7 @@ Requiem explores traceable execution systems for automation and orchestration.
 ```mermaid
 flowchart TB
 
-Inputs["Inputs\nEvents • Agents • Tasks"]
+Inputs["Inputs<br/>Events • Agents • Tasks"]
 Kernel["Execution Kernel"]
 Trace["Trace Engine"]
 Policy["Policy Layer"]
@@ -160,7 +160,7 @@ Focus areas:
 ```mermaid
 flowchart LR
 
-Docs["Documents\nWeb Data"]
+Docs["Documents<br/>Web Data"]
 Agents["AI Agents"]
 Review["Human Oversight"]
 Output["Operational Systems"]
@@ -181,12 +181,12 @@ AI systems that remain **observable, governable, and operationally safe**.
 ```mermaid
 flowchart LR
 
-UI["UI\nReact • Next.js • Tailwind"]
-API["API\nNode.js • REST • Webhooks"]
-Middleware["Middleware\nAuth • SDKs"]
-Data["Data\nPostgres • Supabase • RLS"]
-Infra["Infrastructure\nCI/CD"]
-Obs["Observability\nLogs • Verification"]
+UI["UI<br/>React • Next.js • Tailwind"]
+API["API<br/>Node.js • REST • Webhooks"]
+Middleware["Middleware<br/>Auth • SDKs"]
+Data["Data<br/>Postgres • Supabase • RLS"]
+Infra["Infrastructure<br/>CI/CD"]
+Obs["Observability<br/>Logs • Verification"]
 
 UI --> API
 API --> Middleware
@@ -277,7 +277,7 @@ Guidelines that shape most systems I design:
 - keep humans in the loop where judgment matters
 - build systems that survive real-world conditions
 
-If a system cannot be **debugged, explained, or recovered**, it probably is not ready to ship.
+If a system cannot be debugged, explained, or recovered, it probably is not ready to ship.
 
 ---
 
