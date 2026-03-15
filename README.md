@@ -2,36 +2,36 @@
 <!-- HERO -->
 <!-- ========================================================= -->
 
-<h1 align="center">🚀 Scott Hardie</h1>
+<h1 align="center">Scott Hardie</h1>
 
 <h3 align="center">
-Technical Product Manager • Solutions Architect • Platform & Automation Systems
+Technical Product Manager • Solutions Architect • Platform Systems
 </h3>
 
 <p align="center">
-<em>Designing and shipping reliable systems where product thinking, architecture, and operations intersect.</em>
+<em>Designing operational platforms where product thinking, architecture, and automation meet.</em>
 </p>
 
 <p align="center">
-🏢 Solutions Architect @ <strong>McGraw Hill</strong><br>
-🇨🇦 Canada • EdTech • SaaS Platforms • Ecommerce Systems
+Solutions Architect @ <strong>McGraw Hill</strong><br>
+Canada • Platform Architecture • SaaS Systems • Automation Infrastructure
 </p>
 
 <p align="center">
-<img src="https://readme-typing-svg.herokuapp.com?font=Inter&size=20&pause=1200&center=true&vCenter=true&width=950&lines=Systems+thinking+with+execution;Architecture+%2B+product+delivery;Automation+that+survives+real+operations;Platforms%2C+integrations%2C+and+operational+tooling;Useful+%3E+clever.&cache_seconds=1800"/>
+<img src="https://readme-typing-svg.herokuapp.com?font=Inter&size=20&pause=1200&center=true&vCenter=true&width=900&lines=Architecture+%2B+Execution;Operational+systems+over+demo+systems;Automation+that+survives+real+operations;Platforms%2C+integrations%2C+and+product+delivery;Useful+%3E+clever.&cache_seconds=1800"/>
 </p>
 
 <p align="center">
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0ea5e9,100:7c3aed&height=40&section=header&text=Platforms%20%7C%20Automation%20%7C%20Product%20Systems&fontSize=18&fontColor=ffffff"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0ea5e9,100:7c3aed&height=40&section=header&text=Platform%20Architecture%20•%20Automation%20Systems%20•%20Product%20Delivery&fontSize=18&fontColor=ffffff"/>
 </p>
 
 <p align="center">
-<img src="https://img.shields.io/badge/Product-Systems-blueviolet"/>
-<img src="https://img.shields.io/badge/Architecture-Platform-blue"/>
-<img src="https://img.shields.io/badge/AI-Applied-green"/>
-<img src="https://img.shields.io/badge/SaaS-Multi--Tenant-orange"/>
+<img src="https://img.shields.io/badge/Product%20Systems-Architecture-blueviolet"/>
+<img src="https://img.shields.io/badge/SaaS-Multi%20Tenant-orange"/>
 <img src="https://img.shields.io/badge/Frontend-React%20%2B%20Next.js-06b6d4"/>
-<img src="https://img.shields.io/badge/Backend-Node.js%20%2F%20APIs-3c873a"/>
+<img src="https://img.shields.io/badge/Backend-Node.js%20APIs-3c873a"/>
+<img src="https://img.shields.io/badge/Data-Postgres%20%2B%20RLS-green"/>
+<img src="https://img.shields.io/badge/Automation-AI%20Workflows-purple"/>
 <img src="https://img.shields.io/badge/CI-GitHub%20Actions-orange"/>
 </p>
 
@@ -39,83 +39,137 @@ Technical Product Manager • Solutions Architect • Platform & Automation Syst
 <img src="https://img.shields.io/badge/C%2B%2B-Systems%20Knowledge-00599C?logo=c%2B%2B"/>
 <img src="https://img.shields.io/badge/Rust-Systems%20Knowledge-black?logo=rust"/>
 <img src="https://img.shields.io/badge/TypeScript-Primary-3178C6?logo=typescript"/>
-<img src="https://img.shields.io/badge/SDKs-Integration%20%26%20Design-6366f1"/>
 </p>
 
 ---
 
-# About
+# Overview
 
-I’m **Scott Hardie**, a Solutions Architect at **McGraw Hill** working across:
+I work on systems that sit at the intersection of:
 
-- platform architecture  
-- operational automation  
-- applied AI systems  
-- SaaS and ecommerce platforms  
+**product direction → platform architecture → operational automation**
 
-My work sits at the intersection of:
+These systems often involve:
 
-**product direction → system architecture → shipped systems**
+- distributed integrations  
+- SaaS platforms  
+- automation pipelines  
+- reconciliation and operational tooling  
 
-with emphasis on reliability, observability, and operational clarity.
+The goal is to build systems that remain:
 
-Many systems I work on must function in **messy real-world environments**, not controlled demos.
+- **observable**
+- **reliable**
+- **traceable**
+- **operationally clear**
+
+Many systems must function in **messy real-world environments**, not idealized demos.
 
 ---
 
-# Core Platform Projects
+# Core Platform Systems
 
-## System Relationship Map
+Several projects explore different layers of operational infrastructure.
+
+| System | Role |
+|------|------|
+| **AIAS** | AI workflow architecture |
+| **Requiem** | deterministic execution kernel |
+| **Settler** | reconciliation control plane |
+
+---
+
+# Platform Relationship
 
 ```mermaid
 flowchart TB
 
-AIAS["AIAS<br>AI Architecture Systems"]
-Requiem["Requiem<br>Deterministic Execution Kernel"]
-Settler["Settler<br>Reconciliation Control Plane"]
+classDef users fill:#f3f4f6,stroke:#6b7280,color:#111
+classDef ai fill:#dbeafe,stroke:#3b82f6,color:#111
+classDef kernel fill:#ede9fe,stroke:#7c3aed,color:#111
+classDef control fill:#dcfce7,stroke:#22c55e,color:#111
+classDef external fill:#fff7ed,stroke:#fb923c,color:#111
 
-Users["Operators / Product Systems"]
-External["External Systems<br>APIs • SaaS • Payments • Ecommerce"]
+Users["Operators\nProduct Systems"]
+AIAS["AIAS\nAI Workflow Architecture"]
+Requiem["Requiem\nExecution Kernel"]
+Settler["Settler\nReconciliation Control Plane"]
+External["External Systems\nPayments • APIs • SaaS"]
 
 Users --> AIAS
 AIAS --> Requiem
 Requiem --> Settler
 Settler --> External
+
+class Users users
+class AIAS ai
+class Requiem kernel
+class Settler control
+class External external
 ```
 
 ---
 
-# Settler Architecture (Reconciliation Control Plane)
+# Settler
+
+**Reconciliation Control Plane**
+
+Settler explores how reconciliation workflows can move from manual processes toward deterministic automation.
 
 ```mermaid
 flowchart LR
 
-Sources["Data Sources<br>Bank • ERP • Payment APIs"]
-Ingestion["Ingestion Layer<br>ETL • Webhooks"]
-Matcher["Matching Engine<br>Deterministic Matching"]
-Review["Human Review Layer"]
+classDef data fill:#e0f2fe,stroke:#0284c7
+classDef process fill:#ede9fe,stroke:#7c3aed
+classDef human fill:#fef3c7,stroke:#f59e0b
+classDef ledger fill:#dcfce7,stroke:#16a34a
+classDef audit fill:#fee2e2,stroke:#ef4444
+
+Sources["Data Sources\nBank • ERP • Payment APIs"]
+Ingestion["Ingestion\nETL • Webhooks"]
+Matcher["Matching Engine"]
+Review["Human Review"]
 Ledger["Verified Ledger"]
-Audit["Audit & Reporting"]
+Audit["Audit Reporting"]
 
 Sources --> Ingestion
 Ingestion --> Matcher
 Matcher --> Review
 Review --> Ledger
 Ledger --> Audit
+
+class Sources data
+class Ingestion process
+class Matcher process
+class Review human
+class Ledger ledger
+class Audit audit
 ```
 
-Purpose:
+Goals:
 
-A control plane exploring how reconciliation workflows can move from **manual accounting tasks to deterministic automation systems with traceability**.
+- deterministic matching logic  
+- auditability  
+- traceable financial workflows  
+- human-review checkpoints  
 
 ---
 
-# Requiem Architecture (Deterministic Kernel)
+# Requiem
+
+**Deterministic Execution Kernel**
+
+Explores traceable execution systems for automation and orchestration.
 
 ```mermaid
 flowchart TB
 
-Inputs["Inputs<br>Agents • Events • Tasks"]
+classDef input fill:#e0f2fe,stroke:#0284c7
+classDef engine fill:#ede9fe,stroke:#7c3aed
+classDef policy fill:#fef3c7,stroke:#f59e0b
+classDef state fill:#dcfce7,stroke:#16a34a
+
+Inputs["Inputs\nEvents • Agents • Tasks"]
 Kernel["Execution Kernel"]
 Trace["Trace Engine"]
 Policy["Policy Layer"]
@@ -126,237 +180,175 @@ Kernel --> Trace
 Kernel --> Policy
 Trace --> State
 Policy --> State
+
+class Inputs input
+class Kernel engine
+class Trace engine
+class Policy policy
+class State state
 ```
 
-Focus:
+Focus areas:
 
-- deterministic execution
-- system traceability
-- agent orchestration
-- governance and reproducibility
+- deterministic workflows  
+- execution traceability  
+- governance layers  
+- reproducible automation  
 
 ---
 
-# AIAS Architecture (AI Workflow Layer)
+# AIAS
+
+**Applied AI Workflow Architecture**
 
 ```mermaid
 flowchart LR
 
-Docs["Documents / Web Data"]
+classDef data fill:#e0f2fe,stroke:#0284c7
+classDef ai fill:#ede9fe,stroke:#7c3aed
+classDef human fill:#fef3c7,stroke:#f59e0b
+classDef output fill:#dcfce7,stroke:#16a34a
+
+Docs["Documents\nWeb Data"]
 Agents["AI Agents"]
-Review["Human Review"]
+Review["Human Oversight"]
 Output["Operational Systems"]
 
 Docs --> Agents
 Agents --> Review
 Review --> Output
+
+class Docs data
+class Agents ai
+class Review human
+class Output output
 ```
 
-Purpose:
+Goal:
 
-AI workflows that remain **observable, governable, and operationally safe**.
+AI systems that remain **observable, governable, and operationally safe**.
 
 ---
 
 # Platform Stack
 
-Most systems span multiple layers of the stack.
-
 ```mermaid
 flowchart LR
 
-UI["UI Layer<br>React • Next.js • Tailwind"]
-API["API Layer<br>Node.js • REST • Webhooks"]
-Middleware["Middleware<br>Auth • Routing • SDK Integration"]
-Data["Data Layer<br>Postgres • Supabase • RLS"]
-Infra["Infrastructure<br>CI/CD • GitHub Actions"]
-Observability["Observability<br>Logs • Verification"]
+classDef ui fill:#dbeafe,stroke:#3b82f6
+classDef api fill:#ede9fe,stroke:#7c3aed
+classDef middleware fill:#fef3c7,stroke:#f59e0b
+classDef data fill:#dcfce7,stroke:#16a34a
+classDef infra fill:#fee2e2,stroke:#ef4444
+classDef obs fill:#e0f2fe,stroke:#0284c7
+
+UI["UI\nReact • Next.js • Tailwind"]
+API["API\nNode.js • REST • Webhooks"]
+Middleware["Middleware\nAuth • SDKs"]
+Data["Data\nPostgres • Supabase • RLS"]
+Infra["Infrastructure\nCI/CD"]
+Obs["Observability\nLogs • Verification"]
 
 UI --> API
 API --> Middleware
 Middleware --> Data
 API --> Infra
-Infra --> Observability
+Infra --> Obs
+
+class UI ui
+class API api
+class Middleware middleware
+class Data data
+class Infra infra
+class Obs obs
 ```
 
 ---
 
 # Technical Surface
 
-## Languages
+Primary languages:
 
-Primary working stack
+- TypeScript / JavaScript  
+- SQL  
+- Python  
+- Bash  
 
-- TypeScript / JavaScript
-- SQL
-- Python
-- Bash
+Systems familiarity:
 
-Systems familiarity
-
-- Rust
-- C++
-
-Used selectively for systems-oriented experimentation.
+- Rust  
+- C++  
 
 ---
 
-# Capability Map
+# Capabilities
 
-| Layer | Technologies |
-|-----|-----|
+| Domain | Areas |
+|------|------|
 | Frontend | React, Next.js, Tailwind |
-| Backend | Node.js APIs, REST, Webhooks |
+| Backend | Node APIs, REST services |
 | Data | Postgres, Supabase, RLS |
-| Integration | OAuth, SDKs, SaaS APIs |
-| Automation | AI Agents, Workflow Systems |
-| DevOps | GitHub Actions, CI/CD |
+| Integration | OAuth, SaaS APIs |
+| Automation | AI workflows |
+| DevOps | GitHub Actions |
 | Security | Auth layers, tenant isolation |
-| Performance | Core Web Vitals, SEO |
-| Accessibility | WCAG aware design |
-| Growth | CRO-informed UX |
+| Performance | Core Web Vitals |
+| Accessibility | WCAG design |
+| Growth | CRO-aware UX |
 
 ---
 
-# Backend & Platform Systems
+# Platform Concerns
 
-Typical backend architecture includes:
+Operational systems require attention to:
 
-- Node.js API services  
-- REST APIs  
-- webhook pipelines  
-- event-driven automation  
-- service integrations  
-
-Data architecture commonly includes:
-
-- Postgres  
-- Supabase  
-- Row-Level Security  
-- multi-tenant boundaries  
-- migration discipline  
-
-Focus areas include **traceability, reliability, and operational clarity**.
-
----
-
-# Frontend & Product Surface
-
-User-facing systems typically use:
-
-- React  
-- Next.js  
-- Tailwind CSS  
-
-Design priorities:
-
-- truthful system states  
-- degraded-state UX  
-- accessibility-first thinking  
-- performance-aware UI  
-- component-driven architecture  
-
----
-
-# APIs, Middleware & Integrations
-
-Typical architecture includes:
-
-- API route design  
-- middleware layers  
 - authentication boundaries  
-- SDK integrations  
-- third-party platform integrations  
-
-Common integrations include:
-
-- SaaS APIs  
-- OAuth systems  
-- webhook pipelines  
-- ecommerce platforms  
-- payment providers  
-
----
-
-# Security & System Integrity
-
-Operational systems require careful boundaries.
-
-Typical concerns include:
-
-- authentication and authorization  
 - tenant isolation  
 - webhook verification  
 - secrets management  
-- operational auditability  
+- audit logging  
+- failure visibility  
 
-The goal is systems that **fail safely and predictably**.
+Systems should **fail predictably and recover safely**.
 
 ---
 
-# Testing, CI & Delivery
+# Delivery
 
 Delivery workflows typically include:
 
-- GitHub Actions  
-- CI verification pipelines  
+- CI pipelines  
 - regression testing  
 - smoke tests  
 - reproducible builds  
-- safe deployment practices  
+- staged deployments  
 
 Operational reliability is treated as **part of product quality**.
 
 ---
 
-# Performance, SEO & Product Optimization
-
-Public-facing systems require attention to:
-
-- SEO architecture  
-- Core Web Vitals  
-- crawler compatibility  
-- accessibility (WCAG)
-
-For SaaS and ecommerce platforms:
-
-- CRO-informed UX  
-- funnel friction reduction  
-- performance-aware UI architecture  
-
----
-
 # Additional Projects
 
-- **Hardonia** — ecommerce automation experiments  
-- **eCommerce Manager** — AI-assisted ecommerce operations  
-- **AI-Agent-Portfolio** — applied AI workflows  
-- **hardonia-intel-scraper** — research automation  
+- Hardonia — ecommerce automation experiments  
+- AI-Agent-Portfolio — applied AI workflow systems  
+- hardonia-intel-scraper — research automation  
 
 ---
 
 # Operating Principles
 
-Design heuristics I return to frequently:
+Guidelines that shape most systems I design:
 
 - reduce complexity before automating it  
 - prefer observable systems over opaque abstractions  
 - design for degraded states  
 - keep humans in the loop where judgment matters  
-- optimize for systems that survive real-world conditions  
+- build systems that survive real-world conditions  
 
-If a system cannot be **explained, debugged, or recovered**, it probably is not ready to ship.
+If a system cannot be **debugged, explained, or recovered**, it probably is not ready to ship.
 
 ---
 
 <p align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0ea5e9,100:7c3aed&height=90&section=footer"/>
-</p>
-
-<p align="center">
-<em>
-Reduce friction ✨  
-Automate responsibly 🤖  
-Keep humans in control 🧠
-</em>
 </p>
