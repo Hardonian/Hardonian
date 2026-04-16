@@ -49,7 +49,7 @@ I build systems at the intersection of:
 
 **product direction → platform architecture → operational automation**
 
-My focus is on systems that remain:
+My focus is on systems that are:
 
 - observable
 - reliable
@@ -57,6 +57,8 @@ My focus is on systems that remain:
 - operationally clear
 
 I optimize for real operations, not demo environments.
+
+**Current focus:** deterministic AI execution, reconciliation infrastructure, and governance-first automation.
 
 ---
 
@@ -93,13 +95,15 @@ Settler --> External
 
 | Project | What it does | Focus |
 |------|------|------|
-| [Settler](https://github.com/Hardonian/Settler) | Resend-style payment reconciliation API for developers | Deterministic matching, auditability |
 | [Requiem](https://github.com/Hardonian/Requiem) | Unified AI control plane (kernel + policy + web) | Governance, orchestration, traceability |
+| [Settler](https://github.com/Hardonian/Settler) | Resend-style payment reconciliation API for developers | Deterministic matching, auditability |
 | [ControlPlane](https://github.com/Hardonian/ControlPlane) | Execution engine for agent-driven systems | Reliable automation at scale |
 | [ReadyLayer](https://github.com/Hardonian/ReadyLayer) | Review/test/document AI-generated code before merge | CI-integrated code governance |
 | [JobForge](https://github.com/Hardonian/JobForge) | Postgres-native, language-agnostic job orchestrator | Idempotency, retries, RPC-first design |
 | [castor](https://github.com/Hardonian/castor) | Podcast sponsor analytics + ROI attribution stack | Ingestion pipelines, reporting systems |
 | [truthcore](https://github.com/Hardonian/truthcore) | Deterministic verification platform | Reproducibility, anomaly detection |
+
+**What this portfolio emphasizes:** systems that can be operated, audited, and evolved safely under real production constraints.
 
 ---
 
@@ -117,6 +121,13 @@ Settler --> External
 | Security boundaries (auth, tenant isolation) | Advanced |
 | Performance and web quality (CWV) | Strong |
 | Accessibility (WCAG-aware delivery) | Strong |
+
+## Outcomes I Optimize For
+
+- faster delivery without sacrificing governance
+- deterministic execution over brittle automation
+- auditable operations with clear failure paths
+- practical architecture that supports product velocity
 
 ---
 
@@ -232,6 +243,10 @@ Infra --> Obs
 - build systems that survive real-world conditions
 
 If a system cannot be debugged, explained, or recovered, it probably is not ready to ship.
+
+## Collaboration
+
+If you're building platform-heavy products or AI-enabled operational systems, I’m always open to exchanging architecture notes and practical implementation patterns.
 
 ---
 
