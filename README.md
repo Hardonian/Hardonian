@@ -46,7 +46,8 @@ Canada • Platform Architecture • SaaS Systems • Automation Infrastructure
 <a href="#featured-projects">Featured Projects</a> •
 <a href="#proficiencies">Proficiencies</a> •
 <a href="#architecture-deep-dives">Architecture</a> •
-<a href="#operating-principles">Principles</a>
+<a href="#operating-principles">Principles</a> •
+<a href="#collaboration">Collaboration</a>
 </p>
 
 ---
@@ -73,6 +74,12 @@ I optimize for real operations, not demo environments.
 - building platform systems that prioritize explainability and operational safety
 - designing automation that remains deterministic under production stress
 - integrating product delivery with governance, policy, and auditability from day one
+
+## Why Teams Bring Me In
+
+- when systems are growing fast but operational risk is rising
+- when automation exists but reliability, traceability, or governance is weak
+- when product, architecture, and execution need to align under one operating model
 
 ---
 
@@ -108,6 +115,8 @@ Settler --> External
 ## Featured Projects
 
 > Selected projects that best represent my architecture and operating model.
+
+<sub>Tip: Start with Requiem + Settler for the clearest view of my governance-first systems approach.</sub>
 
 | Project | What it does | Focus |
 |------|------|------|
@@ -271,11 +280,17 @@ If a system cannot be debugged, explained, or recovered, it probably is not read
 
 If you're building platform-heavy products or AI-enabled operational systems, I’m always open to exchanging architecture notes and practical implementation patterns.
 
+## Contact
+
+- GitHub discussions/issues on relevant repos
+- Connect here: [github.com/Hardonian](https://github.com/Hardonian)
+
 ## Profile Changelog
 
 - **v1:** clarity and structure upgrade
 - **v2:** narrative + credibility polish
 - **v3:** production-grade framing, scanability, and strategic positioning
+- **v4:** conversion optimization, decision-context framing, and collaboration pathing
 
 ---
 
