@@ -41,6 +41,14 @@ Canada • Platform Architecture • SaaS Systems • Automation Infrastructure
 <img src="https://img.shields.io/badge/TypeScript-Primary-3178C6?logo=typescript"/>
 </p>
 
+<p align="center">
+<a href="#overview">Overview</a> •
+<a href="#featured-projects">Featured Projects</a> •
+<a href="#proficiencies">Proficiencies</a> •
+<a href="#architecture-deep-dives">Architecture</a> •
+<a href="#operating-principles">Principles</a>
+</p>
+
 ---
 
 ## Overview
@@ -59,6 +67,12 @@ My focus is on systems that are:
 I optimize for real operations, not demo environments.
 
 **Current focus:** deterministic AI execution, reconciliation infrastructure, and governance-first automation.
+
+## Strategic Snapshot
+
+- building platform systems that prioritize explainability and operational safety
+- designing automation that remains deterministic under production stress
+- integrating product delivery with governance, policy, and auditability from day one
 
 ---
 
@@ -92,6 +106,8 @@ Settler --> External
 ---
 
 ## Featured Projects
+
+> Selected projects that best represent my architecture and operating model.
 
 | Project | What it does | Focus |
 |------|------|------|
@@ -128,6 +144,13 @@ Settler --> External
 - deterministic execution over brittle automation
 - auditable operations with clear failure paths
 - practical architecture that supports product velocity
+
+## Production-Grade Defaults
+
+- explicit policy + guardrail layers before autonomy
+- observability designed in (not retrofitted)
+- reproducible deployment and verification workflows
+- human escalation paths for high-risk decisions
 
 ---
 
@@ -247,6 +270,12 @@ If a system cannot be debugged, explained, or recovered, it probably is not read
 ## Collaboration
 
 If you're building platform-heavy products or AI-enabled operational systems, I’m always open to exchanging architecture notes and practical implementation patterns.
+
+## Profile Changelog
+
+- **v1:** clarity and structure upgrade
+- **v2:** narrative + credibility polish
+- **v3:** production-grade framing, scanability, and strategic positioning
 
 ---
 
