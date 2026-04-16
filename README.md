@@ -43,31 +43,24 @@ Canada • Platform Architecture • SaaS Systems • Automation Infrastructure
 
 ---
 
-# Overview
+## Overview
 
-I build systems that sit at the intersection of:
+I build systems at the intersection of:
 
 **product direction → platform architecture → operational automation**
 
-These systems often involve:
-
-- distributed integrations
-- SaaS platforms
-- automation pipelines
-- reconciliation and operational tooling
-
-The goal is to build systems that remain:
+My focus is on systems that remain:
 
 - observable
 - reliable
 - traceable
 - operationally clear
 
-Many systems must function in messy real-world environments, not controlled demos.
+I optimize for real operations, not demo environments.
 
 ---
 
-# Core Platform Systems
+## Core Platform Systems
 
 | System | Role |
 |------|------|
@@ -77,7 +70,7 @@ Many systems must function in messy real-world environments, not controlled demo
 
 ---
 
-# Platform Relationship
+## Platform Relationship
 
 ```mermaid
 flowchart TB
@@ -96,9 +89,40 @@ Settler --> External
 
 ---
 
-# Settler Architecture
+## Featured Projects
 
-Settler explores how reconciliation workflows can move from manual processes toward deterministic automation.
+| Project | What it does | Focus |
+|------|------|------|
+| [Settler](https://github.com/Hardonian/Settler) | Resend-style payment reconciliation API for developers | Deterministic matching, auditability |
+| [Requiem](https://github.com/Hardonian/Requiem) | Unified AI control plane (kernel + policy + web) | Governance, orchestration, traceability |
+| [ControlPlane](https://github.com/Hardonian/ControlPlane) | Execution engine for agent-driven systems | Reliable automation at scale |
+| [ReadyLayer](https://github.com/Hardonian/ReadyLayer) | Review/test/document AI-generated code before merge | CI-integrated code governance |
+| [JobForge](https://github.com/Hardonian/JobForge) | Postgres-native, language-agnostic job orchestrator | Idempotency, retries, RPC-first design |
+| [castor](https://github.com/Hardonian/castor) | Podcast sponsor analytics + ROI attribution stack | Ingestion pipelines, reporting systems |
+| [truthcore](https://github.com/Hardonian/truthcore) | Deterministic verification platform | Reproducibility, anomaly detection |
+
+---
+
+## Proficiencies
+
+| Area | Proficiency |
+|------|------|
+| Platform architecture | Advanced |
+| SaaS systems (multi-tenant) | Advanced |
+| API/backend systems (Node/REST/Webhooks) | Advanced |
+| Frontend product systems (React/Next.js) | Advanced |
+| Data systems (Postgres/Supabase/RLS) | Advanced |
+| AI workflow automation | Advanced |
+| CI/CD and delivery engineering | Advanced |
+| Security boundaries (auth, tenant isolation) | Advanced |
+| Performance and web quality (CWV) | Strong |
+| Accessibility (WCAG-aware delivery) | Strong |
+
+---
+
+## Architecture Deep Dives
+
+### Settler Architecture
 
 ```mermaid
 flowchart LR
@@ -124,11 +148,7 @@ Goals:
 - traceable financial workflows
 - human review checkpoints
 
----
-
-# Requiem Architecture
-
-Requiem explores traceable execution systems for automation and orchestration.
+### Requiem Architecture
 
 ```mermaid
 flowchart TB
@@ -153,9 +173,7 @@ Focus areas:
 - governance layers
 - reproducible automation
 
----
-
-# AIAS Architecture
+### AIAS Architecture
 
 ```mermaid
 flowchart LR
@@ -176,7 +194,7 @@ AI systems that remain **observable, governable, and operationally safe**.
 
 ---
 
-# Platform Stack
+## Platform Stack
 
 ```mermaid
 flowchart LR
@@ -197,88 +215,15 @@ Infra --> Obs
 
 ---
 
-# Technical Surface
+## Technical Surface
 
-Primary languages:
-
-- TypeScript / JavaScript
-- Python
-- SQL
-- Go
-- HTML
-- CSS
-- Bash
-
-Systems familiarity:
-
-- Rust
-- C++
-
-Execution environments
-- WebAssembly (WASM)
-- Node.js
-- Deno
-- Bun
+**Primary:** TypeScript/JavaScript, Python, SQL, Go, HTML/CSS, Bash  
+**Systems familiarity:** Rust, C++  
+**Execution environments:** WebAssembly (WASM), Node.js, Deno, Bun
 
 ---
 
-# Capabilities
-
-| Domain | Areas |
-|------|------|
-| Frontend | React, Next.js, Tailwind |
-| Backend | Node APIs, REST services |
-| Data | Postgres, Supabase, RLS |
-| Integration | OAuth, SaaS APIs |
-| Automation | AI workflows |
-| DevOps | GitHub Actions |
-| Security | Auth layers, tenant isolation |
-| Performance | Core Web Vitals |
-| Accessibility | WCAG design |
-| Growth | CRO-aware UX |
-
----
-
-# Platform Concerns
-
-Operational systems require attention to:
-
-- authentication boundaries
-- tenant isolation
-- webhook verification
-- secrets management
-- audit logging
-- failure visibility
-
-Systems should **fail predictably and recover safely**.
-
----
-
-# Delivery
-
-Delivery workflows typically include:
-
-- CI pipelines
-- regression testing
-- smoke tests
-- reproducible builds
-- staged deployments
-
-Operational reliability is treated as **product quality**.
-
----
-
-# Additional Projects
-
-- Hardonia — ecommerce automation experiments
-- AI-Agent-Portfolio — applied AI workflow systems
-- hardonia-intel-scraper — research automation
-
----
-
-# Operating Principles
-
-Guidelines that shape most systems I design:
+## Operating Principles
 
 - reduce complexity before automating it
 - prefer observable systems over opaque abstractions
