@@ -44,6 +44,7 @@ Canada • Platform Architecture • SaaS Systems • Automation Infrastructure
 <p align="center">
 <a href="#overview">Overview</a> •
 <a href="#featured-projects">Featured Projects</a> •
+<a href="#active-systems">Active Systems</a> •
 <a href="#proficiencies">Proficiencies</a> •
 <a href="#architecture-deep-dives">Architecture</a> •
 <a href="#operating-principles">Principles</a> •
@@ -60,10 +61,10 @@ I build systems at the intersection of:
 
 My focus is on systems that are:
 
-- observable
-- reliable
-- traceable
-- operationally clear
+- **Observable** — telemetry, traces, and audit trails built in
+- **Reliable** — designed for degraded states and partial failures
+- **Traceable** — every decision reconstructable from logs
+- **Operationally clear** — runbooks, not runaway automation
 
 I optimize for real operations, not demo environments.
 
@@ -71,25 +72,25 @@ I optimize for real operations, not demo environments.
 
 ## Strategic Snapshot
 
-- building platform systems that prioritize explainability and operational safety
-- designing automation that remains deterministic under production stress
-- integrating product delivery with governance, policy, and auditability from day one
+- Building platform systems that prioritize explainability and operational safety
+- Designing automation that remains deterministic under production stress
+- Integrating product delivery with governance, policy, and auditability from day one
 
 ## Why Teams Bring Me In
 
-- when systems are growing fast but operational risk is rising
-- when automation exists but reliability, traceability, or governance is weak
-- when product, architecture, and execution need to align under one operating model
+- When systems are growing fast but operational risk is rising
+- When automation exists but reliability, traceability, or governance is weak
+- When product, architecture, and execution need to align under one operating model
 
 ---
 
 ## Core Platform Systems
 
-| System | Role |
-|------|------|
-| **AIAS** | AI workflow architecture |
-| **Requiem** | deterministic execution kernel |
-| **Settler** | reconciliation control plane |
+| System | Role | Status |
+|------|------|--------|
+| **AIAS** | AI workflow architecture — document ingestion, agent orchestration, human oversight | Active |
+| **Requiem** | Unified AI control plane (kernel + policy + web UI) — governance, orchestration, traceability | Active |
+| **Settler** | Reconciliation control plane — deterministic matching, audit trails, human review checkpoints | Active |
 
 ---
 
@@ -98,16 +99,16 @@ I optimize for real operations, not demo environments.
 ```mermaid
 flowchart TB
 
-Users["Operators<br/>Product Systems"]
-AIAS["AIAS<br/>AI Workflow Architecture"]
-Requiem["Requiem<br/>Execution Kernel"]
-Settler["Settler<br/>Reconciliation Control Plane"]
-External["External Systems<br/>Payments • APIs • SaaS"]
+    Users["Operators<br/>Product Systems"]
+    AIAS["AIAS<br/>AI Workflow Architecture"]
+    Requiem["Requiem<br/>Execution Kernel"]
+    Settler["Settler<br/>Reconciliation Control Plane"]
+    External["External Systems<br/>Payments • APIs • SaaS"]
 
-Users --> AIAS
-AIAS --> Requiem
-Requiem --> Settler
-Settler --> External
+    Users --> AIAS
+    AIAS --> Requiem
+    Requiem --> Settler
+    Settler --> External
 ```
 
 ---
@@ -116,50 +117,66 @@ Settler --> External
 
 > Selected projects that best represent my architecture and operating model.
 
-<sub>Tip: Start with Requiem + Settler for the clearest view of my governance-first systems approach.</sub>
+<sub>Tip: Start with <strong>Requiem + Settler</strong> for the clearest view of my governance-first systems approach.</sub>
 
-| Project | What it does | Focus |
-|------|------|------|
-| [Requiem](https://github.com/Hardonian/Requiem) | Unified AI control plane (kernel + policy + web) | Governance, orchestration, traceability |
-| [Settler](https://github.com/Hardonian/Settler) | Resend-style payment reconciliation API for developers | Deterministic matching, auditability |
-| [ControlPlane](https://github.com/Hardonian/ControlPlane) | Execution engine for agent-driven systems | Reliable automation at scale |
-| [ReadyLayer](https://github.com/Hardonian/ReadyLayer) | Review/test/document AI-generated code before merge | CI-integrated code governance |
-| [JobForge](https://github.com/Hardonian/JobForge) | Postgres-native, language-agnostic job orchestrator | Idempotency, retries, RPC-first design |
-| [castor](https://github.com/Hardonian/castor) | Podcast sponsor analytics + ROI attribution stack | Ingestion pipelines, reporting systems |
-| [truthcore](https://github.com/Hardonian/truthcore) | Deterministic verification platform | Reproducibility, anomaly detection |
+| Project | What it does | Focus | Stack |
+|------|------|------|------|
+| **[Requiem](https://github.com/Hardonian/Requiem)** | Unified AI control plane — kernel, policy engine, web UI. Centralized governance for AI workflows with full traceability. | Governance, orchestration, traceability, reproducible execution | TypeScript, Node.js, React, PostgreSQL |
+| **[Settler](https://github.com/Hardonian/Settler)** | Resend-style payment reconciliation API for developers. Deterministic matching engine with human review gates and full audit logs. | Deterministic matching, auditability, financial workflow traceability | Node.js, TypeScript, PostgreSQL, Prisma |
+| **[ControlPlane](https://github.com/Hardonian/ControlPlane)** | Execution engine for agent-driven systems. Reliable automation at scale with idempotency, retries, and policy enforcement. | Reliable automation, idempotency, policy-guarded execution | TypeScript, Node.js, PostgreSQL |
+| **[ReadyLayer](https://github.com/Hardonian/ReadyLayer)** | CI-integrated code governance — review, test, and document AI-generated code before merge. Quality gates for generated code. | Code governance, CI integration, AI code verification | TypeScript, GitHub Actions, Node.js |
+| **[JobForge](https://github.com/Hardonian/JobForge)** | Postgres-native, language-agnostic job orchestrator. Idempotency keys, exponential backoff, RPC-first design. | Job orchestration, idempotency, retries, observability | Go, PostgreSQL, SQL |
+| **[castor](https://github.com/Hardonian/castor)** | Podcast sponsor analytics + ROI attribution stack. Ingestion pipelines, normalization, reporting dashboards. | Data pipelines, attribution modeling, reporting systems | Python, PostgreSQL, Apache Airflow |
+| **[truthcore](https://github.com/Hardonian/truthcore)** | Deterministic verification platform. Reproducible builds, anomaly detection, supply-chain verification. | Reproducibility, anomaly detection, verification | Rust, Go, WebAssembly |
 
 **What this portfolio emphasizes:** systems that can be operated, audited, and evolved safely under real production constraints.
 
 ---
 
+## Active Systems (Extended Portfolio)
+
+> Additional production systems in active development — each addressing a specific operational domain.
+
+| System | Domain | Description | Key Tech |
+|------|--------|-------------|----------|
+| **[AI-Automated-Systems (AIAS)](https://github.com/Hardonian/AI-Automated-Systems_AIAS)** | AI Workflow Architecture | Document ingestion → agent orchestration → human oversight → operational output. Multi-agent pipelines with policy gates. | TypeScript, React, Node.js, PostgreSQL, LangGraph |
+| **[EvidenceVault](https://github.com/Hardonian/EvidenceVault)** | Compliance & Audit | Immutable evidence store with cryptographic verification. WORM storage, Merkle proofs, regulatory export packs. | Go, PostgreSQL, WASM, OpenTelemetry |
+| **[MissionLedger](https://github.com/Hardonian/MissionLedger)** | Operational Ledger | Double-entry ledger for operational events. Idempotent writes, temporal queries, audit-grade immutability. | Rust, PostgreSQL, SQLx |
+| **[Nautilus](https://github.com/Hardonian/Nautilus)** | Operator Substrate | Kubernetes-native operator framework. Reconciliation loops, CRD management, multi-cluster governance. | Go, controller-runtime, Helm, CUE |
+| **[TokenGoblin](https://github.com/Hardonian/TokenGoblin)** | Token Efficiency | LLM token measurement & optimization. Prompt compression, routing, cost attribution per tenant/feature. | Go, React, TypeScript, ClickHouse |
+| **[FindingNemos](https://github.com/Hardonian/FindingNemos)** | Reconciliation Intelligence | Transaction matching with ML-assisted rules. Deterministic core + human-in-the-loop exception handling. | Zig, TypeScript, PostgreSQL |
+| **[MEL / MeshEdgeLayer](https://github.com/Hardonian/MeshEdgeLayer)** | Edge Coordination | Distributed coordination layer for edge workloads. Conflict-free replication, offline-first sync. | Rust, CRDTs, WebRTC, WASM |
+
+---
+
 ## Proficiencies
 
-| Area | Proficiency |
-|------|------|
-| Platform architecture | Advanced |
-| SaaS systems (multi-tenant) | Advanced |
-| API/backend systems (Node/REST/Webhooks) | Advanced |
-| Frontend product systems (React/Next.js) | Advanced |
-| Data systems (Postgres/Supabase/RLS) | Advanced |
-| AI workflow automation | Advanced |
-| CI/CD and delivery engineering | Advanced |
-| Security boundaries (auth, tenant isolation) | Advanced |
-| Performance and web quality (CWV) | Strong |
-| Accessibility (WCAG-aware delivery) | Strong |
+| Area | Proficiency | Notes |
+|------|------|-------|
+| Platform architecture | Advanced | Multi-tenant SaaS, operator patterns, control planes |
+| SaaS systems (multi-tenant) | Advanced | RLS, tenant isolation, billing integration |
+| API/backend systems (Node/REST/Webhooks) | Advanced | Idempotency, versioning, observability |
+| Frontend product systems (React/Next.js) | Advanced | CWV optimization, accessibility, design systems |
+| Data systems (Postgres/Supabase/RLS) | Advanced | Partitioning, read replicas, row-level security |
+| AI workflow automation | Advanced | Governance layers, deterministic execution, human gates |
+| CI/CD and delivery engineering | Advanced | GitHub Actions, ArgoCD, verification matrices |
+| Security boundaries (auth, tenant isolation) | Advanced | OAuth2/OIDC, mTLS, capability-based auth |
+| Performance and web quality (CWV) | Strong | LCP/CLS/INP optimization, bundle analysis |
+| Accessibility (WCAG-aware delivery) | Strong | Semantic HTML, ARIA, focus management |
 
 ## Outcomes I Optimize For
 
-- faster delivery without sacrificing governance
-- deterministic execution over brittle automation
-- auditable operations with clear failure paths
-- practical architecture that supports product velocity
+- Faster delivery **without** sacrificing governance
+- Deterministic execution **over** brittle automation
+- Auditable operations with clear failure paths
+- Practical architecture that supports product velocity
 
 ## Production-Grade Defaults
 
-- explicit policy + guardrail layers before autonomy
-- observability designed in (not retrofitted)
-- reproducible deployment and verification workflows
-- human escalation paths for high-risk decisions
+- Explicit policy + guardrail layers before autonomy
+- Observability designed in (not retrofitted)
+- Reproducible deployment and verification workflows
+- Human escalation paths for high-risk decisions
 
 ---
 
@@ -170,70 +187,68 @@ Settler --> External
 ```mermaid
 flowchart LR
 
-Sources["Data Sources<br/>Bank • ERP • Payment APIs"]
-Ingestion["Ingestion<br/>ETL • Webhooks"]
-Matcher["Matching Engine"]
-Review["Human Review"]
-Ledger["Verified Ledger"]
-Audit["Audit Reporting"]
+    Sources["Data Sources<br/>Bank • ERP • Payment APIs"]
+    Ingestion["Ingestion<br/>ETL • Webhooks • Normalization"]
+    Matcher["Matching Engine<br/>Deterministic Rules + ML Assist"]
+    Review["Human Review<br/>Exception Queue • Policy Gates"]
+    Ledger["Verified Ledger<br/>Immutable • Auditable"]
+    Audit["Audit Reporting<br/>Traces • Exports • Compliance"]
 
-Sources --> Ingestion
-Ingestion --> Matcher
-Matcher --> Review
-Review --> Ledger
-Ledger --> Audit
+    Sources --> Ingestion
+    Ingestion --> Matcher
+    Matcher --> Review
+    Review --> Ledger
+    Ledger --> Audit
 ```
 
-Goals:
+**Goals:**
 
-- deterministic matching logic
-- auditability
-- traceable financial workflows
-- human review checkpoints
+- Deterministic matching logic with configurable rules
+- Full auditability — every match traceable to source
+- Traceable financial workflows with human checkpoints
+- Extensible for new payment rails and data formats
 
 ### Requiem Architecture
 
 ```mermaid
 flowchart TB
 
-Inputs["Inputs<br/>Events • Agents • Tasks"]
-Kernel["Execution Kernel"]
-Trace["Trace Engine"]
-Policy["Policy Layer"]
-State["System State"]
+    Inputs["Inputs<br/>Events • Agents • Tasks • Schedules"]
+    Kernel["Execution Kernel<br/>DAG Runtime • Idempotency • Retries"]
+    Trace["Trace Engine<br/>Spans • Decisions • Artifacts"]
+    Policy["Policy Layer<br/>Guardrails • Approvals • Budgets"]
+    State["System State<br/>PostgreSQL • Event Store"]
 
-Inputs --> Kernel
-Kernel --> Trace
-Kernel --> Policy
-Trace --> State
-Policy --> State
+    Inputs --> Kernel
+    Kernel --> Trace
+    Kernel --> Policy
+    Trace --> State
+    Policy --> State
 ```
 
-Focus areas:
+**Focus areas:**
 
-- deterministic workflows
-- execution traceability
-- governance layers
-- reproducible automation
+- Deterministic workflows with replay capability
+- Execution traceability — every decision logged
+- Governance layers: policies, budgets, approval gates
+- Reproducible automation via event sourcing
 
 ### AIAS Architecture
 
 ```mermaid
 flowchart LR
 
-Docs["Documents<br/>Web Data"]
-Agents["AI Agents"]
-Review["Human Oversight"]
-Output["Operational Systems"]
+    Docs["Documents<br/>Web Data • APIs • Feeds"]
+    Agents["AI Agents<br/>Specialized • Composable"]
+    Review["Human Oversight<br/>Review • Approve • Redirect"]
+    Output["Operational Systems<br/>APIs • DBs • Queues"]
 
-Docs --> Agents
-Agents --> Review
-Review --> Output
+    Docs --> Agents
+    Agents --> Review
+    Review --> Output
 ```
 
-Goal:
-
-AI systems that remain **observable, governable, and operationally safe**.
+**Goal:** AI systems that remain **observable, governable, and operationally safe**.
 
 ---
 
@@ -242,18 +257,18 @@ AI systems that remain **observable, governable, and operationally safe**.
 ```mermaid
 flowchart LR
 
-UI["UI<br/>React • Next.js • Tailwind"]
-API["API<br/>Node.js • REST • Webhooks"]
-Middleware["Middleware<br/>Auth • SDKs"]
-Data["Data<br/>Postgres • Supabase • RLS"]
-Infra["Infrastructure<br/>CI/CD"]
-Obs["Observability<br/>Logs • Verification"]
+    UI["UI<br/>React • Next.js • Tailwind • shadcn/ui"]
+    API["API<br/>Node.js • REST • Webhooks • tRPC"]
+    Middleware["Middleware<br/>Auth • SDKs • Rate Limiting"]
+    Data["Data<br/>PostgreSQL • Supabase • RLS • ClickHouse"]
+    Infra["Infrastructure<br/>GitHub Actions • ArgoCD • Terraform"]
+    Obs["Observability<br/>OpenTelemetry • Logs • Verification"]
 
-UI --> API
-API --> Middleware
-Middleware --> Data
-API --> Infra
-Infra --> Obs
+    UI --> API
+    API --> Middleware
+    Middleware --> Data
+    API --> Infra
+    Infra --> Obs
 ```
 
 ---
@@ -261,24 +276,26 @@ Infra --> Obs
 ## Technical Surface
 
 **Primary:** TypeScript/JavaScript, Python, SQL, Go, HTML/CSS, Bash  
-**Systems familiarity:** Rust, C++  
-**Execution environments:** WebAssembly (WASM), Node.js, Deno, Bun
+**Systems familiarity:** Rust, C++, Zig  
+**Execution environments:** WebAssembly (WASM), Node.js, Deno, Bun  
+**Infrastructure:** Kubernetes, PostgreSQL, Redis, ClickHouse, Supabase  
+**AI/ML:** LangGraph, OpenTelemetry, custom agent runtimes
 
 ---
 
 ## Operating Principles
 
-- reduce complexity before automating it
-- prefer observable systems over opaque abstractions
-- design for degraded states
-- keep humans in the loop where judgment matters
-- build systems that survive real-world conditions
+- **Reduce complexity before automating it** — automation codifies; don't codify chaos
+- **Prefer observable systems over opaque abstractions** — if you can't trace it, you can't trust it
+- **Design for degraded states** — partial failure is the normal case
+- **Keep humans in the loop where judgment matters** — approval gates, not just notifications
+- **Build systems that survive real-world conditions** — network partitions, clock skew, bad inputs
 
 If a system cannot be debugged, explained, or recovered, it probably is not ready to ship.
 
 ## Collaboration
 
-If you're building platform-heavy products or AI-enabled operational systems, I’m always open to exchanging architecture notes and practical implementation patterns.
+If you're building platform-heavy products or AI-enabled operational systems, I'm always open to exchanging architecture notes and practical implementation patterns.
 
 ## Contact
 
@@ -291,6 +308,7 @@ If you're building platform-heavy products or AI-enabled operational systems, I�
 - **v2:** narrative + credibility polish
 - **v3:** production-grade framing, scanability, and strategic positioning
 - **v4:** conversion optimization, decision-context framing, and collaboration pathing
+- **v5:** extended active systems, deeper repo details, architecture diagrams, technical surface expansion
 
 ---
 
