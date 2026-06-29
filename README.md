@@ -22,7 +22,7 @@ Canada • Platform Architecture • SaaS Systems • Automation Infrastructure
 </p>
 
 <p align="center">
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0ea5e9,100:7c3aed&height=40&section=header&text=Platform%20Architecture%20•%20Automation%20Systems%20•%20Product%20Delivery&fontSize=18&fontColor=ffffff"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0ea5e9,100:7c3aed&height=40&section=header&text=Platform%20Architecture%20•%20Product%20Delivery%20•%20Revenue%20Systems&fontSize=18&fontColor=ffffff"/>
 </p>
 
 <p align="center">
@@ -36,6 +36,8 @@ Canada • Platform Architecture • SaaS Systems • Automation Infrastructure
 </p>
 
 <p align="center">
+<img src="https://img.shields.io/badge/Revenue-Stripe%20%2B%20Gumroad-635bff?logo=stripe"/>
+<img src="https://img.shields.io/badge/AI-ComfyUI%20%2B%20Ollama-8A05FF"/>
 <img src="https://img.shields.io/badge/C%2B%2B-Systems%20Knowledge-00599C?logo=c%2B%2B"/>
 <img src="https://img.shields.io/badge/Rust-Systems%20Knowledge-black?logo=rust"/>
 <img src="https://img.shields.io/badge/TypeScript-Primary-3178C6?logo=typescript"/>
@@ -43,6 +45,7 @@ Canada • Platform Architecture • SaaS Systems • Automation Infrastructure
 
 <p align="center">
 <a href="#overview">Overview</a> •
+<a href="#revenue-products">Revenue Products</a> •
 <a href="#featured-projects">Featured Projects</a> •
 <a href="#active-systems">Active Systems</a> •
 <a href="#proficiencies">Proficiencies</a> •
@@ -75,12 +78,29 @@ I optimize for real operations, not demo environments.
 - Building platform systems that prioritize explainability and operational safety
 - Designing automation that remains deterministic under production stress
 - Integrating product delivery with governance, policy, and auditability from day one
+- Shipping sellable AI toolchains (ComfyUI, token observability, webhook systems)
 
 ## Why Teams Bring Me In
 
 - When systems are growing fast but operational risk is rising
 - When automation exists but reliability, traceability, or governance is weak
 - When product, architecture, and execution need to align under one operating model
+- When you need deterministic AI systems that can be monetized safely
+
+---
+
+## 🔥 Revenue-Ready Products
+
+> Live products generating revenue or ready for immediate Gumroad launch. Each built with full observability, audit trails, and production-grade delivery.
+
+| Product | Price | Status | What You Get |
+|---------|-------|--------|--------------|
+| [ComfyUI Node Starter Kit](https://github.com/Hardonian/ai-lab-command-center/tree/main/data/signals/comfyui-node-starter-kit) | **$39 lite / $99 commercial** | ✅ LIVE on Gumroad | Scaffold + example nodes + install guide + sales copy for building custom ComfyUI nodes |
+| [ComfyUI Fashion Lookbook Kit](https://github.com/Hardonian/ai-lab-command-center/tree/main/data/signals/comfyui-fashion-lookbook-kit) | **$69 creator / $149 agency** | ✅ LIVE on Gumroad | Editorial workflows, pose presets, upscale passes for fashion photography concepts |
+| [ComfyUI Product Photo Kit](https://github.com/Hardonian/ai-lab-command-center/tree/main/data/signals/comfyui-product-photo-kit) | **$59 niche / $129 studio** | ✅ LIVE on Gumroad | Clean product-shot prompts, upscale finishing, commercial-safe workflows |
+| [ComfyUI Thumbnail Creator Kit](https://github.com/Hardonian/ai-lab-command-center/tree/main/data/signals/comfyui-thumbnail-creator-kit) | **$49 solo / $119 channel pack** | ✅ LIVE on Gumroad | Bold thumbnail framing presets, repeatable rendering, multi-scene variations |
+
+**Deploy any repo with:** `./deploy-cloudflare-app.sh <project-name> <app-name> <tagline> <db-name> <db-id>` — found in [cloudflare-deploy-template](https://github.com/Hardonian/cloudflare-deploy-template)
 
 ---
 
@@ -88,9 +108,10 @@ I optimize for real operations, not demo environments.
 
 | System | Role | Status |
 |------|------|--------|
-| **AIAS** | AI workflow architecture — document ingestion, agent orchestration, human oversight | Active |
-| **Requiem** | Unified AI control plane (kernel + policy + web UI) — governance, orchestration, traceability | Active |
-| **Settler** | Reconciliation control plane — deterministic matching, audit trails, human review checkpoints | Active |
+| **Settler** | Reconciliation control plane — deterministic matching, audit trails, human review checkpoints | ✅ LIVE (Payment reconciliation API) |
+| **TokenGoblin** | LLM token measurement & optimization with cost attribution per tenant/feature | ✅ LIVE (SaaS observability) |
+| **webhook-witness** | Webhook capture, inspect, replay with full payload preservation and troubleshooting UI | ✅ LIVE (SaaS webhook tool) |
+| **tfstate-drift-inspector** | Terraform state drift detection with PR comments and policy-aware alerting | ✅ LIVE (DevOps automation) |
 
 ---
 
@@ -100,15 +121,17 @@ I optimize for real operations, not demo environments.
 flowchart TB
 
     Users["Operators<br/>Product Systems"]
-    AIAS["AIAS<br/>AI Workflow Architecture"]
-    Requiem["Requiem<br/>Execution Kernel"]
-    Settler["Settler<br/>Reconciliation Control Plane"]
-    External["External Systems<br/>Payments • APIs • SaaS"]
+    Revenue["Revenue Products<br/>Gumroad • SaaS • APIs"]
+    Settler["Settler<br/>Payment Reconciliation"]
+    TokenGoblin["TokenGoblin<br/>LLM Cost Observability"]
+    Webhook["webhook-witness<br/>Capture + Replay"]
+    Drift["tfstate-drift-inspector<br/>Terraform Drift Detection"]
 
-    Users --> AIAS
-    AIAS --> Requiem
-    Requiem --> Settler
-    Settler --> External
+    Users --> Revenue
+    Revenue --> Settler
+    Settler --> TokenGoblin
+    TokenGoblin --> Webhook
+    Webhook --> Drift
 ```
 
 ---
@@ -117,19 +140,17 @@ flowchart TB
 
 > Selected projects that best represent my architecture and operating model.
 
-<sub>Tip: Start with <strong>Requiem + Settler</strong> for the clearest view of my governance-first systems approach.</sub>
+<sub>Tip: Start with <strong>Settler</strong> for payment reconciliation, or <strong>ComfyUI Fashion Lookbook Kit</strong> for immediate revenue.</sub>
 
-| Project | What it does | Focus | Stack |
+| Project | What it does | Revenue Status | Stack |
 |------|------|------|------|
-| **[Requiem](https://github.com/Hardonian/Requiem)** | Unified AI control plane — kernel, policy engine, web UI. Centralized governance for AI workflows with full traceability. | Governance, orchestration, traceability, reproducible execution | TypeScript, Node.js, React, PostgreSQL |
-| **[Settler](https://github.com/Hardonian/Settler)** | Resend-style payment reconciliation API for developers. Deterministic matching engine with human review gates and full audit logs. | Deterministic matching, auditability, financial workflow traceability | Node.js, TypeScript, PostgreSQL, Prisma |
-| **[ControlPlane](https://github.com/Hardonian/ControlPlane)** | Execution engine for agent-driven systems. Reliable automation at scale with idempotency, retries, and policy enforcement. | Reliable automation, idempotency, policy-guarded execution | TypeScript, Node.js, PostgreSQL |
-| **[ReadyLayer](https://github.com/Hardonian/ReadyLayer)** | CI-integrated code governance — review, test, and document AI-generated code before merge. Quality gates for generated code. | Code governance, CI integration, AI code verification | TypeScript, GitHub Actions, Node.js |
-| **[JobForge](https://github.com/Hardonian/JobForge)** | Postgres-native, language-agnostic job orchestrator. Idempotency keys, exponential backoff, RPC-first design. | Job orchestration, idempotency, retries, observability | Go, PostgreSQL, SQL |
-| **[castor](https://github.com/Hardonian/castor)** | Podcast sponsor analytics + ROI attribution stack. Ingestion pipelines, normalization, reporting dashboards. | Data pipelines, attribution modeling, reporting systems | Python, PostgreSQL, Apache Airflow |
-| **[truthcore](https://github.com/Hardonian/truthcore)** | Deterministic verification platform. Reproducible builds, anomaly detection, supply-chain verification. | Reproducibility, anomaly detection, verification | Rust, Go, WebAssembly |
+| **[Settler](https://github.com/Hardonian/Settler)** | Resend-style payment reconciliation API for developers. Deterministic matching engine with human review gates and full audit logs. | ✅ LIVE SaaS | Node.js, TypeScript, PostgreSQL, Prisma |
+| **[TokenGoblin](https://github.com/Hardonian/TokenGoblin)** | LLM token measurement & optimization. Prompt compression, routing, cost attribution per tenant/feature. | ✅ LIVE SaaS | Go, React, TypeScript, ClickHouse |
+| **[webhook-witness](https://github.com/Hardonian/webhook-witness)** | Webhook capture, inspect, replay with full payload preservation and troubleshooting UI. | ✅ LIVE SaaS | TypeScript, Node.js, PostgreSQL |
+| **[tfstate-drift-inspector](https://github.com/Hardonian/tfstate-drift-inspector)** | Terraform state drift detection with PR comment alerts and policy-aware enforcement. | ✅ LIVE SaaS | Go, Actions, Terraform |
+| **[comfyui-fashion-lookbook-kit](https://github.com/Hardonian/ai-lab-command-center)** | Editorial fashion concepts with repeatable scene, pose, and upscale passes. Commercial-safe workflows. | ✅ LIVE on Gumroad | ComfyUI, Workflow JSON, Gumroad |
 
-**What this portfolio emphasizes:** systems that can be operated, audited, and evolved safely under real production constraints.
+**What this portfolio emphasizes:** systems that generate revenue AND can be operated, audited, and evolved safely under real production constraints.
 
 ---
 
@@ -139,13 +160,10 @@ flowchart TB
 
 | System | Domain | Description | Key Tech |
 |------|--------|-------------|----------|
-| **[AI-Automated-Systems (AIAS)](https://github.com/Hardonian/AI-Automated-Systems_AIAS)** | AI Workflow Architecture | Document ingestion → agent orchestration → human oversight → operational output. Multi-agent pipelines with policy gates. | TypeScript, React, Node.js, PostgreSQL, LangGraph |
-| **[EvidenceVault](https://github.com/Hardonian/EvidenceVault)** | Compliance & Audit | Immutable evidence store with cryptographic verification. WORM storage, Merkle proofs, regulatory export packs. | Go, PostgreSQL, WASM, OpenTelemetry |
-| **[MissionLedger](https://github.com/Hardonian/MissionLedger)** | Operational Ledger | Double-entry ledger for operational events. Idempotent writes, temporal queries, audit-grade immutability. | Rust, PostgreSQL, SQLx |
-| **[Nautilus](https://github.com/Hardonian/Nautilus)** | Operator Substrate | Kubernetes-native operator framework. Reconciliation loops, CRD management, multi-cluster governance. | Go, controller-runtime, Helm, CUE |
-| **[TokenGoblin](https://github.com/Hardonian/TokenGoblin)** | Token Efficiency | LLM token measurement & optimization. Prompt compression, routing, cost attribution per tenant/feature. | Go, React, TypeScript, ClickHouse |
-| **[FindingNemos](https://github.com/Hardonian/FindingNemos)** | Reconciliation Intelligence | Transaction matching with ML-assisted rules. Deterministic core + human-in-the-loop exception handling. | Zig, TypeScript, PostgreSQL |
-| **[MEL / MeshEdgeLayer](https://github.com/Hardonian/MeshEdgeLayer)** | Edge Coordination | Distributed coordination layer for edge workloads. Conflict-free replication, offline-first sync. | Rust, CRDTs, WebRTC, WASM |
+| **[ai-lab-command-center](https://github.com/Hardonian/ai-lab-command-center)** | AI Lab Operations | Dashboard + audit API + signal processor. Full observability into local AI stack. | TypeScript, Node.js, PostgreSQL, Svelte |
+| **[cloudflare-app-ops-dashboard](https://github.com/Hardonian/cloudflare-app-ops-dashboard)** | Operations Dashboard | Portfolio + ops dashboard. Live status of all deployed services. | TypeScript, Cloudflare Pages |
+| **[api-changelog-radar](https://github.com/Hardonian/api-changelog-radar)** | API Monitoring | Track breaking changes across 3rd-party APIs with alert routing. | TypeScript, Node.js, PostgreSQL |
+| **[Keys](https://github.com/Hardonian/Keys)** | Pack Management | Backendless CLI for structured AI asset packs. No accounts, no servers. | TypeScript, Node.js, Zod |
 
 ---
 
@@ -169,7 +187,7 @@ flowchart TB
 - Faster delivery **without** sacrificing governance
 - Deterministic execution **over** brittle automation
 - Auditable operations with clear failure paths
-- Practical architecture that supports product velocity
+- Revenue systems with production-grade reliability
 
 ## Production-Grade Defaults
 
@@ -182,73 +200,43 @@ flowchart TB
 
 ## Architecture Deep Dives
 
-### Settler Architecture
+### Settler: Reconciliation Pipeline
 
 ```mermaid
 flowchart LR
-
-    Sources["Data Sources<br/>Bank • ERP • Payment APIs"]
-    Ingestion["Ingestion<br/>ETL • Webhooks • Normalization"]
-    Matcher["Matching Engine<br/>Deterministic Rules + ML Assist"]
-    Review["Human Review<br/>Exception Queue • Policy Gates"]
+    Sources["Payment Sources<br/>Bank • ERP • Stripe"]
+    Ingest["Ingestion<br/>ETL • Webhooks • Rules"]
+    Match["Matching Engine<br/>Deterministic • ML Assist"]
+    Review["Human Review<br/>Exceptions • Policy"]
     Ledger["Verified Ledger<br/>Immutable • Auditable"]
-    Audit["Audit Reporting<br/>Traces • Exports • Compliance"]
+    Audit["Audit Trail<br/>Traces • Exports"]
 
-    Sources --> Ingestion
-    Ingestion --> Matcher
-    Matcher --> Review
+    Sources --> Ingest
+    Ingest --> Match
+    Match --> Review
     Review --> Ledger
     Ledger --> Audit
 ```
 
-**Goals:**
+**Settler is live:** Deterministic payment matching with full audit trails. Built for teams processing $1M+ monthly who need reconciliation without chaos.
 
-- Deterministic matching logic with configurable rules
-- Full auditability — every match traceable to source
-- Traceable financial workflows with human checkpoints
-- Extensible for new payment rails and data formats
-
-### Requiem Architecture
-
-```mermaid
-flowchart TB
-
-    Inputs["Inputs<br/>Events • Agents • Tasks • Schedules"]
-    Kernel["Execution Kernel<br/>DAG Runtime • Idempotency • Retries"]
-    Trace["Trace Engine<br/>Spans • Decisions • Artifacts"]
-    Policy["Policy Layer<br/>Guardrails • Approvals • Budgets"]
-    State["System State<br/>PostgreSQL • Event Store"]
-
-    Inputs --> Kernel
-    Kernel --> Trace
-    Kernel --> Policy
-    Trace --> State
-    Policy --> State
-```
-
-**Focus areas:**
-
-- Deterministic workflows with replay capability
-- Execution traceability — every decision logged
-- Governance layers: policies, budgets, approval gates
-- Reproducible automation via event sourcing
-
-### AIAS Architecture
+### TokenGoblin: Token Efficiency Pipeline
 
 ```mermaid
 flowchart LR
+    Apps["Applications<br/>AI Features"]
+    Intercept["Token Intercept<br/>Prompt Router"]
+    Measure["Measurement<br/>Cost Attribution"]
+    Optimize["Optimization<br/>Compression • Routing"]
+    Report["Reporting<br/>Cost Alerts • Dashboards"]
 
-    Docs["Documents<br/>Web Data • APIs • Feeds"]
-    Agents["AI Agents<br/>Specialized • Composable"]
-    Review["Human Oversight<br/>Review • Approve • Redirect"]
-    Output["Operational Systems<br/>APIs • DBs • Queues"]
-
-    Docs --> Agents
-    Agents --> Review
-    Review --> Output
+    Apps --> Intercept
+    Intercept --> Measure
+    Measure --> Optimize
+    Optimize --> Report
 ```
 
-**Goal:** AI systems that remain **observable, governable, and operationally safe**.
+**TokenGoblin is live:** LLM token observability. Route prompts to cheapest models, compress prompts, attribute costs to features.
 
 ---
 
@@ -256,19 +244,18 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-
-    UI["UI<br/>React • Next.js • Tailwind • shadcn/ui"]
-    API["API<br/>Node.js • REST • Webhooks • tRPC"]
-    Middleware["Middleware<br/>Auth • SDKs • Rate Limiting"]
-    Data["Data<br/>PostgreSQL • Supabase • RLS • ClickHouse"]
-    Infra["Infrastructure<br/>GitHub Actions • ArgoCD • Terraform"]
-    Obs["Observability<br/>OpenTelemetry • Logs • Verification"]
+    UI["UI<br/>React • Next.js • Tailwind"]
+    API["API<br/>Node.js • REST • Webhooks"]
+    SaaS["SaaS<br/>Stripe • Gumroad • RLS"]
+    Data["Data<br/>PostgreSQL • ClickHouse"]
+    AI["AI<br/>ComfyUI • Ollama • Local GPU"]
+    Infra["Infra<br/>Cloudflare • GitHub Actions"]
 
     UI --> API
-    API --> Middleware
-    Middleware --> Data
-    API --> Infra
-    Infra --> Obs
+    API --> SaaS
+    API --> Data
+    AI --> API
+    Infra --> API
 ```
 
 ---
@@ -276,10 +263,9 @@ flowchart LR
 ## Technical Surface
 
 **Primary:** TypeScript/JavaScript, Python, SQL, Go, HTML/CSS, Bash  
-**Systems familiarity:** Rust, C++, Zig  
-**Execution environments:** WebAssembly (WASM), Node.js, Deno, Bun  
-**Infrastructure:** Kubernetes, PostgreSQL, Redis, ClickHouse, Supabase  
-**AI/ML:** LangGraph, OpenTelemetry, custom agent runtimes
+**Systems:** Rust, C++, Zig  
+**Infrastructure:** Cloudflare Workers, PostgreSQL, Supabase, ClickHouse  
+**AI/ML:** ComfyUI, Ollama, Local GPU (V100/P40), Gumroad digital products  
 
 ---
 
@@ -290,6 +276,7 @@ flowchart LR
 - **Design for degraded states** — partial failure is the normal case
 - **Keep humans in the loop where judgment matters** — approval gates, not just notifications
 - **Build systems that survive real-world conditions** — network partitions, clock skew, bad inputs
+- **Ship revenue early** — production systems should monetize, not just demo
 
 If a system cannot be debugged, explained, or recovered, it probably is not ready to ship.
 
@@ -297,18 +284,20 @@ If a system cannot be debugged, explained, or recovered, it probably is not read
 
 If you're building platform-heavy products or AI-enabled operational systems, I'm always open to exchanging architecture notes and practical implementation patterns.
 
+**Hiring for:** SRE/devops roles, AI systems architecture, SaaS optimization
+
 ## Contact
 
-- GitHub discussions/issues on relevant repos
+- GitHub discussions/issues on [Settler](https://github.com/Hardonian/Settler) or [ai-lab-command-center](https://github.com/Hardonian/ai-lab-command-center)
 - Connect here: [github.com/Hardonian](https://github.com/Hardonian)
 
 ## Profile Changelog
 
-- **v1:** clarity and structure upgrade
-- **v2:** narrative + credibility polish
+- **v5:** revenue products, live SaaS systems, Gumroad-ready ComfyUI kits
+- **v4:** conversion optimization, decision-context framing, collaboration pathing
 - **v3:** production-grade framing, scanability, and strategic positioning
-- **v4:** conversion optimization, decision-context framing, and collaboration pathing
-- **v5:** extended active systems, deeper repo details, architecture diagrams, technical surface expansion
+- **v2:** narrative + credibility polish
+- **v1:** clarity and structure upgrade
 
 ---
 
