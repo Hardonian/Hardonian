@@ -81,7 +81,7 @@ Active repositories grouped by domain. Repos range from deployed services to exp
 
 | Repo | What It Does | Status | Stack |
 |------|-------------|--------|-------|
-| [webhook-witness](https://github.com/Hardonian/webhook-witness) | Capture, inspect, replay webhooks. API endpoints functional. Billing shell only (Stripe not provisioned), static HTML pages not actively deployed. | Phase 2 (local/test) | JavaScript, Cloudflare Workers, D1 |
+| [webhook-witness](https://github.com/Hardonian/webhook-witness) | Capture, inspect, replay webhooks. API endpoints functional (Worker + D1 deployed). Billing shell only (Stripe not provisioned). | Phase 2 / Deployed | JavaScript, Cloudflare Workers, D1 |
 | [api-changelog-radar](https://github.com/Hardonian/api-changelog-radar) | Planned changelog monitoring service. Currently a Cloudflare Workers scaffold with D1 schema design — no diffing, fetching, or alert dispatch implemented yet. | Scaffold / proof-of-concept | JavaScript, Cloudflare Workers, D1 |
 
 ### Infrastructure & DevOps
