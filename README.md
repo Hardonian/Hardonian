@@ -95,10 +95,10 @@ I optimize for real operations, not demo environments.
 
 | Product | Price | Status | What You Get |
 |---------|-------|--------|--------------|
-| [ComfyUI Node Starter Kit](https://github.com/Hardonian/ai-lab-command-center/tree/main/data/signals/comfyui-node-starter-kit) | **$39 lite / $99 commercial** | ✅ LIVE on Gumroad | Scaffold + example nodes + install guide + sales copy for building custom ComfyUI nodes |
-| [ComfyUI Fashion Lookbook Kit](https://github.com/Hardonian/ai-lab-command-center/tree/main/data/signals/comfyui-fashion-lookbook-kit) | **$69 creator / $149 agency** | ✅ LIVE on Gumroad | Editorial workflows, pose presets, upscale passes for fashion photography concepts |
-| [ComfyUI Product Photo Kit](https://github.com/Hardonian/ai-lab-command-center/tree/main/data/signals/comfyui-product-photo-kit) | **$59 niche / $129 studio** | ✅ LIVE on Gumroad | Clean product-shot prompts, upscale finishing, commercial-safe workflows |
-| [ComfyUI Thumbnail Creator Kit](https://github.com/Hardonian/ai-lab-command-center/tree/main/data/signals/comfyui-thumbnail-creator-kit) | **$49 solo / $119 channel pack** | ✅ LIVE on Gumroad | Bold thumbnail framing presets, repeatable rendering, multi-scene variations |
+| [ComfyUI Node Starter Kit](https://github.com/Hardonian/ai-lab-command-center/tree/main/products/comfyui-node-starter-kit) | **$39 lite / $99 commercial** | ✅ LIVE on Gumroad | Scaffold + example nodes + install guide + sales copy for building custom ComfyUI nodes |
+| [ComfyUI Fashion Lookbook Kit](https://github.com/Hardonian/ai-lab-command-center/tree/main/products/comfyui-fashion-lookbook-kit) | **$69 creator / $149 agency** | ✅ LIVE on Gumroad | Editorial workflows, pose presets, upscale passes for fashion photography concepts |
+| [ComfyUI Product Photo Kit](https://github.com/Hardonian/ai-lab-command-center/tree/main/products/comfyui-product-photo-kit) | **$59 niche / $129 studio** | ✅ LIVE on Gumroad | Clean product-shot prompts, upscale finishing, commercial-safe workflows |
+| [ComfyUI Thumbnail Creator Kit](https://github.com/Hardonian/ai-lab-command-center/tree/main/products/comfyui-thumbnail-creator-kit) | **$49 solo / $119 channel pack** | ✅ LIVE on Gumroad | Bold thumbnail framing presets, repeatable rendering, multi-scene variations |
 
 **Deploy any repo with:** `./deploy-cloudflare-app.sh <project-name> <app-name> <tagline> <db-name> <db-id>` — found in [cloudflare-deploy-template](https://github.com/Hardonian/cloudflare-deploy-template)
 
