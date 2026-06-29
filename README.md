@@ -62,7 +62,7 @@ All products are **commercial-safe** (editorial/fictional use only), packaged wi
 
 ## Repositories
 
-Active repositories grouped by domain. Not all are externally deployed — some are local-only or Cloudflare-deployed — but each is structurally complete, documented, and operable.
+Active repositories grouped by domain. Repos range from deployed services to experimental scaffolds — each status is noted in the table.
 
 ### Payments & Financial Infrastructure
 
@@ -82,13 +82,13 @@ Active repositories grouped by domain. Not all are externally deployed — some 
 | Repo | What It Does | Status | Stack |
 |------|-------------|--------|-------|
 | [webhook-witness](https://github.com/Hardonian/webhook-witness) | Capture, inspect, replay webhooks. Full payload preservation, troubleshooting UI, event export. | Cloudflare-deployed | TypeScript, Node.js, PostgreSQL |
-| [api-changelog-radar](https://github.com/Hardonian/api-changelog-radar) | Monitor 3rd-party API changelogs, detect breaking changes, route alerts. | Cloudflare-deployed | TypeScript, Node.js, PostgreSQL |
+| [api-changelog-radar](https://github.com/Hardonian/api-changelog-radar) | Planned changelog monitoring service. Currently a Cloudflare Workers scaffold with D1 schema design — no diffing, fetching, or alert dispatch implemented yet. | Scaffold / proof-of-concept | JavaScript, Cloudflare Workers, D1 |
 
 ### Infrastructure & DevOps
 
 | Repo | What It Does | Status | Stack |
 |------|-------------|--------|-------|
-| [tfstate-drift-inspector](https://github.com/Hardonian/tfstate-drift-inspector) | Terraform state drift detector — PR comments on state changes, policy rules. | Cloudflare-deployed | Go, GitHub Actions, HCL |
+| [tfstate-drift-inspector](https://github.com/Hardonian/tfstate-drift-inspector) | Terraform state drift detection — CLI-based scan engine with Slack alerts and GitHub PR integration. Basic proof-of-concept. | Experimental / proof-of-concept | Python, Click, Docker, Fly.io |
 | [cloudflare-app-ops-dashboard](https://github.com/Hardonian/cloudflare-app-ops-dashboard) | Portfolio dashboard with live status of all deployed Cloudflare services. | Cloudflare-deployed | TypeScript, Cloudflare Workers |
 | [cloudflare-deploy-template](https://github.com/Hardonian/cloudflare-deploy-template) | Reusable one-shot deploy script: `./deploy-cloudflare-app.sh <name> <title> <tagline> <db-name> <db-id>` | Template (copy to deploy) | Shell, YAML, TOML |
 
