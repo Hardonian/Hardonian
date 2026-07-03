@@ -62,6 +62,22 @@ These are now admin-managed through the **AI Lab Command Center / Revenue OS** d
 
 ---
 
+## Latest Pushed Architecture / Platform Work
+
+The newest public pushes on the profile now also include enterprise architecture and platform reference work beyond the AI-lab product line.
+
+| Repo | Focus | State |
+|------|-------|-------|
+| [commercial-architecture-simulator](https://github.com/Hardonian/commercial-architecture-simulator) | Elixir-based commercial architecture simulator scaffold / experimental modeling repo | Early scaffold |
+| [identity-entitlement-broker](https://github.com/Hardonian/identity-entitlement-broker) | Enterprise identity + entitlement broker with SSO, SCIM, tenant isolation, and OPA policy decisions | Active reference build |
+| [enterprise-integration-fabric](https://github.com/Hardonian/enterprise-integration-fabric) | Governed integration layer for LMS, SIS, CRM, billing, identity, analytics, and support workflows | Active reference architecture |
+| [golden-path-platform](https://github.com/Hardonian/golden-path-platform) | Internal developer platform / golden-path architecture for standardized service delivery and policy gates | Active reference architecture |
+| [JupyterNotebooks](https://github.com/Hardonian/JupyterNotebooks) | Interactive notebooks, AI experiments, and applied workflow/tooling research | Active applied R&D |
+
+These repos round out the profile beyond product SKUs: they show architecture depth in identity, integration, platform engineering, workflow simulation, and applied AI experimentation.
+
+---
+
 ## Flagship Build: AI Lab Command Center
 
 **What it is:** a local-first FastAPI dashboard and operator console for private AI infrastructure.
