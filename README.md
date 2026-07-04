@@ -1,201 +1,84 @@
+<p align="center">
+<img src="https://img.shields.io/badge/Scott%20Hardie-Solutions%20Architect%20%7C%20AI%20Operator-blueviolet" alt="badge"/>
+</p>
+
 <h1 align="center">Scott Hardie</h1>
 
-<h3 align="center">
-Solutions Architect • AI Systems Operator • Platform Builder
-</h3>
+<h3 align="center">Solutions Architect • AI Systems Operator • Revenue Automation • Platform Builder</h3>
 
 <p align="center">
 Solutions Architect @ <strong>McGraw Hill</strong><br>
-Ontario, Canada • SaaS Architecture • Local-First AI Infrastructure • Revenue Automation
-</p>
-
-<p align="center">
-<img src="https://img.shields.io/badge/Role-Solution%20Architect-blueviolet"/>
-<img src="https://img.shields.io/badge/Focus-Operator%20Systems-0ea5e9"/>
-<img src="https://img.shields.io/badge/Backend-Python%20%2F%20FastAPI-3c873a"/>
-<img src="https://img.shields.io/badge/Web-Next.js%20%2F%20TypeScript-111827"/>
-<img src="https://img.shields.io/badge/Data-PostgreSQL%20%2F%20Redis%20%2F%20SQLite-2563eb"/>
-<img src="https://img.shields.io/badge/AI-Ollama%20%2F%20ComfyUI-8A05FF"/>
-<img src="https://img.shields.io/badge/Billing-Stripe%20Payment%20Links-orange"/>
-</p>
-
-<p align="center">
-<a href="#what-i-build">What I Build</a> •
-<a href="#live-operator-managed-products">Live Products</a> •
-<a href="#repositories">Repositories</a> •
-<a href="#architecture-maps">Architecture Maps</a> •
-<a href="#proficiencies">Proficiencies</a>
+Ontario, Canada • SaaS Architecture • Local-First AI Infrastructure • Operator Tooling
 </p>
 
 ---
 
-## What I Build
+## 🔥 Products Ready Now
 
-I build systems that sit between architecture and operations:
-- local-first AI control planes
-- multi-tenant SaaS and backend services
-- workflow and observability tooling
-- monetization infrastructure with checkout, landing pages, and deliverables
-- operator dashboards that make internal systems sellable and supportable
+Live, admin-managed, wired to checkout immediately:
 
-Recent work has focused on turning private AI-lab tooling into a real operating surface: health, automation, product admin, checkout wiring, packaging, and proof-first delivery.
-
----
-
-## Live Operator-Managed Products
-
-These are now admin-managed through the **AI Lab Command Center / Revenue OS** dashboard with checkout, landing pages, and deliverable tracking.
-
-| Product | Offer | State |
-|---------|-------|-------|
-| APVA AI ROI Benchmark | Reliability-adjusted AI workflow ROI scoring | Live |
-| AI Command Center Setup | Private AI workstation control plane template | Live |
-| Floyo Workflow Radar | Workflow-pattern audit / setup / monitor | Live |
-| Local AI Lab Audit | Private AI lab audit + remediation offer | Live |
-| SaaS Repo Rescue Audit | Auth / billing / RLS / webhook repo audit | Live |
-| Local Automation Retainer | Recurring automation + operator support | Live |
-| ComfyUI Workflow Packs | Productized private image workflow bundles | Live |
-| ComfyUI Node Starter Kit | Sellable node-pack scaffold | Live |
-| ComfyUI Product Photo Kit | Repeatable ecommerce imaging workflow | Live |
-| ComfyUI Fashion Lookbook Kit | Fictional editorial lookbook workflow pack | Live |
-| ComfyUI Thumbnail Creator Kit | Thumbnail generation workflow product | Live |
+| Product | What You Get | Price | Link |
+|---|---|---|---|
+| **Local AI Lab Audit** | Full private AI-laboratory audit + ranked fixes + deliverables | **$499 fixed** | [Buy →](https://buy.stripe.com/7sYaEW9nG6hSdJggP7b3q0i) |
+| **Repo Rescue** | Auth / billing / RLS / webhook audit + 48h fix sprint | **$499 audit** | [Buy →](https://buy.stripe.com/9B68wO57qbCc7kSeGZb3q0j) |
+| **AI Command Center Setup** | Local FastAPI control plane + verifier + runbook | **$297 lifetime** | [Buy →](https://buy.stripe.com/9B68wO57qbCc7kSeGZb3q0j) |
+| **APVA AI ROI Benchmark** | Reliability-adjusted AI workflow ROI scoring | **$199 self-serve** | [Buy →](https://buy.stripe.com/aFa28qeI08q0dJggP7b3q0k) |
+| **Automation Retainer** | Monthly operator support + automation sprints | **From $750/mo** | [Enquire →](https://buy.stripe.com/9B68wO57qbCc7kSeGZb3q0j) |
+| **ComfyUI Workflow Packs** | Image workflow bundles + prompts + scaling v2 pack | **$29–$149** | [Buy →](https://buy.stripe.com/9B68wO57qbCc7kSeGZb3q0j) |
 
 ---
 
-## Latest Pushed Architecture / Platform Work
+## 🏗️ How It Connects
 
-The newest public pushes on the profile now also include enterprise architecture and platform reference work beyond the AI-lab product line.
-
-| Repo | Focus | State |
-|------|-------|-------|
-| [commercial-architecture-simulator](https://github.com/Hardonian/commercial-architecture-simulator) | Elixir-based commercial architecture simulator scaffold / experimental modeling repo | Early scaffold |
-| [identity-entitlement-broker](https://github.com/Hardonian/identity-entitlement-broker) | Enterprise identity + entitlement broker with SSO, SCIM, tenant isolation, and OPA policy decisions | Active reference build |
-| [enterprise-integration-fabric](https://github.com/Hardonian/enterprise-integration-fabric) | Governed integration layer for LMS, SIS, CRM, billing, identity, analytics, and support workflows | Active reference architecture |
-| [golden-path-platform](https://github.com/Hardonian/golden-path-platform) | Internal developer platform / golden-path architecture for standardized service delivery and policy gates | Active reference architecture |
-| [JupyterNotebooks](https://github.com/Hardonian/JupyterNotebooks) | Interactive notebooks, AI experiments, and applied workflow/tooling research | Active applied R&D |
-
-These repos round out the profile beyond product SKUs: they show architecture depth in identity, integration, platform engineering, workflow simulation, and applied AI experimentation.
-
----
-
-## Flagship Build: AI Lab Command Center
-
-**What it is:** a local-first FastAPI dashboard and operator console for private AI infrastructure.
-
-**What it manages:**
-- Ollama multi-lane routing
-- ComfyUI health and workflow surfaces
-- GPU / disk / service truth
-- self-heal and smoke checks
-- Revenue OS product queue
-- public offer + checkout routing
-- deliverable and readiness state
-
-**Why it matters:** it turns an internal AI workstation into a real, operator-grade product surface.
-
-Repo: [Hardonian/ai-lab-command-center](https://github.com/Hardonian/ai-lab-command-center)
-
----
-
-## Repositories
-
-### AI Infrastructure & Operator Systems
-
-| Repo | What It Does | Status | Stack |
-|------|--------------|--------|-------|
-| [ai-lab-command-center](https://github.com/Hardonian/ai-lab-command-center) | Local AI operator dashboard with Revenue OS, health, routing, smoke, and product admin | Running locally / active | FastAPI, Python, JS |
-| [apva-framework](https://github.com/Hardonian/apva-framework) | Benchmarking framework for reliability-adjusted AI workflow ROI | Active / productized | Python, FastAPI |
-| [floyo](https://github.com/Hardonian/floyo) | Workflow-pattern intelligence and automation discovery platform | Active / productized | Next.js, FastAPI, Supabase |
-| [Keys](https://github.com/Hardonian/Keys) | Backendless CLI for structured AI asset packs and local workflows | Active | TypeScript, Node.js |
-
-### Payments, Reconciliation & SaaS Systems
-
-| Repo | What It Does | Status | Stack |
-|------|--------------|--------|-------|
-| [Settler](https://github.com/Hardonian/Settler) | Reconciliation intelligence system for finance and operations workflows | Active development | TypeScript, Node.js, PostgreSQL |
-| [TokenGoblin](https://github.com/Hardonian/TokenGoblin) | Token usage measurement and routing/cost tooling for LLM workloads | Active development | Go, React, ClickHouse |
-| [ai-lab-audit-api](https://github.com/Hardonian/ai-lab-audit-api) | Local-first AI-lab audit API with reports and checkout flow | Live-ready | FastAPI, Python, Stripe |
-
-### Webhook / Infra / Platform Tooling
-
-| Repo | What It Does | Status | Stack |
-|------|--------------|--------|-------|
-| [webhook-witness](https://github.com/Hardonian/webhook-witness) | Capture, inspect, and replay webhook traffic | Deployed / phase 2 | Cloudflare Workers, D1 |
-| [api-changelog-radar](https://github.com/Hardonian/api-changelog-radar) | API changelog monitoring scaffold | Proof-of-concept | Cloudflare Workers, D1 |
-| [tfstate-drift-inspector](https://github.com/Hardonian/tfstate-drift-inspector) | Terraform drift scanning and alerting | Experimental | Python, Docker |
-| [cloudflare-app-ops-dashboard](https://github.com/Hardonian/cloudflare-app-ops-dashboard) | Portfolio status board for Cloudflare services | Deployed | TypeScript, Workers |
-
----
-
-## Architecture Maps
-
-### Operator Revenue Surface
-
-```mermaid
-flowchart LR
-    Repo["Source Repos"] --> RevenueOS["Revenue OS"]
-    RevenueOS --> Landing["Landing Pages"]
-    RevenueOS --> Checkout["Stripe Payment Links"]
-    RevenueOS --> Deliverables["Tar Deliverables"]
-    RevenueOS --> Dashboard["Admin Dashboard"]
-    Dashboard --> Smoke["Verification / Smoke"]
+```
+Repos → Revenue OS (SQLite catalog + Stripe wiring + landing pages + deliverables)
+          ↓
+   Dashboard (FastAPI, health, routing, smoke, admin)
+          ↓
+   Cron + systemd (overnight optimizer, morning brief, lead scanner, watchdog)
 ```
 
-### Private AI Lab Control Plane
+**Revenue OS** is the broker: 17 products, all scored 100, all with checkout URLs + landing pages. Nothing synthetic.
 
-```mermaid
-flowchart LR
-    UI["Dashboard UI"] --> API["FastAPI Control Plane"]
-    API --> Ollama["Ollama Lanes"]
-    API --> Comfy["ComfyUI"]
-    API --> Jobs["Automation / Cron / systemd"]
-    API --> Revenue["Revenue OS"]
-    Revenue --> Products["Offers / Checkout / Deliverables"]
-```
-
-### Reconciliation / Financial Systems Pattern
-
-```mermaid
-flowchart LR
-    Sources["Payment Sources"] --> Normalize["Normalization"]
-    Normalize --> Match["Deterministic Matching"]
-    Match --> Review["Human Review"]
-    Review --> Ledger["Verified Ledger"]
-    Ledger --> Audit["Audit Trail / Exports"]
-```
+**Stack:** Python / FastAPI / TypeScript / Cloudflare Workers / Supabase / Stripe / Ollama / ComfyUI
 
 ---
 
-## Proficiencies
+## 🚀 Live Services
 
-| Area | Notes |
-|------|-------|
-| Solution architecture | SaaS workflows, integration design, stakeholder translation |
-| AI platform operations | local-first inference, routing, workflow systems, operator control |
-| Backend systems | FastAPI, Node.js, REST APIs, webhooks, service hardening |
-| Revenue infrastructure | Stripe checkout, landing flows, packaging, monetization ops |
-| Data systems | PostgreSQL, Redis, SQLite, Supabase, ClickHouse |
-| Automation | cron, systemd, smoke testing, verification-led delivery |
-| Frontend/admin surfaces | dashboard UX, product admin, operator consoles |
-
----
-
-## Technical Surface
-
-**Primary:** Python, TypeScript, SQL, Bash, JavaScript  
-**Infrastructure:** FastAPI, Next.js, PostgreSQL, Redis, SQLite, Supabase, Cloudflare  
-**AI:** Ollama, ComfyUI, local GPU workflows  
-**Execution style:** verification-first, low-bloat, operator-grade
+| Service | Purpose | Status |
+|---|---|---|
+| **AI Lab Command Center** | Health, routing, revenue admin, smoke | ✅ Running |
+| **AI Lab Audit API** | Audit + report + checkout flow | ✅ Running on `:8011` |
+| **Dashboard** | Unified operator dashboard | ✅ Running on `:8000` |
+| **ComfyUI** | Local image generation | ✅ Running on `:8188` |
+| **WebUI (Ollama)** | Local LLM frontend | ✅ Running on `:3002` |
+| **Settler API** | Reconciliation intelligence | ✅ Cloudflare Worker |
+| **Webhook Witness** | Capture, inspect, replay webhooks | ✅ Cloudflare Worker |
+| **API Changelog Radar** | API change monitoring | ✅ Cloudflare Pages |
+| **TFState Drift Inspector** | Terraform drift scanning | ✅ Cloudflare Pages |
+| **Cloudflare App Ops Dashboard** | Portfolio status board | ✅ Cloudflare Pages |
 
 ---
 
-## Background
+## 🏦 Enterprise & Platform Architecture
 
-- Solutions Architect at **McGraw Hill**
-- 15+ years across **McGraw Hill** and **Pearson**
-- Strong mix of technical architecture, commercial execution, and operator thinking
-- Recent focus: building systems that connect internal tooling to revenue, not just demos
+| Repo | Focus |
+|---|---|
+| **enterprise-integration-fabric** | LMS / CIS / CRM / billing integration layer |
+| **identity-entitlement-broker** | SSO, SCIM, OPA, tenant isolation |
+| **golden-path-platform** | IDP architecture, golden paths |
+| **commercial-architecture-simulator** | Architecture modeling + simulation |
+| **JupyterNotebooks** | AI experiments and workflow research |
 
 ---
 
-*If you want to collaborate, the best starting points are [Settler](https://github.com/Hardonian/Settler) and [ai-lab-command-center](https://github.com/Hardonian/ai-lab-command-center).*
+## 📫 Start Here
+
+- [Settler →](https://github.com/Hardonian/Settler)
+- [AI Lab Command Center →](https://github.com/Hardonian/ai-lab-command-center)
+- [Revenue OS →](https://github.com/Hardonian/ai-lab-revenue-os)
+
+---
+
+*All products above have working checkout links and deliverable packages. Fork or open an issue if you see a gap in your own stack.*
