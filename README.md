@@ -44,21 +44,27 @@ Recent work has focused on turning private AI-lab tooling into a real operating 
 
 ## Live Operator-Managed Products
 
-These are now admin-managed through the **AI Lab Command Center / Revenue OS** dashboard with checkout, landing pages, and deliverable tracking.
+These are admin-managed through the **AI Lab Command Center / Revenue OS** dashboard and now include verified live Stripe checkout links. High-ticket services are listed first so visitors see the clearest purchase paths before lower-cost kits.
 
-| Product | Offer | State |
-|---------|-------|-------|
-| APVA AI ROI Benchmark | Reliability-adjusted AI workflow ROI scoring | Live |
-| AI Command Center Setup | Private AI workstation control plane template | Live |
-| Floyo Workflow Radar | Workflow-pattern audit / setup / monitor | Live |
-| Local AI Lab Audit | Private AI lab audit + remediation offer | Live |
-| SaaS Repo Rescue Audit | Auth / billing / RLS / webhook repo audit | Live |
-| Local Automation Retainer | Recurring automation + operator support | Live |
-| ComfyUI Workflow Packs | Productized private image workflow bundles | Live |
-| ComfyUI Node Starter Kit | Sellable node-pack scaffold | Live |
-| ComfyUI Product Photo Kit | Repeatable ecommerce imaging workflow | Live |
-| ComfyUI Fashion Lookbook Kit | Fictional editorial lookbook workflow pack | Live |
-| ComfyUI Thumbnail Creator Kit | Thumbnail generation workflow product | Live |
+| Product | Offer | Price | Buy |
+|---------|-------|-------|-----|
+| Local Automation Retainer | Recurring local automation and operator support for teams with messy manual workflows. | $750-$2500/mo | [Buy](https://buy.stripe.com/8x2fZg0Ra6hS34C6atb3q0r) |
+| SaaS Repo Rescue Audit | Auth, billing, RLS, webhook, and deployment audit for SaaS repos that need to stop pretending. | $499 audit / $1500 fix sprint | [Buy](https://buy.stripe.com/00wfZgfM4bCc9t0buNb3q0q) |
+| Local AI Lab Audit | Private AI lab / workstation audit with remediation plan and optional implementation day. | $499 fixed / $997 with implementation day | [Buy](https://buy.stripe.com/7sYaEW9nG6hSdJggP7b3q0i) |
+| AI Command Center Setup | Private AI workstation control plane template with optional managed checks or done-for-you setup. | $297 lifetime template / $29-mo managed checks / $997 done-for-you | [Buy](https://buy.stripe.com/9B68wO57qbCc7kSeGZb3q0j) |
+| APVA AI ROI Benchmark | Reliability-adjusted AI workflow ROI scoring for teams validating automation investments. | $199 self-serve / $799 team benchmark | [Buy](https://buy.stripe.com/aFa28qeI08q0dJggP7b3q0k) |
+| Floyo Workflow Radar | Workflow-pattern audit, setup, and monitoring to find repeatable automation wins. | $149 pattern audit / $499 setup / $49-mo monitor | [Buy](https://buy.stripe.com/9B66oG9nGdKk8oW42lb3q0y) |
+| AI Character Generator Kit | Fictional character generation prompt/workflow kit. | $49 one-time | [Buy](https://buy.stripe.com/3cI8wO1Veay8fRo6atb3q0s) |
+| AI Video Storyboard Studio | Storyboard planning assets for AI video workflows. | $79 one-time | [Buy](https://buy.stripe.com/9B65kCgQ8eOodJg6atb3q0u) |
+| AI Voice Clone Training Kit | Training kit for safe, consent-based voice workflow setup. | $89 one-time | [Buy](https://buy.stripe.com/bJeeVc7fy35GgVs6atb3q0v) |
+| ComfyUI Fashion Lookbook Kit | Fictional editorial lookbook workflow pack for private/local creative workflows. | $69 creator pack / $149 agency pack | [Buy](https://buy.stripe.com/dRm4gy6bu5dO48G7exb3q0o) |
+| ComfyUI Node Starter Kit | Starter scaffold for sellable ComfyUI custom node packs. | $39 lite / $99 commercial | [Buy](https://buy.stripe.com/9B6cN41Veay8eNkfL3b3q0m) |
+| ComfyUI Product Photo Kit | Repeatable ecommerce product image workflow kit. | $59 niche pack / $129 studio pack | [Buy](https://buy.stripe.com/cNibJ057q21C34C7exb3q0n) |
+| ComfyUI Thumbnail Creator Kit | Thumbnail generation workflow product for creators and channels. | $49 solo creator / $119 channel pack | [Buy](https://buy.stripe.com/00wcN443m7lW8oWbuNb3q0p) |
+| ComfyUI Workflow Pack Shop | Productized private ComfyUI workflow packs for repeatable image generation pipelines. | $29 starter / $79 pro / $149 niche pack / $499 custom pack | [Buy](https://buy.stripe.com/3cIbJ0bvO6hS0WuaqJb3q0l) |
+| Defend-Your-AI Legal Kit | Practical AI-use legal/readiness kit for small operators. | $149 one-time | [Buy](https://buy.stripe.com/9B600i1Ve8q020y0Q9b3q0x) |
+| Prompt Engineering Laboratory | Prompt testing and iteration lab kit. | $39 one-time | [Buy](https://buy.stripe.com/fZufZg9nGbCc0WufL3b3q0t) |
+| Research Paper Visualizer | Research-paper visual summary workflow kit. | $59 one-time | [Buy](https://buy.stripe.com/8x228qczS0Xy48G2Yhb3q0w) |
 
 ---
 
