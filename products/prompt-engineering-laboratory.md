@@ -19,3 +19,7 @@ No systematic way to measure prompt effectiveness or build reusable libraries.
 ---
 
 Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+
+## Buyer Docs
+
+- Buyer pack: [docs/buyer-docs](docs/buyer-docs)

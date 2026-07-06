@@ -19,3 +19,7 @@ Paper-to-diagram workflow, Mermaid template library, citation extractor, summary
 ---
 
 Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+
+## Buyer Docs
+
+- Buyer pack: [docs/buyer-docs](docs/buyer-docs)

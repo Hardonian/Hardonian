@@ -19,3 +19,7 @@ PDF/Markdown audit report, ranked fixes, APVA ROI estimate, optional dashboard s
 ---
 
 Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+
+## Buyer Docs
+
+- Buyer pack: [docs/buyer-docs](docs/buyer-docs)

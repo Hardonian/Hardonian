@@ -19,3 +19,7 @@ Repo health report, risk matrix, failing/passing checks, prioritized fix sprint 
 ---
 
 Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+
+## Buyer Docs
+
+- Buyer pack: [docs/buyer-docs](docs/buyer-docs)

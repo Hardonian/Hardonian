@@ -21,3 +21,7 @@ Txt2img + upscale workflow bundle, prompt recipes, angle/background presets, out
 ---
 
 Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+
+## Buyer Docs
+
+- Buyer pack: [docs/buyer-docs](docs/buyer-docs)

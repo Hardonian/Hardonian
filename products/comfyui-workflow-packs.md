@@ -19,3 +19,7 @@ Packaged workflow JSONs, prompt presets, model manifest, install notes, batch sc
 ---
 
 Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+
+## Buyer Docs
+
+- Buyer pack: [docs/buyer-docs](docs/buyer-docs)

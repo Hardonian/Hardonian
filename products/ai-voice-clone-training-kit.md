@@ -19,3 +19,7 @@ Local voice training workflow, consent template, audio preprocessing scripts, le
 ---
 
 Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+
+## Buyer Docs
+
+- Buyer pack: [docs/buyer-docs](docs/buyer-docs)

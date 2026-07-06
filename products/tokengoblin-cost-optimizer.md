@@ -19,3 +19,7 @@ Real-time token measurement + intelligent routing + cost dashboards. Go binary f
 ---
 
 Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+
+## Buyer Docs
+
+- Buyer pack: [docs/buyer-docs](docs/buyer-docs)

@@ -19,3 +19,7 @@ Pattern audit, automation candidates, admin dashboard wiring, onboarding script,
 ---
 
 Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+
+## Buyer Docs
+
+- Buyer pack: [docs/buyer-docs](docs/buyer-docs)

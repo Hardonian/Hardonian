@@ -19,3 +19,7 @@ Privacy framework, model card templates, risk assessment matrix, compliance chec
 ---
 
 Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+
+## Buyer Docs
+
+- Buyer pack: [docs/buyer-docs](docs/buyer-docs)

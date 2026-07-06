@@ -19,3 +19,7 @@ Monthly automation backlog, 2-5 shipped automations, logs, status commands, roll
 ---
 
 Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+
+## Buyer Docs
+
+- Buyer pack: [docs/buyer-docs](docs/buyer-docs)

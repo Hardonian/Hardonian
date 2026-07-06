@@ -21,3 +21,7 @@ Txt2img + img2img + upscale workflow bundle, look presets, composition notes, pr
 ---
 
 Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+
+## Buyer Docs
+
+- Buyer pack: [docs/buyer-docs](docs/buyer-docs)
