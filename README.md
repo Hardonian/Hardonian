@@ -40,11 +40,6 @@ I build systems that sit between architecture and operations:
 
 Recent work has focused on turning private AI-lab tooling into a real operating surface: health, automation, product admin, checkout wiring, packaging, and proof-first delivery.
 
----
-Recent work has focused on turning private AI-lab tooling into a real operating surface: health, automation, product admin, checkout wiring, packaging, and proof-first delivery.
-
----
-
 ## Latest Pushed Architecture / Platform Work
 
 The newest public pushes on the profile now also include enterprise architecture and platform reference work beyond the AI-lab product line.
@@ -59,13 +54,9 @@ The newest public pushes on the profile now also include enterprise architecture
 
 These repos round out the profile beyond product SKUs: they show architecture depth in identity, integration, platform engineering, workflow simulation, and applied AI experimentation.
 
----
-
 ## Architecture Portfolio & Playbook
 
 I also maintain a reusable architecture delivery kit under [architecture-playbook](/Hardonian/tree/main/architecture-playbook). It covers current-state assessment, target-state architecture, ADRs, migration planning, rollout risk, and executive briefs.
-
----
 
 ## Flagship Build: AI Lab Command Center
 
@@ -83,8 +74,6 @@ I also maintain a reusable architecture delivery kit under [architecture-playboo
 **Why it matters:** it turns an internal AI workstation into a real, operator-grade product surface.
 
 Repo: [Hardonian/ai-lab-command-center](https://github.com/Hardonian/ai-lab-command-center)
-
----
 
 ## Repositories
 
@@ -113,8 +102,6 @@ Repo: [Hardonian/ai-lab-command-center](https://github.com/Hardonian/ai-lab-comm
 | [api-changelog-radar](https://github.com/Hardonian/api-changelog-radar) | API changelog monitoring scaffold | Proof-of-concept | Cloudflare Workers, D1 |
 | [tfstate-drift-inspector](https://github.com/Hardonian/tfstate-drift-inspector) | Terraform drift scanning and alerting | Experimental | Python, Docker |
 | [cloudflare-app-ops-dashboard](https://github.com/Hardonian/cloudflare-app-ops-dashboard) | Portfolio status board for Cloudflare services | Deployed | TypeScript, Workers |
-
----
 
 ## Architecture Maps
 
@@ -153,38 +140,34 @@ flowchart LR
     Ledger --> Audit["Audit Trail / Exports"]
 ```
 
----
-
 ## Live Operator-Managed Products
 
-These are managed through the **AI Lab Command Center / Revenue OS** dashboard and are listed below for visibility. To keep the profile clean and secure, this README shows offer summaries only; checkout links live on each product page, not here.
+These are managed through the **AI Lab Command Center / Revenue OS** dashboard and listed here for visibility. This README stays scannable and secure: pricing, checkout, and purchase links live on each product subpage, not in the README itself.
 
-| Product | Headline | Price | Product Page | Notes |
-|---------|----------|-------|--------------|-------|
-| Local AI Lab Audit | Find and fix the hidden bottlenecks in your local AI lab in one day. | $499 fixed / $997 with implementation day | [Product page](products/local-ai-lab-audit.md) | Audit-first entry point |
-| AI Command Center Setup | Local control plane template with optional managed checks or done-for-you setup. | $297 lifetime template / $29-mo managed checks / $997 done-for-you | [Product page](products/ai-command-center-setup.md) | |
-| APVA AI ROI Benchmark | Reliability-adjusted AI workflow ROI scoring for automation investments. | $199 self-serve / $799 team benchmark | [Product page](products/apva-roi-benchmark.md) | |
-| SaaS Repo Rescue Audit | Audit and fix auth, billing, RLS, webhooks, and deployment gaps in SaaS repos. | $499 audit / $1500 fix sprint | [Product page](products/repo-rescue-saas-audit.md) | |
-| Local Automation Retainer | Recurring automation and operator support for messy manual workflows. | $750-$2500/mo | [Product page](products/automation-retainer.md) | Retainer |
-| ComfyUI Node Starter Kit | Sellable starter scaffold for custom ComfyUI node packs. | $39 lite / $99 commercial | [Product page](products/comfyui-node-starter-kit.md) | Gumroad also |
-| ComfyUI Product Photo Kit | Repeatable local ecommerce product image workflow kit. | $59 niche pack / $129 studio pack | [Product page](products/comfyui-product-photo-kit.md) | Gumroad also |
-| ComfyUI Fashion Lookbook Kit | Fictional editorial lookbook workflow pack. | $69 creator pack / $149 agency pack | [Product page](products/comfyui-fashion-lookbook-kit.md) | Gumroad also |
-| ComfyUI Thumbnail Creator Kit | Local thumbnail generation workflow for creators and channels. | $49 solo creator / $119 channel pack | [Product page](products/comfyui-thumbnail-creator-kit.md) | Gumroad also |
-| ComfyUI Workflow Pack Shop | Productized private ComfyUI workflow packs. | $29 starter / $79 pro / $149 niche pack / $499 custom pack | [Product page](products/comfyui-workflow-packs.md) | |
-| Floyo Workflow Radar | Workflow-pattern audit, setup, and monitoring. | $149 pattern audit / $499 setup / $49-mo monitor | [Product page](products/floyo-workflow-radar.md) | |
-| Settler FinOps Reconciliation Engine | Payment reconciliation with deterministic matching and audit trails. | $2,500 self-serve / $10,000 enterprise setup / $500/mo managed | [Product page](products/settler-finops-platform.md) | Enterprise |
-| TokenGoblin LLM Cost Optimizer | Token usage measurement, smart routing, and cost optimization. | $1,499 self-serve / $5,000 enterprise / $299/mo managed | [Product page](products/tokengoblin-cost-optimizer.md) | Enterprise |
-| AI Lab Applied Notebook Packs | Reproducible AI experiment packs. | $79 per pack / $299 bundle / $99/mo subscription | [Product page](products/ai-lab-notebook-packs.md) | |
-| AI Character Generator Kit | Fictional character workflow kit for storytelling and RPGs. | $49 one-time | [Product page](products/ai-character-generator-kit.md) | |
-| Prompt Engineering Laboratory | Lab-tested prompt templates and iteration workflow. | $39 one-time | [Product page](products/prompt-engineering-laboratory.md) | |
-| AI Video Storyboard Studio | Video storyboard assets and pacing guides. | $79 one-time | [Product page](products/ai-video-storyboard-studio.md) | |
-| AI Voice Clone Training Kit | Consent-based local voice training workflow kit. | $89 one-time | [Product page](products/ai-voice-clone-training-kit.md) | |
-| Research Paper Visualizer | Academic paper visual summary workflow kit. | $59 one-time | [Product page](products/research-paper-visualizer.md) | |
-| Defend-Your-AI Legal Kit | AI-use legal, privacy, and risk readiness kit. | $149 one-time | [Product page](products/defend-your-ai-legal-kit.md) | |
+| Product | Headline | Track / Buyer | Product Page | Notes |
+|---------|----------|---------------|--------------|-------|
+| Local AI Lab Audit | Find and fix the hidden bottlenecks in your local AI lab in one day. | Direct sale | [Product page](products/local-ai-lab-audit.md) | Audit-first entry point |
+| AI Command Center Setup | Local control plane template with optional managed checks or done-for-you setup. | Template + managed services | [Product page](products/ai-command-center-setup.md) | Flagship product |
+| APVA AI ROI Benchmark | Reliability-adjusted AI workflow ROI scoring for automation investments. | Direct sale | [Product page](products/apva-roi-benchmark.md) | Benchmark product |
+| SaaS Repo Rescue Audit | Audit and fix auth, billing, RLS, webhooks, and deployment gaps in SaaS repos. | Audit + sprint | [Product page](products/repo-rescue-saas-audit.md) | Repo buyer |
+| Local Automation Retainer | Recurring automation and operator support for messy manual workflows. | Retainer | [Product page](products/automation-retainer.md) | Recurring revenue |
+| ComfyUI Node Starter Kit | Sellable starter scaffold for custom ComfyUI node packs. | Creator tooling | [Product page](products/comfyui-node-starter-kit.md) | Gumroad also |
+| ComfyUI Product Photo Kit | Repeatable local ecommerce product image workflow kit. | Commerce creator | [Product page](products/comfyui-product-photo-kit.md) | Gumroad also |
+| ComfyUI Fashion Lookbook Kit | Fictional editorial lookbook workflow pack. | Fashion / editorial | [Product page](products/comfyui-fashion-lookbook-kit.md) | Gumroad also |
+| ComfyUI Thumbnail Creator Kit | Local thumbnail generation workflow for creators and channels. | Creator / channel | [Product page](products/comfyui-thumbnail-creator-kit.md) | Gumroad also |
+| ComfyUI Workflow Pack Shop | Productized private ComfyUI workflow packs. | Workflow buyer | [Product page](products/comfyui-workflow-packs.md) | Shop-style catalog |
+| Floyo Workflow Radar | Workflow-pattern audit, setup, and monitoring. | Operator / founder | [Product page](products/floyo-workflow-radar.md) | Monitor recurring |
+| Settler FinOps Reconciliation Engine | Payment reconciliation with deterministic matching and audit trails. | Enterprise finance | [Product page](products/settler-finops-platform.md) | Enterprise |
+| TokenGoblin LLM Cost Optimizer | Token usage measurement, smart routing, and cost optimization. | Enterprise AI | [Product page](products/tokengoblin-cost-optimizer.md) | Enterprise |
+| AI Lab Applied Notebook Packs | Reproducible AI experiment packs. | Researcher / learner | [Product page](products/ai-lab-notebook-packs.md) | Subscription tier |
+| AI Character Generator Kit | Fictional character workflow kit for storytelling and RPGs. | Hobbyist / creator | [Product page](products/ai-character-generator-kit.md) | |
+| Prompt Engineering Laboratory | Lab-tested prompt templates and iteration workflow. | Operator / learner | [Product page](products/prompt-engineering-laboratory.md) | |
+| AI Video Storyboard Studio | Video storyboard assets and pacing guides. | Creator / studio | [Product page](products/ai-video-storyboard-studio.md) | |
+| AI Voice Clone Training Kit | Consent-based local voice training workflow kit. | Voice creator | [Product page](products/ai-voice-clone-training-kit.md) | Consent-first |
+| Research Paper Visualizer | Academic paper visual summary workflow kit. | Researcher / student | [Product page](products/research-paper-visualizer.md) | |
+| Defend-Your-AI Legal Kit | AI-use legal, privacy, and risk readiness kit. | Operator / org | [Product page](products/defend-your-ai-legal-kit.md) | Risk-first |
 
-Each product links to a description subpage under [products/](/Hardonian/tree/main/products). Buy/checkout links and usage details are on those subpages, keeping this README scannable and professional.
-
----
+Each product links to a description subpage under [products/](/Hardonian/tree/main/products). Checkout and usage details are on those subpages, keeping this README scannable and professional.
 
 ## Proficiencies
 
