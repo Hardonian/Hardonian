@@ -42,12 +42,32 @@ Recent work has focused on turning private AI-lab tooling into a real operating 
 
 ---
 
-## Live Operator-Managed Products
 
-These are admin-managed through the **AI Lab Command Center / Revenue OS** dashboard and now include verified live Stripe checkout links. High-ticket services are listed first so visitors see the clearest purchase paths before lower-cost kits.
+These are admin-managed through the **AI Lab Command Center / Revenue OS** dashboard. To reduce exposure, this README contains only offer summaries; every product links to a description page, and checkout links live on those product subpages, not here. If you want a link shortened/reviewed, open the linked page.
 
-|| Product | Offer | Price | Buy (Stripe) | Gumroad ||
-||---------|-------|-------|--------------|--------||
+| Product | Headline | Price | Product Page | Checkout | Gumroad |
+|---------|----------|-------|--------------|----------|---------|
+| Local AI Lab Audit | Find and fix the hidden bottlenecks in your local AI lab in one day. | $499 fixed / $997 with implementation day | [Product page](products/local-ai-lab-audit.md) | Styled Stripe page in local-ai-lab-audit.md | Gumroad: `No` |
+| AI Command Center Setup | A local dashboard that tells you what is broken, what to fix first, and what is making money. | $297 lifetime template / $29-mo managed checks / $997 done-for-you | [Product page](products/ai-command-center-setup.md) | Styled Stripe page in ai-command-center-setup.md | Gumroad: `No` |
+| APVA AI ROI Benchmark | Stop guessing whether AI saves time. Measure True Value Yield. | $199 self-serve / $799 team benchmark | [Product page](products/apva-roi-benchmark.md) | Styled Stripe page in apva-roi-benchmark.md | Gumroad: `No` |
+| ComfyUI Workflow Pack Shop | Sell repeatable private image pipelines instead of random prompt chaos. | $29 starter / $79 pro / $149 niche pack / $499 custom pack | [Product page](products/comfyui-workflow-packs.md) | Styled Stripe page in comfyui-workflow-packs.md | Gumroad: `No` |
+| ComfyUI Node Starter Kit | A sellable starter template for shipping custom ComfyUI nodes without starting from zero. | $39 lite / $99 commercial | [Product page](products/comfyui-node-starter-kit.md) | Styled Stripe page in comfyui-node-starter-kit.md | Gumroad: `Yes` |
+| ComfyUI Product Photo Kit | Generate clean ecommerce product shots locally with repeatable prompts and upscale flow. | $59 niche pack / $129 studio pack | [Product page](products/comfyui-product-photo-kit.md) | Styled Stripe page in comfyui-product-photo-kit.md | Gumroad: `Yes` |
+| ComfyUI Fashion Lookbook Kit | Build stylized fictional lookbook imagery with repeatable composition and upscale passes. | $69 creator pack / $149 agency pack | [Product page](products/comfyui-fashion-lookbook-kit.md) | Styled Stripe page in comfyui-fashion-lookbook-kit.md | Gumroad: `Yes` |
+| ComfyUI Thumbnail Creator Kit | Ship bold local thumbnail concepts with reusable prompt structures and upscale finishing. | $49 solo creator / $119 channel pack | [Product page](products/comfyui-thumbnail-creator-kit.md) | Styled Stripe page in comfyui-thumbnail-creator-kit.md | Gumroad: `Yes` |
+| SaaS Repo Rescue Audit | Find the auth, billing, RLS, webhook, and deployment bugs before customers do. | $499 audit / $1500 fix sprint | [Product page](products/repo-rescue-saas-audit.md) | Styled Stripe page in repo-rescue-saas-audit.md | Gumroad: `No` |
+| Local Automation Retainer | Turn repeated AI lab and business chores into boring verified automations. | $750-$2500/mo | [Product page](products/automation-retainer.md) | Styled Stripe page in automation-retainer.md | Gumroad: `No` |
+| AI Character Generator Kit | Build consistent fictional characters for storytelling, comics, and RPGs. | $49 one-time | [Product page](products/ai-character-generator-kit.md) | Styled Stripe page in ai-character-generator-kit.md | Gumroad: `No` |
+| Prompt Engineering Laboratory | Turn random prompting into precision results with lab-tested templates. | $39 one-time | [Product page](products/prompt-engineering-laboratory.md) | Styled Stripe page in prompt-engineering-laboratory.md | Gumroad: `No` |
+| AI Video Storyboard Studio | Turn text prompts into viral-ready video storyboards with shot lists and pacing guides. | $79 one-time | [Product page](products/ai-video-storyboard-studio.md) | Styled Stripe page in ai-video-storyboard-studio.md | Gumroad: `No` |
+| AI Voice Clone Training Kit | Train your own voice clone locally with consent-only workflows and audio processing. | $89 one-time | [Product page](products/ai-voice-clone-training-kit.md) | Styled Stripe page in ai-voice-clone-training-kit.md | Gumroad: `No` |
+| Research Paper Visualizer | Convert academic papers into digestible visuals and explainer diagrams automatically. | $59 one-time | [Product page](products/research-paper-visualizer.md) | Styled Stripe page in research-paper-visualizer.md | Gumroad: `No` |
+| Defend-Your-AI Legal Kit | Legal defensive security for AI products: privacy, model cards, and risk matrices. | $149 one-time | [Product page](products/defend-your-ai-legal-kit.md) | Styled Stripe page in defend-your-ai-legal-kit.md | Gumroad: `No` |
+| Floyo Workflow Radar | See hidden workflow patterns, rank automation wins, and turn them into boring repeatable systems. | $149 pattern audit / $499 setup / $49-mo monitor | [Product page](products/floyo-workflow-radar.md) | Styled Stripe page in floyo-workflow-radar.md | Gumroad: `No` |
+| Settler FinOps Reconciliation Engine | Automate payment reconciliation with deterministic matching and evidence-grade audit trails. | $2,500 self-serve / $10,000 enterprise setup / $500/mo managed | [Product page](products/settler-finops-platform.md) | Styled Stripe page in settler-finops-platform.md | Gumroad: `No` |
+| TokenGoblin LLM Cost Optimizer | Stop LLM bill shock: real-time token measurement, smart routing, and cost optimization in one binary. | $1,499 self-serve / $5,000 enterprise / $299/mo managed | [Product page](products/tokengoblin-cost-optimizer.md) | Styled Stripe page in tokengoblin-cost-optimizer.md | Gumroad: `No` |
+| AI Lab Applied Notebook Packs | Reproducible AI experiment packs - from notebook to production without the chaos. | $79 per pack / $299 bundle (5 packs) / $99/mo subscription | [Product page](products/ai-lab-notebook-packs.md) | Styled Stripe page in ai-lab-notebook-packs.md | Gumroad: `No` |
+---------|-------|-------|--------------|--------||
 || Local Automation Retainer | Recurring local automation and operator support for teams with messy manual workflows. | $750-$2500/mo | [Buy](https://buy.stripe.com/8x2fZg0Ra6hS34C6atb3q0r) | — ||
 || SaaS Repo Rescue Audit | Auth, billing, RLS, webhook, and deployment audit for SaaS repos that need to stop pretending. | $499 audit / $1500 fix sprint | [Buy](https://buy.stripe.com/00wfZgfM4bCc9t0buNb3q0q) | — ||
 || Local AI Lab Audit | Private AI lab / workstation audit with remediation plan and optional implementation day. | $499 fixed / $997 with implementation day | [Buy](https://buy.stripe.com/7sYaEW9nG6hSdJggP7b3q0i) | — ||
