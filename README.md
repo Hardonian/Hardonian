@@ -23,8 +23,8 @@ Ontario, Canada • SaaS Architecture • Local-First AI Infrastructure • Reve
 <a href="#what-i-build">What I Build</a> •
 <a href="#repositories">Repositories</a> •
 <a href="#architecture-maps">Architecture Maps</a> •
-<a href="#live-operator-managed-products">Live Products</a> •
-<a href="#proficiencies">Proficiencies</a>
+<a href="#proficiencies">Proficiencies</a> •
+<a href="#operator-products">Live Products</a>
 </p>
 
 ---
@@ -140,35 +140,6 @@ flowchart LR
     Ledger --> Audit["Audit Trail / Exports"]
 ```
 
-## Live Operator-Managed Products
-
-These are managed through the **AI Lab Command Center / Revenue OS** dashboard and listed here for visibility. This README stays scannable and secure: pricing, checkout, and purchase links live on each product subpage, not in the README itself.
-
-| Product | Headline | Track / Buyer | Product Page | Notes |
-|---------|----------|---------------|--------------|-------|
-| Local AI Lab Audit | Find and fix the hidden bottlenecks in your local AI lab in one day. | Direct sale | [Product page](products/local-ai-lab-audit.md) | Audit-first entry point |
-| AI Command Center Setup | Local control plane template with optional managed checks or done-for-you setup. | Template + managed services | [Product page](products/ai-command-center-setup.md) | Flagship product |
-| APVA AI ROI Benchmark | Reliability-adjusted AI workflow ROI scoring for automation investments. | Direct sale | [Product page](products/apva-roi-benchmark.md) | Benchmark product |
-| SaaS Repo Rescue Audit | Audit and fix auth, billing, RLS, webhooks, and deployment gaps in SaaS repos. | Audit + sprint | [Product page](products/repo-rescue-saas-audit.md) | Repo buyer |
-| Local Automation Retainer | Recurring automation and operator support for messy manual workflows. | Retainer | [Product page](products/automation-retainer.md) | Recurring revenue |
-| ComfyUI Node Starter Kit | Sellable starter scaffold for custom ComfyUI node packs. | Creator tooling | [Product page](products/comfyui-node-starter-kit.md) | Gumroad also |
-| ComfyUI Product Photo Kit | Repeatable local ecommerce product image workflow kit. | Commerce creator | [Product page](products/comfyui-product-photo-kit.md) | Gumroad also |
-| ComfyUI Fashion Lookbook Kit | Fictional editorial lookbook workflow pack. | Fashion / editorial | [Product page](products/comfyui-fashion-lookbook-kit.md) | Gumroad also |
-| ComfyUI Thumbnail Creator Kit | Local thumbnail generation workflow for creators and channels. | Creator / channel | [Product page](products/comfyui-thumbnail-creator-kit.md) | Gumroad also |
-| ComfyUI Workflow Pack Shop | Productized private ComfyUI workflow packs. | Workflow buyer | [Product page](products/comfyui-workflow-packs.md) | Shop-style catalog |
-| Floyo Workflow Radar | Workflow-pattern audit, setup, and monitoring. | Operator / founder | [Product page](products/floyo-workflow-radar.md) | Monitor recurring |
-| Settler FinOps Reconciliation Engine | Payment reconciliation with deterministic matching and audit trails. | Enterprise finance | [Product page](products/settler-finops-platform.md) | Enterprise |
-| TokenGoblin LLM Cost Optimizer | Token usage measurement, smart routing, and cost optimization. | Enterprise AI | [Product page](products/tokengoblin-cost-optimizer.md) | Enterprise |
-| AI Lab Applied Notebook Packs | Reproducible AI experiment packs. | Researcher / learner | [Product page](products/ai-lab-notebook-packs.md) | Subscription tier |
-| AI Character Generator Kit | Fictional character workflow kit for storytelling and RPGs. | Hobbyist / creator | [Product page](products/ai-character-generator-kit.md) | |
-| Prompt Engineering Laboratory | Lab-tested prompt templates and iteration workflow. | Operator / learner | [Product page](products/prompt-engineering-laboratory.md) | |
-| AI Video Storyboard Studio | Video storyboard assets and pacing guides. | Creator / studio | [Product page](products/ai-video-storyboard-studio.md) | |
-| AI Voice Clone Training Kit | Consent-based local voice training workflow kit. | Voice creator | [Product page](products/ai-voice-clone-training-kit.md) | Consent-first |
-| Research Paper Visualizer | Academic paper visual summary workflow kit. | Researcher / student | [Product page](products/research-paper-visualizer.md) | |
-| Defend-Your-AI Legal Kit | AI-use legal, privacy, and risk readiness kit. | Operator / org | [Product page](products/defend-your-ai-legal-kit.md) | Risk-first |
-
-Each product links to a description subpage under [products/](/Hardonian/tree/main/products). Checkout and usage details are on those subpages, keeping this README scannable and professional.
-
 ## Proficiencies
 
 | Area | Notes |
@@ -200,5 +171,34 @@ Each product links to a description subpage under [products/](/Hardonian/tree/ma
 - Recent focus: building systems that connect internal tooling to revenue, not just demos
 
 ---
+<a name="operator-products"></a>
+## Live Operator-Managed Products
+
+Operator catalog maintained through the **AI Lab Command Center / Revenue OS** dashboard. Pricing, checkout, and purchase links live on each product subpage, not in the README itself.
+
+| Product | Headline | Track / Buyer | Product Page | Notes |
+|---------|----------|---------------|--------------|-------|
+| Local AI Lab Audit | Find and fix the hidden bottlenecks in your local AI lab in one day. | Direct sale | [Product page](products/local-ai-lab-audit.md) | Audit-first entry point |
+| AI Command Center Setup | Local control plane template with optional managed checks or done-for-you setup. | Template + managed services | [Product page](products/ai-command-center-setup.md) | Flagship product |
+| APVA AI ROI Benchmark | Reliability-adjusted AI workflow ROI scoring for automation investments. | Direct sale | [Product page](products/apva-roi-benchmark.md) | Benchmark product |
+| SaaS Repo Rescue Audit | Audit and fix auth, billing, RLS, webhooks, and deployment gaps in SaaS repos. | Audit + sprint | [Product page](products/repo-rescue-saas-audit.md) | Repo buyer |
+| Local Automation Retainer | Recurring automation and operator support for messy manual workflows. | Retainer | [Product page](products/automation-retainer.md) | Recurring revenue |
+| ComfyUI Node Starter Kit | Sellable starter scaffold for custom ComfyUI node packs. | Creator tooling | [Product page](products/comfyui-node-starter-kit.md) | Gumroad also |
+| ComfyUI Product Photo Kit | Repeatable local ecommerce product image workflow kit. | Commerce creator | [Product page](products/comfyui-product-photo-kit.md) | Gumroad also |
+| ComfyUI Fashion Lookbook Kit | Fictional editorial lookbook workflow pack. | Fashion / editorial | [Product page](products/comfyui-fashion-lookbook-kit.md) | Gumroad also |
+| ComfyUI Thumbnail Creator Kit | Local thumbnail generation workflow for creators and channels. | Creator / channel | [Product page](products/comfyui-thumbnail-creator-kit.md) | Gumroad also |
+| ComfyUI Workflow Pack Shop | Productized private ComfyUI workflow packs. | Workflow buyer | [Product page](products/comfyui-workflow-packs.md) | Shop-style catalog |
+| Floyo Workflow Radar | Workflow-pattern audit, setup, and monitoring. | Operator / founder | [Product page](products/floyo-workflow-radar.md) | Monitor recurring |
+| Settler FinOps Reconciliation Engine | Payment reconciliation with deterministic matching and audit trails. | Enterprise finance | [Product page](products/settler-finops-platform.md) | Enterprise |
+| TokenGoblin LLM Cost Optimizer | Token usage measurement, smart routing, and cost optimization. | Enterprise AI | [Product page](products/tokengoblin-cost-optimizer.md) | Enterprise |
+| AI Lab Applied Notebook Packs | Reproducible AI experiment packs. | Researcher / learner | [Product page](products/ai-lab-notebook-packs.md) | Subscription tier |
+| AI Character Generator Kit | Fictional character workflow kit for storytelling and RPGs. | Hobbyist / creator | [Product page](products/ai-character-generator-kit.md) | |
+| Prompt Engineering Laboratory | Lab-tested prompt templates and iteration workflow. | Operator / learner | [Product page](products/prompt-engineering-laboratory.md) | |
+| AI Video Storyboard Studio | Video storyboard assets and pacing guides. | Creator / studio | [Product page](products/ai-video-storyboard-studio.md) | |
+| AI Voice Clone Training Kit | Consent-based local voice training workflow kit. | Voice creator | [Product page](products/ai-voice-clone-training-kit.md) | Consent-first |
+| Research Paper Visualizer | Academic paper visual summary workflow kit. | Researcher / student | [Product page](products/research-paper-visualizer.md) | |
+| Defend-Your-AI Legal Kit | AI-use legal, privacy, and risk readiness kit. | Operator / org | [Product page](products/defend-your-ai-legal-kit.md) | Risk-first |
+
+*Checkout and usage details are on each product subpage, keeping this catalog scannable and professional.*
 
 *If you want to collaborate, the best starting points are [Settler](https://github.com/Hardonian/Settler) and [ai-lab-command-center](https://github.com/Hardonian/ai-lab-command-center).*
