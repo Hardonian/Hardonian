@@ -12,6 +12,8 @@ Product visuals are inconsistent, expensive to outsource, and hard to batch with
 
 Txt2img + upscale workflow bundle, prompt recipes, angle/background presets, output naming guide, install checklist.
 
+**Requirements:** SDXL 1.0 checkpoint (~6.5GB). Runs on 8GB+ VRAM; tested on RTX 3060 12GB.
+
 ## Checkout / Buy
 
 - Stripe checkout: https://buy.stripe.com/cNibJ057q21C34C7exb3q0n

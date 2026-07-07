@@ -10,7 +10,9 @@ Thumbnail ideation is repetitive and most image pipelines do not package cleanly
 
 ## Deliverable
 
-Flux/SDXL workflow bundle, framing presets, headline-space prompts, versioning checklist, packaging docs.
+SDXL text-to-image thumbnail workflow (runs on 8GB+ VRAM; tested on RTX 3060 12GB), 4x-UltraSharp upscale workflow, framing presets, headline-space prompts, versioning checklist, packaging docs.
+
+**Requirements:** SDXL 1.0 checkpoint (~6.5GB). Flux Dev is an optional 16GB+ variant, not included by default.
 
 ## Checkout / Buy
 
