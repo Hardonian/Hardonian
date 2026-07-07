@@ -1,5 +1,6 @@
 # APVA AI ROI Benchmark
 
+![apva-roi-benchmark sample](assets/apva-roi-benchmark.png)
 Stop guessing whether AI saves time. Measure True Value Yield.
 
 **Price:** $199 self-serve / $799 team benchmark

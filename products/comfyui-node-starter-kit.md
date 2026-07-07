@@ -1,5 +1,6 @@
 # ComfyUI Node Starter Kit
 
+![comfyui-node-starter-kit sample](assets/comfyui-node-starter-kit.png)
 A sellable starter template for shipping custom ComfyUI nodes without starting from zero.
 
 **Price:** $39 lite / $99 commercial

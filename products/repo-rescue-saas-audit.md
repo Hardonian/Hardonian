@@ -1,5 +1,6 @@
 # SaaS Repo Rescue Audit
 
+![repo-rescue-saas-audit sample](assets/repo-rescue-saas-audit.png)
 Find the auth, billing, RLS, webhook, and deployment bugs before customers do.
 
 **Price:** $499 audit / $1500 fix sprint

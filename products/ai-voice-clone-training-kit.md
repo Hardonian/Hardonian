@@ -1,5 +1,6 @@
 # AI Voice Clone Training Kit
 
+![ai-voice-clone-training-kit sample](assets/ai-voice-clone-training-kit.png)
 Train your own voice clone locally with consent-only workflows and audio processing.
 
 **Price:** $89 one-time

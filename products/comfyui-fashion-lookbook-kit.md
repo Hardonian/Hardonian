@@ -1,5 +1,6 @@
 # ComfyUI Fashion Lookbook Kit
 
+![comfyui-fashion-lookbook-kit sample](assets/comfyui-fashion-lookbook-kit.png)
 Build stylized fictional lookbook imagery with repeatable composition and upscale passes.
 
 **Price:** $69 creator pack / $149 agency pack

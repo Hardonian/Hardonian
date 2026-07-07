@@ -1,5 +1,6 @@
 # Research Paper Visualizer
 
+![research-paper-visualizer sample](assets/research-paper-visualizer.png)
 Convert academic papers into digestible visuals and explainer diagrams automatically.
 
 **Price:** $59 one-time

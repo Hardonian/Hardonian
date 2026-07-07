@@ -1,5 +1,6 @@
 # AI Lab Applied Notebook Packs
 
+![ai-lab-notebook-packs sample](assets/ai-lab-notebook-packs.png)
 Reproducible AI experiment packs - from notebook to production without the chaos.
 
 **Price:** $79 per pack / $299 bundle (5 packs) / $99/mo subscription

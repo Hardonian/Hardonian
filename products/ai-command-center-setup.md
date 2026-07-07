@@ -1,5 +1,6 @@
 # AI Command Center Setup
 
+![ai-command-center-setup sample](assets/ai-command-center-setup.png)
 A local dashboard that tells you what is broken, what to fix first, and what is making money.
 
 **Price:** $297 lifetime template / $29-mo managed checks / $997 done-for-you

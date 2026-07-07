@@ -1,5 +1,6 @@
 # Local AI Lab Audit
 
+![local-ai-lab-audit sample](assets/local-ai-lab-audit.png)
 Find and fix the hidden bottlenecks in your local AI lab in one day.
 
 **Price:** $499 fixed / $997 with implementation day

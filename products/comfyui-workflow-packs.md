@@ -1,5 +1,6 @@
 # ComfyUI Workflow Pack Shop
 
+![comfyui-workflow-packs sample](assets/comfyui-workflow-packs.png)
 Sell repeatable private image pipelines instead of random prompt chaos.
 
 **Price:** $29 starter / $79 pro / $149 niche pack / $499 custom pack
