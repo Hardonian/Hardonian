@@ -4,6 +4,7 @@ Operator archive for the ai-lab-command-center monetization stack.
 This playbook is the public backend reference linked from the product README.
 
 ## Endpoints
+| Buyer docs | `/home/scott/ai-lab/productization/generated-buyer-docs/<slug>` | README, walkthrough, support, manifest, preview, license, changelog |
 
 | Purpose | Route | Notes |
 |---------|-------|-------|
@@ -16,7 +17,7 @@ This playbook is the public backend reference linked from the product README.
 `/home/scott/ai-lab/productization/generated-buyer-docs/<slug>`
 
 ## Deliverable archive
-`/home/scott/ai-lab/reports/deliverables/<slug>-YYYYMMDD-HHMMSS.tar.gz`
+`/home/scott/ai-lab/reports/deliverables/stable/<slug>-latest.tar.gz`
 
 ## Links
 
