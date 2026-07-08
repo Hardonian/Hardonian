@@ -1,5 +1,6 @@
 # Local Automation Retainer
 
+![automation-retainer sample](assets/automation-retainer.png)
 Turn repeated AI lab and business chores into boring verified automations.
 
 **Price:** $750-$2500/mo

@@ -1,5 +1,6 @@
 # Prompt Engineering Laboratory
 
+![prompt-engineering-laboratory sample](assets/prompt-engineering-laboratory.png)
 Turn random prompting into precision results with lab-tested templates.
 
 **Price:** $39 one-time

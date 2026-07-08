@@ -1,5 +1,6 @@
 # Defend-Your-AI Legal Kit
 
+![defend-your-ai-legal-kit sample](assets/defend-your-ai-legal-kit.png)
 Legal defensive security for AI products: privacy, model cards, and risk matrices.
 
 **Price:** $149 one-time

@@ -1,5 +1,6 @@
 # ComfyUI Product Photo Kit
 
+![comfyui-product-photo-kit sample](assets/comfyui-product-photo-kit.png)
 Generate clean ecommerce product shots locally with repeatable prompts and upscale flow.
 
 **Price:** $59 niche pack / $129 studio pack

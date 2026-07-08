@@ -1,5 +1,6 @@
 # ComfyUI Thumbnail Creator Kit
 
+![comfyui-thumbnail-creator-kit sample](assets/comfyui-thumbnail-creator-kit.png)
 Ship bold local thumbnail concepts with reusable prompt structures and upscale finishing.
 
 **Price:** $49 solo creator / $119 channel pack

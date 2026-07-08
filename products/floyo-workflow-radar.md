@@ -1,5 +1,6 @@
 # Floyo Workflow Radar
 
+![floyo-workflow-radar sample](assets/floyo-workflow-radar.png)
 See hidden workflow patterns, rank automation wins, and turn them into boring repeatable systems.
 
 **Price:** $149 pattern audit / $499 setup / $49-mo monitor

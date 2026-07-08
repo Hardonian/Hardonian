@@ -1,5 +1,6 @@
 # AI Character Generator Kit
 
+![ai-character-generator-kit sample](assets/ai-character-generator-kit.png)
 Build consistent fictional characters for storytelling, comics, and RPGs.
 
 **Price:** $49 one-time

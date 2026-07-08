@@ -1,5 +1,6 @@
 # AI Video Storyboard Studio
 
+![ai-video-storyboard-studio sample](assets/ai-video-storyboard-studio.png)
 Turn text prompts into viral-ready video storyboards with shot lists and pacing guides.
 
 **Price:** $79 one-time

@@ -1,5 +1,6 @@
 # Settler FinOps Reconciliation Engine
 
+![settler-finops-platform sample](assets/settler-finops-platform.png)
 Automate payment reconciliation with deterministic matching and evidence-grade audit trails.
 
 **Price:** $2,500 self-serve / $10,000 enterprise setup / $500/mo managed

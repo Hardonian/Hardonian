@@ -1,5 +1,6 @@
 # TokenGoblin LLM Cost Optimizer
 
+![tokengoblin-cost-optimizer sample](assets/tokengoblin-cost-optimizer.png)
 Stop LLM bill shock: real-time token measurement, smart routing, and cost optimization in one binary.
 
 **Price:** $1,499 self-serve / $5,000 enterprise / $299/mo managed
