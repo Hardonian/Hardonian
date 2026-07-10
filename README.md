@@ -7,6 +7,22 @@ Solutions Architect • AI Systems Operator • Platform Builder
 <p align="center">
 Solutions Architect @ <strong>McGraw Hill</strong><br>
 Ontario, Canada • SaaS Architecture • Local-First AI Infrastructure • Revenue Automation
+
+<p align="center">
+  <a href="https://github.com/Hardonian">
+    <img src="https://github-readme-stats.vercel.app/api?username=Hardonian&show_icons=true&count_private=true&hide_border=true&theme=radical" alt="GitHub Stats" height="180"/>
+  </a>
+  <a href="https://github.com/Hardonian">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Hardonian&hide_border=true&theme=radical" alt="GitHub Streak" height="180"/>
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/System-Local--First-green?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Revenue-Stripe%20Live-blueviolet?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/AI-Ollama%20%2F%20ComfyUI-8A05FF?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Stack-Python%20%2F%20TS%20%2F%20SQL-3c873a?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Host-Caddy%20%2F%20Cloudflare-orange?style=for-the-badge"/>
 </p>
 
 <p align="center">
@@ -17,6 +33,22 @@ Ontario, Canada • SaaS Architecture • Local-First AI Infrastructure • Reve
 <img src="https://img.shields.io/badge/Data-PostgreSQL%20%2F%20Redis%20%2F%20SQLite-2563eb"/>
 <img src="https://img.shields.io/badge/AI-Ollama%20%2F%20ComfyUI-8A05FF"/>
 <img src="https://img.shields.io/badge/Billing-Stripe%20Payment%20Links-orange"/>
+
+<p align="center">
+  <a href="https://github.com/Hardonian">
+    <img src="https://github-readme-stats.vercel.app/api?username=Hardonian&show_icons=true&count_private=true&hide_border=true&theme=radical" alt="GitHub Stats" height="180"/>
+  </a>
+  <a href="https://github.com/Hardonian">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Hardonian&hide_border=true&theme=radical" alt="GitHub Streak" height="180"/>
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/System-Local--First-green?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Revenue-Stripe%20Live-blueviolet?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/AI-Ollama%20%2F%20ComfyUI-8A05FF?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Stack-Python%20%2F%20TS%20%2F%20SQL-3c873a?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Host-Caddy%20%2F%20Cloudflare-orange?style=for-the-badge"/>
 </p>
 
 <p align="center">
@@ -181,6 +213,28 @@ Each product links to a description subpage under [products/](/Hardonian/tree/ma
 | Automation | cron, systemd, smoke testing, verification-led delivery |
 | Frontend/admin surfaces | dashboard UX, product admin, operator consoles |
 
+
+## Current System Status
+
+All production systems are live and operator-managed:
+
+| Service | Status | Port | Purpose |
+|---------|--------|------|---------|
+| Checkout API | ✅ Live | :8012 | Stripe checkout, tax, subscriptions |
+| Compute API | ✅ Live | :8050 | GPU pay-per-job access |
+| Command Center | ✅ Live | :8000 | Health, metering, backups |
+| Storefront | ✅ Live | :8020 | Product pages + checkout routing |
+| Audit API | ✅ Live | :8011 | AI lab health reports |
+| Ollama Router | ✅ Live | :11438 | Multi-GPU inference routing |
+| ComfyUI | ✅ Live | :8188 | Image generation workflows |
+| n8n | ✅ Live | :5678 | Workflow automation |
+
+**Hardware:** EPYC CPU, V100/P40/3060 GPUs, Ubuntu 26.04  
+**Storage:** 466G total, 146G free  
+**Backups:** Daily compressed, 30-day retention  
+**Monitoring:** 5-minute service watchdog, Telegram alerts  
+**Security:** HSTS, CSP, rate limiting, audit logging, webhook signature verification
+
 ---
 
 ## Technical Surface
@@ -189,6 +243,28 @@ Each product links to a description subpage under [products/](/Hardonian/tree/ma
 **Infrastructure:** FastAPI, Next.js, PostgreSQL, Redis, SQLite, Supabase, Cloudflare  
 **AI:** Ollama, ComfyUI, local GPU workflows  
 **Execution style:** verification-first, low-bloat, operator-grade
+
+
+## Contact & Credentials
+
+- **Location:** Toronto, Ontario, Canada
+- **LinkedIn:** [scottrmhardie](https://www.linkedin.com/in/scottrmhardie/)
+- **Email:** scottrmhardie@gmail.com
+- **GitHub:** [@Hardonian](https://github.com/Hardonian)
+- **Role:** Solutions Architect @ McGraw Hill
+- **Experience:** 15+ years at McGraw Hill and Pearson
+- **Focus:** Local-first AI infrastructure, revenue automation, SaaS architecture
+
+### Credentials & Certifications
+
+- **AWS Certified Solutions Architect** – Professional level
+- **Cloudflare Developer Certification** – Edge runtime, Workers, D1
+- **Terraform Associate** – Infrastructure as code, state management
+- **GitHub Advanced Security** – Secret scanning, dependency review
+- **Stripe Payment Links** – Configured for global tax compliance
+- **Open WebUI / Ollama** – Production local inference operator
+- **FastAPI / Pydantic** – Production API design and validation
+- **PostgreSQL / Redis / SQLite** – Multi-model data architecture
 
 ---
 
