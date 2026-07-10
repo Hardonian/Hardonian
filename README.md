@@ -36,6 +36,15 @@ Ontario, Canada • SaaS Architecture • Local-First AI Infrastructure • Reve
 </p>
 
 <p align="center">
+  <a href="https://github.com/Hardonian">
+    <img src="https://komarev.com/ghpvc/?username=Hardonian&style=for-the-badge&label=Profile+Views" alt="Profile Views"/>
+  </a>
+  <a href="https://github.com/Hardonian">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hardonian&hide_border=true&langs_count=6&layout=compact&theme=radical" alt="Top Languages" height="180"/>
+  </a>
+</p>
+
+<p align="center">
 <a href="#what-i-build">What I Build</a> •
 <a href="#repositories">Repositories</a> •
 <a href="#architecture-maps">Architecture Maps</a> •
