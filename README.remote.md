@@ -26,13 +26,29 @@ Ontario, Canada • SaaS Architecture • Local-First AI Infrastructure • Reve
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Role-Solution%20Architect-blueviolet?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Focus-Operator%20Systems-0ea5e9?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Backend-Python%20%2F%20FastAPI-3c873a?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Web-Next.js%20%2F%20TypeScript-111827?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Data-PostgreSQL%20%2F%20Redis%20%2F%20SQLite-2563eb?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Role-Solution%20Architect-blueviolet"/>
+<img src="https://img.shields.io/badge/Focus-Operator%20Systems-0ea5e9"/>
+<img src="https://img.shields.io/badge/Backend-Python%20%2F%20FastAPI-3c873a"/>
+<img src="https://img.shields.io/badge/Web-Next.js%20%2F%20TypeScript-111827"/>
+<img src="https://img.shields.io/badge/Data-PostgreSQL%20%2F%20Redis%20%2F%20SQLite-2563eb"/>
+<img src="https://img.shields.io/badge/AI-Ollama%20%2F%20ComfyUI-8A05FF"/>
+<img src="https://img.shields.io/badge/Billing-Stripe%20Payment%20Links-orange"/>
+
+<p align="center">
+  <a href="https://github.com/Hardonian">
+    <img src="https://github-readme-stats.vercel.app/api?username=Hardonian&show_icons=true&count_private=true&hide_border=true&theme=radical" alt="GitHub Stats" height="180"/>
+  </a>
+  <a href="https://github.com/Hardonian">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Hardonian&hide_border=true&theme=radical" alt="GitHub Streak" height="180"/>
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/System-Local--First-green?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Revenue-Stripe%20Live-blueviolet?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/AI-Ollama%20%2F%20ComfyUI-8A05FF?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Billing-Stripe%20Payment%20Links-orange?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Stack-Python%20%2F%20TS%20%2F%20SQL-3c873a?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Host-Caddy%20%2F%20Cloudflare-orange?style=for-the-badge"/>
 </p>
 
 <p align="center">
