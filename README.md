@@ -175,7 +175,6 @@ These are managed through the **AI Lab Command Center / Revenue OS** dashboard a
 
 | Product | Headline | Track / Buyer | Product Page | Notes |
 |---------|----------|---------------|--------------|-------|
-| Local AI Lab Audit | Find and fix the hidden bottlenecks in your local AI lab in one day. | Direct sale | [Product page](products/local-ai-lab-audit.md) | Audit-first entry point |
 | AI Command Center Setup | Local control plane template with optional managed checks or done-for-you setup. | Template + managed services | [Product page](products/ai-command-center-setup.md) | Flagship product |
 | APVA AI ROI Benchmark | Reliability-adjusted AI workflow ROI scoring for automation investments. | Direct sale | [Product page](products/apva-roi-benchmark.md) | Benchmark product |
 | SaaS Repo Rescue Audit | Audit and fix auth, billing, RLS, webhooks, and deployment gaps in SaaS repos. | Audit + sprint | [Product page](products/repo-rescue-saas-audit.md) | Repo buyer |
