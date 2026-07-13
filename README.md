@@ -114,6 +114,11 @@ Repo: [Hardonian/ai-lab-command-center](https://github.com/Hardonian/ai-lab-comm
 | [apva-framework](https://github.com/Hardonian/apva-framework) | Benchmarking framework for reliability-adjusted AI workflow ROI | Active / productized | Python, FastAPI |
 | [floyo](https://github.com/Hardonian/floyo) | Workflow-pattern intelligence and automation discovery platform | Active / productized | Next.js, FastAPI, Supabase |
 | [Keys](https://github.com/Hardonian/Keys) | Backendless CLI for structured AI asset packs and local workflows | Active | TypeScript, Node.js |
+| [ollama-router](https://github.com/Hardonian/ollama-router) | Local Ollama GPU router: routes model requests to the right GPU lane (vision / mid / large) across multiple `ollama serve` instances | Live / active | Python, FastAPI |
+| [llm-inference-api](https://github.com/Hardonian/llm-inference-api) | Local LLM inference gateway: OpenAI-compatible endpoints, multi-GPU routing, load balancing, auth, usage metering | Live / active | Python, FastAPI |
+| [comfyui-api](https://github.com/Hardonian/comfyui-api) | Cloudflare deploy wrapper fronting the local ComfyUI inference API (worker + D1 + schema) | Deployed / active | Cloudflare Workers |
+| [Nautilus](https://github.com/Hardonian/Nautilus) | Deterministic operational AI infrastructure platform (NemoClaw runtime, RecallForge, OperatorGraph, ThreatMesh) | Active / fork-evolved | TypeScript, Go |
+| [TokenGoblin](https://github.com/Hardonian/TokenGoblin) | AI spend & token-efficiency observability across autonomous agent fleets | Active / productized | Go, TypeScript |
 
 ### Payments, Reconciliation & SaaS Systems
 
