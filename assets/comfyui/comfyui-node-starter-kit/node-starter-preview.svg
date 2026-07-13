@@ -1,0 +1,23 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='900' viewBox='0 0 1600 900'>
+  <defs>
+    <linearGradient id='bg' x1='0' x2='1' y1='0' y2='1'>
+      <stop offset='0%' stop-color='#081120'/><stop offset='100%' stop-color='#16284a'/>
+    </linearGradient>
+  </defs>
+  <rect width='1600' height='900' fill='url(#bg)'/>
+  <rect x='60' y='60' width='1480' height='780' rx='28' fill='#0f1b31' stroke='#2f4c7d' stroke-width='3'/>
+  <text x='120' y='150' fill='#eaf2ff' font-size='56' font-family='Inter, Arial, sans-serif' font-weight='700'>ComfyUI Node Starter Kit</text>
+  <text x='120' y='210' fill='#8ff0ff' font-size='28' font-family='Inter, Arial, sans-serif'>Real scaffold + utility nodes + faster custom-node upsell path</text>
+  <rect x='120' y='270' width='510' height='460' rx='18' fill='#0b1426' stroke='#2b4069'/>
+  <text x='155' y='325' fill='#9effa1' font-size='26' font-family='monospace'>Included nodes</text>
+  <text x='155' y='380' fill='#eef4ff' font-size='24' font-family='monospace'>• ScottSlugifyText</text>
+  <text x='155' y='425' fill='#eef4ff' font-size='24' font-family='monospace'>• ScottShotPresetSuffix</text>
+  <text x='155' y='490' fill='#9cb0d8' font-size='22' font-family='Inter, Arial, sans-serif'>Use it to bootstrap sellable</text>
+  <text x='155' y='525' fill='#9cb0d8' font-size='22' font-family='Inter, Arial, sans-serif'>prompt / utility / ops helper nodes.</text>
+  <rect x='690' y='270' width='730' height='460' rx='18' fill='#09111f' stroke='#2b4069'/>
+  <text x='720' y='320' fill='#9effa1' font-size='24' font-family='monospace'>nodes.py preview</text>
+  <foreignObject x='720' y='345' width='660' height='350'>
+    <div xmlns='http://www.w3.org/1999/xhtml' style='font-family: monospace; color:#eaf2ff; font-size:20px; white-space:pre-wrap;'>[&#x27;class SlugifyText:&#x27;, &#x27;    CATEGORY = &quot;Scott/Productization&quot;&#x27;, &#x27;    RETURN_TYPES = (&quot;STRING&quot;,)&#x27;, &#x27;    FUNCTION = &quot;run&quot;&#x27;, &#x27;&#x27;, &#x27;    @classmethod&#x27;, &#x27;    def INPUT_TYPES(cls):&#x27;, &#x27;        return {&quot;required&quot;: {&quot;text&quot;: (&quot;STRING&quot;, {&quot;multiline&quot;: True, &quot;default&quot;: &quot;&quot;})}}&#x27;, &#x27;&#x27;, &#x27;    def run(self, text):&#x27;, &quot;        value = &#x27;&#x27;.join(ch.lower() if ch.isalnum() else &#x27;-&#x27; for ch in text)&quot;, &quot;        while &#x27;--&#x27; in value:&quot;, &quot;            value = value.replace(&#x27;--&#x27;, &#x27;-&#x27;)&quot;, &quot;        return (value.strip(&#x27;-&#x27;),)&quot;, &#x27;&#x27;, &#x27;&#x27;, &#x27;class ShotPresetSuffix:&#x27;, &#x27;    CATEGORY = &quot;Scott/Productization&quot;&#x27;]</div>
+  </foreignObject>
+  <text x='120' y='790' fill='#8ff0ff' font-size='24' font-family='Inter, Arial, sans-serif'>Buyer outcome: faster node-pack launch, less boilerplate, clearer upsell into custom implementation.</text>
+</svg>

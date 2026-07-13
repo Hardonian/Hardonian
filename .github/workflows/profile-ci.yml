@@ -1,0 +1,88 @@
+name: Profile CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate-assets:
+    name: Validate Assets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify product images exist
+        run: |
+          for f in products/*.md; do
+            img=$(grep -oP '!\[.*?\]\(\Kassets/[^)]+' "$f" || true)
+            if [ -n "$img" ] && [ ! -f "$img" ]; then
+              echo "MISSING: $img referenced in $f"
+              exit 1
+            fi
+          done
+          echo "All product images present"
+
+  validate-product-pages:
+    name: Validate Product Pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check required fields in product pages
+        run: |
+          for f in products/*.md; do
+            if ! grep -q "^# " "$f"; then
+              echo "ERROR: $f missing H1 title"
+              exit 1
+            fi
+            if ! grep -q "Price:" "$f"; then
+              echo "ERROR: $f missing Price field"
+              exit 1
+            fi
+            if ! grep -q "Checkout" "$f"; then
+              echo "ERROR: $f missing Checkout link"
+              exit 1
+            fi
+          done
+          echo "All product pages valid"
+
+  check-github-actions:
+    name: Validate Workflow Files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate workflow YAML
+        uses: rhysd/actionlint@v1.7.3
+
+  link-check:
+    name: Link Check (Key URLs)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check key URLs
+        run: |
+          # Check key external URLs that must work
+          for url in \
+            "https://github.com/Hardonian" \
+            "https://buy.stripe.com" \
+            "https://aiautomatedsystems.ca" \
+            "https://linkedin.com/in/scottrmhardie" \
+            "https://github.com/Hardonian/ai-lab-command-center" \
+            "https://github.com/Hardonian/hardonia-compute-api" \
+            "https://github.com/Hardonian/hardonia-checkout-api" \
+            "https://github.com/Hardonian/storefront"; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "$url" || echo "000")
+            if [[ "$code" =~ ^(2|3) ]]; then
+              echo "OK $code $url"
+            else
+              echo "FAIL $code $url"
+              exit 1
+            fi
+          done
+
+concurrency:
+  group: profile-ci-${{ github.ref }}
+  cancel-in-progress: true
