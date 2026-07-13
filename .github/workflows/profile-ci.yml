@@ -26,7 +26,9 @@ jobs:
       - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --verbose --no-progress --max-concurrency 10 --include-mail .
+          args: --verbose --no-progress --max-concurrency 10 --include-mail . --base . --accept 200,429,999 --root-dir .
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   validate-assets:
     name: Validate Assets
