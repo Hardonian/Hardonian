@@ -106,6 +106,10 @@ Repo: [Hardonian/ai-lab-command-center](https://github.com/Hardonian/ai-lab-comm
 
 | Repo | What It Does | Status | Stack |
 |------|--------------|--------|-------|
+| [ai-lab](https://github.com/Hardonian/ai-lab) | Local-first AI lab platform: control plane, resilience layer, contracts registry, KB, LangChain AU support agent, workforce automation | Live / active | Python, FastAPI, systemd |
+| [hardonia-compute-api](https://github.com/Hardonian/hardonia-compute-api) | GPU pay-per-job compute API: auth, credits, metered usage, resilience probes | Live / active | Python, FastAPI, SQLite |
+| [hardonia-checkout-api](https://github.com/Hardonian/hardonia-checkout-api) | Stripe checkout, tax, subscriptions, webhook fanout to workforce, revenue OS | Live / active | Python, FastAPI, Stripe |
+| [storefront](https://github.com/Hardonian/storefront) | Product pages, consent-gated analytics, AU support widget, legal docs surface | Live / active | Python, FastAPI, Jinja |
 | [ai-lab-command-center](https://github.com/Hardonian/ai-lab-command-center) | Local AI operator dashboard with Revenue OS, health, routing, smoke, and product admin | Running locally / active | FastAPI, Python, JS |
 | [apva-framework](https://github.com/Hardonian/apva-framework) | Benchmarking framework for reliability-adjusted AI workflow ROI | Active / productized | Python, FastAPI |
 | [floyo](https://github.com/Hardonian/floyo) | Workflow-pattern intelligence and automation discovery platform | Active / productized | Next.js, FastAPI, Supabase |
