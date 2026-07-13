@@ -18,7 +18,8 @@ jobs:
       - name: Install markdownlint-cli2
         run: npm install -g markdownlint-cli2
       - name: Lint markdown files
-        run: markdownlint-cli2 "**/*.md" --config .markdownlint.jsonc
+        run: |
+          npx markdownlint-cli2@latest "**/*.md" --config .markdownlint.jsonc
 
   link-check:
     name: Link Check
@@ -28,7 +29,7 @@ jobs:
       - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --verbose --no-progress --max-concurrency 10 --exclude-mail . --base .
+          args: --verbose --no-progress --max-concurrency 10 --include-mail . --base .
 
   validate-assets:
     name: Validate Assets
@@ -75,7 +76,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate workflow YAML
-        uses: rhysd/actionlint@v1
+        uses: rhysd/actionlint@v1.7.3
 
 concurrency:
   group: profile-ci-${{ github.ref }}
