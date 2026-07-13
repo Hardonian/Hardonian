@@ -1,0 +1,82 @@
+name: Profile CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  markdown-lint:
+    name: Markdown Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install markdownlint-cli2
+        run: npm install -g markdownlint-cli2
+      - name: Lint markdown files
+        run: markdownlint-cli2 "**/*.md" --config .markdownlint.jsonc
+
+  link-check:
+    name: Link Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose --no-progress --max-concurrency 10 --exclude-mail . --base .
+
+  validate-assets:
+    name: Validate Assets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify product images exist
+        run: |
+          for f in products/*.md; do
+            img=$(grep -oP '!\[.*?\]\(\Kassets/[^)]+' "$f" || true)
+            if [ -n "$img" ] && [ ! -f "$img" ]; then
+              echo "MISSING: $img referenced in $f"
+              exit 1
+            fi
+          done
+          echo "All product images present"
+
+  validate-product-pages:
+    name: Validate Product Pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check required fields in product pages
+        run: |
+          for f in products/*.md; do
+            if ! grep -q "^# " "$f"; then
+              echo "ERROR: $f missing H1 title"
+              exit 1
+            fi
+            if ! grep -q "Price:" "$f"; then
+              echo "ERROR: $f missing Price field"
+              exit 1
+            fi
+            if ! grep -q "Checkout" "$f"; then
+              echo "ERROR: $f missing Checkout link"
+              exit 1
+            fi
+          done
+          echo "All product pages valid"
+
+  check-github-actions:
+    name: Validate Workflow Files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate workflow YAML
+        uses: rhysd/actionlint@v1
+
+concurrency:
+  group: profile-ci-${{ github.ref }}
+  cancel-in-progress: true
