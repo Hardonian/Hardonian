@@ -1,7 +1,5 @@
 {
-  "extends": ["markdownlint/recommended"],
-  "default": true,
-  "customRules": [],
+  "extends": "markdownlint/recommended",
   "rules": {
     "MD013": false,
     "MD024": false,

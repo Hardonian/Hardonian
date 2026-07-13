@@ -15,11 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install markdownlint-cli2
-        run: npm install -g markdownlint-cli2
       - name: Lint markdown files
-        run: |
-          npx markdownlint-cli2@latest "**/*.md" --config .markdownlint.jsonc
+        run: npx markdownlint-cli2@latest "**/*.md" --config .markdownlint.jsonc
 
   link-check:
     name: Link Check
