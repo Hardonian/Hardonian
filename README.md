@@ -46,7 +46,7 @@ Ontario, Canada • SaaS Architecture • Local-First AI Infrastructure • Reve
 
 <p align="center">
 <a href="#what-i-build">What I Build</a> •
-<a href="#the-empire">The Empire</a> •
+<a href="#the-platform">The Platform</a> •
 <a href="#repositories">Repositories</a> •
 <a href="#architecture-maps">Architecture Maps</a> •
 <a href="#live-operator-managed-products">Live Products</a> •
@@ -55,9 +55,9 @@ Ontario, Canada • SaaS Architecture • Local-First AI Infrastructure • Reve
 
 ---
 
-## The Empire — Full AI Operations Suite
+## The Platform — Full AI Operations Stack
 
-Beyond individual repos, I run a **fully operator-managed AI product empire** from a single hardened EPYC workstation: a self-healing GPU fleet, a live Stripe + Gumroad revenue stack, and done-for-you services — automated to run on ~2 hours/day of human input while agents operate 24/7.
+Beyond individual repos, I run a **fully operator-managed AI product platform** from a single hardened EPYC workstation: a self-healing GPU fleet, a live Stripe + Gumroad revenue stack, and done-for-you services — automated to run on ~2 hours/day of human input while agents operate 24/7.
 
 Every layer is production-live and security-hardened (UFW default-deny, LiteLLM loopback, Cloudflare tunnel, continuous exposure + GPU-wall-clock watchdogs, SOC 2-aligned controls).
 
@@ -80,8 +80,8 @@ Every layer is production-live and security-hardened (UFW default-deny, LiteLLM 
 | **AI Lab Uptime Bond** | $49/mo | 99.5% SLA with auto-refund, backed by self-healing infra |
 | + 20 existing SKUs | — | Audits, ComfyUI packs, automations, benchmarks, legal kits |
 
-### Why it's an empire and not a repo
-The repos are the pieces. The **empire** is the closed loop: infra → product → checkout → fulfillment → monitoring → re-investment, with agents handling 24/7 operations. The 7 products above are pure leverage on infrastructure already built and battle-tested.
+### Why it's a platform, not just a repo
+The repos are the pieces. The **platform** is the closed loop: infra → product → checkout → fulfillment → monitoring → re-investment, with agents handling 24/7 operations. The 7 products above are pure leverage on infrastructure already built and battle-tested.
 
 Repo: [Hardonian/ai-lab-command-center](https://github.com/Hardonian/ai-lab-command-center) · Storefront: [aiautomatedsystems.ca](https://aiautomatedsystems.ca)
 
