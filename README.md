@@ -18,21 +18,21 @@ Ontario, Canada • SaaS Architecture • Local-First AI Infrastructure • Reve
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/System-Local--First-green?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Revenue-Stripe%20Live-blueviolet?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/AI-Ollama%20%2F%20ComfyUI-8A05FF?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Stack-Python%20%2F%20TS%20%2F%20SQL-3c873a?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Host-Caddy%20%2F%20Cloudflare-orange?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/System-Local--First-green?style=for-the-badge" alt="System: Local-First"/>
+  <img src="https://img.shields.io/badge/Revenue-Stripe%20Live-blueviolet?style=for-the-badge" alt="Revenue: Stripe Live"/>
+  <img src="https://img.shields.io/badge/AI-Ollama%20%2F%20ComfyUI-8A05FF?style=for-the-badge" alt="AI: Ollama / ComfyUI"/>
+  <img src="https://img.shields.io/badge/Stack-Python%20%2F%20TS%20%2F%20SQL-3c873a?style=for-the-badge" alt="Stack: Python / TS / SQL"/>
+  <img src="https://img.shields.io/badge/Host-Caddy%20%2F%20Cloudflare-orange?style=for-the-badge" alt="Host: Caddy / Cloudflare"/>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Role-Solution%20Architect-blueviolet?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Focus-Operator%20Systems-0ea5e9?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Backend-Python%20%2F%20FastAPI-3c873a?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Web-Next.js%20%2F%20TypeScript-111827?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Data-PostgreSQL%20%2F%20Redis%20%2F%20SQLite-2563eb?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/AI-Ollama%20%2F%20ComfyUI-8A05FF?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Billing-Stripe%20Payment%20Links-orange?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Role-Solution%20Architect-blueviolet?style=for-the-badge" alt="Role: Solution Architect"/>
+  <img src="https://img.shields.io/badge/Focus-Operator%20Systems-0ea5e9?style=for-the-badge" alt="Focus: Operator Systems"/>
+  <img src="https://img.shields.io/badge/Backend-Python%20%2F%20FastAPI-3c873a?style=for-the-badge" alt="Backend: Python / FastAPI"/>
+  <img src="https://img.shields.io/badge/Web-Next.js%20%2F%20TypeScript-111827?style=for-the-badge" alt="Web: Next.js / TypeScript"/>
+  <img src="https://img.shields.io/badge/Data-PostgreSQL%20%2F%20Redis%20%2F%20SQLite-2563eb?style=for-the-badge" alt="Data: PostgreSQL / Redis / SQLite"/>
+  <img src="https://img.shields.io/badge/AI-Ollama%20%2F%20ComfyUI-8A05FF?style=for-the-badge" alt="AI: Ollama / ComfyUI"/>
+  <img src="https://img.shields.io/badge/Billing-Stripe%20Payment%20Links-orange?style=for-the-badge" alt="Billing: Stripe Payment Links"/>
 </p>
 
 <p align="center">
