@@ -46,7 +46,7 @@ Ontario, Canada • SaaS Architecture • Local-First AI Infrastructure • Reve
 
 <p align="center">
 <a href="#what-i-build">What I Build</a> •
-<a href="#the-platform">The Platform</a> •
+<a href="#the-platform-full-ai-operations-stack">The Platform</a>
 <a href="#repositories">Repositories</a> •
 <a href="#architecture-maps">Architecture Maps</a> •
 <a href="#live-operator-managed-products">Live Products</a> •
