@@ -15,7 +15,7 @@ PDF/Markdown audit report, ranked fixes, APVA ROI estimate, optional dashboard s
 
 ## Checkout / Buy
 
-- Stripe checkout: https://buy.stripe.com/7sYaEW9nG6hSdJggP7b3q0i
+- [Stripe checkout](https://buy.stripe.com/7sYaEW9nG6hSdJggP7b3q0i)
 
 ---
 

@@ -17,9 +17,9 @@ SDXL text-to-image thumbnail workflow (runs on 8GB+ VRAM; tested on RTX 3060 12G
 
 ## Checkout / Buy
 
-- Stripe checkout: https://buy.stripe.com/00wcN443m7lW8oWbuNb3q0p
+- [Stripe checkout](https://buy.stripe.com/00wcN443m7lW8oWbuNb3q0p)
 
-- Gumroad: https://scottrmhardie.gumroad.com/l/bsjqfm
+- [Gumroad](https://scottrmhardie.gumroad.com/l/bsjqfm)
 
 ---
 

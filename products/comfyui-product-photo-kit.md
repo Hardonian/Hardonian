@@ -17,9 +17,9 @@ Txt2img + upscale workflow bundle, prompt recipes, angle/background presets, out
 
 ## Checkout / Buy
 
-- Stripe checkout: https://buy.stripe.com/cNibJ057q21C34C7exb3q0n
+- [Stripe checkout](https://buy.stripe.com/cNibJ057q21C34C7exb3q0n)
 
-- Gumroad: https://scottrmhardie.gumroad.com/l/cqfiev
+- [Gumroad](https://scottrmhardie.gumroad.com/l/cqfiev)
 
 ---
 

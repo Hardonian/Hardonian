@@ -15,7 +15,7 @@ No systematic way to measure prompt effectiveness or build reusable libraries.
 
 ## Checkout / Buy
 
-- Stripe checkout: https://buy.stripe.com/fZufZg9nGbCc0WufL3b3q0t
+- [Stripe checkout](https://buy.stripe.com/fZufZg9nGbCc0WufL3b3q0t)
 
 ---
 
