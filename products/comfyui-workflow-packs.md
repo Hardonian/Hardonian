@@ -15,7 +15,7 @@ Packaged workflow JSONs, prompt presets, model manifest, install notes, batch sc
 
 ## Checkout / Buy
 
-- Stripe checkout: https://buy.stripe.com/3cIbJ0bvO6hS0WuaqJb3q0l
+- [Stripe checkout](https://buy.stripe.com/3cIbJ0bvO6hS0WuaqJb3q0l)
 
 ---
 

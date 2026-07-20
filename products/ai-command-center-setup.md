@@ -15,7 +15,7 @@ Installable local FastAPI dashboard, verify script, systemd service, browser smo
 
 ## Checkout / Buy
 
-- Stripe checkout: https://buy.stripe.com/9B68wO57qbCc7kSeGZb3q0j
+- [Stripe checkout](https://buy.stripe.com/9B68wO57qbCc7kSeGZb3q0j)
 
 ---
 

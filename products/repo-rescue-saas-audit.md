@@ -15,7 +15,7 @@ Repo health report, risk matrix, failing/passing checks, prioritized fix sprint 
 
 ## Checkout / Buy
 
-- Stripe checkout: https://buy.stripe.com/00wfZgfM4bCc9t0buNb3q0q
+- [Stripe checkout](https://buy.stripe.com/00wfZgfM4bCc9t0buNb3q0q)
 
 ---
 

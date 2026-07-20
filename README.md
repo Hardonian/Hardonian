@@ -283,7 +283,7 @@ All production systems are live and operator-managed:
 
 - **Location:** Toronto, Ontario, Canada
 - **LinkedIn:** [scottrmhardie](https://www.linkedin.com/in/scottrmhardie/)
-- **Email:** scottrmhardie@gmail.com
+- **Email:** [scottrmhardie@gmail.com](mailto:scottrmhardie@gmail.com)
 - **GitHub:** [@Hardonian](https://github.com/Hardonian)
 - **Role:** Solutions Architect @ McGraw Hill
 - **Experience:** 15+ years at McGraw Hill and Pearson

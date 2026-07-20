@@ -15,7 +15,7 @@ Local voice training workflow, consent template, audio preprocessing scripts, le
 
 ## Checkout / Buy
 
-- Stripe checkout: https://buy.stripe.com/bJeeVc7fy35GgVs6atb3q0v
+- [Stripe checkout](https://buy.stripe.com/bJeeVc7fy35GgVs6atb3q0v)
 
 ---
 

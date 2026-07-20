@@ -15,9 +15,9 @@ Working node-pack scaffold, example utility nodes, packaging layout, install not
 
 ## Checkout / Buy
 
-- Stripe checkout: https://buy.stripe.com/9B6cN41Veay8eNkfL3b3q0m
+- [Stripe checkout](https://buy.stripe.com/9B6cN41Veay8eNkfL3b3q0m)
 
-- Gumroad: https://scottrmhardie.gumroad.com/l/cauzzx
+- [Gumroad](https://scottrmhardie.gumroad.com/l/cauzzx)
 
 ---
 
