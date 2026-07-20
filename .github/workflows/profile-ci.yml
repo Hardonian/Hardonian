@@ -55,7 +55,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate workflow YAML
-        uses: rhysd/actionlint@v1.7.3
+        uses: rhysd/actionlint@v1.7.12
 
   link-check:
     name: Link Check (Key URLs)
