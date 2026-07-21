@@ -5,3 +5,6 @@
 ## 2024-07-25 - Bare URLs
 **Learning:** Bare URLs in Markdown files are often read character-by-character by screen readers, making them tedious and unhelpful for visually impaired users to consume.
 **Action:** Always format URLs as descriptive Markdown links, or explicitly as clickable links (e.g. `[Stripe checkout](https://...)` or `<https://...>`), to provide better context and a smoother screen reader experience.
+## 2024-07-21 - GitHub Markdown Image Links
+**Learning:** GitHub's Markdown rendering pipeline strips `aria-*` attributes (such as `aria-label`) from user-supplied HTML tags. For image-only links, you must use the `alt` text of the inner `<img>` to describe the link's destination instead.
+**Action:** Use the `alt` attribute on images inside link tags to describe where the link goes when there is no text in the link, rather than using `aria-label` on the link itself.
