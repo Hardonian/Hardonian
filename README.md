@@ -10,10 +10,10 @@ Ontario, Canada • SaaS Architecture • Local-First AI Infrastructure • Reve
 
 <p align="center">
   <a href="https://github.com/Hardonian">
-    <img src="https://github-readme-stats.vercel.app/api?username=Hardonian&show_icons=true&count_private=true&hide_border=true&theme=radical" alt="GitHub Stats" height="180"/>
+    <img src="https://github-readme-stats.vercel.app/api?username=Hardonian&show_icons=true&count_private=true&hide_border=true&theme=radical" alt="Scott Hardie's GitHub profile - GitHub Stats" height="180"/>
   </a>
   <a href="https://github.com/Hardonian">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Hardonian&hide_border=true&theme=radical" alt="GitHub Streak" height="180"/>
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=Hardonian&hide_border=true&theme=radical" alt="Scott Hardie's GitHub profile - GitHub Streak" height="180"/>
   </a>
 </p>
 
@@ -37,10 +37,10 @@ Ontario, Canada • SaaS Architecture • Local-First AI Infrastructure • Reve
 
 <p align="center">
   <a href="https://github.com/Hardonian">
-    <img src="https://komarev.com/ghpvc/?username=Hardonian&style=for-the-badge&label=Profile+Views" alt="Profile Views"/>
+    <img src="https://komarev.com/ghpvc/?username=Hardonian&style=for-the-badge&label=Profile+Views" alt="Scott Hardie's GitHub profile - Profile Views"/>
   </a>
   <a href="https://github.com/Hardonian">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hardonian&hide_border=true&langs_count=6&layout=compact&theme=radical" alt="Top Languages" height="180"/>
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hardonian&hide_border=true&langs_count=6&layout=compact&theme=radical" alt="Scott Hardie's GitHub profile - Top Languages" height="180"/>
   </a>
 </p>
 
