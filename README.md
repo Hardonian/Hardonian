@@ -57,13 +57,13 @@ Ontario, Canada • SaaS Architecture • Local-First AI Infrastructure • Reve
 
 ## The Platform — Full AI Operations Stack
 
-Beyond individual repos, I run a **fully operator-managed AI product platform** from a single hardened EPYC workstation: a self-healing GPU fleet, a live Stripe + Gumroad revenue stack, and done-for-you services — automated to run on ~2 hours/day of human input while agents operate 24/7.
+Beyond individual repos, I run an operator-managed local AI product platform from a hardened EPYC workstation: GPU services, a Stripe + Gumroad revenue stack, and productized audit/automation assets. The platform is actively operated with verification gates; public deploy status and customer-facing readiness are reported separately from local runtime health.
 
-Every layer is production-live and security-hardened (UFW default-deny, LiteLLM loopback, Cloudflare tunnel, continuous exposure + GPU-wall-clock watchdogs, SOC 2-aligned controls).
+Core local services are running and hardened, but not every repository or Cloudflare deployment is production-live. CI, infrastructure-as-code, webhook authority, and runtime verification are treated as separate release gates.
 
 ### Infrastructure Layer (the foundation)
 - **EPYC GPU fleet** — V100/P40/3060, multi-lane Ollama routing, ComfyUI image pipelines
-- **Compute API** — per-key isolated GPU jobs, 1-concurrent + 60-min wall-clock caps, credit metering
+- **Compute API** — per-key isolated GPU jobs, prepaid credits, usage reporting, 1-concurrent + 60-minute wall-clock caps
 - **Checkout + Revenue OS** — Stripe (live) + Gumroad, idempotent webhook→credit minting, delivery tokens
 - **Command Center / Audit API** — operator dashboard, AI-lab health reports, self-heal
 - **Monitoring** — lan-exposure-scanner (q15m), gpu-farm-watchdog (q5m), dependency-audit, access-review
@@ -114,7 +114,7 @@ These repos round out the profile beyond product SKUs: they show architecture de
 
 ## Architecture Portfolio & Playbook
 
-I also maintain a reusable architecture delivery kit under [architecture-playbook](/Hardonian/tree/main/architecture-playbook). It covers current-state assessment, target-state architecture, ADRs, migration planning, rollout risk, and executive briefs.
+I maintain architecture delivery notes inside the private/local platform infrastructure work; the public repository list below labels reference builds separately from live runtime services.
 
 ## Flagship Build: AI Lab Command Center
 
@@ -140,16 +140,16 @@ Repo: [Hardonian/ai-lab-command-center](https://github.com/Hardonian/ai-lab-comm
 | Repo | What It Does | Status | Stack |
 |------|--------------|--------|-------|
 | [ai-lab](https://github.com/Hardonian/ai-lab) | Local-first AI lab platform: control plane, resilience layer, contracts registry, KB, LangChain AU support agent, workforce automation | Live / active | Python, FastAPI, systemd |
-| [hardonia-compute-api](https://github.com/Hardonian/hardonia-compute-api) | GPU pay-per-job compute API: auth, credits, metered usage, resilience probes | Live / active | Python, FastAPI, SQLite |
+| [hardonia-compute-api](https://github.com/Hardonian/hardonia-compute-api) | GPU pay-per-job compute API: auth, prepaid credits, usage reporting, resilience probes | Local runtime verified / active | Python, FastAPI, SQLite |
 | [hardonia-checkout-api](https://github.com/Hardonian/hardonia-checkout-api) | Stripe checkout, tax, subscriptions, webhook fanout to workforce, revenue OS | Live / active | Python, FastAPI, Stripe |
 | [storefront](https://github.com/Hardonian/storefront) | Product pages, consent-gated analytics, AU support widget, legal docs surface | Live / active | Python, FastAPI, Jinja |
 | [ai-lab-command-center](https://github.com/Hardonian/ai-lab-command-center) | Local AI operator dashboard with Revenue OS, health, routing, smoke, and product admin | Running locally / active | FastAPI, Python, JS |
 | [apva-framework](https://github.com/Hardonian/apva-framework) | Benchmarking framework for reliability-adjusted AI workflow ROI | Active / productized | Python, FastAPI |
-| [floyo](https://github.com/Hardonian/floyo) | Workflow-pattern intelligence and automation discovery platform | Active / productized | Next.js, FastAPI, Supabase |
+| [floyo](https://github.com/Hardonian/floyo) | Workflow-pattern intelligence and automation discovery platform | Experimental / scope decision required | Next.js, FastAPI, Supabase |
 | [Keys](https://github.com/Hardonian/Keys) | Backendless CLI for structured AI asset packs and local workflows | Active | TypeScript, Node.js |
 | [ollama-router](https://github.com/Hardonian/ollama-router) | Local Ollama GPU router: routes model requests to the right GPU lane (vision / mid / large) across multiple `ollama serve` instances | Live / active | Python, FastAPI |
-| [llm-inference-api](https://github.com/Hardonian/llm-inference-api) | Local LLM inference gateway: OpenAI-compatible endpoints, multi-GPU routing, load balancing, auth, usage metering | Live / active | Python, FastAPI |
-| [comfyui-api](https://github.com/Hardonian/comfyui-api) | Cloudflare deploy wrapper fronting the local ComfyUI inference API (worker + D1 + schema) | Deployed / active | Cloudflare Workers |
+| [llm-inference-api](https://github.com/Hardonian/llm-inference-api) | Local LLM inference gateway reference implementation | Reference / verify before reuse | Python, FastAPI |
+| [comfyui-api](https://github.com/Hardonian/comfyui-api) | Cloudflare deploy wrapper/reference for local ComfyUI inference | Experimental / deploy verification required | Cloudflare Workers |
 | [Nautilus](https://github.com/Hardonian/Nautilus) | Deterministic operational AI infrastructure platform (NemoClaw runtime, RecallForge, OperatorGraph, ThreatMesh) | Active / fork-evolved | TypeScript, Go |
 | [TokenGoblin](https://github.com/Hardonian/TokenGoblin) | AI spend & token-efficiency observability across autonomous agent fleets | Active / productized | Go, TypeScript |
 
@@ -250,24 +250,20 @@ Each product links to a description subpage under [products/](/Hardonian/tree/ma
 
 ## Current System Status
 
-All production systems are live and operator-managed:
+This is a verified local runtime snapshot, not a blanket claim that every public deployment is complete. The release gate covers local health, repository tests, product truth, webhook routing, backup/restore, and IaC validation.
 
-| Service | Status | Port | Purpose |
-|---------|--------|------|---------|
-| Checkout API | ✅ Live | :8012 | Stripe checkout, tax, subscriptions |
-| Compute API | ✅ Live | :8050 | GPU pay-per-job access |
-| Command Center | ✅ Live | :8000 | Health, metering, backups |
-| Storefront | ✅ Live | :8020 | Product pages + checkout routing |
-| Audit API | ✅ Live | :8011 | AI lab health reports |
-| Ollama Router | ✅ Live | :11438 | Multi-GPU inference routing |
-| ComfyUI | ✅ Live | :8188 | Image generation workflows |
-| n8n | ✅ Live | :5678 | Workflow automation |
+| Service | Verified state | Port | Purpose |
+|---------|----------------|------|---------|
+| Checkout API | ✅ Local runtime healthy | :8012 | Stripe checkout and authoritative webhook |
+| Compute API | ✅ Local runtime healthy | :8050 | GPU pay-per-job access with prepaid credits |
+| Command Center | ✅ Local runtime healthy | :8000 | Health, routing, and operator controls |
+| Storefront | ✅ Local runtime healthy | :8020 | Product pages and checkout routing |
+| Audit API | ✅ Local runtime healthy | :8011 | AI lab health reports |
+| AU support bot | ✅ Local runtime healthy | :8071 | Support answers; GitHub issue creation disabled |
 
-**Hardware:** EPYC CPU, V100/P40/3060 GPUs, Ubuntu 26.04  
-**Storage:** 466G total, 146G free  
-**Backups:** Daily compressed, 30-day retention  
-**Monitoring:** 5-minute service watchdog, Telegram alerts  
-**Security:** HSTS, CSP, rate limiting, audit logging, webhook signature verification
+**Hardware:** EPYC CPU and attached GPU lanes (runtime-specific availability varies)
+**Backups:** Restore drill verified against a temporary SQLite database; retention requires operator policy review
+**Verification:** Platform release gate produces a JSON report under `ai-lab/reports/release-gate/`
 
 ---
 
