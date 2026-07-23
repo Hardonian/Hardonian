@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 190" role="img" aria-labelledby="title desc">
+  <title id="title">Hardonia operating loop</title>
+  <desc id="desc">Architecture leads to implementation, verification, product or service delivery, customer surface, and support and measurement, which feeds back into verification.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5eead4"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="190" rx="18" fill="url(#bg)"/>
+  <g fill="none" stroke="#5eead4" stroke-width="3" marker-end="url(#arrow)">
+    <path d="M178 92 H205"/><path d="M378 92 H405"/><path d="M578 92 H605"/>
+    <path d="M778 92 H805"/><path d="M978 92 H1025"/>
+    <path d="M1090 143 C1090 177 110 177 110 143"/>
+  </g>
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" text-anchor="middle">
+    <g font-size="17" font-weight="700" fill="#f8fafc">
+      <text x="110" y="88">Architecture</text><text x="310" y="88">Implementation</text>
+      <text x="510" y="88">Verification</text><text x="710" y="88">Product / Service</text>
+      <text x="890" y="88">Customer Surface</text><text x="1090" y="88">Support +</text><text x="1090" y="110">Measurement</text>
+    </g>
+    <g font-size="13" fill="#99f6e4">
+      <text x="110" y="118">constraints and design</text><text x="310" y="118">build the smallest system</text>
+      <text x="510" y="118">tests, endpoints, evidence</text><text x="710" y="118">package a useful outcome</text>
+      <text x="890" y="118">docs, demo, delivery</text><text x="600" y="168">feedback improves the next release</text>
+    </g>
+  </g>
+</svg>
