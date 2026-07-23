@@ -58,31 +58,12 @@ jobs:
         uses: rhysd/actionlint@v1.7.12
 
   link-check:
-    name: Link Check (Key URLs)
+    name: Link and Image Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check key URLs
-        run: |
-          # Check key external URLs that must work
-          for url in \
-            "https://github.com/Hardonian" \
-            "https://buy.stripe.com" \
-            "https://aiautomatedsystems.ca" \
-            "https://linkedin.com/in/scottrmhardie" \
-            "https://github.com/Hardonian/ai-lab-command-center" \
-            "https://github.com/Hardonian/hardonia-compute-api" \
-            "https://github.com/Hardonian/hardonia-checkout-api" \
-            "https://github.com/Hardonian/storefront"; do
-            # Use a standard user-agent to avoid WAF blocks, and allow 403 (WAF block) / 999 (LinkedIn bot block) / 404 (private repos) as valid server responses
-            code=$(curl -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" -s -o /dev/null -w "%{http_code}" --max-time 10 "$url" || echo "000")
-            if [[ "$code" =~ ^(2|3|403|404|999) ]]; then
-              echo "OK $code $url"
-            else
-              echo "FAIL $code $url"
-              exit 1
-            fi
-          done
+      - name: Check every README link and image
+        run: python3 scripts/profile-link-audit.py
 
 concurrency:
   group: profile-ci-${{ github.ref }}
