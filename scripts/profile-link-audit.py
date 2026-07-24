@@ -16,6 +16,8 @@ for raw in urls:
         target=raw
     else:
         local=(root/raw.lstrip('/')).resolve()
+        if not local.is_relative_to(root.resolve()):
+            fail.append((raw,'PATH_TRAVERSAL',str(local))); continue
         if raw.startswith('/') and raw.startswith('/Hardonian/'):
             local=root/(raw.split('/tree/main/',1)[-1] if '/tree/main/' in raw else raw.split('/Hardonian/',1)[-1])
         if raw.startswith('products/') or raw.startswith('architecture-playbook/') or raw.startswith('assets/'):
