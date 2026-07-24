@@ -37,5 +37,5 @@ for raw in urls:
     except Exception as e:
         fail.append((raw,'ERROR',str(e))); print(f'FAIL ERROR {raw}: {e}')
 if fail:
-    print('FAILURES',len(fail)); [print(x) for x in fail]; sys.exit(1)
+    print('FAILURES',len(fail)); print('\n'.join(map(str, fail))); sys.exit(1)
 print(f'CHECKED {len(seen)} UNIQUE_LINKS_AND_IMAGES; FAILURES 0')
