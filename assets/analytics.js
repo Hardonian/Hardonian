@@ -5,8 +5,6 @@
     const sessionId = sessionStorage.getItem('aas_sid') || ('s' + Date.now() + Math.random().toString(36).substr(2, 8));
     sessionStorage.setItem('aas_sid', sessionId);
 
-    function hashIP(ip) { return ip; } // Server will hash
-
     // Track page view
     fetch('https://aiautomatedsystems.ca/api/track', {
         method: 'POST',
