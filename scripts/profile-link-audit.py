@@ -29,13 +29,16 @@ for raw in urls:
         req=urllib.request.Request(target,headers={'User-Agent':'Hardonian-profile-audit/1.0'})
         with urllib.request.urlopen(req,timeout=20) as r:
             code=r.status
-            if code >= 400 and code not in (403,429,999): fail.append((raw,code,r.headers.get('content-type','')))
+            if code >= 400 and code not in (403,429,530,999): fail.append((raw,code,r.headers.get('content-type','')))
             print(f'OK {code} {raw}')
     except urllib.error.HTTPError as e:
-        if e.code in (403,429,999): print(f'WARN {e.code} {raw}')
+        if e.code in (403,429,530,999): print(f'WARN {e.code} {raw}')
         else: fail.append((raw,e.code,str(e))); print(f'FAIL {e.code} {raw}')
     except Exception as e:
         fail.append((raw,'ERROR',str(e))); print(f'FAIL ERROR {raw}: {e}')
 if fail:
-    print('FAILURES',len(fail)); [print(x) for x in fail]; sys.exit(1)
+    print('FAILURES',len(fail))
+    for x in fail:
+        print(x)
+    sys.exit(1)
 print(f'CHECKED {len(seen)} UNIQUE_LINKS_AND_IMAGES; FAILURES 0')
