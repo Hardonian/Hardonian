@@ -9,7 +9,7 @@ if [ -f .env ] && grep -qE "=(sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}|sk_live_|
   exit 1
 fi
 # 2. No private key blocks in tracked files
-if git grep -n "BEGIN.*PRIVATE KEY" -- ':!*.md' 2>/dev/null; then
+if git grep -n "BEGIN.*PRIVATE KEY" -- ':!*.md' -- ':!scripts/security-scan.sh' 2>/dev/null; then
   echo "FAIL: private key material found in tracked files."
   exit 1
 fi
