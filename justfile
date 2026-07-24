@@ -11,7 +11,7 @@ dev:
 
 # Run tests
 test:
-    @echo "Override 'test' in your repo justfile"
+    pytest tests/
 
 # Smoke / health check
 smoke:
