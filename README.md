@@ -4,10 +4,10 @@
 I turn complex AI, SaaS, integration, and revenue workflows into systems people can operate.</p>
 
 <p align="center">
-  <a href="https://github.com/Hardonian"><img src="https://img.shields.io/badge/GitHub-Hardonian-181717?style=for-the-badge&logo=github" alt="GitHub profile" /></a>
-  <a href="https://www.linkedin.com/in/scottrmhardie/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn profile" /></a>
-  <a href="https://www.aiautomatedsystems.ca"><img src="https://img.shields.io/badge/AI_Automated_Systems-Visit-0f766e?style=for-the-badge&logo=cloudflare" alt="AI Automated Systems website" /></a>
-  <a href="https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml"><img src="https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml/badge.svg" alt="Profile CI status" /></a>
+  <a href="https://github.com/Hardonian"><img src="https://img.shields.io/badge/GitHub-Hardonian-181717?style=for-the-badge&logo=github" alt="Visit my GitHub profile" /></a>
+  <a href="https://www.linkedin.com/in/scottrmhardie/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin" alt="Visit my LinkedIn profile" /></a>
+  <a href="https://www.aiautomatedsystems.ca"><img src="https://img.shields.io/badge/AI_Automated_Systems-Visit-0f766e?style=for-the-badge&logo=cloudflare" alt="Visit the AI Automated Systems website" /></a>
+  <a href="https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml"><img src="https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml/badge.svg" alt="View the Profile CI status on GitHub Actions" /></a>
 </p>
 
 <p align="center">Toronto, Canada · SaaS architecture · local-first AI · observability · automation · commercial systems</p>
@@ -23,17 +23,17 @@ I turn complex AI, SaaS, integration, and revenue workflows into systems people 
 ## Technology stack — click a logo
 
 <p align="center">
-  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /></a>
-  <a href="https://fastapi.tiangolo.com/"><img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" /></a>
-  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" /></a>
-  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" /></a>
-  <a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" /></a>
-  <a href="https://redis.io/"><img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" /></a>
-  <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" /></a>
-  <a href="https://www.cloudflare.com/developer-platform/products/workers/"><img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Cloudflare" /></a>
-  <a href="https://github.com/features/actions"><img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" /></a>
-  <a href="https://ollama.com/"><img src="https://img.shields.io/badge/Ollama-111827?style=for-the-badge&logo=llama&logoColor=white" alt="Ollama" /></a>
-  <a href="https://github.com/comfyanonymous/ComfyUI"><img src="https://img.shields.io/badge/ComfyUI-8A05FF?style=for-the-badge&logo=stable-diffusion&logoColor=white" alt="ComfyUI" /></a>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Visit the Python website" /></a>
+  <a href="https://fastapi.tiangolo.com/"><img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="Visit the FastAPI website" /></a>
+  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="Visit the TypeScript website" /></a>
+  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Visit the Node.js website" /></a>
+  <a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="Visit the PostgreSQL website" /></a>
+  <a href="https://redis.io/"><img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Visit the Redis website" /></a>
+  <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Visit the Docker website" /></a>
+  <a href="https://www.cloudflare.com/developer-platform/products/workers/"><img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Visit the Cloudflare Workers website" /></a>
+  <a href="https://github.com/features/actions"><img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="Visit the GitHub Actions website" /></a>
+  <a href="https://ollama.com/"><img src="https://img.shields.io/badge/Ollama-111827?style=for-the-badge&logo=llama&logoColor=white" alt="Visit the Ollama website" /></a>
+  <a href="https://github.com/comfyanonymous/ComfyUI"><img src="https://img.shields.io/badge/ComfyUI-8A05FF?style=for-the-badge&logo=stable-diffusion&logoColor=white" alt="Visit the ComfyUI GitHub repository" /></a>
 </p>
 
 ## Start here
