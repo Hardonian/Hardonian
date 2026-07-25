@@ -59,6 +59,27 @@ The operating loop is:
 
 The design priorities are boring reliability, tenant and payment integrity, local privacy, observable operations, and small systems that reduce manual work.
 
+### Recovered enterprise lineage
+
+The following repositories are active again because they form a coherent foundation for The Platform. They are reference implementations and capability surfaces, not claims that every route or deployment topology is production-ready.
+
+- [Requiem](https://github.com/Hardonian/Requiem) — native execution engine, operator console lineage, and deterministic control-plane experiments
+- [Reach](https://github.com/Hardonian/Reach) — deterministic run, transcript, replay, and cryptographic evidence contracts
+- [ReadyLayer](https://github.com/Hardonian/ReadyLayer) — AI-assisted software delivery governance, policy checks, provenance, and evidence export
+- [Zeo](https://github.com/Hardonian/Zeo) — local-first composable agent pipelines, signed module artifacts, and deterministic exports
+- [truthcore](https://github.com/Hardonian/truthcore) — Python verification, content-addressed caching, anomaly detection, and offline evidence reports
+- [JobForge](https://github.com/Hardonian/JobForge) — Postgres-native idempotent jobs, retries, backoff, and RLS-aware execution contracts
+- [MissionLedger](https://github.com/Hardonian/MissionLedger) — governed agent missions, policy boundaries, and proof-grade execution records
+
+The enterprise fold is intentionally modular:
+
+- verification and evidence → `truthcore` + `Reach`
+- governed execution and durable jobs → `Requiem` + `JobForge` + `MissionLedger`
+- AI-assisted delivery assurance → `ReadyLayer` + `Zeo`
+- local-first runtime and hardware-aware routing → existing The Platform control plane, Ollama lanes, and ComfyUI services
+
+Additional archived prototypes remain preserved while their useful contracts are extracted into the private platform rather than presented as live products.
+
 ## Public work by area
 
 ### AI and platform engineering
