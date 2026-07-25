@@ -1,6 +1,6 @@
 # Local Automation Retainer
 
-![automation-retainer sample](assets/automation-retainer.png)
+![Product preview for Local Automation Retainer](assets/automation-retainer.png)
 Turn repeated AI lab and business chores into boring verified automations.
 
 **Price:** $750-$2500/mo
@@ -15,8 +15,8 @@ Monthly automation backlog, 2-5 shipped automations, logs, status commands, roll
 
 ## Checkout / Buy
 
-- [Stripe checkout](https://buy.stripe.com/8x2fZg0Ra6hS34C6atb3q0r)
+- [Purchase Local Automation Retainer via Stripe](https://buy.stripe.com/8x2fZg0Ra6hS34C6atb3q0r)
 
 ---
 
-Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+Source product page in repo: [Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)

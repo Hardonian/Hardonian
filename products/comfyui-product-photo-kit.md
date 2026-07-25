@@ -1,6 +1,6 @@
 # ComfyUI Product Photo Kit
 
-![comfyui-product-photo-kit sample](assets/comfyui-product-photo-kit.png)
+![Product preview for ComfyUI Product Photo Kit](assets/comfyui-product-photo-kit.png)
 Generate clean ecommerce product shots locally with repeatable prompts and upscale flow.
 
 **Price:** $59 niche pack / $129 studio pack
@@ -17,10 +17,10 @@ Txt2img + upscale workflow bundle, prompt recipes, angle/background presets, out
 
 ## Checkout / Buy
 
-- [Stripe checkout](https://buy.stripe.com/cNibJ057q21C34C7exb3q0n)
+- [Purchase ComfyUI Product Photo Kit via Stripe](https://buy.stripe.com/cNibJ057q21C34C7exb3q0n)
 
 - [Gumroad](https://scottrmhardie.gumroad.com/l/cqfiev)
 
 ---
 
-Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+Source product page in repo: [Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)

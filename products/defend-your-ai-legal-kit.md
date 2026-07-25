@@ -1,6 +1,6 @@
 # Defend-Your-AI Legal Kit
 
-![defend-your-ai-legal-kit sample](assets/defend-your-ai-legal-kit.png)
+![Product preview for Defend-Your-AI Legal Kit](assets/defend-your-ai-legal-kit.png)
 Legal defensive security for AI products: privacy, model cards, and risk matrices.
 
 **Price:** $149 one-time
@@ -15,8 +15,8 @@ Privacy framework, model card templates, risk assessment matrix, compliance chec
 
 ## Checkout / Buy
 
-- [Stripe checkout](https://buy.stripe.com/9B600i1Ve8q020y0Q9b3q0x)
+- [Purchase Defend-Your-AI Legal Kit via Stripe](https://buy.stripe.com/9B600i1Ve8q020y0Q9b3q0x)
 
 ---
 
-Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+Source product page in repo: [Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)
