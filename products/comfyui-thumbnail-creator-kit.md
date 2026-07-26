@@ -19,7 +19,7 @@ SDXL text-to-image thumbnail workflow (runs on 8GB+ VRAM; tested on RTX 3060 12G
 
 - [Purchase ComfyUI Thumbnail Creator Kit via Stripe](https://buy.stripe.com/00wcN443m7lW8oWbuNb3q0p)
 
-- [Gumroad](https://scottrmhardie.gumroad.com/l/bsjqfm)
+- [Purchase ComfyUI Thumbnail Creator Kit via Gumroad](https://scottrmhardie.gumroad.com/l/bsjqfm)
 
 ---
 

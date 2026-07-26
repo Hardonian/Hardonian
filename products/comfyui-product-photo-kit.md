@@ -19,7 +19,7 @@ Txt2img + upscale workflow bundle, prompt recipes, angle/background presets, out
 
 - [Purchase ComfyUI Product Photo Kit via Stripe](https://buy.stripe.com/cNibJ057q21C34C7exb3q0n)
 
-- [Gumroad](https://scottrmhardie.gumroad.com/l/cqfiev)
+- [Purchase ComfyUI Product Photo Kit via Gumroad](https://scottrmhardie.gumroad.com/l/cqfiev)
 
 ---
 

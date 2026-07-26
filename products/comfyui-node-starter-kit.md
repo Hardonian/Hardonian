@@ -17,7 +17,7 @@ Working node-pack scaffold, example utility nodes, packaging layout, install not
 
 - [Purchase ComfyUI Node Starter Kit via Stripe](https://buy.stripe.com/9B6cN41Veay8eNkfL3b3q0m)
 
-- [Gumroad](https://scottrmhardie.gumroad.com/l/cauzzx)
+- [Purchase ComfyUI Node Starter Kit via Gumroad](https://scottrmhardie.gumroad.com/l/cauzzx)
 
 ---
 
