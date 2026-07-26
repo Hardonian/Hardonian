@@ -1,6 +1,6 @@
 # APVA AI ROI Benchmark
 
-![apva-roi-benchmark sample](assets/apva-roi-benchmark.png)
+![Product preview for APVA AI ROI Benchmark](assets/apva-roi-benchmark.png)
 Stop guessing whether AI saves time. Measure True Value Yield.
 
 **Price:** $199 self-serve / $799 team benchmark
@@ -15,8 +15,8 @@ Workflow intake, APVA score, ROI report, kill/optimize/scale decision, dashboard
 
 ## Checkout / Buy
 
-- [Stripe checkout](https://buy.stripe.com/aFa28qeI08q0dJggP7b3q0k)
+- [Purchase APVA AI ROI Benchmark via Stripe](https://buy.stripe.com/aFa28qeI08q0dJggP7b3q0k)
 
 ---
 
-Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+Source product page in repo: [Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)

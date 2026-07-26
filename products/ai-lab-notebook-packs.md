@@ -1,6 +1,6 @@
 # AI Lab Applied Notebook Packs
 
-![ai-lab-notebook-packs sample](assets/ai-lab-notebook-packs.png)
+![Product preview for AI Lab Applied Notebook Packs](assets/ai-lab-notebook-packs.png)
 Reproducible AI experiment packs - from notebook to production without the chaos.
 
 **Price:** $79 per pack / $299 bundle (5 packs) / $99/mo subscription
@@ -19,4 +19,4 @@ Curated reproducible notebook packs: RAG evaluation, agent benchmarks, prompt op
 
 ---
 
-Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+Source product page in repo: [Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)

@@ -7,7 +7,9 @@ import sys
 from pathlib import Path
 
 def run_script(monkeypatch, readme_content):
-    monkeypatch.setattr('pathlib.Path.read_text', lambda self: readme_content)
+    def mock_read_text(self, *args, **kwargs):
+        return readme_content
+    monkeypatch.setattr('pathlib.Path.read_text', mock_read_text)
 
     # Capture stdout to verify prints and avoid cluttering test output
     captured_output = io.StringIO()
