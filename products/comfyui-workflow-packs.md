@@ -1,6 +1,6 @@
 # ComfyUI Workflow Pack Shop
 
-![comfyui-workflow-packs sample](assets/comfyui-workflow-packs.png)
+![Product preview for ComfyUI Workflow Pack Shop](assets/comfyui-workflow-packs.png)
 Sell repeatable private image pipelines instead of random prompt chaos.
 
 **Price:** $29 starter / $79 pro / $149 niche pack / $499 custom pack
@@ -15,8 +15,8 @@ Packaged workflow JSONs, prompt presets, model manifest, install notes, batch sc
 
 ## Checkout / Buy
 
-- [Stripe checkout](https://buy.stripe.com/3cIbJ0bvO6hS0WuaqJb3q0l)
+- [Purchase ComfyUI Workflow Pack Shop via Stripe](https://buy.stripe.com/3cIbJ0bvO6hS0WuaqJb3q0l)
 
 ---
 
-Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+Source product page in repo: [Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)

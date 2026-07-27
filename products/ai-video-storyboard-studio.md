@@ -1,6 +1,6 @@
 # AI Video Storyboard Studio
 
-![ai-video-storyboard-studio sample](assets/ai-video-storyboard-studio.png)
+![Product preview for AI Video Storyboard Studio](assets/ai-video-storyboard-studio.png)
 Turn text prompts into viral-ready video storyboards with shot lists and pacing guides.
 
 **Price:** $79 one-time
@@ -15,8 +15,8 @@ Txt2video + txt2img workflows, prompt templates, shot planning docs, timing guid
 
 ## Checkout / Buy
 
-- [Stripe checkout](https://buy.stripe.com/9B65kCgQ8eOodJg6atb3q0u)
+- [Purchase AI Video Storyboard Studio via Stripe](https://buy.stripe.com/9B65kCgQ8eOodJg6atb3q0u)
 
 ---
 
-Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+Source product page in repo: [Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)
