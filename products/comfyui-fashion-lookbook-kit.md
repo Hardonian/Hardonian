@@ -19,7 +19,7 @@ Txt2img + img2img + upscale workflow bundle, look presets, composition notes, pr
 
 - [Purchase ComfyUI Fashion Lookbook Kit via Stripe](https://buy.stripe.com/dRm4gy6bu5dO48G7exb3q0o)
 
-- [Gumroad](https://scottrmhardie.gumroad.com/l/ictrbg)
+- [Purchase ComfyUI Fashion Lookbook Kit via Gumroad](https://scottrmhardie.gumroad.com/l/ictrbg)
 
 ---
 
