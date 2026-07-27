@@ -15,7 +15,7 @@ Monthly automation backlog, 2-5 shipped automations, logs, status commands, roll
 
 ## Checkout / Buy
 
-- Stripe checkout: https://buy.stripe.com/8x2fZg0Ra6hS34C6atb3q0r
+- [Stripe checkout](https://buy.stripe.com/8x2fZg0Ra6hS34C6atb3q0r)
 
 ---
 

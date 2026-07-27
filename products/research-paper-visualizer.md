@@ -15,7 +15,7 @@ Paper-to-diagram workflow, Mermaid template library, citation extractor, summary
 
 ## Checkout / Buy
 
-- Stripe checkout: https://buy.stripe.com/8x228qczS0Xy48G2Yhb3q0w
+- [Stripe checkout](https://buy.stripe.com/8x228qczS0Xy48G2Yhb3q0w)
 
 ---
 

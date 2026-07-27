@@ -15,7 +15,7 @@ Txt2video + txt2img workflows, prompt templates, shot planning docs, timing guid
 
 ## Checkout / Buy
 
-- Stripe checkout: https://buy.stripe.com/9B65kCgQ8eOodJg6atb3q0u
+- [Stripe checkout](https://buy.stripe.com/9B65kCgQ8eOodJg6atb3q0u)
 
 ---
 

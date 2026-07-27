@@ -15,7 +15,7 @@ Character consistency workflow, LoRA presets, expression grid generator, naming 
 
 ## Checkout / Buy
 
-- Stripe checkout: https://buy.stripe.com/3cI8wO1Veay8fRo6atb3q0s
+- [Stripe checkout](https://buy.stripe.com/3cI8wO1Veay8fRo6atb3q0s)
 
 ---
 

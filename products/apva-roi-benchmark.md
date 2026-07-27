@@ -15,7 +15,7 @@ Workflow intake, APVA score, ROI report, kill/optimize/scale decision, dashboard
 
 ## Checkout / Buy
 
-- Stripe checkout: https://buy.stripe.com/aFa28qeI08q0dJggP7b3q0k
+- [Stripe checkout](https://buy.stripe.com/aFa28qeI08q0dJggP7b3q0k)
 
 ---
 

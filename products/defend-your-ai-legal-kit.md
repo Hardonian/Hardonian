@@ -15,7 +15,7 @@ Privacy framework, model card templates, risk assessment matrix, compliance chec
 
 ## Checkout / Buy
 
-- Stripe checkout: https://buy.stripe.com/9B600i1Ve8q020y0Q9b3q0x
+- [Stripe checkout](https://buy.stripe.com/9B600i1Ve8q020y0Q9b3q0x)
 
 ---
 

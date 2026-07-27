@@ -15,7 +15,7 @@ Pattern audit, automation candidates, admin dashboard wiring, onboarding script,
 
 ## Checkout / Buy
 
-- Stripe checkout: https://buy.stripe.com/9B66oG9nGdKk8oW42lb3q0y
+- [Stripe checkout](https://buy.stripe.com/9B66oG9nGdKk8oW42lb3q0y)
 
 ---
 

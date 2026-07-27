@@ -17,9 +17,9 @@ Txt2img + img2img + upscale workflow bundle, look presets, composition notes, pr
 
 ## Checkout / Buy
 
-- Stripe checkout: https://buy.stripe.com/dRm4gy6bu5dO48G7exb3q0o
+- [Stripe checkout](https://buy.stripe.com/dRm4gy6bu5dO48G7exb3q0o)
 
-- Gumroad: https://scottrmhardie.gumroad.com/l/ictrbg
+- [Gumroad](https://scottrmhardie.gumroad.com/l/ictrbg)
 
 ---
 
