@@ -1,82 +1,133 @@
-import pytest
+import unittest
 from unittest.mock import patch, MagicMock
-import runpy
 import urllib.error
-import io
 import sys
-from pathlib import Path
+import importlib.util
+import io
 
-def run_script(monkeypatch, readme_content):
-    def mock_read_text(self, *args, **kwargs):
-        return readme_content
-    monkeypatch.setattr('pathlib.Path.read_text', mock_read_text)
+# Dynamically import the module since it has hyphens in the filename
+spec = importlib.util.spec_from_file_location("profile_link_audit", "scripts/profile-link-audit.py")
+profile_link_audit = importlib.util.module_from_spec(spec)
+sys.modules["profile_link_audit"] = profile_link_audit
+spec.loader.exec_module(profile_link_audit)
 
-    # Capture stdout to verify prints and avoid cluttering test output
-    captured_output = io.StringIO()
-    monkeypatch.setattr(sys, 'stdout', captured_output)
+class TestProfileLinkAudit(unittest.TestCase):
 
-    try:
-        runpy.run_path('scripts/profile-link-audit.py')
-        exit_code = 0
-    except SystemExit as e:
-        exit_code = e.code
+    @patch('profile_link_audit.urllib.request.urlopen')
+    @patch('profile_link_audit.sys.exit')
+    @patch('profile_link_audit.Path.read_text')
+    def test_http_error_handling(self, mock_read_text, mock_exit, mock_urlopen):
+        mock_read_text.return_value = "Here is a test URL: [test](https://example.com/test)"
+        mock_error = urllib.error.HTTPError(url='https://example.com/test', code=500, msg='Internal Server Error', hdrs={}, fp=None)
+        mock_urlopen.side_effect = mock_error
 
-    return exit_code, captured_output.getvalue()
+        with patch('sys.stdout', new=io.StringIO()):
+            profile_link_audit.audit()
 
-@patch('urllib.request.urlopen')
-def test_successful_external_link(mock_urlopen, monkeypatch):
-    mock_cm = MagicMock()
-    mock_cm.status = 200
-    mock_cm.__enter__.return_value = mock_cm
-    mock_urlopen.return_value = mock_cm
+        mock_exit.assert_called_once_with(1)
 
-    code, out = run_script(monkeypatch, "[Example](https://example.com)")
+    @patch('profile_link_audit.urllib.request.urlopen')
+    @patch('profile_link_audit.sys.exit')
+    @patch('profile_link_audit.Path.read_text')
+    def test_generic_exception_handling(self, mock_read_text, mock_exit, mock_urlopen):
+        mock_read_text.return_value = "Here is a test URL: [test](https://example.com/test)"
+        mock_urlopen.side_effect = Exception("Generic connection failure")
 
-    assert code == 0
-    assert "OK 200 https://example.com" in out
-    assert "CHECKED 1 UNIQUE_LINKS_AND_IMAGES; FAILURES 0" in out
+        with patch('sys.stdout', new=io.StringIO()):
+            profile_link_audit.audit()
 
-@patch('urllib.request.urlopen')
-def test_failed_external_link(mock_urlopen, monkeypatch):
-    mock_urlopen.side_effect = urllib.error.HTTPError("https://example.com", 404, "Not Found", {}, None)
+        mock_exit.assert_called_once_with(1)
 
-    code, out = run_script(monkeypatch, "[Example](https://example.com)")
+    @patch('profile_link_audit.urllib.request.urlopen')
+    @patch('profile_link_audit.sys.exit')
+    @patch('profile_link_audit.Path.read_text')
+    def test_successful_external_link(self, mock_read_text, mock_exit, mock_urlopen):
+        mock_read_text.return_value = "[Example](https://example.com)"
+        mock_cm = MagicMock()
+        mock_cm.status = 200
+        mock_cm.__enter__.return_value = mock_cm
+        mock_urlopen.return_value = mock_cm
 
-    assert code == 1
-    assert "FAIL 404 https://example.com" in out
-    assert "FAILURES 1" in out
+        with patch('sys.stdout', new=io.StringIO()) as fake_out:
+            profile_link_audit.audit()
+            out = fake_out.getvalue()
 
-@patch('pathlib.Path.exists')
-def test_successful_local_link(mock_exists, monkeypatch):
-    mock_exists.return_value = True
+        mock_exit.assert_not_called()
+        self.assertIn("OK 200 https://example.com", out)
+        self.assertIn("CHECKED 1 UNIQUE_LINKS_AND_IMAGES; FAILURES 0", out)
 
-    code, out = run_script(monkeypatch, "[Example](products/test.md)")
+    @patch('profile_link_audit.urllib.request.urlopen')
+    @patch('profile_link_audit.sys.exit')
+    @patch('profile_link_audit.Path.read_text')
+    def test_failed_external_link(self, mock_read_text, mock_exit, mock_urlopen):
+        mock_read_text.return_value = "[Example](https://example.com)"
+        mock_urlopen.side_effect = urllib.error.HTTPError("https://example.com", 404, "Not Found", {}, None)
 
-    assert code == 0
-    assert "LOCAL 200 products/test.md" in out
-    assert "CHECKED 1 UNIQUE_LINKS_AND_IMAGES; FAILURES 0" in out
+        with patch('sys.stdout', new=io.StringIO()) as fake_out:
+            profile_link_audit.audit()
+            out = fake_out.getvalue()
 
-@patch('pathlib.Path.exists')
-def test_missing_local_link(mock_exists, monkeypatch):
-    mock_exists.return_value = False
+        mock_exit.assert_called_once_with(1)
+        self.assertIn("FAIL 404 https://example.com", out)
+        self.assertIn("FAILURES 1", out)
 
-    code, out = run_script(monkeypatch, "[Example](products/test.md)")
+    @patch('profile_link_audit.Path.exists')
+    @patch('profile_link_audit.sys.exit')
+    @patch('profile_link_audit.Path.read_text')
+    def test_successful_local_link(self, mock_read_text, mock_exit, mock_exists):
+        mock_read_text.return_value = "[Example](products/test.md)"
+        mock_exists.return_value = True
 
-    assert code == 1
-    assert "FAILURES 1" in out
+        with patch('sys.stdout', new=io.StringIO()) as fake_out:
+            profile_link_audit.audit()
+            out = fake_out.getvalue()
 
-def test_ignored_links(monkeypatch):
-    code, out = run_script(monkeypatch, "[Example1](#anchor) [Example2](mailto:test@example.com)")
+        mock_exit.assert_not_called()
+        self.assertIn("LOCAL 200 products/test.md", out)
+        self.assertIn("CHECKED 1 UNIQUE_LINKS_AND_IMAGES; FAILURES 0", out)
 
-    assert code == 0
-    assert "CHECKED 1 UNIQUE_LINKS_AND_IMAGES" in out
+    @patch('profile_link_audit.Path.exists')
+    @patch('profile_link_audit.sys.exit')
+    @patch('profile_link_audit.Path.read_text')
+    def test_missing_local_link(self, mock_read_text, mock_exit, mock_exists):
+        mock_read_text.return_value = "[Example](products/test.md)"
+        mock_exists.return_value = False
 
-@patch('urllib.request.urlopen')
-def test_http_warnings(mock_urlopen, monkeypatch):
-    for status in [403, 429, 999]:
-        mock_urlopen.side_effect = urllib.error.HTTPError("https://example.com", status, "Warning", {}, None)
+        with patch('sys.stdout', new=io.StringIO()) as fake_out:
+            profile_link_audit.audit()
+            out = fake_out.getvalue()
 
-        code, out = run_script(monkeypatch, "[Example](https://example.com)")
+        mock_exit.assert_called_once_with(1)
+        self.assertIn("FAILURES 1", out)
 
-        assert code == 0
-        assert f"WARN {status} https://example.com" in out
+    @patch('profile_link_audit.sys.exit')
+    @patch('profile_link_audit.Path.read_text')
+    def test_ignored_links(self, mock_read_text, mock_exit):
+        mock_read_text.return_value = "[Example1](#anchor) [Example2](mailto:test@example.com)"
+
+        with patch('sys.stdout', new=io.StringIO()) as fake_out:
+            profile_link_audit.audit()
+            out = fake_out.getvalue()
+
+        mock_exit.assert_not_called()
+        self.assertIn("CHECKED 1 UNIQUE_LINKS_AND_IMAGES", out)
+
+    @patch('profile_link_audit.urllib.request.urlopen')
+    @patch('profile_link_audit.sys.exit')
+    @patch('profile_link_audit.Path.read_text')
+    def test_http_warnings(self, mock_read_text, mock_exit, mock_urlopen):
+        for status in [403, 429, 999]:
+            with self.subTest(status=status):
+                mock_read_text.return_value = "[Example](https://example.com)"
+                mock_urlopen.side_effect = urllib.error.HTTPError("https://example.com", status, "Warning", {}, None)
+                mock_exit.reset_mock()
+
+                with patch('sys.stdout', new=io.StringIO()) as fake_out:
+                    profile_link_audit.audit()
+                    out = fake_out.getvalue()
+
+                mock_exit.assert_not_called()
+                self.assertIn(f"WARN {status} https://example.com", out)
+
+if __name__ == '__main__':
+    unittest.main()
