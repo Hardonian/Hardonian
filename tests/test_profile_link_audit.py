@@ -16,7 +16,7 @@ def run_script(monkeypatch, readme_content):
     monkeypatch.setattr(sys, 'stdout', captured_output)
 
     try:
-        runpy.run_path('scripts/profile-link-audit.py')
+        runpy.run_path('scripts/profile-link-audit.py', run_name='__main__')
         exit_code = 0
     except SystemExit as e:
         exit_code = e.code
