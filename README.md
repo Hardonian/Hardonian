@@ -23,11 +23,26 @@ I turn complex AI, SaaS, integration, and revenue workflows into systems people 
 ## Platform status — live infrastructure
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Services-10%2F10-0f766e?style=flat-square" alt="10/10 services healthy" />
-  <img src="https://img.shields.io/badge/GPUs-3-active-0f766e?style=flat-square" alt="3 GPUs active" />
-  <img src="https://img.shields.io/badge/Models-13-loaded-0f766e?style=flat-square" alt="13 models loaded" />
-  <img src="https://img.shields.io/badge/Products-18%2F37-ready-0f766e?style=flat-square" alt="18 products ready" />
-  <img src="https://img.shields.io/badge/Stripe-Purchases-verified-0f766e?style=flat-square" alt="Stripe purchases verified" />
+  <img
+    src="https://img.shields.io/badge/Services-10%2F10-0f766e.svg?style=flat-square&v=2"
+    alt="10/10 services healthy"
+  />
+  <img
+    src="https://img.shields.io/badge/GPUs-3%20active-0f766e.svg?style=flat-square&v=2"
+    alt="3 GPUs active"
+  />
+  <img
+    src="https://img.shields.io/badge/Models-13%20loaded-0f766e.svg?style=flat-square&v=2"
+    alt="13 models loaded"
+  />
+  <img
+    src="https://img.shields.io/badge/Products-18%2F37%20ready-0f766e.svg?style=flat-square&v=2"
+    alt="18 products ready"
+  />
+  <img
+    src="https://img.shields.io/badge/Stripe-Purchases%20verified-0f766e.svg?style=flat-square&logo=stripe&logoColor=white&v=2"
+    alt="Stripe purchases verified"
+  />
 </p>
 
 | Layer | Component | Status |
