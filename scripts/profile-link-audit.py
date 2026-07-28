@@ -39,7 +39,10 @@ def audit():
         except Exception as e:
             fail.append((raw,'ERROR',str(e))); print(f'FAIL ERROR {raw}: {e}')
     if fail:
-        print('FAILURES',len(fail)); [print(x) for x in fail]; sys.exit(1)
+        print('FAILURES', len(fail))
+        for x in fail:
+            print(x)
+        sys.exit(1)
     print(f'CHECKED {len(seen)} UNIQUE_LINKS_AND_IMAGES; FAILURES 0')
 
 if __name__ == '__main__':
