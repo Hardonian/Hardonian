@@ -22,7 +22,7 @@ This playbook is the public backend reference linked from the product README.
 ## Links
 
 ### Product landing pages
-- [Hardonian README](https://github.com/Hardonian/Hardonian/blob/main/README.md)
+- [Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian/blob/main/README.md)
 - [Local AI Lab Audit](https://github.com/Hardonian/Hardonian/blob/main/products/local-ai-lab-audit.md)
 - [AI Command Center Setup](https://github.com/Hardonian/Hardonian/blob/main/products/ai-command-center-setup.md)
 - [ComfyUI Workflow Packs](https://github.com/Hardonian/Hardonian/blob/main/products/comfyui-workflow-packs.md)
