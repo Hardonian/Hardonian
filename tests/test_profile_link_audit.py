@@ -4,7 +4,6 @@ import runpy
 import urllib.error
 import io
 import sys
-from pathlib import Path
 
 def run_script(monkeypatch, readme_content):
     def mock_read_text(self, *args, **kwargs):
@@ -16,7 +15,7 @@ def run_script(monkeypatch, readme_content):
     monkeypatch.setattr(sys, 'stdout', captured_output)
 
     try:
-        runpy.run_path('scripts/profile-link-audit.py')
+        runpy.run_path('scripts/profile-link-audit.py', run_name='__main__')
         exit_code = 0
     except SystemExit as e:
         exit_code = e.code
@@ -80,3 +79,13 @@ def test_http_warnings(mock_urlopen, monkeypatch):
 
         assert code == 0
         assert f"WARN {status} https://example.com" in out
+
+@patch('urllib.request.urlopen')
+def test_generic_exception(mock_urlopen, monkeypatch):
+    mock_urlopen.side_effect = Exception("Generic test exception")
+
+    code, out = run_script(monkeypatch, "[Example](https://example.com)")
+
+    assert code == 1
+    assert "FAIL ERROR https://example.com: Generic test exception" in out
+    assert "FAILURES 1" in out

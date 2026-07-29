@@ -1,6 +1,23 @@
 import re, sys, urllib.request, urllib.error
 from pathlib import Path
 from urllib.parse import urljoin
+import concurrent.futures
+
+def check_url(raw, target):
+    try:
+        req=urllib.request.Request(target,headers={'User-Agent':'Hardonian-profile-audit/1.0'})
+        with urllib.request.urlopen(req,timeout=20) as r:
+            code=r.status
+            if code >= 400 and code not in (403,429,530,999):
+                return ('fail', (raw,code,r.headers.get('content-type','')))
+            return ('ok', f'OK {code} {raw}')
+    except urllib.error.HTTPError as e:
+        if e.code in (403,429,530,999):
+            return ('warn', f'WARN {e.code} {raw}')
+        else:
+            return ('fail_err', (raw,e.code,str(e)), f'FAIL {e.code} {raw}')
+    except Exception as e:
+        return ('error', (raw,'ERROR',str(e)), f'FAIL ERROR {raw}: {e}')
 
 def audit():
     root=Path('.')
