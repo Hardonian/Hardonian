@@ -73,5 +73,27 @@ class TestProfileLinkAudit(unittest.TestCase):
         # Verify that exit(1) was called due to the failure
         mock_exit.assert_called_once_with(1)
 
+    @patch('profile_link_audit.urllib.request.urlopen')
+    @patch('profile_link_audit.sys.exit')
+    @patch('profile_link_audit.Path.read_text')
+    def test_hardonian_path_fallback(self, mock_read_text, mock_exit, mock_urlopen):
+        mock_read_text.return_value = "Here is a test URL: [Link](/Hardonian/test)"
+
+        # Make urlopen succeed
+        mock_response = MagicMock()
+        mock_response.status = 200
+        mock_response.headers.get.return_value = 'text/html'
+
+        # Handle context manager since urlopen is used in a 'with' block
+        mock_urlopen.return_value.__enter__.return_value = mock_response
+
+        with patch('sys.stdout', new=io.StringIO()):
+            profile_link_audit.audit()
+
+        # Verify that urlopen was called with a request targeting 'https://github.com/Hardonian/test'
+        mock_urlopen.assert_called_once()
+        req = mock_urlopen.call_args[0][0]
+        self.assertEqual(req.full_url, 'https://github.com/Hardonian/test')
+
 if __name__ == '__main__':
     unittest.main()
