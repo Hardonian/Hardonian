@@ -1,23 +1,27 @@
 import pytest
 from unittest.mock import patch, MagicMock
-import runpy
 import urllib.error
 import io
 import sys
+import importlib.util
 from pathlib import Path
+
+# Load script with hyphen in name
+spec = importlib.util.spec_from_file_location("profile_link_audit", "scripts/profile-link-audit.py")
+profile_link_audit = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(profile_link_audit)
 
 def run_script(monkeypatch, readme_content):
     def mock_read_text(self, *args, **kwargs):
         return readme_content
     monkeypatch.setattr('pathlib.Path.read_text', mock_read_text)
 
-    # Capture stdout to verify prints and avoid cluttering test output
     captured_output = io.StringIO()
     monkeypatch.setattr(sys, 'stdout', captured_output)
 
+    exit_code = 0
     try:
-        runpy.run_path('scripts/profile-link-audit.py')
-        exit_code = 0
+        profile_link_audit.audit()
     except SystemExit as e:
         exit_code = e.code
 
@@ -80,3 +84,13 @@ def test_http_warnings(mock_urlopen, monkeypatch):
 
         assert code == 0
         assert f"WARN {status} https://example.com" in out
+
+@patch('urllib.request.urlopen')
+def test_generic_exception(mock_urlopen, monkeypatch):
+    mock_urlopen.side_effect = Exception("Generic test exception")
+
+    code, out = run_script(monkeypatch, "[Example](https://example.com)")
+
+    assert code == 1
+    assert "FAIL ERROR https://example.com: Generic test exception" in out
+    assert "FAILURES 1" in out
