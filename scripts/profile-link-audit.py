@@ -19,7 +19,10 @@ def audit():
         else:
             local=(root/raw.lstrip('/')).resolve()
             if raw.startswith('/') and raw.startswith('/Hardonian/'):
-                local=root/(raw.split('/tree/main/',1)[-1] if '/tree/main/' in raw else raw.split('/Hardonian/',1)[-1])
+                local=(root/(raw.split('/tree/main/',1)[-1] if '/tree/main/' in raw else raw.split('/Hardonian/',1)[-1])).resolve()
+            if not local.is_relative_to(root.resolve()):
+                fail.append((raw, 'PATH_TRAVERSAL', str(local)))
+                continue
             if raw.startswith('products/') or raw.startswith('architecture-playbook/') or raw.startswith('assets/'):
                 if not local.exists(): fail.append((raw,'LOCAL_MISSING',str(local))); continue
                 print(f'LOCAL 200 {raw}')
