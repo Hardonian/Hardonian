@@ -1,9 +1,9 @@
 import unittest
 from unittest.mock import patch, MagicMock
-import runpy
 import urllib.error
 import io
 import sys
+import importlib.util
 from pathlib import Path
 
 def run_script(readme_content):
