@@ -16,7 +16,7 @@ def run_script(monkeypatch, readme_content):
     monkeypatch.setattr(sys, 'stdout', captured_output)
 
     try:
-        runpy.run_path('scripts/profile-link-audit.py')
+        runpy.run_path('scripts/profile-link-audit.py', run_name='__main__')
         exit_code = 0
     except SystemExit as e:
         exit_code = e.code
@@ -80,3 +80,10 @@ def test_http_warnings(mock_urlopen, monkeypatch):
 
         assert code == 0
         assert f"WARN {status} https://example.com" in out
+
+def test_ssrf_protection(monkeypatch):
+    code, out = run_script(monkeypatch, "[Malicious](file:///etc/passwd)")
+
+    assert code == 1
+    assert "FAIL INVALID_SCHEME file:///etc/passwd" in out
+    assert "FAILURES 1" in out

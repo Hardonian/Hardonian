@@ -27,6 +27,10 @@ def audit():
             target=urljoin('https://github.com/Hardonian/Hardonian/blob/main/', raw)
             if raw.startswith('/Hardonian/'):
                 target='https://github.com'+raw
+        if not target.startswith(("http://", "https://")):
+            fail.append((raw, "INVALID_SCHEME", target))
+            print(f"FAIL INVALID_SCHEME {raw}")
+            continue
         try:
             req=urllib.request.Request(target,headers={'User-Agent':'Hardonian-profile-audit/1.0'})
             with urllib.request.urlopen(req,timeout=20) as r:
