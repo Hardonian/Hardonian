@@ -4,7 +4,6 @@ import runpy
 import urllib.error
 import io
 import sys
-from pathlib import Path
 
 def run_script(monkeypatch, readme_content):
     def mock_read_text(self, *args, **kwargs):
