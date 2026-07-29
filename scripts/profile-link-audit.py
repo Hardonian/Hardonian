@@ -152,7 +152,6 @@ def audit():
         for x in fail:
             print(x)
         sys.exit(1)
-
     print(f'CHECKED {len(seen)} UNIQUE_LINKS_AND_IMAGES; FAILURES 0')
 
 if __name__ == '__main__':
