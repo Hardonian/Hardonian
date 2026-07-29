@@ -6,20 +6,21 @@ import sys
 import importlib.util
 from pathlib import Path
 
-# Load script dynamically
-spec = importlib.util.spec_from_file_location("profile_link_audit", "scripts/profile-link-audit.py")
-profile_link_audit = importlib.util.module_from_spec(spec)
-sys.modules["profile_link_audit"] = profile_link_audit
-spec.loader.exec_module(profile_link_audit)
-
 def run_script(readme_content):
-    def mock_read_text(self, *args, **kwargs):
+    def mock_read_text(*args, **kwargs):
         return readme_content
 
     captured_output = io.StringIO()
-    with patch('pathlib.Path.read_text', mock_read_text), patch('sys.stdout', captured_output):
+
+    with patch('pathlib.Path.read_text', mock_read_text), \
+         patch('sys.stdout', captured_output):
+
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("profile_link_audit", "scripts/profile-link-audit.py")
+        module = importlib.util.module_from_spec(spec)
         try:
-            profile_link_audit.audit()
+            spec.loader.exec_module(module)
+            module.audit()
             exit_code = 0
         except SystemExit as e:
             exit_code = e.code
@@ -27,7 +28,6 @@ def run_script(readme_content):
     return exit_code, captured_output.getvalue()
 
 class TestProfileLinkAudit(unittest.TestCase):
-
     @patch('urllib.request.urlopen')
     def test_successful_external_link(self, mock_urlopen):
         mock_cm = MagicMock()
