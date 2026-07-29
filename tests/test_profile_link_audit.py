@@ -1,22 +1,27 @@
 import pytest
 from unittest.mock import patch, MagicMock
-import runpy
 import urllib.error
 import io
 import sys
+import importlib.util
+from pathlib import Path
+
+# Load script with hyphen in name
+spec = importlib.util.spec_from_file_location("profile_link_audit", "scripts/profile-link-audit.py")
+profile_link_audit = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(profile_link_audit)
 
 def run_script(monkeypatch, readme_content):
     def mock_read_text(self, *args, **kwargs):
         return readme_content
     monkeypatch.setattr('pathlib.Path.read_text', mock_read_text)
 
-    # Capture stdout to verify prints and avoid cluttering test output
     captured_output = io.StringIO()
     monkeypatch.setattr(sys, 'stdout', captured_output)
 
+    exit_code = 0
     try:
-        runpy.run_path('scripts/profile-link-audit.py', run_name='__main__')
-        exit_code = 0
+        profile_link_audit.audit()
     except SystemExit as e:
         exit_code = e.code
 
