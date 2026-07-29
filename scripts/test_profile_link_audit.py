@@ -31,6 +31,32 @@ class TestProfileLinkAudit(unittest.TestCase):
         # Verify that exit(1) was called due to the failure
         mock_exit.assert_called_once_with(1)
 
+
+    @patch('profile_link_audit.urllib.request.urlopen')
+    @patch('profile_link_audit.urllib.request.Request')
+    @patch('profile_link_audit.Path.read_text')
+    def test_relative_path_resolution(self, mock_read_text, mock_request, mock_urlopen):
+        # Provide some dummy markdown with a relative path URL
+        mock_read_text.return_value = "Here is a test URL: [test](unknown-path.md)"
+
+        # Mock the Request object instance
+        mock_req_instance = MagicMock()
+        mock_request.return_value = mock_req_instance
+
+        # Mock the response
+        mock_response = MagicMock()
+        mock_response.status = 200
+        mock_urlopen.return_value.__enter__.return_value = mock_response
+
+        with patch('sys.stdout', new=io.StringIO()) as fake_out:
+            profile_link_audit.audit()
+
+        # Verify that Request was called with the correct urljoin resolved URL
+        mock_request.assert_called_once_with(
+            'https://github.com/Hardonian/Hardonian/blob/main/unknown-path.md',
+            headers={'User-Agent': 'Hardonian-profile-audit/1.0'}
+        )
+
     @patch('profile_link_audit.urllib.request.urlopen')
     @patch('profile_link_audit.sys.exit')
     @patch('profile_link_audit.Path.read_text')
