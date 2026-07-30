@@ -23,4 +23,4 @@ SDXL text-to-image thumbnail workflow (runs on 8GB+ VRAM; tested on RTX 3060 12G
 
 ---
 
-Source product page in repo: [Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)
+[View source product page in Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)

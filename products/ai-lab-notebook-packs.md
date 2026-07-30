@@ -19,4 +19,4 @@ Curated reproducible notebook packs: RAG evaluation, agent benchmarks, prompt op
 
 ---
 
-Source product page in repo: [Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)
+[View source product page in Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)

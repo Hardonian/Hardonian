@@ -19,4 +19,4 @@ PDF/Markdown audit report, ranked fixes, APVA ROI estimate, optional dashboard s
 
 ---
 
-Source product page in repo: [Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)
+[View source product page in Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)

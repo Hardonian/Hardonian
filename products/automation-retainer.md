@@ -19,4 +19,4 @@ Monthly automation backlog, 2-5 shipped automations, logs, status commands, roll
 
 ---
 
-Source product page in repo: [Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)
+[View source product page in Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)
