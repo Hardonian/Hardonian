@@ -40,7 +40,7 @@ I turn complex AI, SaaS, integration, and revenue workflows into systems people 
     alt="18 products ready"
   />
   <img
-    src="https://img.shields.io/badge/Stripe-Purchases%20verified-0f766e.svg?style=flat-square&logo=stripe&logoColor=white&v=2"
+    src="https://img.shields.io/badge/Stripe-Checkout_live-0f766e.svg?style=flat-square&logo=stripe&logoColor=white&v=2"
     alt="Stripe purchases verified"
   />
 </p>
@@ -52,11 +52,13 @@ I turn complex AI, SaaS, integration, and revenue workflows into systems people 
 | Inference | 13 local models (hermes3, qwen3, deepseek-r1, glm-4, etc.) | Ollama router on port 11438 |
 | Image workflows | ComfyUI + custom nodes + workflow packs | Proved, documented, packaged |
 | Checkout | Stripe → checkout-api → revenue-os → fulfillment | Webhook-verified, receipt-signed |
-| Revenue ledger | purchases, leads, truth classification, daily rollups | 161 verified purchases |
+| Revenue ledger | purchases, leads, truth classification, daily rollups | Synthetic demo data — 0 verified sales (commercial path proven, no settled payment yet) |
 | Audit | Audit API, proof score, benchmark | Synthetic harness: 4/4 pass |
 | Storefront | 20 product routes, legal pages, proof score | Public at aiautomatedsystems.ca |
 | Compute | GPU job API, credit accounting, signed delivery | Authenticated, bounded, auditable |
 | Monitoring | Disk watchdog, service health, self-heal | 6h disk budget, auto-restart |
+
+**Recent platform work (2026-07-31):** resolved a systemd boot-order cycle that had silently killed the control plane and ComfyUI workflow API; fixed the Hermes runtime-guard self-heal loop; reconciled a product price contradiction; removed an idle microk8s stack (~190 MB reclaimed, zero regression); and proved the Stripe webhook fulfillment path end-to-end with a signed self-test. The revenue ledger is honestly classified as synthetic demo data — the commercial path is proven but no settled payment has landed yet.
 
 ## Technology stack — click a logo
 
