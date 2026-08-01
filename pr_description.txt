@@ -1,0 +1,4 @@
+💡 **What:** Updated generic link text in `README.md` and 20 `products/*.md` files to be fully contextual.
+🎯 **Why:** To comply with WCAG SC 2.4.4, providing screen reader users with clear, actionable link context when navigating via a links list.
+📸 **Before/After:** N/A (Text/Markdown link change only)
+♿ **Accessibility:** Enhances screen reader navigation by embedding the surrounding context directly into the link text instead of using generic words like "LinkedIn" or "Scott Hardie's Profile README".

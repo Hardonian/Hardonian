@@ -23,4 +23,4 @@ Txt2img + img2img + upscale workflow bundle, look presets, composition notes, pr
 
 ---
 
-Source product page in repo: [Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)
+[View source product page in Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)
