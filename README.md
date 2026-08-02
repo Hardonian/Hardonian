@@ -20,46 +20,25 @@ I turn complex AI, SaaS, integration, and revenue workflows into systems people 
 - Operator tooling that turns infrastructure into a repeatable service
 - Proof-first productization: documentation, packaging, checkout, fulfillment, and support
 
-## Platform status — live infrastructure
+## Platform status — evidence-first, not badge theatre
 
-<p align="center">
-  <img
-    src="https://img.shields.io/badge/Services-10%2F10-0f766e.svg?style=flat-square&v=2"
-    alt="10/10 services healthy"
-  />
-  <img
-    src="https://img.shields.io/badge/GPUs-3%20active-0f766e.svg?style=flat-square&v=2"
-    alt="3 GPUs active"
-  />
-  <img
-    src="https://img.shields.io/badge/Models-13%20loaded-0f766e.svg?style=flat-square&v=2"
-    alt="13 models loaded"
-  />
-  <img
-    src="https://img.shields.io/badge/Products-18%2F37%20ready-0f766e.svg?style=flat-square&v=2"
-    alt="18 products ready"
-  />
-  <img
-    src="https://img.shields.io/badge/Stripe-Checkout_live-0f766e.svg?style=flat-square&logo=stripe&logoColor=white&v=2"
-    alt="Stripe purchases verified"
-  />
-</p>
+Hardonia operates a local-first AI systems lab and product platform. Runtime status is intentionally read from current operator evidence rather than hard-coded into a public README.
 
-| Layer | Component | Status |
+The public story is:
+
+`Observe → Control → Operate → Prove → Monetize`
+
+| Layer | Capability | Public role |
 |---|---|---|
-| Control plane | Command center, self-heal, watchdogs | 10/10 services, 83 cron jobs, 0 errors |
-| GPU fleet | V100 16GB · P40 24GB · RTX 3060 12GB | 3 lanes, auto-routing, health-probed |
-| Inference | 13 local models (hermes3, qwen3, deepseek-r1, glm-4, etc.) | Ollama router on port 11438 |
-| Image workflows | ComfyUI + custom nodes + workflow packs | Proved, documented, packaged |
-| Checkout | Stripe → checkout-api → revenue-os → fulfillment | Webhook-verified, receipt-signed |
-| Revenue ledger | purchases, leads, truth classification, daily rollups | Synthetic demo data — 0 verified sales (commercial path proven, no settled payment yet) |
-| Audit | Audit API, proof score, benchmark | Synthetic harness: 4/4 pass |
-| Storefront | 20 product routes, legal pages, proof score | Public at aiautomatedsystems.ca |
-| Compute | GPU job API, credit accounting, signed delivery | Authenticated, bounded, auditable |
-| Monitoring | Disk watchdog, service health, self-heal | 6h disk budget, auto-restart |
+| Observe | GPU lanes, service probes, labsentry, metrics, APVA, TokenGoblin | Establish a measurable baseline |
+| Control | fabricd, vramd, edgevec, mcpwall, identity and policy boundaries | Keep execution bounded and explainable |
+| Operate | Command Center, EACP, ContinuityOS, MEL, Zeo/AIR workflows | Turn evidence into approved action |
+| Prove | Evidence envelopes, reconciliation, Workproof-style records, audit reports | Separate observed facts from claims |
+| Monetize | Storefront, checkout, compute, audit, assurance, implementation | Deliver a concrete buyer outcome |
 
-**Recent platform work (2026-07-31):** resolved a systemd boot-order cycle that had silently killed the control plane and ComfyUI workflow API; fixed the Hermes runtime-guard self-heal loop; reconciled a product price contradiction; removed an idle microk8s stack (~190 MB reclaimed, zero regression); and proved the Stripe webhook fulfillment path end-to-end with a signed self-test. The revenue ledger is honestly classified as synthetic demo data — the commercial path is proven but no settled payment has landed yet.
+Current local truth is published through the authenticated Command Center endpoint `/api/truth` and the read-only operator artifact `state/truth-latest.json`. The envelope separates technical health, evidence freshness, commercial readiness, and provider-correlated payment evidence.
 
+The commercial rule is strict: catalog rows, local purchase rows, synthetic tests, and delivery-looking records are not reported as realized revenue without independent provider correlation.
 ## Technology stack — click a logo
 
 <p align="center">
@@ -105,21 +84,21 @@ The design priorities are boring reliability, tenant and payment integrity, loca
 
 ### What runs on the platform
 
-The platform is not a demo. It is a live, revenue-generating system that processes real Stripe payments, runs real GPU jobs, and publishes real operational evidence. Here is what is actually running:
+The platform is an active local operating environment with public-facing components and private operator services. Readiness is reported per layer: technical runtime, catalog/artifact integrity, provider-backed payment evidence, fulfillment, and realized revenue are separate verdicts.
 
-**Inference fleet** — Three GPU lanes (V100, P40, RTX 3060) behind an Ollama router with automatic model selection, health probing, and fallback routing. 13 models loaded for chat, code, vision, and embedding workloads.
+**Inference fleet** — Hardware-aware Ollama lanes and a router support local chat, code, vision, and embedding workloads. Current lane and model state is measured by the operator truth envelope rather than hard-coded here.
 
-**Image workflows** — ComfyUI with custom nodes, documented workflows, and packaged workflow subscriptions. Batch generation, quality presets, and repeatable local pipelines.
+**Image workflows** — ComfyUI, custom nodes, documented workflows, and packaged workflow assets support repeatable local generation.
 
-**Checkout and fulfillment** — Stripe checkout → webhook verification → revenue-os ledger → automated fulfillment. Webhook signatures are validated. Receipts are signed. The ledger is the single source of truth.
+**Checkout and fulfillment** — Checkout, webhook verification, revenue classification, and fulfillment are implemented as separate components. Provider-correlated payment evidence is required before realized revenue is claimed.
 
-**Revenue operations** — Purchase classification, truth verification, daily rollups, weekly snapshots, and leakage reports. Every number in the dashboard is traceable to a real Stripe event or classified as test/synthetic.
+**Revenue operations** — Purchase rows, leads, truth classifications, catalog state, and provider evidence are reconciled separately.
 
-**Compute API** — Prepaid credit model for GPU job execution. API-key isolation, bounded execution, signed result delivery, and webhook callbacks. No metered billing in this release.
+**Compute API** — Prepaid credit access supports bounded GPU jobs with API-key isolation and signed result delivery. Metered billing is not claimed in this release.
 
-**Proof layer** — A synthetic benchmark harness that validates policy enforcement, hash-chain integrity, and denial behavior. Published as a public proof score backed by real operational evidence.
+**Proof layer** — Evidence envelopes and deterministic audit artifacts make operational claims inspectable and freshness-aware.
 
-**Self-heal** — Automated service restart, disk budget monitoring, and cron job health checks. The platform monitors itself and escalates to the operator only when automated recovery is insufficient.
+**Self-heal** — Watchdogs and operator timers exist, but their aggregate state is reported honestly when failed units or contradictory probes are present.
 
 ### Recovered enterprise lineage
 
