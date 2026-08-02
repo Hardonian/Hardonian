@@ -1,39 +1,49 @@
-# AI Lab Command Center — Architecture Playbook
+# Architecture Playbook
 
-Operator archive for the ai-lab-command-center monetization stack.
-This playbook is the public backend reference linked from the product README.
+Public architecture notes for the Hardonia Sovereign AI Operations platform.
 
-## Endpoints
-| Buyer docs | `/home/scott/ai-lab/productization/generated-buyer-docs/<slug>` | README, walkthrough, support, manifest, preview, license, changelog |
+This page explains the migration and product-operations patterns behind the platform. It is reference documentation, not a promise that every route or deployment topology is publicly reachable or production-ready.
 
-| Purpose | Route | Notes |
-|---------|-------|-------|
-| Fulfillment | `POST /api/revenue-os/products/{slug}/fulfill` | Writes event, triggers post-purchase email, record download |
-| Download | `GET /api/revenue-os/products/{slug}/download/{event_file}` | Serves latest tarball for purchased slug |
-| Health | `GET /health` | service health |
-| Summary | `GET /api/revenue-os/summary` | revenue rollup |
+## Platform position
 
-## Buyer docs location
-`/home/scott/ai-lab/productization/generated-buyer-docs/<slug>`
+`Observe → Control → Operate → Prove → Monetize`
 
-## Deliverable archive
-`/home/scott/ai-lab/reports/deliverables/stable/<slug>-latest.tar.gz`
+Migration Factory and the AI Lab Command Center sit primarily in the Control and Operate layers. The shared evidence envelope supplies the Prove layer; checkout, audit, compute, and implementation surfaces supply the Monetize layer.
 
-## Links
+## Capability map
 
-### Product landing pages
-- [Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian/blob/main/README.md)
-- [Local AI Lab Audit](https://github.com/Hardonian/Hardonian/blob/main/products/local-ai-lab-audit.md)
-- [AI Command Center Setup](https://github.com/Hardonian/Hardonian/blob/main/products/ai-command-center-setup.md)
-- [ComfyUI Workflow Packs](https://github.com/Hardonian/Hardonian/blob/main/products/comfyui-workflow-packs.md)
+| Capability | Public contract | Evidence boundary |
+|---|---|---|
+| Fulfillment orchestration | Authenticated operator workflow | Entitlement and delivery events are recorded internally |
+| Download delivery | Signed, time-bound customer URL | Customer-specific tokens are never documented or exposed here |
+| Health | `GET /health` on the relevant local service | A health response is not proof of payment or revenue |
+| Operator summary | Authenticated operator API | Raw customer, payment, and local-path data stays private |
 
-### Operator portal
-- [AI Lab Command Center dashboard](https://github.com/Hardonian/ai-lab-command-center)
+Internal source paths and deployment filesystem locations are intentionally omitted from this public page. Use the repository's local runbooks and environment configuration for operator setup.
 
-## Playbook usage rules
-- keep payer-facing marketing claims factual and sourced from `revenue-os/products/<slug>/product.json`
-- buyer docs path is the canonical deliverable location; never invent a new copy without regenerating from current tar
-- fulfill mutations only run through `/api/revenue-os/products/{slug}/fulfill` or verified stripe handler
+## Architecture concerns
+
+- Define data ownership before extracting a bounded capability.
+- Put routing and cutover behind an explicit, reversible control point.
+- Shadow-validate behavior before changing customer traffic.
+- Emit evidence for decisions, releases, fulfillment, and rollback.
+- Keep tenant, identity, entitlement, payment, and webhook boundaries explicit.
+- Separate technical readiness from provider-backed payment and realized revenue evidence.
+
+## Related public surfaces
+
+- [Hardonian profile](https://github.com/Hardonian/Hardonian/blob/main/README.md)
+- [AI Lab Command Center](https://github.com/Hardonian/ai-lab-command-center)
+- [Migration Factory](https://github.com/Hardonian/migration-factory)
+- [AI Automated Systems storefront](https://www.aiautomatedsystems.ca)
+
+## Usage rules
+
+- Keep payer-facing claims factual and sourced from the canonical catalog and current evidence artifacts.
+- Do not publish local paths, credentials, raw logs, customer identifiers, webhook payloads, or private checkout details.
+- Do not call a catalog row, local purchase row, or generated artifact realized revenue without provider correlation.
+- Keep buyer-facing pages focused on outcomes; keep operator routes and internal implementation notes in private runbooks.
 
 ## Changelog
-- 2026-07-06: Initial architecture-playbook content added for public product-page linkage.
+
+- 2026-08-02: Reframed as a public architecture reference and removed internal filesystem-path and route-fulfillment claims.
