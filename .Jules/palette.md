@@ -13,3 +13,7 @@
 ## 2024-07-25 - Contextual Links in Markdown
 **Learning:** Generic template links like "Stripe checkout" or "Hardonian README" create a poor experience for screen reader users navigating via a links list, as the context is lost without surrounding text.
 **Action:** Always provide descriptive context in link text, especially in template-generated content (e.g., "Purchase [Product Name] via Stripe"), to comply with WCAG SC 2.4.4. Apply the same principle to image alt texts for non-decorative images to meet SC 1.1.1.
+
+## 2024-08-05 - Device-Specific Verbs in Documentation
+**Learning:** Using device-specific verbs like "click" assumes users are interacting via a mouse or pointing device. This violates WCAG SC 1.3.3 (Sensory Characteristics) by relying on a specific hardware interaction model. Screen reader users, keyboard navigators, or touch-screen users "select" or "activate" elements, they do not necessarily "click" them.
+**Action:** Always utilize device-agnostic terminology (e.g., "select", "choose", or simply describe the resulting action) when providing instructions to ensure documentation is inclusive of all interaction modalities.
