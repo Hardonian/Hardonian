@@ -39,7 +39,7 @@ The public story is:
 Current local truth is published through the authenticated Command Center endpoint `/api/truth` and the read-only operator artifact `state/truth-latest.json`. The envelope separates technical health, evidence freshness, commercial readiness, and provider-correlated payment evidence.
 
 The commercial rule is strict: catalog rows, local purchase rows, synthetic tests, and delivery-looking records are not reported as realized revenue without independent provider correlation.
-## Technology stack — click a logo
+## Technology stack — select a logo
 
 <p align="center">
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Visit the Python website" /></a>
