@@ -1,0 +1,4 @@
+💡 What: Replaced device-specific language ('click') with device-agnostic language ('select') in the README.md technology stack header. Added critical learning about inclusive language to .Jules/palette.md.
+🎯 Why: To comply with WCAG SC 1.3.3 and ensure documentation does not assume mouse usage, making it more inclusive for users navigating with keyboards, screen readers, or touch devices.
+📸 Before/After: N/A (Text/Markdown copy change only)
+♿ Accessibility: Improves inclusivity by removing assumptions about the user's input device, supporting users on non-pointer devices.
