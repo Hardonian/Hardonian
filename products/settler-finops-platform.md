@@ -15,7 +15,7 @@ Complete reconciliation engine: deterministic matching, marketplace settlement, 
 
 ## Checkout / Buy
 
-- Stripe checkout: Contact for enterprise/implementation pricing
+- [Contact via Email for Settler FinOps Reconciliation Engine enterprise/implementation pricing](mailto:scottrmhardie@gmail.com)
 
 ---
 
