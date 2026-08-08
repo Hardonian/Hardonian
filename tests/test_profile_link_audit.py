@@ -86,5 +86,17 @@ class TestProfileLinkAudit(unittest.TestCase):
             self.assertEqual(code, 0)
             self.assertIn(f"WARN {status} https://example.com", out)
 
+    def test_ssrf_protection(self):
+        code, out = run_script("[SSRF](file:///etc/passwd)")
+        self.assertEqual(code, 1)
+        self.assertIn("FAILURES 1", out)
+        self.assertIn("INVALID_SCHEME", out)
+
+    def test_ssrf_protection(self):
+        code, out = run_script("[SSRF](file:///etc/passwd)")
+        self.assertEqual(code, 1)
+        self.assertIn("FAILURES 1", out)
+        self.assertIn("INVALID_SCHEME", out)
+
 if __name__ == '__main__':
     unittest.main()
