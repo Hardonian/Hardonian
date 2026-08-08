@@ -1,11 +1,7 @@
-**💡 What:**
-Updated the `alt` text of the image-only profile badges and technology stack links in the README to explicitly describe the destination of the link (e.g., "Visit the Python website") rather than just the image content ("Python").
+🎯 **What:** Removed unused, duplicate, and dead code functions from `scripts/profile-link-audit.py` (including `is_local_only` and others before `def audit()`).
 
-**🎯 Why:**
-For screen reader users, when an image is the sole content of a link, the `alt` text serves as the link text. Generically describing the image creates a poor user experience, especially when navigating via a links list. Providing clear, contextual link destinations complies with WCAG SC 2.4.4. Furthermore, because GitHub strips `aria-label` attributes from user-supplied HTML in Markdown, utilizing the `alt` attribute of the inner `<img>` is the standard and necessary way to make these links accessible.
+💡 **Why:** These functions were not being called anywhere in the script. The core logic of the script is contained entirely within the `audit()` function. Removing dead code significantly reduces complexity, removes duplication (e.g. `check_url`, `extract_urls` were defined multiple times), and improves overall maintainability of the file.
 
-**📸 Before/After:**
-*(Visuals remain unchanged. Screen reader output changes from "Python" to "Visit the Python website")*
+✅ **Verification:** Verified by running the existing unit tests (`test_profile_link_audit.py`) which assert that `audit()` behaves correctly for internal and external links.
 
-**♿ Accessibility:**
-Improves screen reader navigation and context for all top-level badge links and technology stack links in the profile README, ensuring compliance with WCAG SC 2.4.4 (Link Purpose In Context).
+✨ **Result:** The script size is reduced by 110 lines of unused functions, leaving only the required imports, `audit()`, and the execution block. All functionality is fully preserved.
