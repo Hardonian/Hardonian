@@ -85,9 +85,6 @@ def get_local_path(raw, root):
             local = root / raw.split('/Hardonian/', 1)[-1]
     return local
 
-def is_local_only(raw):
-    return raw.startswith('products/') or raw.startswith('architecture-playbook/') or raw.startswith('assets/')
-
 def get_target_url(raw):
     if raw.startswith('https://') or raw.startswith('http://'):
         return raw
