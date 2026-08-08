@@ -49,24 +49,6 @@ def resolve_local_or_target(raw: str, root: Path) -> tuple[str | None, Path | No
 
     return target, None
 
-def check_target(target: str, raw: str, fail: list) -> None:
-    try:
-        req = urllib.request.Request(target, headers={'User-Agent': 'Hardonian-profile-audit/1.0'})
-        with urllib.request.urlopen(req, timeout=20) as r:
-            code = r.status
-            if code >= 400 and code not in (403, 429, 530, 999):
-                fail.append((raw, code, r.headers.get('content-type', '')))
-            print(f'OK {code} {raw}')
-    except urllib.error.HTTPError as e:
-        if e.code in (403, 429, 530, 999):
-            print(f'WARN {e.code} {raw}')
-        else:
-            fail.append((raw, e.code, str(e)))
-            print(f'FAIL {e.code} {raw}')
-    except Exception as e:
-        fail.append((raw, 'ERROR', str(e)))
-        print(f'FAIL ERROR {raw}: {e}')
-
 def extract_urls(text):
     urls = []
     pattern = r'!\[[^]]*\]\(([^)]+)\)|\[[^]]*\]\(([^)]+)\)|<(?:a|img)[^>]+(?:href|src)=["\']([^"\']+)'
