@@ -7,6 +7,8 @@ from urllib.parse import urljoin
 import concurrent.futures
 
 def check_url(raw, target):
+    if not target.startswith(('http://', 'https://')):
+        return ('fail', (raw, 'INVALID_SCHEME', 'Only http and https are allowed'))
     try:
         req=urllib.request.Request(target,headers={'User-Agent':'Hardonian-profile-audit/1.0'})
         with urllib.request.urlopen(req,timeout=20) as r:
@@ -50,6 +52,9 @@ def resolve_local_or_target(raw: str, root: Path) -> tuple[str | None, Path | No
     return target, None
 
 def check_target(target: str, raw: str, fail: list) -> None:
+    if not target.startswith(('http://', 'https://')):
+        fail.append((raw, 'INVALID_SCHEME', 'Only http and https are allowed'))
+        return
     try:
         req = urllib.request.Request(target, headers={'User-Agent': 'Hardonian-profile-audit/1.0'})
         with urllib.request.urlopen(req, timeout=20) as r:
@@ -98,6 +103,8 @@ def get_target_url(raw):
     return target
 
 def check_url(target, raw):
+    if not target.startswith(('http://', 'https://')):
+        return (raw, 'INVALID_SCHEME', 'Only http and https are allowed')
     req = urllib.request.Request(target, headers={'User-Agent': 'Hardonian-profile-audit/1.0'})
     try:
         with urllib.request.urlopen(req, timeout=20) as r:
@@ -148,6 +155,9 @@ def audit():
             if raw.startswith('/Hardonian/'):
                 target='https://github.com'+raw
         try:
+            if not target.startswith(('http://', 'https://')):
+                fail.append((raw, 'INVALID_SCHEME', 'Only http and https are allowed'))
+                continue
             req=urllib.request.Request(target,headers={'User-Agent':'Hardonian-profile-audit/1.0'})
             with urllib.request.urlopen(req,timeout=20) as r:
                 code=r.status
