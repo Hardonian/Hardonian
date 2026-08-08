@@ -67,15 +67,6 @@ def check_target(target: str, raw: str, fail: list) -> None:
         fail.append((raw, 'ERROR', str(e)))
         print(f'FAIL ERROR {raw}: {e}')
 
-def extract_urls(text):
-    urls = []
-    pattern = r'!\[[^]]*\]\(([^)]+)\)|\[[^]]*\]\(([^)]+)\)|<(?:a|img)[^>]+(?:href|src)=["\']([^"\']+)'
-    for m in re.finditer(pattern, text):
-        u = next((x for x in m.groups() if x), '')
-        if u:
-            urls.append(u.strip().split(' ')[0])
-    return urls
-
 def get_local_path(raw, root):
     local = (root / raw.lstrip('/')).resolve()
     if raw.startswith('/') and raw.startswith('/Hardonian/'):
