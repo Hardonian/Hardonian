@@ -1,3 +1,4 @@
-💡 **What:** Replaced the discarded list comprehension `[print(x) for x in fail]` with a traditional `for` loop in `scripts/profile-link-audit.py` to process failure entries.
-🎯 **Why:** The list comprehension was creating an unnecessary list of `None` values in memory just to execute the side-effect of calling `print()`. A standard `for` loop accomplishes the same outcome without the needless allocation overhead.
-📊 **Measured Improvement:** Investigating the list comprehension behavior versus a loop showed a peak memory reduction from ~1.4MB to ~0.6MB when generating side effects for an arbitrary list of 100,000 items (tested using `tracemalloc`).
+🎯 **What:** Removed the duplicated `extract_urls` function from `scripts/profile-link-audit.py`.
+💡 **Why:** The `extract_urls` function was defined twice (at lines 25 and 70). Removing the duplicate improves code readability and maintainability without altering functionality.
+✅ **Verification:** Ran the full test suite (`python -m unittest discover -s tests`) before and after the change to ensure no regressions were introduced.
+✨ **Result:** A cleaner codebase with the redundant function definition removed.
