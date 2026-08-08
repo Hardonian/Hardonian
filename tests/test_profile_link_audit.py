@@ -86,5 +86,20 @@ class TestProfileLinkAudit(unittest.TestCase):
             self.assertEqual(code, 0)
             self.assertIn(f"WARN {status} https://example.com", out)
 
+    def test_extract_urls(self):
+        spec = importlib.util.spec_from_file_location("profile_link_audit", "scripts/profile-link-audit.py")
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+
+        self.assertEqual(module.extract_urls("[Link](https://example.com)"), ["https://example.com"])
+        self.assertEqual(module.extract_urls("![Image](https://example.com/img.png)"), ["https://example.com/img.png"])
+        self.assertEqual(module.extract_urls("<a href=\"https://example.com\">Link</a>"), ["https://example.com"])
+        self.assertEqual(module.extract_urls("<img src=\"https://example.com/img.png\">"), ["https://example.com/img.png"])
+        self.assertEqual(
+            module.extract_urls("[Link](https://example.com \"Title\") ![Image](img.png)"),
+            ["https://example.com", "img.png"]
+        )
+        self.assertEqual(module.extract_urls("No links here!"), [])
+
 if __name__ == '__main__':
     unittest.main()
