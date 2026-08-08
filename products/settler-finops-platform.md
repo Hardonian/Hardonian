@@ -15,7 +15,7 @@ Complete reconciliation engine: deterministic matching, marketplace settlement, 
 
 ## Checkout / Buy
 
-- Stripe checkout: Contact for enterprise/implementation pricing
+- [Contact for enterprise/implementation pricing via Email](mailto:scottrmhardie@gmail.com)
 
 ---
 
