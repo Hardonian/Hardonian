@@ -1,0 +1,4 @@
+🎯 **What:** Removed unused and duplicate helper functions from `scripts/profile-link-audit.py` (`check_url`, `extract_urls`, `resolve_local_or_target`, `check_target`, `get_local_path`, `is_local_only`, `get_target_url`).
+💡 **Why:** The script implements all its URL checking logic directly within the main `audit()` function. Keeping these unused, duplicate, and isolated helper functions clutters the file, creating confusion and making it harder to maintain. Removing dead code improves code health, maintainability, and readability.
+✅ **Verification:** Verified that the test suite passes successfully and the script can still run effectively against the README without any regressions. Link auditing still works perfectly as before.
+✨ **Result:** Cleaned up the script significantly by removing over 100 lines of unused dead code.
