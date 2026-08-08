@@ -88,3 +88,26 @@ class TestProfileLinkAudit(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+class TestGetLocalPath(unittest.TestCase):
+    def setUp(self):
+        spec = importlib.util.spec_from_file_location("profile_link_audit", "scripts/profile-link-audit.py")
+        self.module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(self.module)
+
+    def test_get_local_path(self):
+        root = Path('/my/root')
+        test_cases = [
+            ("products/test.md", "/my/root/products/test.md"),
+            ("/products/test.md", "/my/root/products/test.md"),
+            ("/Hardonian/project/tree/main/docs/api.md", "/my/root/docs/api.md"),
+            ("/Hardonian/other-repo/blob/main/README.md", "/my/root/other-repo/blob/main/README.md"),
+            ("/Hardonian/Hardonian/tree/main/architecture-playbook/index.md", "/my/root/architecture-playbook/index.md"),
+            ("assets/image.png", "/my/root/assets/image.png"),
+            ("/assets/image.png", "/my/root/assets/image.png"),
+        ]
+
+        for raw, expected in test_cases:
+            with self.subTest(raw=raw):
+                result = self.module.get_local_path(raw, root)
+                self.assertEqual(result, Path(expected))
