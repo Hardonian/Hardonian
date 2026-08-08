@@ -76,14 +76,6 @@ def extract_urls(text):
             urls.append(u.strip().split(' ')[0])
     return urls
 
-def get_local_path(raw, root):
-    local = (root / raw.lstrip('/')).resolve()
-    if raw.startswith('/') and raw.startswith('/Hardonian/'):
-        if '/tree/main/' in raw:
-            local = root / raw.split('/tree/main/', 1)[-1]
-        else:
-            local = root / raw.split('/Hardonian/', 1)[-1]
-    return local
 
 def is_local_only(raw):
     return raw.startswith('products/') or raw.startswith('architecture-playbook/') or raw.startswith('assets/')
