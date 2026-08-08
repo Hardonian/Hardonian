@@ -1,0 +1,3 @@
+🎯 **What:** Added a test to verify `check_url` correctly handles generic exceptions.
+📊 **Coverage:** Added coverage for the generic exception block in `check_url` by mocking `urllib.request.urlopen`.
+✨ **Result:** Increased test suite reliability by ensuring unexpected HTTP request failures return the expected error tuple without crashing.

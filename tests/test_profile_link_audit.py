@@ -86,5 +86,19 @@ class TestProfileLinkAudit(unittest.TestCase):
             self.assertEqual(code, 0)
             self.assertIn(f"WARN {status} https://example.com", out)
 
+    @patch('urllib.request.urlopen')
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_check_url_generic_exception(self, mock_stdout, mock_urlopen):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("profile_link_audit", "scripts/profile-link-audit.py")
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+
+        mock_urlopen.side_effect = Exception("test generic error")
+        result = module.check_url("https://example.com", "https://example.com")
+
+        self.assertEqual(result, ("https://example.com", "ERROR", "test generic error"))
+        self.assertIn("FAIL ERROR https://example.com: test generic error", mock_stdout.getvalue())
+
 if __name__ == '__main__':
     unittest.main()
