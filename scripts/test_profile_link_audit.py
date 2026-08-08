@@ -100,5 +100,17 @@ class TestProfileLinkAudit(unittest.TestCase):
         # Verify that the audit did not exit with failure
         mock_exit.assert_not_called()
 
+    @patch('profile_link_audit.urllib.request.urlopen')
+    @patch('profile_link_audit.sys.exit')
+    @patch('profile_link_audit.Path.read_text')
+    def test_invalid_scheme_rejection(self, mock_read_text, mock_exit, mock_urlopen):
+        mock_read_text.return_value = "Here is a test URL: [test](file:///etc/passwd)"
+        with patch('sys.stdout', new=io.StringIO()) as fake_out:
+            profile_link_audit.audit()
+        # Urlopen should not be called since scheme is rejected
+        mock_urlopen.assert_not_called()
+        # Script should exit with error since file:// isn't allowed
+        mock_exit.assert_called_once_with(1)
+
 if __name__ == '__main__':
     unittest.main()

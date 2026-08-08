@@ -7,6 +7,8 @@ from urllib.parse import urljoin
 import concurrent.futures
 
 def check_url(raw, target):
+    if not target.startswith(('http://', 'https://')):
+        return ('fail_err', (raw, 'INVALID_SCHEME', 'Target URL must use http or https'), f'FAIL INVALID_SCHEME {raw}')
     try:
         req=urllib.request.Request(target,headers={'User-Agent':'Hardonian-profile-audit/1.0'})
         with urllib.request.urlopen(req,timeout=20) as r:
@@ -50,6 +52,10 @@ def resolve_local_or_target(raw: str, root: Path) -> tuple[str | None, Path | No
     return target, None
 
 def check_target(target: str, raw: str, fail: list) -> None:
+    if not target.startswith(('http://', 'https://')):
+        fail.append((raw, 'INVALID_SCHEME', 'Target URL must use http or https'))
+        print(f'FAIL INVALID_SCHEME {raw}')
+        return
     try:
         req = urllib.request.Request(target, headers={'User-Agent': 'Hardonian-profile-audit/1.0'})
         with urllib.request.urlopen(req, timeout=20) as r:
@@ -98,6 +104,9 @@ def get_target_url(raw):
     return target
 
 def check_url(target, raw):
+    if not target.startswith(('http://', 'https://')):
+        print(f'FAIL INVALID_SCHEME {raw}')
+        return (raw, 'INVALID_SCHEME', 'Target URL must use http or https')
     req = urllib.request.Request(target, headers={'User-Agent': 'Hardonian-profile-audit/1.0'})
     try:
         with urllib.request.urlopen(req, timeout=20) as r:
@@ -147,6 +156,10 @@ def audit():
             target=urljoin('https://github.com/Hardonian/Hardonian/blob/main/', raw)
             if raw.startswith('/Hardonian/'):
                 target='https://github.com'+raw
+        if not target.startswith(('http://', 'https://')):
+            fail.append((raw, 'INVALID_SCHEME', 'Target URL must use http or https'))
+            print(f'FAIL INVALID_SCHEME {raw}')
+            continue
         try:
             req=urllib.request.Request(target,headers={'User-Agent':'Hardonian-profile-audit/1.0'})
             with urllib.request.urlopen(req,timeout=20) as r:
