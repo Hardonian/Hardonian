@@ -4,7 +4,6 @@ import urllib.request
 import urllib.error
 from pathlib import Path
 from urllib.parse import urljoin
-import concurrent.futures
 
 def check_url(raw, target):
     try:
