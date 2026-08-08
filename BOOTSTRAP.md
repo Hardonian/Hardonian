@@ -1,4 +1,4 @@
-# Bootstrap (few clicks)
+# Bootstrap (few steps)
 
 This repo is bootstrap-ready. Pick your stack below.
 

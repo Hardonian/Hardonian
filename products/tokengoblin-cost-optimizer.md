@@ -15,7 +15,7 @@ Real-time token measurement + intelligent routing + cost dashboards. Go binary f
 
 ## Checkout / Buy
 
-- Stripe checkout: Contact for enterprise/implementation pricing
+- [Contact for enterprise/implementation pricing via Email](mailto:scottrmhardie@gmail.com)
 
 ---
 

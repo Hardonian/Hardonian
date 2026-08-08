@@ -15,7 +15,7 @@ Curated reproducible notebook packs: RAG evaluation, agent benchmarks, prompt op
 
 ## Checkout / Buy
 
-- Stripe checkout: Contact for bundle/subscription setup
+- [Contact for bundle/subscription setup via Email](mailto:scottrmhardie@gmail.com)
 
 ---
 
