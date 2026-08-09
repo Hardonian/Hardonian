@@ -13,3 +13,7 @@
 ## 2024-07-25 - Contextual Links in Markdown
 **Learning:** Generic template links like "Stripe checkout" or "Hardonian README" create a poor experience for screen reader users navigating via a links list, as the context is lost without surrounding text.
 **Action:** Always provide descriptive context in link text, especially in template-generated content (e.g., "Purchase [Product Name] via Stripe"), to comply with WCAG SC 2.4.4. Apply the same principle to image alt texts for non-decorative images to meet SC 1.1.1.
+
+## 2024-07-26 - Device-Agnostic Language
+**Learning:** Using device-specific verbs like "click" assumes users are using a mouse. This is an accessibility and inclusivity anti-pattern that alienates touch-screen and keyboard-only users.
+**Action:** Always use device-agnostic verbs (e.g., "select", "choose") or omit the verb entirely to ensure instructions are inclusive of all input modalities.
