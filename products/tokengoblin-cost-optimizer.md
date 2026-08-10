@@ -15,7 +15,7 @@ Real-time token measurement + intelligent routing + cost dashboards. Go binary f
 
 ## Checkout / Buy
 
-- Stripe checkout: Contact for enterprise/implementation pricing
+- [Contact for TokenGoblin LLM Cost Optimizer enterprise/implementation pricing](mailto:scottrmhardie@gmail.com)
 
 ---
 
