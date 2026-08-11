@@ -1,0 +1,8 @@
+🎯 **What:**
+Fixed an SSRF and Arbitrary File Read vulnerability in `scripts/profile-link-audit.py` by ensuring all requested URLs strictly use the `http://` or `https://` schemes before calling `urllib.request.urlopen`.
+
+⚠️ **Risk:**
+Without scheme validation, `urllib.request.urlopen` can open `file://` schemes, allowing a malicious markdown file or link to trick the audit script into reading arbitrary local files (e.g., `/etc/passwd` or credentials) or accessing internal services (SSRF) when run locally or in CI environments.
+
+🛡️ **Solution:**
+Added checks `if not target.startswith(('http://', 'https://')):` before every `urllib.request.Request` instantiation. Added a test case in `scripts/test_profile_link_audit.py` to verify that `file://` schemes are correctly rejected without attempting to fetch them.
