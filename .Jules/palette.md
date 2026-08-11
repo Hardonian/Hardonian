@@ -17,3 +17,7 @@
 ## 2024-07-26 - Device-Agnostic Language
 **Learning:** Using device-specific verbs like "click" assumes users are using a mouse. This is an accessibility and inclusivity anti-pattern that alienates touch-screen and keyboard-only users.
 **Action:** Always use device-agnostic verbs (e.g., "select", "choose") or omit the verb entirely to ensure instructions are inclusive of all input modalities.
+
+## 2024-08-11 - Actionable Contact Links
+**Learning:** Bare `mailto:` links without context or pre-filled fields create unnecessary friction for users reaching out for enterprise/setup pricing, often leading to drop-off or vague initial emails.
+**Action:** Always pre-fill `mailto:` links with descriptive `subject` parameters (e.g., `?subject=Inquiry:%20Product%20Name`) to lower the cognitive load for the user and streamline the support/sales pipeline.
