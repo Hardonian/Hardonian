@@ -1,174 +1,127 @@
-import re
-import sys
-import urllib.request
-import urllib.error
-from pathlib import Path
-from urllib.parse import urljoin
 import concurrent.futures
+import ipaddress
+import re
+import socket
+import sys
+import urllib.error
+import urllib.request
+from pathlib import Path
+from urllib.parse import urljoin, urlparse
 
-def check_url(raw, target):
-    try:
-        req=urllib.request.Request(target,headers={'User-Agent':'Hardonian-profile-audit/1.0'})
-        with urllib.request.urlopen(req,timeout=20) as r:
-            code=r.status
-            if code >= 400 and code not in (403,429,530,999):
-                return ('fail', (raw,code,r.headers.get('content-type','')))
-            return ('ok', f'OK {code} {raw}')
-    except urllib.error.HTTPError as e:
-        if e.code in (403,429,530,999):
-            return ('warn', f'WARN {e.code} {raw}')
-        else:
-            return ('fail_err', (raw,e.code,str(e)), f'FAIL {e.code} {raw}')
-    except Exception as e:
-        return ('error', (raw,'ERROR',str(e)), f'FAIL ERROR {raw}: {e}')
+ALLOWED_WARNING_CODES = {403, 429, 530, 999}
+USER_AGENT = "Hardonian-profile-audit/1.0"
+
+
+class UnsafeURL(ValueError):
+    pass
+
 
 def extract_urls(text: str) -> list[str]:
-    urls = []
     pattern = r'!\[[^]]*\]\(([^)]+)\)|\[[^]]*\]\(([^)]+)\)|<(?:a|img)[^>]+(?:href|src)=["\']([^"\']+)'
-    for m in re.finditer(pattern, text):
-        u = next((x for x in m.groups() if x), '')
-        if u:
-            urls.append(u.strip().split(' ')[0])
+    urls = []
+    for match in re.finditer(pattern, text):
+        value = next((item for item in match.groups() if item), "")
+        if value:
+            urls.append(value.strip().split(" ")[0])
     return urls
 
-def resolve_local_or_target(raw: str, root: Path) -> tuple[str | None, Path | None]:
-    if raw.startswith('https://') or raw.startswith('http://'):
+
+def validate_public_http_url(target: str) -> None:
+    parsed = urlparse(target)
+    if parsed.scheme not in {"http", "https"} or not parsed.hostname:
+        raise UnsafeURL(f"unsupported URL: {target}")
+    try:
+        addresses = socket.getaddrinfo(parsed.hostname, parsed.port or (443 if parsed.scheme == "https" else 80))
+    except socket.gaierror as exc:
+        raise UnsafeURL(f"DNS resolution failed for {parsed.hostname}: {exc}") from exc
+    for address in {entry[4][0] for entry in addresses}:
+        ip = ipaddress.ip_address(address)
+        if not ip.is_global:
+            raise UnsafeURL(f"non-public address blocked for {parsed.hostname}: {ip}")
+
+
+class ValidatingRedirectHandler(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        validate_public_http_url(newurl)
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+def resolve_link(raw: str, root: Path) -> tuple[str | None, Path | None]:
+    if raw.startswith(("http://", "https://")):
         return raw, None
 
-    local = (root / raw.lstrip('/')).resolve()
-    if raw.startswith('/') and raw.startswith('/Hardonian/'):
-        local_suffix = raw.split('/tree/main/', 1)[-1] if '/tree/main/' in raw else raw.split('/Hardonian/', 1)[-1]
-        local = root / local_suffix
+    root = root.resolve()
+    local_suffix = raw.lstrip("/")
+    if raw.startswith("/Hardonian/"):
+        local_suffix = raw.split("/tree/main/", 1)[-1] if "/tree/main/" in raw else raw.split("/Hardonian/", 1)[-1]
+    local = (root / local_suffix).resolve()
 
-    if raw.startswith('products/') or raw.startswith('architecture-playbook/') or raw.startswith('assets/'):
+    if raw.startswith(("products/", "architecture-playbook/", "assets/", "/Hardonian/")):
+        if not local.is_relative_to(root):
+            raise UnsafeURL(f"local path escapes repository: {raw}")
         return None, local
 
-    target = urljoin('https://github.com/Hardonian/Hardonian/blob/main/', raw)
-    if raw.startswith('/Hardonian/'):
-        target = 'https://github.com' + raw
+    return urljoin("https://github.com/Hardonian/Hardonian/blob/main/", raw), None
 
-    return target, None
 
-def check_target(target: str, raw: str, fail: list) -> None:
+def check_url(raw: str, target: str) -> tuple[str, tuple | str]:
     try:
-        req = urllib.request.Request(target, headers={'User-Agent': 'Hardonian-profile-audit/1.0'})
-        with urllib.request.urlopen(req, timeout=20) as r:
-            code = r.status
-            if code >= 400 and code not in (403, 429, 530, 999):
-                fail.append((raw, code, r.headers.get('content-type', '')))
-            print(f'OK {code} {raw}')
-    except urllib.error.HTTPError as e:
-        if e.code in (403, 429, 530, 999):
-            print(f'WARN {e.code} {raw}')
-        else:
-            fail.append((raw, e.code, str(e)))
-            print(f'FAIL {e.code} {raw}')
-    except Exception as e:
-        fail.append((raw, 'ERROR', str(e)))
-        print(f'FAIL ERROR {raw}: {e}')
+        validate_public_http_url(target)
+        opener = urllib.request.build_opener(ValidatingRedirectHandler())
+        request = urllib.request.Request(target, headers={"User-Agent": USER_AGENT})
+        with opener.open(request, timeout=20) as response:
+            code = response.status
+            if code >= 400 and code not in ALLOWED_WARNING_CODES:
+                return "fail", (raw, code, response.headers.get("content-type", ""))
+            return "ok", f"OK {code} {raw}"
+    except urllib.error.HTTPError as exc:
+        if exc.code in ALLOWED_WARNING_CODES:
+            return "warn", f"WARN {exc.code} {raw}"
+        return "fail", (raw, exc.code, str(exc))
+    except Exception as exc:
+        return "fail", (raw, "ERROR", str(exc))
 
-def extract_urls(text):
-    urls = []
-    pattern = r'!\[[^]]*\]\(([^)]+)\)|\[[^]]*\]\(([^)]+)\)|<(?:a|img)[^>]+(?:href|src)=["\']([^"\']+)'
-    for m in re.finditer(pattern, text):
-        u = next((x for x in m.groups() if x), '')
-        if u:
-            urls.append(u.strip().split(' ')[0])
-    return urls
 
-def get_local_path(raw, root):
-    local = (root / raw.lstrip('/')).resolve()
-    if raw.startswith('/') and raw.startswith('/Hardonian/'):
-        if '/tree/main/' in raw:
-            local = root / raw.split('/tree/main/', 1)[-1]
-        else:
-            local = root / raw.split('/Hardonian/', 1)[-1]
-    return local
+def audit(readme: Path = Path("README.md")) -> int:
+    root = readme.parent.resolve()
+    urls = list(dict.fromkeys(extract_urls(readme.read_text())))
+    failures = []
+    external = []
 
-def is_local_only(raw):
-    return raw.startswith('products/') or raw.startswith('architecture-playbook/') or raw.startswith('assets/')
-
-def get_target_url(raw):
-    if raw.startswith('https://') or raw.startswith('http://'):
-        return raw
-
-    target = urljoin('https://github.com/Hardonian/Hardonian/blob/main/', raw)
-    if raw.startswith('/Hardonian/'):
-        target = 'https://github.com' + raw
-    return target
-
-def check_url(target, raw):
-    req = urllib.request.Request(target, headers={'User-Agent': 'Hardonian-profile-audit/1.0'})
-    try:
-        with urllib.request.urlopen(req, timeout=20) as r:
-            code = r.status
-            if code >= 400 and code not in (403, 429, 530, 999):
-                return (raw, code, r.headers.get('content-type', ''))
-            print(f'OK {code} {raw}')
-    except urllib.error.HTTPError as e:
-        if e.code in (403, 429, 530, 999):
-            print(f'WARN {e.code} {raw}')
-        else:
-            print(f'FAIL {e.code} {raw}')
-            return (raw, e.code, str(e))
-    except Exception as e:
-        print(f'FAIL ERROR {raw}: {e}')
-        return (raw, 'ERROR', str(e))
-    return None
-
-def audit():
-    root=Path('.')
-    text=Path('README.md').read_text()
-    urls=[]
-    for m in re.finditer(r'!\[[^]]*\]\(([^)]+)\)|\[[^]]*\]\(([^)]+)\)|<(?:a|img)[^>]+(?:href|src)=["\']([^"\']+)',text):
-        u=next((x for x in m.groups() if x), '')
-        if u:
-            urls.append(u.strip().split(' ')[0])
-    fail=[]
-    seen=set()
     for raw in urls:
-        if raw in seen or raw.startswith('#'):
+        if raw.startswith(("#", "mailto:")):
             continue
-        seen.add(raw)
-        if raw.startswith('mailto:'):
-            continue
-        if raw.startswith('https://') or raw.startswith('http://'):
-            target=raw
-        else:
-            local=(root/raw.lstrip('/')).resolve()
-            if raw.startswith('/') and raw.startswith('/Hardonian/'):
-                local=root/(raw.split('/tree/main/',1)[-1] if '/tree/main/' in raw else raw.split('/Hardonian/',1)[-1])
-            if raw.startswith('products/') or raw.startswith('architecture-playbook/') or raw.startswith('assets/'):
-                if not local.exists():
-                    fail.append((raw,'LOCAL_MISSING',str(local)))
-                    continue
-                print(f'LOCAL 200 {raw}')
-                continue
-            target=urljoin('https://github.com/Hardonian/Hardonian/blob/main/', raw)
-            if raw.startswith('/Hardonian/'):
-                target='https://github.com'+raw
         try:
-            req=urllib.request.Request(target,headers={'User-Agent':'Hardonian-profile-audit/1.0'})
-            with urllib.request.urlopen(req,timeout=20) as r:
-                code=r.status
-                if code >= 400 and code not in (403,429,530,999):
-                    fail.append((raw,code,r.headers.get('content-type','')))
-                print(f'OK {code} {raw}')
-        except urllib.error.HTTPError as e:
-            if e.code in (403,429,530,999):
-                print(f'WARN {e.code} {raw}')
+            target, local = resolve_link(raw, root)
+        except UnsafeURL as exc:
+            failures.append((raw, "UNSAFE", str(exc)))
+            continue
+        if local is not None:
+            if not local.exists():
+                failures.append((raw, "LOCAL_MISSING", str(local)))
             else:
-                fail.append((raw,e.code,str(e)))
-                print(f'FAIL {e.code} {raw}')
-        except Exception as e:
-            fail.append((raw,'ERROR',str(e)))
-            print(f'FAIL ERROR {raw}: {e}')
-    if fail:
-        print('FAILURES',len(fail))
-        for x in fail:
-            print(x)
-        sys.exit(1)
-    print(f'CHECKED {len(seen)} UNIQUE_LINKS_AND_IMAGES; FAILURES 0')
+                print(f"LOCAL 200 {raw}")
+        elif target is not None:
+            external.append((raw, target))
 
-if __name__ == '__main__':
-    audit()
+    with concurrent.futures.ThreadPoolExecutor(max_workers=min(8, max(1, len(external)))) as pool:
+        futures = {pool.submit(check_url, raw, target): raw for raw, target in external}
+        for future in concurrent.futures.as_completed(futures):
+            status, detail = future.result()
+            if status == "fail":
+                failures.append(detail)
+                print(f"FAIL {detail[1]} {detail[0]}")
+            else:
+                print(detail)
+
+    if failures:
+        print("FAILURES", len(failures))
+        for failure in failures:
+            print(failure)
+        return 1
+    print(f"CHECKED {len(urls)} UNIQUE_LINKS_AND_IMAGES; FAILURES 0")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(audit())
