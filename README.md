@@ -176,6 +176,6 @@ These public pages describe real artifacts in this repository. Availability, pri
 - [Connect with Scott Hardie on LinkedIn](https://www.linkedin.com/in/scottrmhardie/)
 - [Visit the AI Automated Systems website](https://www.aiautomatedsystems.ca)
 - [View Scott Hardie's GitHub profile](https://github.com/Hardonian)
-- [Email Scott Hardie](mailto:scottrmhardie@gmail.com)
+- [Email Scott Hardie](mailto:scottrmhardie@gmail.com?subject=Inquiry:%20GitHub%20Profile)
 
 > If you are building a serious AI, SaaS, integration, or operations system, start with a specific problem, a measurable outcome, and a verifiable path to production.
