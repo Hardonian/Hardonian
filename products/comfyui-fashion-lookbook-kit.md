@@ -1,6 +1,6 @@
 # ComfyUI Fashion Lookbook Kit
 
-![comfyui-fashion-lookbook-kit sample](assets/comfyui-fashion-lookbook-kit.png)
+![Product preview for ComfyUI Fashion Lookbook Kit](assets/comfyui-fashion-lookbook-kit.png)
 Build stylized fictional lookbook imagery with repeatable composition and upscale passes.
 
 **Price:** $69 creator pack / $149 agency pack
@@ -17,10 +17,10 @@ Txt2img + img2img + upscale workflow bundle, look presets, composition notes, pr
 
 ## Checkout / Buy
 
-- [Stripe checkout](https://buy.stripe.com/dRm4gy6bu5dO48G7exb3q0o)
+- [Purchase ComfyUI Fashion Lookbook Kit via Stripe](https://buy.stripe.com/dRm4gy6bu5dO48G7exb3q0o)
 
-- [Gumroad](https://scottrmhardie.gumroad.com/l/ictrbg)
+- [Purchase ComfyUI Fashion Lookbook Kit via Gumroad](https://scottrmhardie.gumroad.com/l/ictrbg)
 
 ---
 
-Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+[View source product page in Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)

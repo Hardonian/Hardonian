@@ -1,6 +1,6 @@
 # Local AI Lab Audit
 
-![local-ai-lab-audit sample](assets/local-ai-lab-audit.png)
+![Product preview for Local AI Lab Audit](assets/local-ai-lab-audit.png)
 Find and fix the hidden bottlenecks in your local AI lab in one day.
 
 **Price:** $499 fixed / $997 with implementation day
@@ -15,8 +15,8 @@ PDF/Markdown audit report, ranked fixes, APVA ROI estimate, optional dashboard s
 
 ## Checkout / Buy
 
-- [Stripe checkout](https://buy.stripe.com/7sYaEW9nG6hSdJggP7b3q0i)
+- [Purchase Local AI Lab Audit via Stripe](https://buy.stripe.com/7sYaEW9nG6hSdJggP7b3q0i)
 
 ---
 
-Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+[View source product page in Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)

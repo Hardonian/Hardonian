@@ -1,6 +1,6 @@
 # Prompt Engineering Laboratory
 
-![prompt-engineering-laboratory sample](assets/prompt-engineering-laboratory.png)
+![Product preview for Prompt Engineering Laboratory](assets/prompt-engineering-laboratory.png)
 Turn random prompting into precision results with lab-tested templates.
 
 **Price:** $39 one-time
@@ -15,8 +15,8 @@ No systematic way to measure prompt effectiveness or build reusable libraries.
 
 ## Checkout / Buy
 
-- [Stripe checkout](https://buy.stripe.com/fZufZg9nGbCc0WufL3b3q0t)
+- [Purchase Prompt Engineering Laboratory via Stripe](https://buy.stripe.com/fZufZg9nGbCc0WufL3b3q0t)
 
 ---
 
-Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+[View source product page in Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)

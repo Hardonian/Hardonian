@@ -1,6 +1,6 @@
 # AI Voice Clone Training Kit
 
-![ai-voice-clone-training-kit sample](assets/ai-voice-clone-training-kit.png)
+![Product preview for AI Voice Clone Training Kit](assets/ai-voice-clone-training-kit.png)
 Train your own voice clone locally with consent-only workflows and audio processing.
 
 **Price:** $89 one-time
@@ -15,8 +15,8 @@ Local voice training workflow, consent template, audio preprocessing scripts, le
 
 ## Checkout / Buy
 
-- [Stripe checkout](https://buy.stripe.com/bJeeVc7fy35GgVs6atb3q0v)
+- [Purchase AI Voice Clone Training Kit via Stripe](https://buy.stripe.com/bJeeVc7fy35GgVs6atb3q0v)
 
 ---
 
-Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+[View source product page in Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)

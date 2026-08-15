@@ -1,6 +1,6 @@
 # TokenGoblin LLM Cost Optimizer
 
-![tokengoblin-cost-optimizer sample](assets/tokengoblin-cost-optimizer.png)
+![Product preview for TokenGoblin LLM Cost Optimizer](assets/tokengoblin-cost-optimizer.png)
 Stop LLM bill shock: real-time token measurement, smart routing, and cost optimization in one binary.
 
 **Price:** $1,499 self-serve / $5,000 enterprise / $299/mo managed
@@ -15,8 +15,8 @@ Real-time token measurement + intelligent routing + cost dashboards. Go binary f
 
 ## Checkout / Buy
 
-- Stripe checkout: Contact for enterprise/implementation pricing
+- [Contact via Email for TokenGoblin LLM Cost Optimizer enterprise/implementation pricing](mailto:scottrmhardie@gmail.com)
 
 ---
 
-Source product page in repo: [Hardonian README](https://github.com/Hardonian/Hardonian)
+[View source product page in Scott Hardie's Profile README](https://github.com/Hardonian/Hardonian)
