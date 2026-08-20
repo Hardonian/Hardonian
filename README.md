@@ -43,7 +43,7 @@ I turn complex AI, SaaS, integration, and revenue workflows into systems people 
 | Compute | GPU job API, credit accounting, signed delivery | Authenticated, bounded, auditable |
 | Monitoring | Disk watchdog, service health, self-heal | 6h disk budget, auto-restart |
 
-## Technology stack — click a logo
+## Technology stack — select a logo
 
 <p align="center">
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /></a>

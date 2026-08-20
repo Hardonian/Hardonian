@@ -16,6 +16,7 @@ Installable local FastAPI dashboard, verify script, systemd service, browser smo
 ## Checkout / Buy
 
 - [Purchase AI Command Center Setup via Stripe](https://buy.stripe.com/9B68wO57qbCc7kSeGZb3q0j)
+- [Contact via Email for AI Command Center done-for-you setup](mailto:scottrmhardie@gmail.com?subject=Inquiry:%20AI%20Command%20Center%20done-for-you%20setup)
 
 ---
 
