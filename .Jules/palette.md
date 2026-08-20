@@ -17,3 +17,7 @@
 ## 2024-07-26 - Device-Agnostic Language
 **Learning:** Using device-specific verbs like "click" assumes users are using a mouse. This is an accessibility and inclusivity anti-pattern that alienates touch-screen and keyboard-only users.
 **Action:** Always use device-agnostic verbs (e.g., "select", "choose") or omit the verb entirely to ensure instructions are inclusive of all input modalities.
+
+## 2024-07-27 - Actionable Enterprise Pricing
+**Learning:** Users interested in high-ticket items like "done-for-you" or "implementation day" setups often experience friction when only a standard checkout link is provided without a direct consultation option.
+**Action:** Always pair high-ticket pricing tiers with descriptive, pre-filled `mailto:` links to provide an immediate, actionable contact method, reducing friction for enterprise inquiries.
