@@ -18,8 +18,8 @@
         })
     }).catch(() => {});
 
-    // Track checkout clicks
-    document.addEventListener('click', function(e) {
+    // Track checkout interactions (clicks and keyboard)
+    function trackCheckout(e) {
         const link = e.target.closest('a[href*="buy.stripe.com"], a[href*="checkout"]');
         if (link) {
             const slug = window.location.pathname.split('/').pop() || 'unknown';
@@ -27,12 +27,18 @@
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
-                    event: 'checkout_click',
+                    event: 'checkout_interaction',
                     product_slug: slug,
                     checkout_url: link.href,
                     session_id: sessionId,
                 })
             }).catch(() => {});
+        }
+    }
+    document.addEventListener('click', trackCheckout);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            trackCheckout(e);
         }
     });
 })();
