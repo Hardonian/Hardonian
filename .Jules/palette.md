@@ -17,3 +17,7 @@
 ## 2024-07-26 - Device-Agnostic Language
 **Learning:** Using device-specific verbs like "click" assumes users are using a mouse. This is an accessibility and inclusivity anti-pattern that alienates touch-screen and keyboard-only users.
 **Action:** Always use device-agnostic verbs (e.g., "select", "choose") or omit the verb entirely to ensure instructions are inclusive of all input modalities.
+
+## 2024-07-27 - Keyboard Navigation for Analytics
+**Learning:** Relying solely on `click` events for interaction tracking (e.g., checkout clicks) misses keyboard interactions (like pressing Enter on a focused link), which means analytics data excludes keyboard-only and screen reader users.
+**Action:** Always listen for both `click` and `keydown` (specifically the Enter and Space keys) when manually tracking interaction events on interactive elements, or attach the tracking to semantic form submissions and navigation events where possible.
