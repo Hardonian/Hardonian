@@ -84,7 +84,7 @@ def check_url(raw: str, target: str) -> tuple[str, tuple | str]:
 
 def audit(readme: Path = Path("README.md")) -> int:
     root = readme.parent.resolve()
-    urls = list(dict.fromkeys(extract_urls(readme.read_text())))
+    urls = list(dict.fromkeys(extract_urls(readme.read_text(encoding="utf-8"))))
     failures = []
     external = []
 
