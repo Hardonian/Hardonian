@@ -175,7 +175,7 @@ Turnkey software kits, audit playbooks, and production workflows packaged for im
 | **Consent-Based Voice Clone Kit**| Ethical, high-fidelity voice fine-tuning pipeline with rights-cleared consent contracts. | Professional voice cloning for media, gaming, and production. | [View Kit](products/ai-voice-clone-training-kit.md) |
 
 <details>
-<summary><strong>🔍 Explore Additional Commercial Products (Click to expand)</strong></summary>
+<summary><strong>🔍 Explore Additional Commercial Products (Select to expand)</strong></summary>
 
 - 🎨 **[AI Character Generator Kit](products/ai-character-generator-kit.md)** — Consistent multi-angle character generation workflows for game dev and storytelling.
 - 🎬 **[AI Video Storyboard Studio](products/ai-video-storyboard-studio.md)** — Automated script-to-visual storyboarding pipeline for creative directors.
