@@ -7,10 +7,10 @@
 
 <br/>
 
-[![GitHub](https://img.shields.io/badge/GitHub-Hardonian-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Hardonian)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
-[![AI Automated Systems](https://img.shields.io/badge/AI_Automated_Systems-Live_Storefront-0f766e?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.aiautomatedsystems.ca)
-[![Profile CI](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml/badge.svg)](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml)
+[![Visit Scott Hardie's GitHub profile](https://img.shields.io/badge/GitHub-Hardonian-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Hardonian)
+[![Connect with Scott Hardie on LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
+[![Visit the AI Automated Systems Storefront](https://img.shields.io/badge/AI_Automated_Systems-Live_Storefront-0f766e?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.aiautomatedsystems.ca)
+[![View Profile CI Workflow Status](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml/badge.svg)](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml)
 
 <br/>
 
@@ -234,9 +234,9 @@ I do not build fragile wrapper apps or chase temporary social media AI trends. I
 
 | Core Languages & Runtimes | Backends & Frameworks | Storage & Caching | Infrastructure & Edge | AI & Local Inference |
 |:---:|:---:|:---:|:---:|:---:|
-| [![Python](https://img.shields.io/badge/Python_3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) | [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/) | [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/) | [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/) | [![Ollama](https://img.shields.io/badge/Ollama-111827?style=for-the-badge&logo=llama&logoColor=white)](https://ollama.com/) |
-| [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) | [![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/) | [![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io/) | [![Cloudflare](https://img.shields.io/badge/Cloudflare_Workers-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.cloudflare.com/developer-platform/products/workers/) | [![ComfyUI](https://img.shields.io/badge/ComfyUI-8A05FF?style=for-the-badge&logo=stable-diffusion&logoColor=white)](https://github.com/comfyanonymous/ComfyUI) |
-| [![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/features/actions) | [![Stripe](https://img.shields.io/badge/Stripe_API-635BFF?style=for-the-badge&logo=stripe&logoColor=white)](https://stripe.com/) | [![n8n](https://img.shields.io/badge/n8n_Automation-EA4B71?style=for-the-badge&logo=n8n&logoColor=white)](https://n8n.io/) | [![Linux](https://img.shields.io/badge/Linux_Systemd-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.kernel.org/) | [![CUDA](https://img.shields.io/badge/NVIDIA_CUDA-76B900?style=for-the-badge&logo=nvidia&logoColor=white)](https://developer.nvidia.com/cuda-zone) |
+| [![Visit the Python website](https://img.shields.io/badge/Python_3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) | [![Visit the FastAPI website](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/) | [![Visit the PostgreSQL website](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/) | [![Visit the Docker website](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/) | [![Visit the Ollama website](https://img.shields.io/badge/Ollama-111827?style=for-the-badge&logo=llama&logoColor=white)](https://ollama.com/) |
+| [![Visit the TypeScript website](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) | [![Visit the Node.js website](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/) | [![Visit the Redis website](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io/) | [![Visit the Cloudflare website](https://img.shields.io/badge/Cloudflare_Workers-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.cloudflare.com/developer-platform/products/workers/) | [![Visit the ComfyUI repository](https://img.shields.io/badge/ComfyUI-8A05FF?style=for-the-badge&logo=stable-diffusion&logoColor=white)](https://github.com/comfyanonymous/ComfyUI) |
+| [![Visit GitHub Actions documentation](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/features/actions) | [![Visit the Stripe website](https://img.shields.io/badge/Stripe_API-635BFF?style=for-the-badge&logo=stripe&logoColor=white)](https://stripe.com/) | [![Visit the n8n website](https://img.shields.io/badge/n8n_Automation-EA4B71?style=for-the-badge&logo=n8n&logoColor=white)](https://n8n.io/) | [![Visit the Linux kernel website](https://img.shields.io/badge/Linux_Systemd-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.kernel.org/) | [![Visit the NVIDIA CUDA website](https://img.shields.io/badge/NVIDIA_CUDA-76B900?style=for-the-badge&logo=nvidia&logoColor=white)](https://developer.nvidia.com/cuda-zone) |
 
 </div>
 
@@ -274,9 +274,9 @@ I am always interested in discussing bold technical architectures, sovereign AI 
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect%20with%20Scott-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
-[![AI Automated Systems](https://img.shields.io/badge/Storefront-AI%20Automated%20Systems-0f766e?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.aiautomatedsystems.ca)
-[![Email](https://img.shields.io/badge/Email-scottrmhardie%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:scottrmhardie@gmail.com?subject=Inquiry:%20Scott%20Hardie%20Platform)
+[![Connect with Scott Hardie on LinkedIn](https://img.shields.io/badge/LinkedIn-Connect%20with%20Scott-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
+[![Visit the AI Automated Systems Storefront](https://img.shields.io/badge/Storefront-AI%20Automated%20Systems-0f766e?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.aiautomatedsystems.ca)
+[![Send an email to Scott Hardie](https://img.shields.io/badge/Email-scottrmhardie%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:scottrmhardie@gmail.com?subject=Inquiry:%20Scott%20Hardie%20Platform)
 
 <br/>
 
