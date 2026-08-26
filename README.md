@@ -25,7 +25,7 @@
   <img src="https://img.shields.io/badge/System_Health-10%2F10_Services_Nominal-0f766e?style=flat-square" alt="System Health: 10/10 Services Nominal" />
   <img src="https://img.shields.io/badge/GPU_Fleet-3_Lanes_Active-0284c7?style=flat-square" alt="GPU Fleet: 3 Lanes Active" />
   <img src="https://img.shields.io/badge/Inference-13_Models_Hot--Loaded-7c3aed?style=flat-square" alt="Inference: 13 Models Loaded" />
-  <img src="https://img.shields.io/badge/Commercial-20_Products_Ready-ea580c?style=flat-square" alt="Commercial: 20 Products Ready" />
+  <img src="https://img.shields.io/badge/Commercial-28_Products_Ready-ea580c?style=flat-square" alt="Commercial: 28 Products Ready" />
   <img src="https://img.shields.io/badge/Ledger-Stripe_Webhook_Verified-059669?style=flat-square" alt="Ledger: Stripe Webhook Verified" />
 </p>
 
@@ -39,10 +39,10 @@ Whether you are here to collaborate, invest, build, or deploy—here is the fast
 
 | Audience | What You Care About | Where to Look |
 |---|---|---|
-| **💼 Investors & Partners** | Unit economics, zero-cloud-markup GPU inference, Stripe ledger verification, productized recurring revenue, and defensible sovereign IP. | [The Platform Engine](#-the-platform-engine) · [Commercial Suite](#-the-commercial-suite--productized-workflows) · [Storefront](https://www.aiautomatedsystems.ca) |
-| **⚡ Contributors & Hackers** | Multi-lane local LLM routers, ComfyUI batch pipelines, Postgres idempotent job queues, and deterministic cryptographic replay harnesses. | [Enterprise Lineage](#-the-hardonia-enterprise-lineage) · [Open Source Repos](#-public-code--engineering-vault) · [Contributing](CONTRIBUTING.md) |
+| **💼 Investors & Partners** | Unit economics, zero-cloud-markup GPU inference, Stripe ledger verification, productized recurring revenue, and defensible sovereign IP. | [Platform Engine](#️-live-hardware--telemetry-matrix) · [Commercial Suite](#-the-commercial-suite--productized-workflows) · [Storefront](https://www.aiautomatedsystems.ca) |
+| **⚡ Contributors & Hackers** | Multi-lane local LLM routers, ComfyUI batch pipelines, Postgres idempotent job queues, and deterministic cryptographic replay harnesses. | [Enterprise Lineage](#️-the-hardonia-enterprise-lineage) · [Engineering Vault](#️-public-code--engineering-vault) · [Contributing](CONTRIBUTING.md) |
 | **🤝 Potential Co-Founders & Colleagues** | High-velocity execution, deep systems craft, clean architectural boundaries, zero-AI-slop ethos, and scalable distributed design. | [Operating Philosophy](#-the-hardonian-operating-philosophy) · [Architecture Playbook](architecture-playbook/README.md) · [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) |
-| **🏢 Enterprises & Clients** | Production SaaS repo rescue, private on-premise AI deployments, LLM token cost optimization (FinOps), and payment reconciliation. | [Repo Rescue Audit](products/repo-rescue-saas-audit.md) · [Settler Engine](products/settler-finops-platform.md) · [TokenGoblin](products/tokengoblin-cost-optimizer.md) |
+| **🏢 Enterprises & Clients** | Production SaaS repo rescue, private on-premise AI deployments, LLM token cost optimization (FinOps), and payment reconciliation. | [Repo Rescue Audit](products/repo-rescue-saas-audit.md) · [Settler Engine](products/settler-finops-platform.md) · [TokenGoblin](products/tokengoblin-cost-optimizer.md) · [Compliance Agent](https://github.com/Hardonian/hardonia-compliance-agent) |
 
 ---
 
@@ -76,10 +76,12 @@ This platform is not a prototype or a conceptual mockup. It is a live, revenue-g
 | **GPU Fleet** | V100 16GB · Tesla P40 24GB · RTX 3060 12GB | 3 Hardware lanes, automatic load balancing, thermal & memory probed | `ACTIVE` |
 | **Inference Router** | Ollama Router on Port 11438 | 13 Models hot-loaded (hermes3, deepseek-r1, qwen2.5, glm-4, embeddings) | `ACTIVE` |
 | **Image Workflows** | ComfyUI Custom Pipelines | Batch generation, custom node packs, quality presets, isolated execution | `ACTIVE` |
+| **Trust & Policy Proxy**| `mcpwall` Zero-Cloud Security Firewall | TOML policy inspection, stdio sandboxing, cryptographic human approval gates | `ACTIVE` |
+| **Query IR Compiler** | `nlsqlc` Multi-Tenant Query IR | Fail-closed tenant isolation, 5 SQL dialects, >62,000 QPS compiler core | `VERIFIED` |
 | **Checkout & Ledger** | Stripe → `checkout-api` → `revenue-os` | Signature-verified webhooks, signed receipts, immutable single-source ledger | `VERIFIED` |
 | **Proof & Audit Layer**| Synthetic Audit Harness & Proof Score | Content-addressed caching, hash-chain integrity, denial behavior verification | `VERIFIED` |
 | **Compute API** | Prepaid GPU Credit Gateway | Isolated API keys, bounded runtime, signed result delivery, webhook callback | `ACTIVE` |
-| **Commercial Storefront**| Public Edge Deployment | 20 Product routes, automated license fulfillment, live at `aiautomatedsystems.ca` | `LIVE` |
+| **Commercial Storefront**| Public Edge Deployment | 28 Product routes, automated license fulfillment, live at `aiautomatedsystems.ca` | `LIVE` |
 
 ---
 
@@ -106,25 +108,29 @@ Systems that thrive in production do not separate software design from business 
 A curated suite of enterprise-grade foundations, deterministic engines, and cryptographic verification contracts:
 
 ```text
-  VERIFICATION & EVIDENCE           EXECUTION & DURABILITY            DELIVERY & CONTROL
+  VERIFICATION & TRUST               EXECUTION & DURABILITY            GOVERNANCE & DELIVERY
  ┌─────────────────────────┐       ┌─────────────────────────┐       ┌─────────────────────────┐
- │ truthcore               │       │ Requiem                 │       │ ReadyLayer              │
- │ Cryptographic Evidence  │ ────► │ Native Execution Engine │ ────► │ Governance & Provenance │
+ │ veridag                 │       │ Requiem                 │       │ ReadyLayer              │
+ │ Quint Formal Trust DAG  │ ────► │ Native Execution Engine │ ────► │ Delivery Governance CI  │
  ├─────────────────────────┤       ├─────────────────────────┤       ├─────────────────────────┤
- │ Reach                   │       │ JobForge                │       │ Zeo                     │
- │ Deterministic Replay    │       │ Idempotent Postgres RLS │       │ Composable Agent Pipes  │
- └─────────────────────────┘       ├─────────────────────────┤       └─────────────────────────┘
-                                   │ MissionLedger           │
-                                   │ Governed Mission Policy │
-                                   └─────────────────────────┘
+ │ truthcore               │       │ JobForge                │       │ continuityos            │
+ │ Cryptographic Evidence  │       │ Idempotent Postgres RLS │       │ Sovereign Resilience    │
+ ├─────────────────────────┤       ├─────────────────────────┤       ├─────────────────────────┤
+ │ Reach                   │       │ MissionLedger           │       │ Zeo                     │
+ │ Deterministic Replay    │       │ Governed Mission Policy │       │ Composable Agent Pipes  │
+ └─────────────────────────┘       └─────────────────────────┘       └─────────────────────────┘
 ```
 
+- 🛡️ **[veridag](https://github.com/Hardonian/veridag)** — Deterministic distributed trust fabric for AI agents, edge swarms, and enterprise state (Rust, Quint formal verification, QUIC + TLS 1.3, embedded Sled).
+- 🧱 **[mcpwall](https://github.com/Hardonian/mcpwall)** — Local-first policy firewall and audit proxy for Model Context Protocol (MCP) servers with inspectable TOML rules and cryptographic human gates (Rust).
+- ⚡ **[nlsqlc](https://github.com/Hardonian/nlsqlc)** — Deterministic multi-tenant Query IR compiler for AI agents and enterprise backends (>62k QPS, fail-closed isolation, 5 SQL dialects).
 - 🛡️ **[truthcore](https://github.com/Hardonian/truthcore)** — Python verification kernel, content-addressed caching, anomaly detection, and offline evidence reports.
 - 📜 **[Reach](https://github.com/Hardonian/Reach)** — Deterministic execution runtime, transcript replay, and cryptographic evidence contracts.
-- ⚙️ **[Requiem](https://github.com/Hardonian/Requiem)** — Native execution engine, operator console lineage, and deterministic control-plane contracts.
+- ⚙️ **[Requiem](https://github.com/Hardonian/Requiem)** — Native execution engine, operator console lineage, and unified AI control-plane contracts.
 - 🔨 **[JobForge](https://github.com/Hardonian/JobForge)** — Postgres-native idempotent jobs, exponential backoff, and Row-Level Security (RLS) execution boundaries.
 - 🧭 **[MissionLedger](https://github.com/Hardonian/MissionLedger)** — Governed agent missions, strict policy boundaries, and audit-grade execution logs.
 - 🛡️ **[ReadyLayer](https://github.com/Hardonian/ReadyLayer)** — AI-assisted software delivery governance, automated policy checks, provenance tracking, and evidence export.
+- 🌐 **[continuityos](https://github.com/Hardonian/continuityos)** — Aegis Continuity (Sovereign Edition): Resilience-as-Code and cyber-physical continuity assurance for maritime trade corridors and critical supply chains.
 - 🧩 **[Zeo](https://github.com/Hardonian/Zeo)** — Local-first composable agent pipelines, signed module artifacts, and deterministic exports.
 
 ---
@@ -133,29 +139,56 @@ A curated suite of enterprise-grade foundations, deterministic engines, and cryp
 
 Explore production-grade implementations across core architectural disciplines:
 
-### 🧠 Sovereign AI & Inference Control Planes
+### 🧠 Sovereign AI, Trust Fabrics & Inference Control Planes
+- **[mcpwall](https://github.com/Hardonian/mcpwall)** — Local-first policy firewall and audit proxy for MCP stdio servers (Rust, zero-cloud, cryptographic human gates).
+- **[veridag](https://github.com/Hardonian/veridag)** — Deterministic distributed trust fabric for AI agents & edge swarms (Rust, Quint formal verification, QUIC + TLS 1.3).
+- **[nlsqlc](https://github.com/Hardonian/nlsqlc)** — Deterministic, multi-tenant Query IR compiler for AI agents & enterprise systems (>62k QPS, fail-closed tenant isolation).
+- **[SawyerCore](https://github.com/Hardonian/SawyerCore)** — RCT-inspired deterministic edge AI runtime and agent simulation engine.
 - **[llm-inference-api](https://github.com/Hardonian/llm-inference-api)** — OpenAI-compatible local inference gateway with dynamic batching and token telemetry.
 - **[ollama-router](https://github.com/Hardonian/ollama-router)** — Multi-lane local model router with automatic fallback and latency-based load balancing.
 - **[comfyui-api](https://github.com/Hardonian/comfyui-api)** — Cloudflare-facing headless ComfyUI automation engine and queue manager.
 - **[Nautilus](https://github.com/Hardonian/Nautilus)** — Deterministic operational AI infrastructure and containerized workflow orchestration.
+- **[Keys](https://github.com/Hardonian/Keys)** — Deterministic mission control for AI agents: explicit constraints, auditable actions, trustworthy orchestration.
 - **[ControlPlane](https://github.com/Hardonian/ControlPlane)** — Control-plane exploration, service supervision, and operator architecture.
 - **[AI-Agent-Portfolio](https://github.com/Hardonian/AI-Agent-Portfolio)** — Autonomous agent architectures, tool execution boundaries, and evaluation suites.
 - **[JupyterNotebooks](https://github.com/Hardonian/JupyterNotebooks)** — Applied research notebooks in local model quantization, vision pipelines, and fine-tuning.
 
-### 💰 FinOps, Ledger & Cost Optimization
-- **[Settler](https://github.com/Hardonian/Settler)** — Reconciliation intelligence engine for multi-source payment and marketplace settlement.
+### 🏛️ Enterprise Governance, Verification & Execution Engines
+- **[ReadyLayer](https://github.com/Hardonian/ReadyLayer)** — AI-assisted software delivery governance, automated policy checks, provenance tracking, and evidence export.
+- **[truthcore](https://github.com/Hardonian/truthcore)** — Python verification kernel, content-addressed caching, anomaly detection, and offline evidence reports.
+- **[Reach](https://github.com/Hardonian/Reach)** — Deterministic execution runtime, transcript replay, and cryptographic evidence contracts.
+- **[Requiem](https://github.com/Hardonian/Requiem)** — Native execution engine, operator console lineage, and deterministic control-plane contracts.
+- **[JobForge](https://github.com/Hardonian/JobForge)** — Postgres-native idempotent agent router and worker queues (no Redis/Kafka, pure SQL & RPC).
+- **[MissionLedger](https://github.com/Hardonian/MissionLedger)** — Governed agent execution substrate with deterministic policy, budget enforcement, and proofpacks.
+- **[Zeo](https://github.com/Hardonian/Zeo)** — Local-first composable agent pipelines, signed module artifacts, and deterministic audit trails.
+- **[continuityos](https://github.com/Hardonian/continuityos)** — Aegis Continuity (Sovereign Edition): Sovereign Resilience-as-Code for maritime trade corridors and defense supply chains.
+- **[hardonia-compliance-agent](https://github.com/Hardonian/hardonia-compliance-agent)** — 6-crate Rust workspace for autonomous regulatory compliance automation.
+- **[hardonia-audit-pack](https://github.com/Hardonian/hardonia-audit-pack)** — Deterministic reconciliation audit evidence bundle for finance, compliance, and audit-ready workflows.
+
+### 💰 FinOps, Ledger Infrastructure & Commercial Engines
+- **[Settler](https://github.com/Hardonian/Settler)** — Reconciliation intelligence engine for multi-source payment and marketplace settlement (TigerBeetle-ledger core).
 - **[TokenGoblin](https://github.com/Hardonian/TokenGoblin)** — Real-time AI token spend observability, dynamic routing, and LLM budget guardrails.
 - **[finops-autopilot](https://github.com/Hardonian/finops-autopilot)** — Autonomous cloud cost anomaly detection and automated rightsizing policies.
 - **[webhook-witness](https://github.com/Hardonian/webhook-witness)** — Cryptographic webhook ingestion, payload signing, and tamper-evident replay logger.
-- **[reliability-platform](https://github.com/Hardonian/reliability-platform)** — High-availability platform tooling, circuit breakers, and automated disaster recovery.
-
-### 🏛️ Enterprise Architecture & Governance
-- **[identity-entitlement-broker](https://github.com/Hardonian/identity-entitlement-broker)** — Identity brokering, fine-grained entitlements, and zero-trust policy enforcement.
-- **[enterprise-integration-fabric](https://github.com/Hardonian/enterprise-integration-fabric)** — Governed event-driven integration architecture for heterogeneous enterprise ecosystems.
-- **[golden-path-platform](https://github.com/Hardonian/golden-path-platform)** — Internal developer platform (IDP) templates with baked-in compliance and CI/CD guardrails.
 - **[commercial-architecture-simulator](https://github.com/Hardonian/commercial-architecture-simulator)** — Stochastic modeling engine for SaaS pricing, unit economics, and churn dynamics.
-- **[architecture-playbook](architecture-playbook/README.md)** — Architectural patterns, decision records (ADRs), and migration runbooks.
+- **[apva-framework](https://github.com/Hardonian/apva-framework)** — Automated Performance & Value Assessment framework (reliability-adjusted ROI model for workflow automation).
+- **[prompt-ops-hardonia-packs](https://github.com/Hardonian/prompt-ops-hardonia-packs)** — Compact operator prompt packs for revenue ops, outreach, GTM, and verification workflows.
+- **[TokPulse](https://github.com/Hardonian/TokPulse)** — Enterprise Multi-Store Shopify App / Creator-Commerce Operating System (Turborepo, Hydrogen/Remix).
 - **[storefront](https://github.com/Hardonian/storefront)** — Edge-rendered e-commerce and digital product fulfillment frontend.
+
+### ⚡ Platform Reliability, Edge & Autonomous Micro-Tools
+- **[enterprise-integration-fabric](https://github.com/Hardonian/enterprise-integration-fabric)** — Governed event-driven integration architecture (Spring Boot 3, Camel 4, Redpanda/Kafka, Keycloak, SvelteKit).
+- **[identity-entitlement-broker](https://github.com/Hardonian/identity-entitlement-broker)** — Identity brokering, fine-grained entitlements, and zero-trust policy enforcement.
+- **[api-changelog-radar](https://github.com/Hardonian/api-changelog-radar)** — Automated vendor API changelog monitor, line diff analyzer, and breaking-change classifier (Cloudflare Pages/Worker).
+- **[reliability-platform](https://github.com/Hardonian/reliability-platform)** — High-availability platform tooling, circuit breakers, and automated disaster recovery.
+- **[golden-path-platform](https://github.com/Hardonian/golden-path-platform)** — Internal developer platform (IDP) templates with baked-in compliance and CI/CD guardrails.
+- **[support-autopilot](https://github.com/Hardonian/support-autopilot)** — Autonomous support triage, resolution CLI, and diagnostic engine.
+- **[ops-autopilot](https://github.com/Hardonian/ops-autopilot)** — Runnerless reliability autopilot consuming telemetry and outputting JobForge jobs.
+- **[growth-autopilot](https://github.com/Hardonian/growth-autopilot)** — Runnerless SEO autopilot proposing experiments and content via JobForge.
+- **[InboxExorcist](https://github.com/Hardonian/InboxExorcist)** — Autonomous Gmail declutter, safe unsubscribe, and reversible filter automation.
+- **[floyo](https://github.com/Hardonian/floyo)** — Workflow intelligence engine detecting hidden integration/automation opportunities from local usage.
+- **[tfstate-drift-inspector](https://github.com/Hardonian/tfstate-drift-inspector)** — Terraform drift inspector comparing live infra vs tfstate before apply.
+- **[architecture-playbook](architecture-playbook/README.md)** — Architectural patterns, decision records (ADRs), and migration runbooks.
 
 ---
 
@@ -175,15 +208,26 @@ Turnkey software kits, audit playbooks, and production workflows packaged for im
 | **Consent-Based Voice Clone Kit**| Ethical, high-fidelity voice fine-tuning pipeline with rights-cleared consent contracts. | Professional voice cloning for media, gaming, and production. | [View Kit](products/ai-voice-clone-training-kit.md) |
 
 <details>
-<summary><strong>🔍 Explore Additional Commercial Products (Select to expand)</strong></summary>
+<summary><strong>🔍 Explore All 28 Turnkey Products & Production Workflows (Select to expand)</strong></summary>
 
+### 🎨 Creative, Media & Generative Studio Toolkits
+- 🔍 **[8K Ultimate SD Upscaler & Facial Restoration Engine](products/advanced-upscale-restoration.md)** — Multi-tile high-fidelity upscaler and neural face restoration with band-pass seam elimination.
+- 🏛️ **[Architectural & Interior Design Render Engine](products/architectural-interior-design.md)** — CAD/BIM sketch-to-photoreal architectural visualization with daylight and material shaders.
+- 💡 **[E-Commerce Product Studio & Relighter](products/ecommerce-product-relighting.md)** — Virtual 3-point studio lighting gimbal, specular control, and multi-angle catalog batch generator.
+- 🖌️ **[Flux.1 Inpaint & Infinite Outpaint Studio](products/flux-inpaint-outpaint-pro.md)** — Boundless canvas expansion and localized feature replacement with seamless texture blending.
+- 👤 **[Flux.1 Ultra Portrait Studio & Face Engine](products/flux-ultra-portrait-studio.md)** — Hollywood-grade photorealistic portrait synthesis, skin pore refinement, and background isolation.
+- 🎮 **[Game Asset & 3D Texture PBR Generator](products/game-asset-3d-generator.md)** — Isometric sprite sheets, normal maps, roughness channels, and seamless PBR game textures.
+- 🎬 **[AnimateDiff & Wan 2.1 Cinematic Video Studio](products/video-production-cinema.md)** — High-framerate cinematic text-to-video, camera motion trajectories, and temporal smoothing.
+- 🗣️ **[Voice-to-Avatar & Audio Lip Sync Engine](products/voice-to-avatar-lip-sync.md)** — Phoneme-aligned audio-to-video avatar animator and real-time streaming talking head pipeline.
 - 🎨 **[AI Character Generator Kit](products/ai-character-generator-kit.md)** — Consistent multi-angle character generation workflows for game dev and storytelling.
 - 🎬 **[AI Video Storyboard Studio](products/ai-video-storyboard-studio.md)** — Automated script-to-visual storyboarding pipeline for creative directors.
-- 🧪 **[Prompt Engineering Laboratory](products/prompt-engineering-laboratory.md)** — Systematic evaluation and regression testing framework for LLM prompts.
 - 👗 **[ComfyUI Fashion Lookbook Kit](products/comfyui-fashion-lookbook-kit.md)** — High-res apparel rendering and virtual fitting workflow pack.
 - 📸 **[ComfyUI Product Photo Kit](products/comfyui-product-photo-kit.md)** — Studio-grade commercial product rendering pipelines.
 - 🖼️ **[ComfyUI Thumbnail Creator Kit](products/comfyui-thumbnail-creator-kit.md)** — High-CTR YouTube and social media thumbnail generation engine.
 - 🔌 **[ComfyUI Node Starter Kit](products/comfyui-node-starter-kit.md)** — Boilerplate and documentation for building high-performance custom nodes.
+
+### ⚙️ Operational, Compliance & Systems Architecture Kits
+- 🧪 **[Prompt Engineering Laboratory](products/prompt-engineering-laboratory.md)** — Systematic evaluation and regression testing framework for LLM prompts.
 - ⚖️ **[Defend Your AI Legal Kit](products/defend-your-ai-legal-kit.md)** — Operational IP boundaries, terms of service, and compliance templates for AI SaaS.
 - 📡 **[Floyo Workflow Radar](products/floyo-workflow-radar.md)** — Workflow observability and bottleneck discovery system.
 - 🩺 **[Local AI Lab Audit](products/local-ai-lab-audit.md)** — On-site / remote audit of local GPU rigs, inference routing, and security postures.

@@ -32,10 +32,11 @@ Internal source paths and deployment filesystem locations are intentionally omit
 
 ## Related public surfaces
 
-- [Hardonian profile](https://github.com/Hardonian/Hardonian/blob/main/README.md)
-- [AI Lab Command Center](https://github.com/Hardonian/ai-lab-command-center)
-- [Migration Factory](https://github.com/Hardonian/migration-factory)
-- [AI Automated Systems storefront](https://www.aiautomatedsystems.ca)
+- [Hardonian Profile](https://github.com/Hardonian/Hardonian)
+- [ControlPlane (AI Operator & Control Plane Engine)](https://github.com/Hardonian/ControlPlane)
+- [ReadyLayer (Governance & Software Delivery)](https://github.com/Hardonian/ReadyLayer)
+- [Storefront & Evidence Console](https://github.com/Hardonian/storefront)
+- [AI Automated Systems Storefront](https://www.aiautomatedsystems.ca)
 
 ## Usage rules
 
