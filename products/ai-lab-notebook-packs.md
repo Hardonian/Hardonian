@@ -15,7 +15,7 @@ Curated reproducible notebook packs: RAG evaluation, agent benchmarks, prompt op
 
 ## Checkout / Buy
 
-- [Contact via Email for AI Lab Applied Notebook Packs bundle/subscription setup](mailto:scottrmhardie@gmail.com?subject=Inquiry:%20AI%20Lab%20Applied%20Notebook%20Packs)
+- [Contact via Email for AI Lab Applied Notebook Packs bundle/subscription setup](mailto:scottrmhardie@gmail.com?subject=Inquiry:%20AI%20Lab%20Applied%20Notebook%20Packs%20Bundle%20Setup)
 
 ---
 

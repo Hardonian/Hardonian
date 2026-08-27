@@ -15,7 +15,7 @@ Real-time token measurement + intelligent routing + cost dashboards. Go binary f
 
 ## Checkout / Buy
 
-- [Contact via Email for TokenGoblin LLM Cost Optimizer enterprise/implementation pricing](mailto:scottrmhardie@gmail.com?subject=Inquiry:%20TokenGoblin%20LLM%20Cost%20Optimizer)
+- [Contact via Email for TokenGoblin LLM Cost Optimizer enterprise/implementation pricing](mailto:scottrmhardie@gmail.com?subject=Inquiry:%20TokenGoblin%20LLM%20Cost%20Optimizer%20Enterprise%20Pricing)
 
 ---
 
