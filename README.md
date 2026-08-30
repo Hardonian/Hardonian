@@ -198,14 +198,14 @@ Turnkey software kits, audit playbooks, and production workflows packaged for im
 
 | Product Pack | What It Delivers | Target Outcome | Artifact |
 |---|---|---|:---:|
-| **AI Command Center Setup** | Local FastAPI control dashboard, systemd service, health probe daemon, and runbook. | Eliminate blind spots; prioritize fixes by revenue impact. | [View Kit](products/ai-command-center-setup.md) |
-| **Settler FinOps Engine** | Deterministic matching engine, multi-source payment normalizer, and evidence packs. | Automate reconciliation; catch fee leaks and orphaned transactions. | [View Kit](products/settler-finops-platform.md) |
-| **TokenGoblin Cost Optimizer** | Real-time token measurement binary, intelligent LLM router, and ClickHouse analytics. | Stop LLM bill shock; cut inference spend by up to 60%. | [View Kit](products/tokengoblin-cost-optimizer.md) |
-| **SaaS Repo Rescue Audit** | Full codebase deep-dive: Auth, billing webhooks, Postgres RLS, and security vulnerabilities. | Hardened SaaS readiness; zero revenue-leaking edge cases. | [View Kit](products/repo-rescue-saas-audit.md) |
-| **ComfyUI Pro Workflow Packs** | Curated SDXL/Flux pipelines, custom nodes, batch generation scripts, and model configs. | Private, deterministic image generation on local silicon. | [View Kit](products/comfyui-workflow-packs.md) |
-| **APVA AI ROI Benchmark** | Reliability-adjusted ROI model for workflow automation and AI worker deployments. | Justify AI spend with hard mathematical proof before buying. | [View Kit](products/apva-roi-benchmark.md) |
-| **Automation Retainer** | Dedicated systems architect support, weekly workflow upgrades, and priority triage. | Continuous operator velocity without full-time executive overhead. | [View Kit](products/automation-retainer.md) |
-| **Consent-Based Voice Clone Kit**| Ethical, high-fidelity voice fine-tuning pipeline with rights-cleared consent contracts. | Professional voice cloning for media, gaming, and production. | [View Kit](products/ai-voice-clone-training-kit.md) |
+| **AI Command Center Setup** | Local FastAPI control dashboard, systemd service, health probe daemon, and runbook. | Eliminate blind spots; prioritize fixes by revenue impact. | [View AI Command Center Setup Kit](products/ai-command-center-setup.md) |
+| **Settler FinOps Engine** | Deterministic matching engine, multi-source payment normalizer, and evidence packs. | Automate reconciliation; catch fee leaks and orphaned transactions. | [View Settler FinOps Engine Kit](products/settler-finops-platform.md) |
+| **TokenGoblin Cost Optimizer** | Real-time token measurement binary, intelligent LLM router, and ClickHouse analytics. | Stop LLM bill shock; cut inference spend by up to 60%. | [View TokenGoblin Cost Optimizer Kit](products/tokengoblin-cost-optimizer.md) |
+| **SaaS Repo Rescue Audit** | Full codebase deep-dive: Auth, billing webhooks, Postgres RLS, and security vulnerabilities. | Hardened SaaS readiness; zero revenue-leaking edge cases. | [View SaaS Repo Rescue Audit Kit](products/repo-rescue-saas-audit.md) |
+| **ComfyUI Pro Workflow Packs** | Curated SDXL/Flux pipelines, custom nodes, batch generation scripts, and model configs. | Private, deterministic image generation on local silicon. | [View ComfyUI Pro Workflow Packs Kit](products/comfyui-workflow-packs.md) |
+| **APVA AI ROI Benchmark** | Reliability-adjusted ROI model for workflow automation and AI worker deployments. | Justify AI spend with hard mathematical proof before buying. | [View APVA AI ROI Benchmark Kit](products/apva-roi-benchmark.md) |
+| **Automation Retainer** | Dedicated systems architect support, weekly workflow upgrades, and priority triage. | Continuous operator velocity without full-time executive overhead. | [View Automation Retainer Kit](products/automation-retainer.md) |
+| **Consent-Based Voice Clone Kit**| Ethical, high-fidelity voice fine-tuning pipeline with rights-cleared consent contracts. | Professional voice cloning for media, gaming, and production. | [View Consent-Based Voice Clone Kit](products/ai-voice-clone-training-kit.md) |
 
 <details>
 <summary><strong>🔍 Explore All 28 Turnkey Products & Production Workflows (Select to expand)</strong></summary>
