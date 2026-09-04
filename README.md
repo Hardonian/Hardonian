@@ -2,10 +2,6 @@
 
 # ⚡ HARDONIAN // SOVEREIGN AI & SYSTEMS PLATFORM
 
-<!-- BEGIN: REPO HERO -->
-![Hardonian — hero generated locally on the GPU stack](assets/repo-hero.png)
-<!-- END: REPO HERO -->
-
 ### **Scott Hardie** · Solutions Architect · Systems Operator · Venture Builder
 **Toronto, Canada** · *Local-First AI Control Planes · Deterministic Backends · FinOps Engines · Revenue Systems*
 
