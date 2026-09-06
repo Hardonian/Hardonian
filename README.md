@@ -2,7 +2,7 @@
 
 # ⚡ HARDONIAN // SOVEREIGN AI & SYSTEMS PLATFORM
 
-### **Scott Hardie** · Solutions Architect · Systems Operator · Venture Builder
+### **Scott Hardie** · Solutions Architect at McGraw Hill · Frontier AI Lab Expert (Independent, Part-Time)
 **Toronto, Canada** · *Local-First AI Control Planes · Deterministic Backends · FinOps Engines · Revenue Systems*
 
 <br/>
@@ -30,6 +30,27 @@
 </p>
 
 </div>
+
+---
+
+## 🧠 Frontier AI Lab Work
+
+**Independent Contract · Part-Time · Remote**
+
+Providing specialized expertise for confidential frontier AI research and development initiatives alongside my full-time work at **McGraw Hill**.
+
+Contributing across enterprise technology, solutions architecture, data and artificial intelligence, integrations, software delivery, and customer-facing technical workflows. Work includes evaluating advanced AI systems, designing and reviewing complex real-world tasks, assessing technical accuracy and output quality, and delivering structured feedback to strengthen model reasoning, reliability, and practical performance.
+
+All engagements are conducted under confidentiality obligations. Client, project, model, dataset, and internal research details are intentionally withheld.
+
+**Key areas:**
+
+- Frontier model evaluation and improvement
+- Enterprise AI and solutions architecture
+- Technical reasoning and software development workflows
+- Data, platform, API, and integration design
+- Quality assurance, rubric development, and structured evaluation
+- Human feedback for advanced AI systems
 
 ---
 
