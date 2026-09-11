@@ -35,8 +35,6 @@
 
 ## 🧠 Frontier AI Lab Work
 
-**Independent Contract · Part-Time · Remote**
-
 Providing specialized expertise for confidential frontier AI research and development initiatives alongside my full-time work at **McGraw Hill**.
 
 Contributing across enterprise technology, solutions architecture, data and artificial intelligence, integrations, software delivery, and customer-facing technical workflows. Work includes evaluating advanced AI systems, designing and reviewing complex real-world tasks, assessing technical accuracy and output quality, and delivering structured feedback to strengthen model reasoning, reliability, and practical performance.
