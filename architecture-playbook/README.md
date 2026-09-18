@@ -13,7 +13,7 @@ Migration Factory and the AI Lab Command Center sit primarily in the Control and
 ## Capability map
 
 | Capability | Public contract | Evidence boundary |
-|---|---|---|
+| --- | --- | --- |
 | Fulfillment orchestration | Authenticated operator workflow | Entitlement and delivery events are recorded internally |
 | Download delivery | Signed, time-bound customer URL | Customer-specific tokens are never documented or exposed here |
 | Health | `GET /health` on the relevant local service | A health response is not proof of payment or revenue |

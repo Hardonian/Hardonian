@@ -2,7 +2,12 @@
 
 # ⚡ HARDONIAN // SOVEREIGN AI & SYSTEMS PLATFORM
 
-### **Scott Hardie** · Solutions Architect at McGraw Hill · Frontier AI Lab Expert (Independent, Part-Time)
+<!-- BEGIN: REPO HERO -->
+![Hardonian — hero generated locally on the GPU stack](assets/repo-hero.png)
+<!-- END: REPO HERO -->
+
+## **Scott Hardie** · Solutions Architect at McGraw Hill · Frontier AI Lab Expert (Independent, Part-Time)
+
 **Toronto, Canada** · *Local-First AI Control Planes · Deterministic Backends · FinOps Engines · Revenue Systems*
 
 <br/>
@@ -29,39 +34,49 @@
   <img src="https://img.shields.io/badge/Ledger-Stripe_Webhook_Verified-059669?style=flat-square" alt="Ledger: Stripe Webhook Verified" />
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/mcpwall-v1.0.5-blue?style=flat-square&logo=rust" alt="mcpwall release v1.0.5" />
+  <img src="https://img.shields.io/badge/TokPulse-v3.0.0-9cf?style=flat-square&logo=shopify" alt="TokPulse release v3.0.0" />
+  <img src="https://img.shields.io/badge/veridag-v0.1.0--alpha-purple?style=flat-square&logo=rust" alt="veridag release v0.1.0-alpha" />
+  <img src="https://img.shields.io/badge/Zeo-v1.1.0-emerald?style=flat-square&logo=typescript" alt="Zeo release v1.1.0" />
+  <img src="https://img.shields.io/badge/continuityos-v1.0_Sovereign-orange?style=flat-square&logo=linux" alt="continuityos v1.0 Sovereign Edition" />
+</p>
+
 </div>
 
 ---
 
 ## 🧠 Frontier AI Lab Work
 
-Providing specialized expertise for confidential frontier AI research and development initiatives alongside my full-time work at **McGraw Hill**.
+**Independent Contract · Part-Time · Remote**
 
-Contributing across enterprise technology, solutions architecture, data and artificial intelligence, integrations, software delivery, and customer-facing technical workflows. Work includes evaluating advanced AI systems, designing and reviewing complex real-world tasks, assessing technical accuracy and output quality, and delivering structured feedback to strengthen model reasoning, reliability, and practical performance.
+Providing specialized systems architecture and empirical evaluation expertise for confidential frontier AI research and development initiatives alongside full-time work at **McGraw Hill**.
 
-All engagements are conducted under confidentiality obligations. Client, project, model, dataset, and internal research details are intentionally withheld.
+Contributing across enterprise systems engineering, solutions architecture, data and AI pipelines, protocol design, software delivery governance, and production operational workflows. Work includes evaluating frontier foundation models, designing rigorous multi-step real-world evaluation benchmarks, auditing technical reasoning accuracy and failure modes, and engineering structured feedback loops to reinforce model capability, determinism, and enterprise utility.
 
-**Key areas:**
+All engagements are conducted under strict confidentiality agreements. Client, project, model, dataset, and internal research specifications are intentionally withheld.
 
-- Frontier model evaluation and improvement
-- Enterprise AI and solutions architecture
-- Technical reasoning and software development workflows
-- Data, platform, API, and integration design
-- Quality assurance, rubric development, and structured evaluation
-- Human feedback for advanced AI systems
+**Core Capabilities & Research Focus:**
+
+- **Frontier Model Evaluation & Stress-Testing** — Rigorous rubric engineering, edge-case probing, hallucination boundary detection, and structured failure analysis.
+- **Enterprise AI & Systems Architecture** — Designing deterministic agent boundary layers, tool execution sandboxes, and high-throughput local inference pipelines.
+- **Technical Reasoning & Complex Workflows** — Assessing multi-hop architectural reasoning, code generation validity, and algorithmic problem-solving.
+- **Protocol & Integration Governance** — Verifying Model Context Protocol (MCP) interactions, Agent-to-Agent (A2A) topologies, and API contracts.
+- **Human Feedback & Alignment Synthesis** — Delivering high-signal expert judgment to advance model safety, precision, and operational reliability.
 
 ---
 
 ## 🎯 Choose Your Frequency
 
-Whether you are here to collaborate, invest, build, or deploy—here is the fast lane to what matters:
+Whether you are an investor, engineering leader, AI researcher, enterprise operator, or venture builder—here is your direct lane into the platform:
 
-| Audience | What You Care About | Where to Look |
-|---|---|---|
-| **💼 Investors & Partners** | Unit economics, zero-cloud-markup GPU inference, Stripe ledger verification, productized recurring revenue, and defensible sovereign IP. | [Platform Engine](#️-live-hardware--telemetry-matrix) · [Commercial Suite](#-the-commercial-suite--productized-workflows) · [Storefront](https://www.aiautomatedsystems.ca) |
-| **⚡ Contributors & Hackers** | Multi-lane local LLM routers, ComfyUI batch pipelines, Postgres idempotent job queues, and deterministic cryptographic replay harnesses. | [Enterprise Lineage](#️-the-hardonia-enterprise-lineage) · [Engineering Vault](#️-public-code--engineering-vault) · [Contributing](CONTRIBUTING.md) |
-| **🤝 Potential Co-Founders & Colleagues** | High-velocity execution, deep systems craft, clean architectural boundaries, zero-AI-slop ethos, and scalable distributed design. | [Operating Philosophy](#-the-hardonian-operating-philosophy) · [Architecture Playbook](architecture-playbook/README.md) · [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) |
-| **🏢 Enterprises & Clients** | Production SaaS repo rescue, private on-premise AI deployments, LLM token cost optimization (FinOps), and payment reconciliation. | [Repo Rescue Audit](products/repo-rescue-saas-audit.md) · [Settler Engine](products/settler-finops-platform.md) · [TokenGoblin](products/tokengoblin-cost-optimizer.md) · [Compliance Agent](https://github.com/Hardonian/hardonia-compliance-agent) |
+| Audience | What You Care About | Fast Path & Key Links |
+| --- | --- | --- |
+| **💼 Investors & Partners** | Unit economics, zero-cloud-markup GPU inference, Stripe ledger verification, productized recurring revenue, and defensible sovereign IP. | [Hardware Matrix](#️-live-hardware--telemetry-matrix) · [Commercial Suite](#-the-commercial-suite--productized-workflows) · [Storefront](https://www.aiautomatedsystems.ca) |
+| **🧠 AI Labs & Researchers** | Agent packet capture (`AgentPCAP`), open agent control planes (`AgentMesh`), compute compilers (`ModelForge`), and formal Quint proofs. | [AgentPCAP](https://github.com/Hardonian/AgentPCAP) · [AgentMesh](https://github.com/Hardonian/AgentMesh) · [ModelForge](https://github.com/Hardonian/ModelForge) · [veridag](https://github.com/Hardonian/veridag) |
+| **⚡ Contributors & Systems Engineers** | Multi-lane local LLM routers, Rust MCP security proxies, Quint formal trust DAGs, and Postgres idempotent job queues. | [Enterprise Lineage](#️-the-hardonia-enterprise-lineage) · [Engineering Vault](#️-public-code--engineering-vault) · [Contributing](CONTRIBUTING.md) |
+| **🏢 Enterprises & Clients** | Production SaaS repo rescue, private on-premise AI deployments, LLM token cost optimization (FinOps), and statutory compliance. | [Repo Rescue Audit](products/repo-rescue-saas-audit.md) · [Settler Engine](products/settler-finops-platform.md) · [TokenGoblin](products/tokengoblin-cost-optimizer.md) · [Compliance Agent](https://github.com/Hardonian/hardonia-compliance-agent) |
+| **🎮 Creators & Application Builders** | Multi-store creator commerce, sandboxed game WASM runtimes, headless ComfyUI factories, and consumer AI apps. | [TokPulse](https://github.com/Hardonian/TokPulse) · [WorldVM](https://github.com/Hardonian/WorldVM) · [WhatsForDinner](https://github.com/Hardonian/WhatsForDinner) · [ReachRadar](https://github.com/Hardonian/ReachRadar) |
 
 ---
 
@@ -90,17 +105,19 @@ This platform is not a prototype or a conceptual mockup. It is a live, revenue-g
 ### Infrastructure Telemetry
 
 | Layer | Hardware & Component | Operational Contract | Status |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Control Plane** | Command Center, Self-Heal, Watchdogs | 10/10 Core microservices, 83 cron jobs, 6h disk budget watchdog | `ACTIVE` |
 | **GPU Fleet** | V100 16GB · Tesla P40 24GB · RTX 3060 12GB | 3 Hardware lanes, automatic load balancing, thermal & memory probed | `ACTIVE` |
 | **Inference Router** | Ollama Router on Port 11438 | 13 Models hot-loaded (hermes3, deepseek-r1, qwen2.5, glm-4, embeddings) | `ACTIVE` |
+| **Agent Packet Sniffer** | `AgentPCAP` (Wireshark for AI) | Zero-overhead packet capture for A2A, MCP, model, and tool traffic | `ACTIVE` |
+| **Agent Mesh Plane** | `AgentMesh` Control Plane | Identity, dynamic routing, circuit breaking, and progressive delivery | `ACTIVE` |
+| **Model Compiler** | `ModelForge` Compute Intelligence | HF to production: VRAM constraint solver & latency-optimal deployment configs | `ACTIVE` |
 | **Image Workflows** | ComfyUI Custom Pipelines | Batch generation, custom node packs, quality presets, isolated execution | `ACTIVE` |
-| **Trust & Policy Proxy**| `mcpwall` Zero-Cloud Security Firewall | TOML policy inspection, stdio sandboxing, cryptographic human approval gates | `ACTIVE` |
+| **Trust & Policy Proxy** | `mcpwall` Zero-Cloud Security Firewall | TOML policy inspection, stdio sandboxing, cryptographic human approval gates | `ACTIVE` |
 | **Query IR Compiler** | `nlsqlc` Multi-Tenant Query IR | Fail-closed tenant isolation, 5 SQL dialects, >62,000 QPS compiler core | `VERIFIED` |
-| **Checkout & Ledger** | Stripe → `checkout-api` → `revenue-os` | Signature-verified webhooks, signed receipts, immutable single-source ledger | `VERIFIED` |
-| **Proof & Audit Layer**| Synthetic Audit Harness & Proof Score | Content-addressed caching, hash-chain integrity, denial behavior verification | `VERIFIED` |
-| **Compute API** | Prepaid GPU Credit Gateway | Isolated API keys, bounded runtime, signed result delivery, webhook callback | `ACTIVE` |
-| **Commercial Storefront**| Public Edge Deployment | 28 Product routes, automated license fulfillment, live at `aiautomatedsystems.ca` | `LIVE` |
+| **Cognitive Ledger** | `Settler` (TigerBeetle Core) | Cognitive matching, zero-trust verification, signature-verified webhooks | `VERIFIED` |
+| **Accessibility Engine** | `AccessibleMadeFlexible` (AROS Engine) | Continuous accessibility issue discovery, AST clustering, and code remediation | `ACTIVE` |
+| **Commercial Storefront** | Public Edge Deployment | 28 Product routes, automated license fulfillment, live at `aiautomatedsystems.ca` | `LIVE` |
 
 ---
 
@@ -112,7 +129,8 @@ Systems that thrive in production do not separate software design from business 
   <img src="assets/operating-loop.svg" alt="Hardonia Operating Loop: Architecture to Implementation to Verification to Product to Customer Surface to Support and Measurement" />
 </p>
 
-### The Six Phases of Execution:
+### The Six Phases of Execution
+
 1. **Architecture** — Define data ownership, identify constraints, and isolate bounded domains before writing a line of code.
 2. **Implementation** — Build the smallest observable system that completely solves the operational bottleneck.
 3. **Verification** — Enforce cryptographic truth with real tests, endpoint assertions, and immutable evidence logs.
@@ -127,21 +145,27 @@ Systems that thrive in production do not separate software design from business 
 A curated suite of enterprise-grade foundations, deterministic engines, and cryptographic verification contracts:
 
 ```text
-  VERIFICATION & TRUST               EXECUTION & DURABILITY            GOVERNANCE & DELIVERY
+  TRUST & VERIFICATION               EXECUTION & MESH                  GOVERNANCE & RESILIENCE
  ┌─────────────────────────┐       ┌─────────────────────────┐       ┌─────────────────────────┐
- │ veridag                 │       │ Requiem                 │       │ ReadyLayer              │
- │ Quint Formal Trust DAG  │ ────► │ Native Execution Engine │ ────► │ Delivery Governance CI  │
+ │ veridag                 │       │ AgentMesh               │       │ continuityos            │
+ │ Quint Formal Trust DAG  │ ────► │ A2A & MCP Control Plane │ ────► │ Sovereign Resilience    │
  ├─────────────────────────┤       ├─────────────────────────┤       ├─────────────────────────┤
- │ truthcore               │       │ JobForge                │       │ continuityos            │
- │ Cryptographic Evidence  │       │ Idempotent Postgres RLS │       │ Sovereign Resilience    │
+ │ mcpwall                 │       │ ModelForge              │       │ ReadyLayer              │
+ │ Policy Proxy & Firewall │       │ VRAM Compute Compiler   │       │ Delivery Governance CI  │
  ├─────────────────────────┤       ├─────────────────────────┤       ├─────────────────────────┤
- │ Reach                   │       │ MissionLedger           │       │ Zeo                     │
- │ Deterministic Replay    │       │ Governed Mission Policy │       │ Composable Agent Pipes  │
+ │ AgentPCAP               │       │ Requiem                 │       │ Settler                 │
+ │ Agent Wire Timeline     │       │ Native Execution Engine │       │ Zero-Trust Verifier     │
+ ├─────────────────────────┤       ├─────────────────────────┤       ├─────────────────────────┤
+ │ truthcore               │       │ JobForge                │       │ Zeo                     │
+ │ Cryptographic Evidence  │       │ Idempotent Postgres RLS │       │ Composable Agent Pipes  │
  └─────────────────────────┘       └─────────────────────────┘       └─────────────────────────┘
 ```
 
-- 🛡️ **[veridag](https://github.com/Hardonian/veridag)** — Deterministic distributed trust fabric for AI agents, edge swarms, and enterprise state (Rust, Quint formal verification, QUIC + TLS 1.3, embedded Sled).
-- 🧱 **[mcpwall](https://github.com/Hardonian/mcpwall)** — Local-first policy firewall and audit proxy for Model Context Protocol (MCP) servers with inspectable TOML rules and cryptographic human gates (Rust).
+- 🛡️ **[veridag](https://github.com/Hardonian/veridag)** `v0.1.0-alpha` — Deterministic distributed trust fabric for AI agents, edge swarms, and enterprise state (Rust, Quint formal verification, QUIC + TLS 1.3, embedded Sled).
+- 🧱 **[mcpwall](https://github.com/Hardonian/mcpwall)** `v1.0.5` — Local-first policy firewall and audit proxy for Model Context Protocol (MCP) servers with inspectable TOML rules and cryptographic human gates (Rust).
+- 📡 **[AgentPCAP](https://github.com/Hardonian/AgentPCAP)** — Wireshark for AI agents: capture A2A, MCP, model, and tool traffic in one local timeline with canonical binary test vectors.
+- 🕸️ **[AgentMesh](https://github.com/Hardonian/AgentMesh)** — The open control plane for A2A and MCP agents: Identity, Policy, Routing, Reliability, and Progressive Delivery.
+- ⚡ **[ModelForge](https://github.com/Hardonian/ModelForge)** — The open compute intelligence layer for AI: compiles optimal deployment infrastructure (VRAM, quantization, latency) from Hugging Face model IDs.
 - ⚡ **[nlsqlc](https://github.com/Hardonian/nlsqlc)** — Deterministic multi-tenant Query IR compiler for AI agents and enterprise backends (>62k QPS, fail-closed isolation, 5 SQL dialects).
 - 🛡️ **[truthcore](https://github.com/Hardonian/truthcore)** — Python verification kernel, content-addressed caching, anomaly detection, and offline evidence reports.
 - 📜 **[Reach](https://github.com/Hardonian/Reach)** — Deterministic execution runtime, transcript replay, and cryptographic evidence contracts.
@@ -149,8 +173,8 @@ A curated suite of enterprise-grade foundations, deterministic engines, and cryp
 - 🔨 **[JobForge](https://github.com/Hardonian/JobForge)** — Postgres-native idempotent jobs, exponential backoff, and Row-Level Security (RLS) execution boundaries.
 - 🧭 **[MissionLedger](https://github.com/Hardonian/MissionLedger)** — Governed agent missions, strict policy boundaries, and audit-grade execution logs.
 - 🛡️ **[ReadyLayer](https://github.com/Hardonian/ReadyLayer)** — AI-assisted software delivery governance, automated policy checks, provenance tracking, and evidence export.
-- 🌐 **[continuityos](https://github.com/Hardonian/continuityos)** — Aegis Continuity (Sovereign Edition): Resilience-as-Code and cyber-physical continuity assurance for maritime trade corridors and critical supply chains.
-- 🧩 **[Zeo](https://github.com/Hardonian/Zeo)** — Local-first composable agent pipelines, signed module artifacts, and deterministic exports.
+- 🌐 **[continuityos](https://github.com/Hardonian/continuityos)** `v1.0` — Aegis Continuity (Sovereign Edition): Resilience-as-Code and cyber-physical continuity assurance for maritime trade corridors and critical supply chains.
+- 🧩 **[Zeo](https://github.com/Hardonian/Zeo)** `v1.1.0` — Local-first composable agent pipelines, signed module artifacts, and deterministic exports.
 
 ---
 
@@ -158,9 +182,13 @@ A curated suite of enterprise-grade foundations, deterministic engines, and cryp
 
 Explore production-grade implementations across core architectural disciplines:
 
-### 🧠 Sovereign AI, Trust Fabrics & Inference Control Planes
-- **[mcpwall](https://github.com/Hardonian/mcpwall)** — Local-first policy firewall and audit proxy for MCP stdio servers (Rust, zero-cloud, cryptographic human gates).
-- **[veridag](https://github.com/Hardonian/veridag)** — Deterministic distributed trust fabric for AI agents & edge swarms (Rust, Quint formal verification, QUIC + TLS 1.3).
+### 🧠 Sovereign AI, Agent Control Planes & Inference Runtimes
+
+- **[AgentPCAP](https://github.com/Hardonian/AgentPCAP)** — Wireshark for AI agents: capture A2A, MCP, model, and tool traffic in one local timeline with canonical binary test vectors.
+- **[AgentMesh](https://github.com/Hardonian/AgentMesh)** — The open control plane for A2A and MCP agents: identity, policy, routing, reliability, and progressive delivery.
+- **[ModelForge](https://github.com/Hardonian/ModelForge)** — The open compute intelligence layer for AI: compiles optimal model deployment configs (VRAM budgets, quantization, batching, latency targets) from Hugging Face model IDs.
+- **[mcpwall](https://github.com/Hardonian/mcpwall)** `v1.0.5` — Local-first policy firewall and audit proxy for MCP stdio servers (Rust, zero-cloud, cryptographic human gates).
+- **[veridag](https://github.com/Hardonian/veridag)** `v0.1.0-alpha` — Deterministic distributed trust fabric for AI agents & edge swarms (Rust, Quint formal verification, QUIC + TLS 1.3).
 - **[nlsqlc](https://github.com/Hardonian/nlsqlc)** — Deterministic, multi-tenant Query IR compiler for AI agents & enterprise systems (>62k QPS, fail-closed tenant isolation).
 - **[SawyerCore](https://github.com/Hardonian/SawyerCore)** — RCT-inspired deterministic edge AI runtime and agent simulation engine.
 - **[llm-inference-api](https://github.com/Hardonian/llm-inference-api)** — OpenAI-compatible local inference gateway with dynamic batching and token telemetry.
@@ -172,30 +200,43 @@ Explore production-grade implementations across core architectural disciplines:
 - **[AI-Agent-Portfolio](https://github.com/Hardonian/AI-Agent-Portfolio)** — Autonomous agent architectures, tool execution boundaries, and evaluation suites.
 - **[JupyterNotebooks](https://github.com/Hardonian/JupyterNotebooks)** — Applied research notebooks in local model quantization, vision pipelines, and fine-tuning.
 
-### 🏛️ Enterprise Governance, Verification & Execution Engines
+### 🏛️ Enterprise Governance, Verification & Sovereign Resilience
+
+- **[continuityos](https://github.com/Hardonian/continuityos)** `v1.0` — Aegis Continuity (Sovereign Edition): Sovereign Resilience-as-Code for maritime trade corridors, critical infrastructure, and defense supply chains.
+- **[FlexibleAccessible](https://github.com/Hardonian/FlexibleAccessible)** — AccessibleMadeFlexible: Accessibility operations and evidence—not vanity scores. Multi-tenant SaaS for continuous accessibility issue discovery, scanning, clustering, and AST/source-level remediation (AROS engine).
 - **[ReadyLayer](https://github.com/Hardonian/ReadyLayer)** — AI-assisted software delivery governance, automated policy checks, provenance tracking, and evidence export.
 - **[truthcore](https://github.com/Hardonian/truthcore)** — Python verification kernel, content-addressed caching, anomaly detection, and offline evidence reports.
 - **[Reach](https://github.com/Hardonian/Reach)** — Deterministic execution runtime, transcript replay, and cryptographic evidence contracts.
 - **[Requiem](https://github.com/Hardonian/Requiem)** — Native execution engine, operator console lineage, and deterministic control-plane contracts.
 - **[JobForge](https://github.com/Hardonian/JobForge)** — Postgres-native idempotent agent router and worker queues (no Redis/Kafka, pure SQL & RPC).
 - **[MissionLedger](https://github.com/Hardonian/MissionLedger)** — Governed agent execution substrate with deterministic policy, budget enforcement, and proofpacks.
-- **[Zeo](https://github.com/Hardonian/Zeo)** — Local-first composable agent pipelines, signed module artifacts, and deterministic audit trails.
-- **[continuityos](https://github.com/Hardonian/continuityos)** — Aegis Continuity (Sovereign Edition): Sovereign Resilience-as-Code for maritime trade corridors and defense supply chains.
 - **[hardonia-compliance-agent](https://github.com/Hardonian/hardonia-compliance-agent)** — 6-crate Rust workspace for autonomous regulatory compliance automation.
 - **[hardonia-audit-pack](https://github.com/Hardonian/hardonia-audit-pack)** — Deterministic reconciliation audit evidence bundle for finance, compliance, and audit-ready workflows.
 
 ### 💰 FinOps, Ledger Infrastructure & Commercial Engines
-- **[Settler](https://github.com/Hardonian/Settler)** — Reconciliation intelligence engine for multi-source payment and marketplace settlement (TigerBeetle-ledger core).
+
+- **[Settler](https://github.com/Hardonian/Settler)** — Reconciliation intelligence & audit OS: deterministic transaction matching, hash-linked evidence, enterprise tenant isolation, and zero-trust verification (TigerBeetle-ledger core).
+- **[WhatsForDinner](https://github.com/Hardonian/WhatsForDinner)** — Production consumer B2C AI SaaS: complete Stripe subscriptions, customer billing portal, credit packs, marketplace, streak freeze, and computer vision fridge parsing.
 - **[TokenGoblin](https://github.com/Hardonian/TokenGoblin)** — Real-time AI token spend observability, dynamic routing, and LLM budget guardrails.
-- **[finops-autopilot](https://github.com/Hardonian/finops-autopilot)** — Autonomous cloud cost anomaly detection and automated rightsizing policies.
+- **[apva-framework](https://github.com/Hardonian/apva-framework)** — AI Productivity & Value Architecture: automated framework measuring true enterprise GenAI ROI as True Value Yield (TVY) with CI/CD deployment and telemetry dashboard UI.
+- **[finops-autopilot](https://github.com/Hardonian/finops-autopilot)** — Autonomous cloud cost anomaly detection, billing event ingestion, and automated rightsizing policies.
 - **[webhook-witness](https://github.com/Hardonian/webhook-witness)** — Cryptographic webhook ingestion, payload signing, and tamper-evident replay logger.
 - **[commercial-architecture-simulator](https://github.com/Hardonian/commercial-architecture-simulator)** — Stochastic modeling engine for SaaS pricing, unit economics, and churn dynamics.
-- **[apva-framework](https://github.com/Hardonian/apva-framework)** — Automated Performance & Value Assessment framework (reliability-adjusted ROI model for workflow automation).
-- **[prompt-ops-hardonia-packs](https://github.com/Hardonian/prompt-ops-hardonia-packs)** — Compact operator prompt packs for revenue ops, outreach, GTM, and verification workflows.
-- **[TokPulse](https://github.com/Hardonian/TokPulse)** — Enterprise Multi-Store Shopify App / Creator-Commerce Operating System (Turborepo, Hydrogen/Remix).
-- **[storefront](https://github.com/Hardonian/storefront)** — Edge-rendered e-commerce and digital product fulfillment frontend.
+- **[prompt-ops-hardonia-packs](https://github.com/Hardonian/prompt-ops-hardonia-packs)** `v0.2.0` — Compact operator prompt packs for revenue ops, outreach, GTM, and verification workflows.
+- **[TokPulse](https://github.com/Hardonian/TokPulse)** `v3.0.0` — Enterprise Multi-Store Shopify App / Creator-Commerce Operating System (Turborepo, Hydrogen/Remix, TikTok Shop).
+- **[storefront](https://github.com/Hardonian/storefront)** — Edge-rendered e-commerce, sovereign mission intelligence, and digital product fulfillment frontend.
+
+### 🌐 Planetary Simulation, Economic Graphs & Game Runtimes
+
+- **[CEO-G-Canada-Economic-Opportunity-Graph](https://github.com/Hardonian/CEO-G-Canada-Economic-Opportunity-Graph)** — Canada Opportunity Graph: Sovereign economic intelligence modeling Canada's multi-trillion-dollar nation-building infrastructure cycle (critical minerals, nuclear SMRs, Flyvbjerg risk model, OCAP data linker).
+- **[World26](https://github.com/Hardonian/World26)** — WORLD//26: An Open Planetary Systems Simulator with macro-scale multi-agent simulation, data checksums, and paper reproduction manifest.
+- **[WorldVM](https://github.com/Hardonian/WorldVM)** — Turn any game into a creator platform: run creator-built gameplay safely inside Unity, Unreal, and Godot via sandboxed WASM capability runtime with Sentinel AI.
+- **[ReachRadar](https://github.com/Hardonian/ReachRadar)** — Independent observability for recommendation algorithms: ingests real-time creator analytics to detect distribution shifts and algorithmic volatility.
+- **[Zeo](https://github.com/Hardonian/Zeo)** `v1.1.0` — Local-first composable agent pipelines, signed module artifacts, and deterministic storefront intelligence.
 
 ### ⚡ Platform Reliability, Edge & Autonomous Micro-Tools
+
+- **[AI-Automated-Systems_AIAS](https://github.com/Hardonian/AI-Automated-Systems_AIAS)** — Static-first authority surface for agentic automation consulting and operational diagnostic wizard.
 - **[enterprise-integration-fabric](https://github.com/Hardonian/enterprise-integration-fabric)** — Governed event-driven integration architecture (Spring Boot 3, Camel 4, Redpanda/Kafka, Keycloak, SvelteKit).
 - **[identity-entitlement-broker](https://github.com/Hardonian/identity-entitlement-broker)** — Identity brokering, fine-grained entitlements, and zero-trust policy enforcement.
 - **[api-changelog-radar](https://github.com/Hardonian/api-changelog-radar)** — Automated vendor API changelog monitor, line diff analyzer, and breaking-change classifier (Cloudflare Pages/Worker).
@@ -216,7 +257,7 @@ Explore production-grade implementations across core architectural disciplines:
 Turnkey software kits, audit playbooks, and production workflows packaged for immediate operational impact:
 
 | Product Pack | What It Delivers | Target Outcome | Artifact |
-|---|---|---|:---:|
+| --- | --- | --- | :---: |
 | **AI Command Center Setup** | Local FastAPI control dashboard, systemd service, health probe daemon, and runbook. | Eliminate blind spots; prioritize fixes by revenue impact. | [View AI Command Center Setup Kit](products/ai-command-center-setup.md) |
 | **Settler FinOps Engine** | Deterministic matching engine, multi-source payment normalizer, and evidence packs. | Automate reconciliation; catch fee leaks and orphaned transactions. | [View Settler FinOps Engine Kit](products/settler-finops-platform.md) |
 | **TokenGoblin Cost Optimizer** | Real-time token measurement binary, intelligent LLM router, and ClickHouse analytics. | Stop LLM bill shock; cut inference spend by up to 60%. | [View TokenGoblin Cost Optimizer Kit](products/tokengoblin-cost-optimizer.md) |
@@ -224,12 +265,13 @@ Turnkey software kits, audit playbooks, and production workflows packaged for im
 | **ComfyUI Pro Workflow Packs** | Curated SDXL/Flux pipelines, custom nodes, batch generation scripts, and model configs. | Private, deterministic image generation on local silicon. | [View ComfyUI Pro Workflow Packs Kit](products/comfyui-workflow-packs.md) |
 | **APVA AI ROI Benchmark** | Reliability-adjusted ROI model for workflow automation and AI worker deployments. | Justify AI spend with hard mathematical proof before buying. | [View APVA AI ROI Benchmark Kit](products/apva-roi-benchmark.md) |
 | **Automation Retainer** | Dedicated systems architect support, weekly workflow upgrades, and priority triage. | Continuous operator velocity without full-time executive overhead. | [View Automation Retainer Kit](products/automation-retainer.md) |
-| **Consent-Based Voice Clone Kit**| Ethical, high-fidelity voice fine-tuning pipeline with rights-cleared consent contracts. | Professional voice cloning for media, gaming, and production. | [View Consent-Based Voice Clone Kit](products/ai-voice-clone-training-kit.md) |
+| **Consent-Based Voice Clone Kit** | Ethical, high-fidelity voice fine-tuning pipeline with rights-cleared consent contracts. | Professional voice cloning for media, gaming, and production. | [View Consent-Based Voice Clone Kit](products/ai-voice-clone-training-kit.md) |
 
 <details>
 <summary><strong>🔍 Explore All 28 Turnkey Products & Production Workflows (Select to expand)</strong></summary>
 
 ### 🎨 Creative, Media & Generative Studio Toolkits
+
 - 🔍 **[8K Ultimate SD Upscaler & Facial Restoration Engine](products/advanced-upscale-restoration.md)** — Multi-tile high-fidelity upscaler and neural face restoration with band-pass seam elimination.
 - 🏛️ **[Architectural & Interior Design Render Engine](products/architectural-interior-design.md)** — CAD/BIM sketch-to-photoreal architectural visualization with daylight and material shaders.
 - 💡 **[E-Commerce Product Studio & Relighter](products/ecommerce-product-relighting.md)** — Virtual 3-point studio lighting gimbal, specular control, and multi-angle catalog batch generator.
@@ -246,14 +288,13 @@ Turnkey software kits, audit playbooks, and production workflows packaged for im
 - 🔌 **[ComfyUI Node Starter Kit](products/comfyui-node-starter-kit.md)** — Boilerplate and documentation for building high-performance custom nodes.
 
 ### ⚙️ Operational, Compliance & Systems Architecture Kits
+
 - 🧪 **[Prompt Engineering Laboratory](products/prompt-engineering-laboratory.md)** — Systematic evaluation and regression testing framework for LLM prompts.
 - ⚖️ **[Defend Your AI Legal Kit](products/defend-your-ai-legal-kit.md)** — Operational IP boundaries, terms of service, and compliance templates for AI SaaS.
 - 📡 **[Floyo Workflow Radar](products/floyo-workflow-radar.md)** — Workflow observability and bottleneck discovery system.
 - 🩺 **[Local AI Lab Audit](products/local-ai-lab-audit.md)** — On-site / remote audit of local GPU rigs, inference routing, and security postures.
 - 📄 **[Research Paper Visualizer](products/research-paper-visualizer.md)** — Convert dense arXiv papers into executive architecture diagrams.
 - 📓 **[AI Lab Notebook Packs](products/ai-lab-notebook-packs.md)** — Ready-to-run Jupyter exploration notebooks for machine learning teams.
-- 🩺 **[Live AI Lab Health Report](https://aiautomatedsystems.ca/p/ai-lab-health-report)** — Real-time operational diagnostics and scorecards.
-- ⚡ **[Private Compute API Access](https://aiautomatedsystems.ca/p/hardonia-compute-api-access)** — Dedicated on-demand GPU lane access.
 
 </details>
 
@@ -296,7 +337,7 @@ I do not build fragile wrapper apps or chase temporary social media AI trends. I
 <div align="center">
 
 | Core Languages & Runtimes | Backends & Frameworks | Storage & Caching | Infrastructure & Edge | AI & Local Inference |
-|:---:|:---:|:---:|:---:|:---:|
+| :---: | :---: | :---: | :---: | :---: |
 | [![Visit the Python website](https://img.shields.io/badge/Python_3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/) | [![Visit the FastAPI website](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/) | [![Visit the PostgreSQL website](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/) | [![Visit the Docker website](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/) | [![Visit the Ollama website](https://img.shields.io/badge/Ollama-111827?style=for-the-badge&logo=llama&logoColor=white)](https://ollama.com/) |
 | [![Visit the TypeScript website](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) | [![Visit the Node.js website](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/) | [![Visit the Redis website](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io/) | [![Visit the Cloudflare website](https://img.shields.io/badge/Cloudflare_Workers-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.cloudflare.com/developer-platform/products/workers/) | [![Visit the ComfyUI repository](https://img.shields.io/badge/ComfyUI-8A05FF?style=for-the-badge&logo=stable-diffusion&logoColor=white)](https://github.com/comfyanonymous/ComfyUI) |
 | [![Visit GitHub Actions documentation](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/features/actions) | [![Visit the Stripe website](https://img.shields.io/badge/Stripe_API-635BFF?style=for-the-badge&logo=stripe&logoColor=white)](https://stripe.com/) | [![Visit the n8n website](https://img.shields.io/badge/n8n_Automation-EA4B71?style=for-the-badge&logo=n8n&logoColor=white)](https://n8n.io/) | [![Visit the Linux kernel website](https://img.shields.io/badge/Linux_Systemd-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.kernel.org/) | [![Visit the NVIDIA CUDA website](https://img.shields.io/badge/NVIDIA_CUDA-76B900?style=for-the-badge&logo=nvidia&logoColor=white)](https://developer.nvidia.com/cuda-zone) |
