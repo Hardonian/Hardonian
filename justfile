@@ -11,7 +11,16 @@ dev:
 
 # Run tests
 test:
-    pytest tests/
+    uv run python -m unittest discover tests
+    uv run python scripts/profile-metadata.py --check
+
+# Verify every public and local README link
+audit:
+    uv run python scripts/profile-link-audit.py
+
+# Verify public project evidence and regenerate the canonical-project section
+refresh-profile:
+    uv run python scripts/profile-metadata.py --refresh
 
 # Smoke / health check
 smoke:

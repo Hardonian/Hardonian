@@ -6,7 +6,7 @@ import sys
 import urllib.error
 import urllib.request
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from urllib.parse import unquote, urlparse
 
 ALLOWED_WARNING_CODES = {403, 429, 530, 999}
 USER_AGENT = "Hardonian-profile-audit/1.0"
@@ -51,17 +51,15 @@ def resolve_link(raw: str, root: Path) -> tuple[str | None, Path | None]:
         return raw, None
 
     root = root.resolve()
-    local_suffix = raw.lstrip("/")
+    parsed = urlparse(raw)
+    local_suffix = unquote(parsed.path).lstrip("/")
     if raw.startswith("/Hardonian/"):
         local_suffix = raw.split("/tree/main/", 1)[-1] if "/tree/main/" in raw else raw.split("/Hardonian/", 1)[-1]
     local = (root / local_suffix).resolve()
 
-    if raw.startswith(("products/", "architecture-playbook/", "assets/", "/Hardonian/")):
-        if not local.is_relative_to(root):
-            raise UnsafeURL(f"local path escapes repository: {raw}")
-        return None, local
-
-    return urljoin("https://github.com/Hardonian/Hardonian/blob/main/", raw), None
+    if not local.is_relative_to(root):
+        raise UnsafeURL(f"local path escapes repository: {raw}")
+    return None, local
 
 
 def check_url(raw: str, target: str) -> tuple[str, tuple | str]:

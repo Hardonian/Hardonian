@@ -8,7 +8,7 @@
 
 **Scott Hardie** · Solutions Architect · AI Systems Builder · Toronto, Canada
 
-[Explore the systems](#flagship-systems) · [Read the architecture](#the-platform) · [View the storefront](https://www.aiautomatedsystems.ca) · [Connect](https://www.linkedin.com/in/scottrmhardie/)
+[Explore the systems](#selected-systems) · [Read the architecture](#the-platform) · [View the storefront](https://www.aiautomatedsystems.ca) · [Connect](https://www.linkedin.com/in/scottrmhardie/)
 
 <br />
 
@@ -26,14 +26,16 @@ Hardonia is a working portfolio of control planes, runtimes, security boundaries
 
 > **Intelligence can be probabilistic. Infrastructure cannot.**
 
+**Best-fit work:** production AI and platform architecture, technical due diligence, and modernization of systems where security, reliability, or financial correctness matters. I take on selective independent engagements alongside my full-time role.
+
 | **Observe** | **Control** | **Prove** |
 | :--- | :--- | :--- |
 | Capture agent, model, tool, cost, and transaction events. | Route workloads, enforce policy, isolate tenants, and recover safely. | Replay decisions, verify state, reconcile money, and export evidence. |
 
 <p align="center">
-  <a href="#start-here"><kbd>Start here</kbd></a>&nbsp;&nbsp;
+  <a href="#selected-systems"><kbd>Selected systems</kbd></a>&nbsp;&nbsp;
   <a href="#the-platform"><kbd>Platform</kbd></a>&nbsp;&nbsp;
-  <a href="#flagship-systems"><kbd>Flagships</kbd></a>&nbsp;&nbsp;
+  <a href="#selected-evidence"><kbd>Evidence</kbd></a>&nbsp;&nbsp;
   <a href="#engineering-vault"><kbd>All projects</kbd></a>&nbsp;&nbsp;
   <a href="#productized-systems"><kbd>Products</kbd></a>&nbsp;&nbsp;
   <a href="#lets-build"><kbd>Contact</kbd></a>
@@ -41,106 +43,48 @@ Hardonia is a working portfolio of control planes, runtimes, security boundaries
 
 ---
 
-## Start here
-
-Six systems tell the story fastest.
-
-| System | The hard problem | What it does |
-| --- | --- | --- |
-| **[AgentPCAP](https://github.com/Hardonian/AgentPCAP)** | Agents fail across invisible protocol boundaries. | Captures A2A, MCP, model, and tool traffic into one replayable timeline. |
-| **[mcpwall](https://github.com/Hardonian/mcpwall)** | Tool-capable models need an enforceable security perimeter. | Applies local, fail-closed policy and signed approval gates to MCP execution. |
-| **[ModelForge](https://github.com/Hardonian/ModelForge)** | Model deployment is still trial-and-OOM. | Compiles model, VRAM, quantization, batch, and latency constraints into a deployment plan. |
-| **[nlsqlc](https://github.com/Hardonian/nlsqlc)** | Natural-language database access can leak tenant data. | Converts requests to a deterministic Query IR with fail-closed tenant isolation. |
-| **[Settler](https://github.com/Hardonian/Settler)** | Financial truth gets fragmented across gateways and exports. | Reconciles transaction streams into hash-linked, audit-ready evidence. |
-| **[continuityos](https://github.com/Hardonian/continuityos)** | Critical operations need more than a disaster-recovery PDF. | Turns continuity policy into executable, testable resilience contracts. |
-
----
-
 ## The platform
 
-Hardonia spans the complete path from physical compute to verified commercial outcome.
+The system map above is the visual overview. This table defines the responsibility and evidence boundary at each layer without pretending a static README is a live operations console.
 
-```mermaid
-flowchart TB
-    L5["05 · FINANCIAL PROOF<br/>Settler · webhook-witness · immutable revenue ledger"]
-    L4["04 · TRUST & RESILIENCE<br/>veridag · mcpwall · continuityos · ReadyLayer"]
-    L3["03 · AGENT CONTROL<br/>AgentMesh · AgentPCAP · JobForge · MissionLedger"]
-    L2["02 · COMPUTE COMPILATION<br/>ModelForge · nlsqlc · SawyerCore"]
-    L1["01 · SOVEREIGN COMPUTE<br/>V100 16 GB · P40 24 GB · RTX 3060 12 GB"]
-
-    L1 --> L2 --> L3 --> L4 --> L5
-```
-
-<div align="center">
-
-![System health](https://img.shields.io/badge/SYSTEMS-10%2F10_NOMINAL-0f766e?style=flat-square)
-![GPU lanes](https://img.shields.io/badge/GPU_LANES-3_ACTIVE-0891b2?style=flat-square)
-![Models](https://img.shields.io/badge/MODELS-13_LOADED-7c3aed?style=flat-square)
-![Products](https://img.shields.io/badge/PRODUCTS-28_READY-ea580c?style=flat-square)
-![Profile CI](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml/badge.svg)
-
-</div>
-
-<details>
-<summary><strong>Open the live hardware and operating envelope</strong></summary>
-
-<br />
-
-| Lane | Hardware | Workload | Operating target |
+| Layer | Responsibility | Representative systems | Evidence boundary |
 | --- | --- | --- | --- |
-| **Alpha · Throughput** | NVIDIA Tesla V100 · 16 GB HBM2 | Batch inference, embeddings, code generation, evaluation | `<45 ms` TTFT target |
-| **Beta · Context** | NVIDIA Tesla P40 · 24 GB GDDR5 | Long-context reasoning, larger quantized models, MoE workloads | `<120 ms` TTFT target |
-| **Gamma · Latency** | NVIDIA RTX 3060 · 12 GB GDDR6 | Interactive inference, agent routing, SDXL / Flux | `<25 ms` TTFT target |
-| **Router mesh** | Local Linux services · Ollama-compatible API | Health probing, batching, fallback, thermal and memory supervision | `99.98%` uptime target |
+| **Observe** | Capture protocol traffic, latency, cost, model usage, and business events. | AgentPCAP · TokenGoblin | Raw events and reproducible captures; no inferred health claims. |
+| **Control** | Apply identity, policy, routing, resource, and tenant constraints before execution. | mcpwall · AgentMesh · ModelForge | Versioned policy and explicit inputs; denied actions remain denied. |
+| **Execute** | Run bounded work with idempotency, isolation, retries, and controlled fallback. | JobForge · Reach · local inference | Execution records describe what ran, not what was intended. |
+| **Prove** | Preserve transcripts, provenance, hashes, and replayable evidence. | truthcore · veridag · ReadyLayer | Claims link to inspectable artifacts or remain qualified. |
+| **Reconcile** | Compare technical and financial records against authoritative sources. | Settler · webhook-witness | Provider-correlated settlement is distinct from catalog, checkout, or local state. |
 
-The current operator layer supervises ten core services, three local GPU lanes, model routing, agent traffic capture, image workflows, policy enforcement, reconciliation, and the commercial storefront. Public health is treated as operational telemetry—not proof of revenue. Revenue claims require provider-correlated payment evidence.
-
-</details>
-
----
-
-## Flagship systems
-
-### Control, security, and trust
-
-| | |
-| --- | --- |
-| **[mcpwall](https://github.com/Hardonian/mcpwall) · Rust**<br />A zero-cloud security firewall for MCP servers. Stdio interception, inspectable TOML policy, cryptographic approval tokens, and fail-closed defaults. | **[veridag](https://github.com/Hardonian/veridag) · Rust + Quint**<br />A formally specified trust fabric for agents and edge swarms using a distributed DAG, QUIC, TLS 1.3, and embedded storage. |
-| **[AgentPCAP](https://github.com/Hardonian/AgentPCAP) · Python**<br />Wire-level observability for agentic systems. Capture, normalize, inspect, and replay cross-protocol execution without vendor instrumentation. | **[AgentMesh](https://github.com/Hardonian/AgentMesh) · Go**<br />An open control plane for A2A and MCP agents: identity, policy, routing, reliability, circuit breaking, and progressive delivery. |
-
-### Compute, data, and money
-
-| | |
-| --- | --- |
-| **[ModelForge](https://github.com/Hardonian/ModelForge) · Python**<br />A compute compiler that resolves model metadata, VRAM limits, quantization, latency targets, and batch bounds before deployment. | **[nlsqlc](https://github.com/Hardonian/nlsqlc) · Rust**<br />A deterministic multi-tenant Query IR compiler with five SQL dialects, fail-closed isolation, and a benchmarked core above 62k QPS. |
-| **[Settler](https://github.com/Hardonian/Settler) · TigerBeetle + Next.js**<br />Reconciliation intelligence for payment, banking, and inventory events with deterministic matching and hash-linked audit evidence. | **[TokenGoblin](https://github.com/Hardonian/TokenGoblin) · Go + ClickHouse**<br />Real-time token-cost telemetry, budget enforcement, and intelligent model routing for production AI workloads. |
-
-### Execution and continuity
-
-| | |
-| --- | --- |
-| **[JobForge](https://github.com/Hardonian/JobForge) · PostgreSQL**<br />Idempotent jobs, exponential backoff, and row-level execution boundaries without adding a separate queueing stack. | **[continuityos](https://github.com/Hardonian/continuityos) · Go + OPA**<br />Resilience-as-Code for critical supply chains, infrastructure, and cyber-physical operations. |
-| **[Reach](https://github.com/Hardonian/Reach) · Rust**<br />A deterministic execution runtime with transcript replay and cryptographic evidence contracts. | **[ReadyLayer](https://github.com/Hardonian/ReadyLayer) · TypeScript**<br />Software-delivery governance with automated policy checks, provenance, and portable evidence export. |
+[![Profile CI](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml/badge.svg)](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml) checks the profile structure, generated project metadata, evidence freshness, product pages, local assets, and public links.
 
 ---
 
-## How the systems fit together
+## Selected systems
 
-```text
-  SIGNAL                 DECISION                 EXECUTION                PROOF
-  ──────                 ────────                 ─────────                ─────
-  AgentPCAP  ───────►    AgentMesh   ─────────►   JobForge   ─────────►   truthcore
-  Telemetry              mcpwall                  Reach                    veridag
-  Cost events            ModelForge               Local inference          Settler
-       ▲                                                                      │
-       └────────────────────── measurable feedback loop ◄─────────────────────┘
-```
+These four projects form a complete operating chain and receive the primary attention on this profile. Maturity is deliberately conservative: `stable` means a versioned release exists; `beta` means the public system is functional but interfaces may change; `research` means the architecture is being actively validated.
 
-1. **Observe the real system.** Capture traffic, latency, spend, tool calls, and business events.
-2. **Make policy explicit.** Compile constraints before allowing models or agents to act.
-3. **Execute inside boundaries.** Use idempotency, tenant isolation, signed artifacts, and controlled fallback.
-4. **Produce evidence.** Every meaningful run should leave enough context to inspect, replay, and reconcile.
-5. **Feed reality back in.** Operational and commercial results—not demos—drive the next architecture decision.
+<!-- profile-projects:start -->
+_Public project metadata last verified **2026-09-19** · [source manifest](profile-projects.json) · [verification policy](CONTRIBUTING.md#project-metadata)_
+
+| Project | Problem | Public evidence |
+| --- | --- | --- |
+| **[AgentPCAP](https://github.com/Hardonian/AgentPCAP)** · Go<br />Observe · `beta`<br />[![AgentPCAP CI](https://github.com/Hardonian/AgentPCAP/actions/workflows/ci.yml/badge.svg)](https://github.com/Hardonian/AgentPCAP/actions/workflows/ci.yml) | Agent failures cross model, tool, MCP, and A2A boundaries that ordinary application logs do not join. | Open .apcap schema, canonical protocol and failure-mode vectors, plus documented CI quality gates.<br />[Architecture](https://github.com/Hardonian/AgentPCAP/blob/main/docs/ARCHITECTURE.md) · [Evidence](https://github.com/Hardonian/AgentPCAP/blob/main/spec/vectors/README.md) |
+| **[mcpwall](https://github.com/Hardonian/mcpwall)** · Rust<br />Control · `stable`<br />[![mcpwall CI](https://github.com/Hardonian/mcpwall/actions/workflows/ci.yml/badge.svg)](https://github.com/Hardonian/mcpwall/actions/workflows/ci.yml) | Tool-capable models need a small, inspectable security boundary before requests reach local MCP servers. | Versioned v1.0.5 release, public firewall tests, release checksums, and a dedicated security workflow.<br />[Architecture](https://github.com/Hardonian/mcpwall/blob/main/SECURITY.md) · [Evidence](https://github.com/Hardonian/mcpwall/releases/tag/v1.0.5) |
+| **[ModelForge](https://github.com/Hardonian/ModelForge)** · TypeScript<br />Compile · `research`<br />[![ModelForge CI](https://github.com/Hardonian/ModelForge/actions/workflows/modelforge-performance.yml/badge.svg)](https://github.com/Hardonian/ModelForge/actions/workflows/modelforge-performance.yml) | Model deployment choices are usually made through trial, OOM failures, and untraceable sizing assumptions. | Revision-specific compute passports distinguish measured, documented, derived, and predicted evidence; performance CI is public.<br />[Architecture](https://github.com/Hardonian/ModelForge/blob/main/docs/ARCHITECTURE.md) · [Evidence](https://github.com/Hardonian/ModelForge/tree/main/packages/benchmark-schema) |
+| **[Settler](https://github.com/Hardonian/Settler)** · TypeScript<br />Reconcile · `beta`<br />[![Settler CI](https://github.com/Hardonian/Settler/actions/workflows/ci.yml/badge.svg)](https://github.com/Hardonian/Settler/actions/workflows/ci.yml) | Payment, banking, and operational records diverge unless matching and evidence rules are explicit. | Public reconciliation benchmark source and checked-in snapshots, with CI and security-invariant workflows.<br />[Architecture](https://github.com/Hardonian/Settler/blob/main/docs/ARCHITECTURE.md) · [Evidence](https://github.com/Hardonian/Settler/blob/main/benchmarks/reconciliationBenchmark.ts) |
+<!-- profile-projects:end -->
+
+---
+
+## Selected evidence
+
+| Artifact | What it demonstrates | Inspect |
+| --- | --- | --- |
+| **AgentPCAP format and vectors** | A documented capture container with canonical MCP, A2A, OTLP, retry, incomplete, and error cases. | [Format specification](https://github.com/Hardonian/AgentPCAP/blob/main/spec/README.md) · [Test vectors](https://github.com/Hardonian/AgentPCAP/tree/main/spec/vectors) |
+| **mcpwall release and tests** | A versioned security boundary with public firewall tests, checksums, and documented limitations. | [v1.0.5 release](https://github.com/Hardonian/mcpwall/releases/tag/v1.0.5) · [Firewall tests](https://github.com/Hardonian/mcpwall/blob/main/tests/firewall_tests.rs) |
+| **ModelForge evidence model** | Deployment recommendations identify whether inputs are measured, documented, derived, or predicted. | [Benchmark schema](https://github.com/Hardonian/ModelForge/tree/main/packages/benchmark-schema) · [Performance CI](https://github.com/Hardonian/ModelForge/actions/workflows/modelforge-performance.yml) |
+| **Settler reconciliation benchmarks** | Matching performance is represented by executable benchmark source and checked-in result snapshots. | [Benchmark source](https://github.com/Hardonian/Settler/blob/main/benchmarks/reconciliationBenchmark.ts) · [Snapshots](https://github.com/Hardonian/Settler/blob/main/benchmarks/snapshots.json) |
+| **Profile integrity** | The portfolio itself is checked for metadata drift, stale verification, missing assets, malformed product pages, and dead links. | [Workflow](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml) · [Verification script](scripts/profile-metadata.py) |
 
 ---
 
@@ -151,9 +95,9 @@ The portfolio covers AI infrastructure, enterprise reliability, financial system
 <details>
 <summary><strong>AI systems, agent control planes, and inference runtimes</strong></summary>
 
-- **[AgentPCAP](https://github.com/Hardonian/AgentPCAP)** `[Python · CLI]` — Protocol capture and deterministic replay for AI agents.
+- **[AgentPCAP](https://github.com/Hardonian/AgentPCAP)** `[Go · CLI]` — Protocol capture and deterministic replay for AI agents.
 - **[AgentMesh](https://github.com/Hardonian/AgentMesh)** `[Go · Distributed]` — Identity, policy, routing, reliability, and progressive delivery for A2A and MCP.
-- **[ModelForge](https://github.com/Hardonian/ModelForge)** `[Python · AI]` — Constraint-driven model deployment planning.
+- **[ModelForge](https://github.com/Hardonian/ModelForge)** `[TypeScript · Compute]` — Constraint-driven model deployment planning.
 - **[mcpwall](https://github.com/Hardonian/mcpwall)** `[Rust · Security]` — Local-first MCP firewall and audit proxy.
 - **[veridag](https://github.com/Hardonian/veridag)** `[Rust · Quint]` — Formally specified distributed trust DAG.
 - **[nlsqlc](https://github.com/Hardonian/nlsqlc)** `[Rust · Compiler]` — Multi-tenant natural-language Query IR compiler.
@@ -188,7 +132,7 @@ The portfolio covers AI infrastructure, enterprise reliability, financial system
 <details>
 <summary><strong>FinOps, ledger infrastructure, and commercial engines</strong></summary>
 
-- **[Settler](https://github.com/Hardonian/Settler)** `[TigerBeetle · Next.js]` — Reconciliation intelligence and audit OS.
+- **[Settler](https://github.com/Hardonian/Settler)** `[TypeScript · TigerBeetle]` — Reconciliation intelligence and audit OS.
 - **[WhatsForDinner](https://github.com/Hardonian/WhatsForDinner)** `[React · Stripe]` — Consumer AI SaaS with subscriptions, credits, marketplace, and vision workflows.
 - **[TokenGoblin](https://github.com/Hardonian/TokenGoblin)** `[Go · ClickHouse]` — AI token-spend observability and routing guardrails.
 - **[apva-framework](https://github.com/Hardonian/apva-framework)** `[Python · Telemetry]` — Reliability-adjusted AI ROI measurement.
@@ -306,21 +250,6 @@ The same architecture patterns are packaged as deployable kits, audits, and oper
 ![NVIDIA](https://img.shields.io/badge/NVIDIA_CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white)
 
 </div>
-
-<details>
-<summary><strong>Run this profile's validation locally</strong></summary>
-
-```bash
-git clone https://github.com/Hardonian/Hardonian.git
-cd Hardonian
-just bootstrap
-cp .env.example .env
-just test
-```
-
-The test harness validates local assets, product-page structure, workflow syntax, and README links.
-
-</details>
 
 ---
 

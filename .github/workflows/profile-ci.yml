@@ -5,11 +5,25 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  schedule:
+    - cron: "17 12 * * 1"
+  workflow_dispatch:
 
 permissions:
+  actions: read
   contents: read
 
 jobs:
+  profile-metadata:
+    name: Verify Project Evidence
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Check generated metadata, freshness, and public evidence
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/profile-metadata.py --check --verify-remote
+
   validate-assets:
     name: Validate Assets
     runs-on: ubuntu-latest

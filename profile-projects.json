@@ -1,0 +1,54 @@
+{
+  "verified_on": "2026-09-19",
+  "max_age_days": 90,
+  "projects": [
+    {
+      "name": "AgentPCAP",
+      "role": "Observe",
+      "maturity": "beta",
+      "language": "Go",
+      "problem": "Agent failures cross model, tool, MCP, and A2A boundaries that ordinary application logs do not join.",
+      "proof": "Open .apcap schema, canonical protocol and failure-mode vectors, plus documented CI quality gates.",
+      "repository": "https://github.com/Hardonian/AgentPCAP",
+      "documentation": "https://github.com/Hardonian/AgentPCAP/blob/main/docs/ARCHITECTURE.md",
+      "evidence": "https://github.com/Hardonian/AgentPCAP/blob/main/spec/vectors/README.md",
+      "ci_workflow": "ci.yml"
+    },
+    {
+      "name": "mcpwall",
+      "role": "Control",
+      "maturity": "stable",
+      "language": "Rust",
+      "problem": "Tool-capable models need a small, inspectable security boundary before requests reach local MCP servers.",
+      "proof": "Versioned v1.0.5 release, public firewall tests, release checksums, and a dedicated security workflow.",
+      "repository": "https://github.com/Hardonian/mcpwall",
+      "documentation": "https://github.com/Hardonian/mcpwall/blob/main/SECURITY.md",
+      "evidence": "https://github.com/Hardonian/mcpwall/releases/tag/v1.0.5",
+      "ci_workflow": "ci.yml"
+    },
+    {
+      "name": "ModelForge",
+      "role": "Compile",
+      "maturity": "research",
+      "language": "TypeScript",
+      "problem": "Model deployment choices are usually made through trial, OOM failures, and untraceable sizing assumptions.",
+      "proof": "Revision-specific compute passports distinguish measured, documented, derived, and predicted evidence; performance CI is public.",
+      "repository": "https://github.com/Hardonian/ModelForge",
+      "documentation": "https://github.com/Hardonian/ModelForge/blob/main/docs/ARCHITECTURE.md",
+      "evidence": "https://github.com/Hardonian/ModelForge/tree/main/packages/benchmark-schema",
+      "ci_workflow": "modelforge-performance.yml"
+    },
+    {
+      "name": "Settler",
+      "role": "Reconcile",
+      "maturity": "beta",
+      "language": "TypeScript",
+      "problem": "Payment, banking, and operational records diverge unless matching and evidence rules are explicit.",
+      "proof": "Public reconciliation benchmark source and checked-in snapshots, with CI and security-invariant workflows.",
+      "repository": "https://github.com/Hardonian/Settler",
+      "documentation": "https://github.com/Hardonian/Settler/blob/main/docs/ARCHITECTURE.md",
+      "evidence": "https://github.com/Hardonian/Settler/blob/main/benchmarks/reconciliationBenchmark.ts",
+      "ci_workflow": "ci.yml"
+    }
+  ]
+}

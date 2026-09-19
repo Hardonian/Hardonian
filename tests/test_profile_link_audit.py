@@ -44,6 +44,15 @@ class ProfileLinkAuditTests(unittest.TestCase):
             with patch("sys.stdout", new=io.StringIO()):
                 self.assertEqual(audit.audit(readme), 1)
 
+    def test_resolves_generic_relative_file_and_ignores_fragment(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            document = root / "CONTRIBUTING.md"
+            document.write_text("# Contributing")
+            target, local = audit.resolve_link("CONTRIBUTING.md#workflow", root)
+            self.assertIsNone(target)
+            self.assertEqual(local, document.resolve())
+
     @patch.object(audit, "validate_public_http_url")
     @patch.object(audit.urllib.request, "build_opener")
     def test_http_warning_is_nonfatal(self, build_opener, validate):
