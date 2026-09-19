@@ -42,7 +42,7 @@ class TestProfileLinkAudit(unittest.TestCase):
         with patch('sys.stdout', new=io.StringIO()):
             result = profile_link_audit.audit()
 
-        self.assertEqual(result, 0)
+        self.assertEqual(result, 1)
 
     @patch('profile_link_audit.validate_public_http_url')
     @patch('profile_link_audit.urllib.request.build_opener')

@@ -3,13 +3,22 @@ import ipaddress
 import re
 import socket
 import sys
+import threading
+import time
 import urllib.error
 import urllib.request
+from collections import defaultdict
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
 ALLOWED_WARNING_CODES = {403, 429, 530, 999}
 USER_AGENT = "Hardonian-profile-audit/1.0"
+REQUEST_TIMEOUT_SECONDS = 8
+TRANSIENT_ATTEMPTS = 2
+HOST_CONCURRENCY = 2
+HOST_SEMAPHORES: defaultdict[str, threading.BoundedSemaphore] = defaultdict(
+    lambda: threading.BoundedSemaphore(HOST_CONCURRENCY)
+)
 
 
 class UnsafeURL(ValueError):
@@ -62,20 +71,48 @@ def resolve_link(raw: str, root: Path) -> tuple[str | None, Path | None]:
     return None, local
 
 
+def is_transient_network_error(exc: BaseException) -> bool:
+    current: BaseException | object | None = exc
+    visited: set[int] = set()
+    while current is not None and id(current) not in visited:
+        visited.add(id(current))
+        if isinstance(current, (TimeoutError, socket.timeout, ConnectionResetError)):
+            return True
+        message = str(current).lower()
+        if any(
+            fragment in message
+            for fragment in ("timed out", "temporarily unavailable", "connection reset", "remote end closed")
+        ):
+            return True
+        current = getattr(current, "reason", None) or getattr(current, "__cause__", None)
+    return False
+
+
 def check_url(raw: str, target: str) -> tuple[str, tuple | str]:
     try:
         validate_public_http_url(target)
         opener = urllib.request.build_opener(ValidatingRedirectHandler())
         request = urllib.request.Request(target, headers={"User-Agent": USER_AGENT})
-        with opener.open(request, timeout=20) as response:
-            code = response.status
-            if code >= 400 and code not in ALLOWED_WARNING_CODES:
-                return "fail", (raw, code, response.headers.get("content-type", ""))
-            return "ok", f"OK {code} {raw}"
-    except urllib.error.HTTPError as exc:
-        if exc.code in ALLOWED_WARNING_CODES:
-            return "warn", f"WARN {exc.code} {raw}"
-        return "fail", (raw, exc.code, str(exc))
+        hostname = urlparse(target).hostname or ""
+        for attempt in range(1, TRANSIENT_ATTEMPTS + 1):
+            try:
+                with HOST_SEMAPHORES[hostname]:
+                    with opener.open(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
+                        code = response.status
+                        if code >= 400 and code not in ALLOWED_WARNING_CODES:
+                            return "fail", (raw, code, response.headers.get("content-type", ""))
+                        return "ok", f"OK {code} {raw}"
+            except urllib.error.HTTPError as exc:
+                if exc.code in ALLOWED_WARNING_CODES:
+                    return "warn", f"WARN {exc.code} {raw}"
+                return "fail", (raw, exc.code, str(exc))
+            except Exception as exc:
+                if not is_transient_network_error(exc):
+                    return "fail", (raw, "ERROR", str(exc))
+                if attempt < TRANSIENT_ATTEMPTS:
+                    time.sleep(0.25 * attempt)
+                    continue
+                return "warn", f"WARN TRANSIENT {raw} ({exc})"
     except Exception as exc:
         return "fail", (raw, "ERROR", str(exc))
 

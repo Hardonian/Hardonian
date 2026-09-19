@@ -64,6 +64,53 @@ class ProfileLinkAuditTests(unittest.TestCase):
         self.assertIn("WARN 429", detail)
         validate.assert_called_once()
 
+    @patch.object(audit.time, "sleep")
+    @patch.object(audit, "validate_public_http_url")
+    @patch.object(audit.urllib.request, "build_opener")
+    def test_transient_timeout_is_retried(self, build_opener, validate, sleep):
+        opener = MagicMock()
+        response = MagicMock()
+        response.status = 200
+        response_context = MagicMock()
+        response_context.__enter__.return_value = response
+        opener.open.side_effect = [TimeoutError("The read operation timed out"), response_context]
+        build_opener.return_value = opener
+
+        status, detail = audit.check_url("https://img.shields.io/test.svg", "https://img.shields.io/test.svg")
+
+        self.assertEqual(status, "ok")
+        self.assertIn("OK 200", detail)
+        self.assertEqual(opener.open.call_count, 2)
+        sleep.assert_called_once()
+
+    @patch.object(audit.time, "sleep")
+    @patch.object(audit, "validate_public_http_url")
+    @patch.object(audit.urllib.request, "build_opener")
+    def test_repeated_transient_timeout_is_warning(self, build_opener, validate, sleep):
+        opener = MagicMock()
+        opener.open.side_effect = TimeoutError("The read operation timed out")
+        build_opener.return_value = opener
+
+        status, detail = audit.check_url("https://img.shields.io/test.svg", "https://img.shields.io/test.svg")
+
+        self.assertEqual(status, "warn")
+        self.assertIn("WARN TRANSIENT", detail)
+        self.assertEqual(opener.open.call_count, 2)
+
+    @patch.object(audit, "validate_public_http_url")
+    @patch.object(audit.urllib.request, "build_opener")
+    def test_hard_http_failure_still_fails(self, build_opener, validate):
+        opener = MagicMock()
+        opener.open.side_effect = urllib.error.HTTPError(
+            "https://example.com/missing", 404, "not found", {}, None
+        )
+        build_opener.return_value = opener
+
+        status, detail = audit.check_url("https://example.com/missing", "https://example.com/missing")
+
+        self.assertEqual(status, "fail")
+        self.assertEqual(detail[1], 404)
+
 
 if __name__ == "__main__":
     unittest.main()
