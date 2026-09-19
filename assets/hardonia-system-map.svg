@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="440" viewBox="0 0 1600 440" role="img" aria-labelledby="title desc">
+  <title id="title">Hardonia Sovereign Systems</title>
+  <desc id="desc">A restrained technical map showing the flow from observe to control, execute, prove, and reconcile.</desc>
+  <defs>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2dd4bf" stop-opacity="0.25"/>
+      <stop offset="0.48" stop-color="#67e8f9"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0.4"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1f2937" stroke-width="1"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="440" rx="24" fill="#090d14"/>
+  <rect x="1" y="1" width="1598" height="438" rx="23" fill="none" stroke="#263140" stroke-width="2"/>
+  <rect width="1600" height="440" rx="24" fill="url(#grid)" opacity="0.28"/>
+
+  <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+    <text x="88" y="98" fill="#7dd3fc" font-size="17" font-weight="700" letter-spacing="5">SOVEREIGN SYSTEMS</text>
+    <text x="84" y="178" fill="#f8fafc" font-size="78" font-weight="750" letter-spacing="-3">HARDONIA</text>
+    <text x="88" y="220" fill="#94a3b8" font-size="22" font-weight="450">Local compute. Deterministic control. Verifiable outcomes.</text>
+
+    <text x="1270" y="93" fill="#64748b" font-size="14" font-weight="600" letter-spacing="2">SYSTEM MAP / 01</text>
+
+    <line x1="98" y1="320" x2="1502" y2="320" stroke="#334155" stroke-width="2"/>
+    <line x1="98" y1="320" x2="1502" y2="320" stroke="url(#line)" stroke-width="3"/>
+
+    <g font-size="14" font-weight="700" letter-spacing="1.5">
+      <g transform="translate(98 320)">
+        <circle r="8" fill="#090d14" stroke="#5eead4" stroke-width="3"/>
+        <text x="0" y="-25" fill="#cbd5e1">01 / OBSERVE</text>
+        <text x="0" y="44" fill="#64748b" font-size="13" font-weight="500" letter-spacing="0">traffic · cost · state</text>
+      </g>
+      <g transform="translate(449 320)">
+        <circle r="8" fill="#090d14" stroke="#67e8f9" stroke-width="3"/>
+        <text x="0" y="-25" fill="#cbd5e1">02 / CONTROL</text>
+        <text x="0" y="44" fill="#64748b" font-size="13" font-weight="500" letter-spacing="0">policy · routing · limits</text>
+      </g>
+      <g transform="translate(800 320)">
+        <circle r="8" fill="#090d14" stroke="#7dd3fc" stroke-width="3" filter="url(#glow)"/>
+        <text x="0" y="-25" fill="#f8fafc">03 / EXECUTE</text>
+        <text x="0" y="44" fill="#64748b" font-size="13" font-weight="500" letter-spacing="0">isolated · idempotent</text>
+      </g>
+      <g transform="translate(1151 320)">
+        <circle r="8" fill="#090d14" stroke="#93c5fd" stroke-width="3"/>
+        <text x="0" y="-25" fill="#cbd5e1">04 / PROVE</text>
+        <text x="0" y="44" fill="#64748b" font-size="13" font-weight="500" letter-spacing="0">replay · evidence · trust</text>
+      </g>
+      <g transform="translate(1502 320)">
+        <circle r="8" fill="#090d14" stroke="#a78bfa" stroke-width="3"/>
+        <text x="0" y="-25" fill="#cbd5e1" text-anchor="end">05 / RECONCILE</text>
+        <text x="0" y="44" fill="#64748b" font-size="13" font-weight="500" letter-spacing="0" text-anchor="end">ledger · outcome · feedback</text>
+      </g>
+    </g>
+  </g>
+</svg>
