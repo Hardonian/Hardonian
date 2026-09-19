@@ -4,7 +4,7 @@
 
 # HARDONIA
 
-### Local compute. Deterministic control. Verifiable outcomes.
+<p><strong>Local compute. Deterministic control. Verifiable outcomes.</strong></p>
 
 **Scott Hardie** · Solutions Architect · AI Systems Builder · Toronto, Canada
 
