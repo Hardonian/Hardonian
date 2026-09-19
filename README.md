@@ -51,19 +51,19 @@ Modern AI systems collapse when they treat inference as an isolated API call. Ha
  │                                 HARDONIA PLATFORM TOPOLOGY                                       │
  ├──────────────────────────────────────────────────────────────────────────────────────────────────┤
  │ LAYER 5: FINANCIAL PROOF & REVENUE LEDGER                                                        │
- │ Settler (TigerBeetle Core) · webhook-witness · Stripe Ingestion · Immutable Cash Ledger         │
+ │ Settler (TigerBeetle Core) · webhook-witness · Stripe Ingestion · Immutable Cash Ledger          │
  ├──────────────────────────────────────────────────────────────────────────────────────────────────┤
  │ LAYER 4: SOVEREIGN RESILIENCE, GOVERNANCE & FORMAL TRUST                                         │
- │ veridag (Quint DAG) · continuityos (Resilience-as-Code) · mcpwall (Policy Proxy) · ReadyLayer     │
+ │ veridag (Quint DAG) · continuityos (Resilience-as-Code) · mcpwall (Policy Proxy) · ReadyLayer    │
  ├──────────────────────────────────────────────────────────────────────────────────────────────────┤
  │ LAYER 3: AGENT COORDINATION & PROTOCOL OBSERVABILITY                                             │
  │ AgentMesh (A2A Control Plane) · AgentPCAP (Agent Packet Capture) · JobForge · MissionLedger      │
  ├──────────────────────────────────────────────────────────────────────────────────────────────────┤
- │ LAYER 2: COMPUTE COMPILATION & DETERMINISTIC INTERMEDIATE REPRESENTATION                        │
- │ ModelForge (VRAM & Compute Compiler) · nlsqlc (Query IR >62k QPS) · SawyerCore Runtime          │
+ │ LAYER 2: COMPUTE COMPILATION & DETERMINISTIC INTERMEDIATE REPRESENTATION                         │
+ │ ModelForge (VRAM & Compute Compiler) · nlsqlc (Query IR >62k QPS) · SawyerCore Runtime           │
  ├──────────────────────────────────────────────────────────────────────────────────────────────────┤
  │ LAYER 1: SILICON CONTROL PLANE & DUAL-ROUTER INFERENCE                                           │
- │ Lane Alpha (V100 16GB) · Lane Beta (Tesla P40 24GB) · Lane Gamma (RTX 3060 12GB) · Ollama:11438│
+ │ Lane Alpha (V100 16GB) · Lane Beta (Tesla P40 24GB) · Lane Gamma (RTX 3060 12GB) · Ollama:11438  │
  └──────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
