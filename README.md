@@ -1,16 +1,23 @@
 <div align="center">
 
+<img src="assets/hardonia-system-map.svg" alt="Hardonia sovereign systems — JEV-powered decision layer across observe, control, execute, prove, and reconcile" width="100%" />
+
 # HARDONIA
 
 <p><strong>Local compute. Deterministic control. Verifiable outcomes.</strong></p>
 
 **Scott Hardie** · Solutions Architect · AI Systems Builder · Toronto, Canada
 
-[Explore the systems](#platform-monorepos) · [View the storefront](https://www.aiautomatedsystems.ca) · [Connect](https://www.linkedin.com/in/scottrmhardie/)
+[Explore the platform](#-platform-monorepos) · [View the storefront](https://www.aiautomatedsystems.ca) · [Connect](https://www.linkedin.com/in/scottrmhardie/)
 
 <br />
 
-`LOCAL-FIRST AI` · `CONTROL PLANES` · `DETERMINISTIC BACKENDS` · `FINOPS` · `VERIFICATION`
+![Rust](https://img.shields.io/badge/Rust-111827?style=flat-square&logo=rust&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
+![NVIDIA](https://img.shields.io/badge/NVIDIA_CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white)
+![TypeSafe](https://img.shields.io/badge/%E2%9A%A1_JEV-FF6B00?style=flat-square)
 
 </div>
 
@@ -24,64 +31,113 @@ Hardonia is a working portfolio of control planes, runtimes, security boundaries
 
 > **Intelligence can be probabilistic. Infrastructure cannot.**
 
-| **Observe** | **Control** | **Prove** |
-| :--- | :--- | :--- |
-| Capture agent, model, tool, cost, and transaction events. | Route workloads, enforce policy, isolate tenants, and recover safely. | Replay decisions, verify state, reconcile money, and export evidence. |
+Every decision in the platform flows through **[TypeSafe JEV](https://typesafe.ai)** — a deterministic decision engine that classifies intent, routes workloads, gates tool calls, and verifies outcomes at $0.042 per million tokens. No black boxes. No vibes-based routing.
+
+<img src="assets/operating-loop.svg" alt="Architecture → Implementation → Verification → Product → Customer Surface → Support + Measurement → feedback loop" width="100%" />
 
 ---
 
-## Platform Monorepos
+## ⚡ JEV Decision Layer
+
+JEV runs between every layer of the Hardonia platform:
+
+| Layer | What JEV does | Cost |
+|---|---|---|
+| **Chat widget** | Classifies visitor intent in 300ms — canned response or deep inference | $0.00002/msg |
+| **Context engine** | Decides which tool calls to keep or drop during compaction | $0.001/compaction |
+| **Tool gating** | Gates every MCP tool call through allowlist + hard rules before execution | $0.00001/call |
+| **Caveman compression** | 62% token reduction on long sessions | Auto-triggered |
+| **GPU routing** | Routes inference to the right GPU lane (V100 · P40 · RTX 3060) | Zero cost |
+
+> *The chat widget on [aiautomatedsystems.ca](https://www.aiautomatedsystems.ca) classifies every visitor message through JEV before deciding whether to serve a canned response or route to local Ollama inference. Zero cloud API costs.*
+
+---
+
+## 🏗️ Platform Monorepos
 
 Seven monorepos, each a coherent subsystem. Every monorepo has an [ARCHITECTURE.md](https://github.com/Hardonian/autopilot/blob/main/ARCHITECTURE.md) showing how it fits the platform.
 
-| Monorepo | Purpose | Contents |
-|---|---|---|
-| [**autopilot**](https://github.com/Hardonian/autopilot) | Runnerless automation | ops · finops · growth · support |
-| [**agent-infra**](https://github.com/Hardonian/agent-infra) | Agent execution and governance | control-plane · mission-ledger · agent-mesh · mcpwall |
-| [**agent-edge**](https://github.com/Hardonian/agent-edge) | Edge networking and capture | mesh-edge · pcap |
-| [**model-tools**](https://github.com/Hardonian/model-tools) | Inference routing and selection | model-forge · inference-api · ollama-router |
-| [**consumer-tools**](https://github.com/Hardonian/consumer-tools) | Consumer protection | warranty-weasel · review-radar · inbox-exorcist |
-| [**api-tools**](https://github.com/Hardonian/api-tools) | API lifecycle tooling | comfyui-api · webhook-witness · changelog-radar |
-| [**ops-tools**](https://github.com/Hardonian/ops-tools) | Operations infrastructure | continuity · drift-inspector · golden-path |
+<table>
+<tr>
+<td width="50%">
 
-### How they connect
+**Automation**
+
+| Monorepo | Purpose |
+|---|---|
+| [**autopilot**](https://github.com/Hardonian/autopilot) | Runnerless ops · finops · growth · support |
+| [**consumer-tools**](https://github.com/Hardonian/consumer-tools) | Warranty · review intel · inbox cleanup |
+| [**api-tools**](https://github.com/Hardonian/api-tools) | ComfyUI API · webhooks · changelog tracking |
+
+</td>
+<td width="50%">
+
+**Infrastructure**
+
+| Monorepo | Purpose |
+|---|---|
+| [**agent-infra**](https://github.com/Hardonian/agent-infra) | Control plane · governance · mesh · firewall |
+| [**agent-edge**](https://github.com/Hardonian/agent-edge) | Edge networking · packet capture |
+| [**model-tools**](https://github.com/Hardonian/model-tools) | Inference routing · GPU management |
+| [**ops-tools**](https://github.com/Hardonian/ops-tools) | Continuity · drift inspection · golden paths |
+
+</td>
+</tr>
+</table>
 
 ```
-autopilot ──→ agent-infra ──→ agent-edge
-    │              │
-    └──→ model-tools
-              │
-         ollama-router (GPU fleet: V100 · P40 · RTX 3060)
+┌─────────────┐  ┌─────────────┐  ┌─────────────┐
+│  autopilot   │  │ agent-infra  │  │ agent-edge   │
+│  ops/finops/ │──│ control-     │──│ mesh-edge/   │
+│  growth/     │  │  plane/      │  │ pcap/        │
+│  support/    │  │ mission-     │  └──────────────┘
+└──────┬───────┘  │  ledger/     │
+       │          │ agent-mesh/  │
+       └──────────│ mcpwall/     │
+                  └──────┬───────┘
+                         │
+                   ┌─────▼──────┐
+                   │ model-tools │
+                   │ inference/  │
+                   │ ollama/     │
+                   └──────┬──────┘
+                          │
+                    ⚡ JEV decides
+                          │
+                   ┌──────▼──────┐
+                   │  GPU FLEET   │
+                   │ V100 · P40   │
+                   │  RTX 3060    │
+                   └──────────────┘
 ```
 
 ---
 
-## SaaS experiments
+## 🧪 SaaS Experiments
 
-Active platform experiments in their own repos:
-
-| Repo | Stack | Purpose |
+| Repo | Stack | What it does |
 |---|---|---|
-| [**Settler**](https://github.com/Hardonian/Settler) | TypeScript · TigerBeetle | Reconciliation intelligence and audit OS |
-| [**Zeo**](https://github.com/Hardonian/Zeo) | TypeScript · Edge | Local-first, signed, composable agent pipelines |
+| [**Settler**](https://github.com/Hardonian/Settler) | TS · TigerBeetle | Reconciliation intelligence and audit OS |
 | [**veridag**](https://github.com/Hardonian/veridag) | Rust · Quint | Formally specified distributed trust DAG |
-| [**MortgageMatchPro**](https://github.com/Hardonian/MortgageMatchPro) | TypeScript | Mortgage matching platform |
-| [**Requiem**](https://github.com/Hardonian/Requiem) | C++ · Native | Native execution and operator-console contracts |
-| [**truthcore**](https://github.com/Hardonian/truthcore) | Python · Verification | Verification kernel and evidence reports |
-| [**ReadyLayer**](https://github.com/Hardonian/ReadyLayer) | TypeScript · CI | Delivery governance and provenance export |
+| [**Zeo**](https://github.com/Hardonian/Zeo) | TS · Edge | Local-first, signed, composable agent pipelines |
 | [**Reach**](https://github.com/Hardonian/Reach) | Rust · Runtime | Deterministic execution and transcript replay |
-| [**Nautilus**](https://github.com/Hardonian/Nautilus) | Docker · Infrastructure | Containerized operational AI infrastructure |
+| [**Requiem**](https://github.com/Hardonian/Requiem) | C++ · Native | Native execution and operator-console contracts |
+| [**truthcore**](https://github.com/Hardonian/truthcore) | Python | Verification kernel and evidence reports |
+| [**ReadyLayer**](https://github.com/Hardonian/ReadyLayer) | TS · CI | Delivery governance and provenance export |
+| [**MortgageMatchPro**](https://github.com/Hardonian/MortgageMatchPro) | TypeScript | Mortgage matching platform |
 | [**Keys**](https://github.com/Hardonian/Keys) | TypeScript | Auditable mission control for constrained agents |
+| [**Nautilus**](https://github.com/Hardonian/Nautilus) | Docker | Containerized operational AI infrastructure |
 | [**TokenGoblin**](https://github.com/Hardonian/TokenGoblin) | Go · ClickHouse | AI token-spend observability and routing guardrails |
 | [**SawyerCore**](https://github.com/Hardonian/SawyerCore) | Node · Python | Deterministic edge-AI runtime and simulation engine |
-| [**World26**](https://github.com/Hardonian/World26) | Python | Open planetary-systems simulator |
 | [**WorldForge**](https://github.com/Hardonian/WorldForge) | Rust | Deterministic, moddable simulation operating system |
+| [**World26**](https://github.com/Hardonian/World26) | Python | Open planetary-systems simulator |
+| [**FlexibleAccessible**](https://github.com/Hardonian/FlexibleAccessible) | TypeScript | WCAG accessibility compliance |
 
 ---
 
-## Infrastructure
+## 🛠️ Infrastructure
 
-| Repo | Purpose |
+| Repo | What it does |
 |---|---|
 | [**ai-lab**](https://github.com/Hardonian/ai-lab) | Lab config, scripts, monitoring, GPU fleet management |
 | [**agent-governance**](https://github.com/Hardonian/agent-governance) | Agent laws, spec, 159 tests, 35 spec sections |
@@ -90,11 +146,9 @@ Active platform experiments in their own repos:
 
 ---
 
-## Revenue stack
+## 💰 Revenue Stack
 
-Commercial systems built on the platform:
-
-| Repo | Purpose |
+| Repo | What it does |
 |---|---|
 | [**hardonia-store**](https://github.com/Hardonian/hardonia-store) | Storefront · [aiautomatedsystems.ca](https://www.aiautomatedsystems.ca) |
 | [**comfyui-workflow-packs**](https://github.com/Hardonian/comfyui-workflow-packs) | 20+ ComfyUI workflow packs on Gumroad |
@@ -104,33 +158,16 @@ Commercial systems built on the platform:
 
 ---
 
-## Operating principles
+## Operating Principles
 
-| Principle | Working rule |
-| --- | --- |
-| **Evidence over confidence** | If a run cannot be inspected or replayed, it is not production-ready. |
-| **Local-first by design** | Own the compute, data boundary, fallback path, and cost model wherever practical. |
-| **Determinism at the edges** | Keep probabilistic intelligence inside explicit policy, schema, and execution constraints. |
-| **Boring reliability wins** | Idempotency, RLS, state machines, and observable queues beat clever hidden behavior. |
-| **Revenue is a reconciled event** | A dashboard row is not money; provider-correlated settlement evidence is money. |
-
----
-
-## Working stack
-
-<div align="center">
-
-![Rust](https://img.shields.io/badge/Rust-111827?style=flat-square&logo=rust&logoColor=white)
-![Python](https://img.shields.io/badge/Python_3.12-3776AB?style=flat-square&logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![NVIDIA](https://img.shields.io/badge/NVIDIA_CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white)
-![TypeSafe](https://img.shields.io/badge/TypeSafe_JEV-FF6B00?style=flat-square)
-
-</div>
+| | Principle | Working rule |
+|---|---|---|
+| 🔍 | **Evidence over confidence** | If a run cannot be inspected or replayed, it is not production-ready. |
+| 🏠 | **Local-first by design** | Own the compute, data boundary, fallback path, and cost model wherever practical. |
+| 🔒 | **Determinism at the edges** | Keep probabilistic intelligence inside explicit policy, schema, and execution constraints. |
+| ⚙️ | **Boring reliability wins** | Idempotency, RLS, state machines, and observable queues beat clever hidden behavior. |
+| 💵 | **Revenue is a reconciled event** | A dashboard row is not money; provider-correlated settlement evidence is money. |
+| ⚡ | **JEV before vibes** | Every decision is classified, routed, and verified — not guessed. |
 
 ---
 
@@ -140,11 +177,17 @@ If you are working on a serious AI, SaaS, integration, reliability, or revenue s
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LINKEDIN-CONNECT_WITH_SCOTT-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
-[![Storefront](https://img.shields.io/badge/STOREFRONT-EXPLORE_SYSTEMS-0f766e?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.aiautomatedsystems.ca)
+[![LinkedIn](https://img.shields.io/badge/LINKEDIN-CONNECT-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
+[![Storefront](https://img.shields.io/badge/STOREFRONT-EXPLORE-0f766e?style=for-the-badge&logo=cloudflare&logoColor=white)](https://www.aiautomatedsystems.ca)
 [![Email](https://img.shields.io/badge/EMAIL-START_A_CONVERSATION-6d28d9?style=for-the-badge&logo=gmail&logoColor=white)](mailto:scottrmhardie@gmail.com?subject=Hardonia%20systems%20inquiry)
 
 <br />
+<br />
+
+![Visitors](https://api.visitorbadge.io/api/visitors?path=Hardonian%2FHardonian&countColor=%23373737&style=flat-square)
+![Repos](https://img.shields.io/badge/repos-39-blue?style=flat-square)
+![Monorepos](https://img.shields.io/badge/monorepos-7-orange?style=flat-square)
+![JEV](https://img.shields.io/badge/JEV-decisions-FF6B00?style=flat-square)
 
 <sub>© Scott Hardie · Hardonia Sovereign Systems · Toronto, Canada</sub>
 
