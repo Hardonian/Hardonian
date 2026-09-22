@@ -74,7 +74,6 @@ Active platform experiments in their own repos:
 | [**Keys**](https://github.com/Hardonian/Keys) | TypeScript | Auditable mission control for constrained agents |
 | [**TokenGoblin**](https://github.com/Hardonian/TokenGoblin) | Go · ClickHouse | AI token-spend observability and routing guardrails |
 | [**SawyerCore**](https://github.com/Hardonian/SawyerCore) | Node · Python | Deterministic edge-AI runtime and simulation engine |
-| [**Zeo**](https://github.com/Hardonian/Zeo) | TypeScript | Local-first agent pipelines |
 | [**World26**](https://github.com/Hardonian/World26) | Python | Open planetary-systems simulator |
 | [**WorldForge**](https://github.com/Hardonian/WorldForge) | Rust | Deterministic, moddable simulation operating system |
 
