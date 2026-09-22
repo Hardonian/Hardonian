@@ -59,6 +59,19 @@ The system map above is the visual overview. This table defines the responsibili
 
 ---
 
+## Platform Monorepos
+
+The core Hardonia platform is organized into four monorepos:
+
+| Repo | Contents | Purpose |
+|---|---|---|
+| [**autopilot**](https://github.com/Hardonian/autopilot) | ops, finops, growth, support | Runnerless automation across all domains |
+| [**agent-infra**](https://github.com/Hardonian/agent-infra) | control-plane, mission-ledger, agent-mesh, mcpwall | Agent execution, governance, networking, security |
+| [**agent-edge**](https://github.com/Hardonian/agent-edge) | mesh-edge, pcap | Edge networking and traffic capture |
+| [**model-tools**](https://github.com/Hardonian/model-tools) | model-forge, inference-api, ollama-router | Model selection, inference routing, GPU management |
+
+See [ARCHITECTURE.md](https://github.com/Hardonian/autopilot/blob/main/ARCHITECTURE.md) in any monorepo for the full platform diagram and cross-repo dependencies.
+
 ## Selected systems
 
 These four projects form a complete operating chain and receive the primary attention on this profile. Maturity is deliberately conservative: `stable` means a versioned release exists; `beta` means the public system is functional but interfaces may change; `research` means the architecture is being actively validated.
