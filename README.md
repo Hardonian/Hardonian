@@ -158,6 +158,32 @@ Seven monorepos, each a coherent subsystem. Every monorepo has an [ARCHITECTURE.
 
 ---
 
+## 🎬 Sovereign AI Lab — Local Video Generation
+
+The Hardonia AI lab runs a 3-GPU sovereign stack with **2,354 ComfyUI nodes** across video generation, image processing, and audio synthesis — all running locally with zero cloud API costs.
+
+| GPU | VRAM | Role | Model Capacity |
+|---|---|---|---|
+| **NVIDIA V100** | 32 GB | Heavy inference · Wan 2.2 14B video | 14B params |
+| **NVIDIA P40** | 24 GB | ComfyUI primary · HunyuanVideo · LoRA training | 8.3B params |
+| **NVIDIA RTX 3060** | 12 GB | Vision models · embeddings · LTX 2.3 | 5B params |
+
+**Live capabilities:**
+
+| Capability | Model | Nodes | Output |
+|---|---|---|---|
+| Product photo → video | [Wan 2.2](https://github.com/Wan-AI/Wan2.2) | 168 nodes | 5-sec rotating product demo |
+| Text → video + audio | [LTX 2.3](https://github.com/Lightricks/ComfyUI-LTXVideo) | 111 nodes | Synced video + narration |
+| Photo → cinematic video | [HunyuanVideo 1.5](https://github.com/Tencent/HunyuanVideo) | 19 nodes | 1080p with super-resolution |
+| Image → portrait | SDXL + ControlNet | 400+ nodes | Professional headshots |
+| Batch product photos | ComfyUI + IP-Adapter | 300+ nodes | 100+ images/hour |
+
+**Infrastructure:** Ollama 4-lane inference · LiteLLM routing · Prometheus + Grafana monitoring · NATS event mesh · n8n automation · Agent governance (159 tests, 35 spec sections)
+
+> The [Video Gen API](https://github.com/Hardonian/ai-lab) on `:8085` wraps all video models behind a single REST endpoint. Upload a product photo, pick a style, get a video.
+
+---
+
 ## Operating Principles
 
 | | Principle | Working rule |
