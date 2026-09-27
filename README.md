@@ -121,7 +121,7 @@ Hardonia includes an owned, local testbed for model routing, image and video wor
 
 | Lane | Hardware | Primary use |
 | --- | --- | --- |
-| **Heavy inference** | NVIDIA V100 · 32 GB | Larger model and video-generation workloads. |
+| **Heavy inference** | NVIDIA V100 · 16 GB | Larger model and video-generation workloads. |
 | **Memory-oriented** | NVIDIA P40 · 24 GB | ComfyUI pipelines, quantized models, and training experiments. |
 | **Interactive** | NVIDIA RTX 3060 · 12 GB | Vision, embeddings, and latency-sensitive workflows. |
 
