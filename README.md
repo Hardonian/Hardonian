@@ -8,9 +8,9 @@
 
 **Scott Hardie** · Solutions Architect at McGraw Hill · Independent AI Systems Builder · Toronto, Canada
 
-[![Book a diagnostic](https://img.shields.io/badge/BOOK_A_DIAGNOSTIC-Choose_a_time-f97316?style=for-the-badge)](https://calendly.com/scottrmhardie)
-[![Run the free audit](https://img.shields.io/badge/RUN_THE_FREE_AUDIT-2_minutes-0f766e?style=for-the-badge)](https://www.aiautomatedsystems.ca/audit)
-[![Email](https://img.shields.io/badge/EMAIL-Describe_the_bottleneck-6d28d9?style=for-the-badge)](mailto:inquiries@aiautomatedsystems.ca?subject=Production%20AI%20systems%20inquiry&body=Workflow%20or%20system%3A%0AWhat%20is%20breaking%20or%20costing%20time%3A%0AWhat%20a%20good%20outcome%20looks%20like%3A)
+[![Book a 30-minute diagnostic with Scott Hardie](https://img.shields.io/badge/BOOK_A_DIAGNOSTIC-Choose_a_time-f97316?style=for-the-badge)](https://calendly.com/scottrmhardie)
+[![Run the free 2-minute AI lab audit](https://img.shields.io/badge/RUN_THE_FREE_AUDIT-2_minutes-0f766e?style=for-the-badge)](https://www.aiautomatedsystems.ca/audit)
+[![Send an email inquiry about production AI systems](https://img.shields.io/badge/EMAIL-Describe_the_bottleneck-6d28d9?style=for-the-badge)](mailto:inquiries@aiautomatedsystems.ca?subject=Production%20AI%20systems%20inquiry&body=Workflow%20or%20system%3A%0AWhat%20is%20breaking%20or%20costing%20time%3A%0AWhat%20a%20good%20outcome%20looks%20like%3A)
 
 [Systems](#proof-backed-systems) · [How I help](#how-i-help) · [Architecture](#how-the-platform-fits-together) · [Lab](#sovereign-ai-lab) · [LinkedIn](https://www.linkedin.com/in/scottrmhardie/)
 
@@ -51,15 +51,15 @@ _Public project metadata last verified **2026-09-26** · [source manifest](profi
 
 | Project | Problem | Public evidence |
 | --- | --- | --- |
-| **[TokenGoblin](https://github.com/Hardonian/TokenGoblin)** · Go<br />Measure · `beta`<br />[![TokenGoblin CI](https://github.com/Hardonian/TokenGoblin/actions/workflows/ci.yml/badge.svg)](https://github.com/Hardonian/TokenGoblin/actions/workflows/ci.yml) | LLM workloads need cost, usage, and routing data before teams can control inference spend. | Public ingestion benchmarks, cost and routing tests, and a repository-level CI workflow.<br />[Architecture](https://github.com/Hardonian/TokenGoblin/blob/main/docs/ARCHITECTURE_AND_SPEC.md) · [Evidence](https://github.com/Hardonian/TokenGoblin/blob/main/internal/ingestion/benchmark_test.go) |
-| **[ReadyLayer](https://github.com/Hardonian/ReadyLayer)** · TypeScript<br />Govern · `beta`<br />[![ReadyLayer CI](https://github.com/Hardonian/ReadyLayer/actions/workflows/ci.yml/badge.svg)](https://github.com/Hardonian/ReadyLayer/actions/workflows/ci.yml) | AI-assisted delivery needs policy, review, and evidence before generated changes reach production. | Public policy contracts, evidence export documentation, test suites, and CI quality gates.<br />[Architecture](https://github.com/Hardonian/ReadyLayer/blob/main/docs/runner/ARCHITECTURE.md) · [Evidence](https://github.com/Hardonian/ReadyLayer/blob/main/docs/EVIDENCE.md) |
-| **[veridag](https://github.com/Hardonian/veridag)** · Rust<br />Prove · `research`<br />[![veridag CI](https://github.com/Hardonian/veridag/actions/workflows/formal.yml/badge.svg)](https://github.com/Hardonian/veridag/actions/workflows/formal.yml) | Distributed execution needs explicit ordering, capability security, and cross-language conformance. | A public protocol specification, Quint formal models, test vectors, and dedicated conformance workflows.<br />[Architecture](https://github.com/Hardonian/veridag/blob/main/docs/architecture.md) · [Evidence](https://github.com/Hardonian/veridag/blob/main/formal/README.md) |
-| **[Settler](https://github.com/Hardonian/Settler)** · TypeScript<br />Reconcile · `beta`<br />[![Settler CI](https://github.com/Hardonian/Settler/actions/workflows/ci.yml/badge.svg)](https://github.com/Hardonian/Settler/actions/workflows/ci.yml) | Payment, banking, and operational records diverge unless matching and evidence rules are explicit. | Public reconciliation benchmark source and checked-in snapshots, with CI and security-invariant workflows.<br />[Architecture](https://github.com/Hardonian/Settler/blob/main/docs/ARCHITECTURE.md) · [Evidence](https://github.com/Hardonian/Settler/blob/main/benchmarks/reconciliationBenchmark.ts) |
+| **[TokenGoblin](https://github.com/Hardonian/TokenGoblin)** · Go<br />Measure · `beta`<br />[![View TokenGoblin CI workflow status](https://github.com/Hardonian/TokenGoblin/actions/workflows/ci.yml/badge.svg)](https://github.com/Hardonian/TokenGoblin/actions/workflows/ci.yml) | LLM workloads need cost, usage, and routing data before teams can control inference spend. | Public ingestion benchmarks, cost and routing tests, and a repository-level CI workflow.<br />[Architecture](https://github.com/Hardonian/TokenGoblin/blob/main/docs/ARCHITECTURE_AND_SPEC.md) · [Evidence](https://github.com/Hardonian/TokenGoblin/blob/main/internal/ingestion/benchmark_test.go) |
+| **[ReadyLayer](https://github.com/Hardonian/ReadyLayer)** · TypeScript<br />Govern · `beta`<br />[![View ReadyLayer CI workflow status](https://github.com/Hardonian/ReadyLayer/actions/workflows/ci.yml/badge.svg)](https://github.com/Hardonian/ReadyLayer/actions/workflows/ci.yml) | AI-assisted delivery needs policy, review, and evidence before generated changes reach production. | Public policy contracts, evidence export documentation, test suites, and CI quality gates.<br />[Architecture](https://github.com/Hardonian/ReadyLayer/blob/main/docs/runner/ARCHITECTURE.md) · [Evidence](https://github.com/Hardonian/ReadyLayer/blob/main/docs/EVIDENCE.md) |
+| **[veridag](https://github.com/Hardonian/veridag)** · Rust<br />Prove · `research`<br />[![View veridag CI workflow status](https://github.com/Hardonian/veridag/actions/workflows/formal.yml/badge.svg)](https://github.com/Hardonian/veridag/actions/workflows/formal.yml) | Distributed execution needs explicit ordering, capability security, and cross-language conformance. | A public protocol specification, Quint formal models, test vectors, and dedicated conformance workflows.<br />[Architecture](https://github.com/Hardonian/veridag/blob/main/docs/architecture.md) · [Evidence](https://github.com/Hardonian/veridag/blob/main/formal/README.md) |
+| **[Settler](https://github.com/Hardonian/Settler)** · TypeScript<br />Reconcile · `beta`<br />[![View Settler CI workflow status](https://github.com/Hardonian/Settler/actions/workflows/ci.yml/badge.svg)](https://github.com/Hardonian/Settler/actions/workflows/ci.yml) | Payment, banking, and operational records diverge unless matching and evidence rules are explicit. | Public reconciliation benchmark source and checked-in snapshots, with CI and security-invariant workflows.<br />[Architecture](https://github.com/Hardonian/Settler/blob/main/docs/ARCHITECTURE.md) · [Evidence](https://github.com/Hardonian/Settler/blob/main/benchmarks/reconciliationBenchmark.ts) |
 <!-- profile-projects:end -->
 
 <div align="center">
 
-[![Profile evidence checks](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml/badge.svg)](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml)
+[![View profile evidence checks CI workflow status](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml/badge.svg)](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml)
 
 </div>
 
@@ -237,10 +237,10 @@ If you have an AI workflow that is expensive, unreliable, hard to govern, or stu
 
 <div align="center">
 
-[![Book](https://img.shields.io/badge/BOOK-30_MIN_DIAGNOSTIC-f97316?style=for-the-badge)](https://calendly.com/scottrmhardie)
-[![Email](https://img.shields.io/badge/EMAIL-INQUIRIES-6d28d9?style=for-the-badge&logo=gmail&logoColor=white)](mailto:inquiries@aiautomatedsystems.ca?subject=Production%20AI%20systems%20inquiry)
-[![Website](https://img.shields.io/badge/WEBSITE-AI_AUTOMATED_SYSTEMS-0f766e?style=for-the-badge)](https://www.aiautomatedsystems.ca)
-[![LinkedIn](https://img.shields.io/badge/LINKEDIN-SCOTT_HARDIE-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
+[![Book a 30-minute diagnostic with Scott Hardie](https://img.shields.io/badge/BOOK-30_MIN_DIAGNOSTIC-f97316?style=for-the-badge)](https://calendly.com/scottrmhardie)
+[![Send an email inquiry about production AI systems](https://img.shields.io/badge/EMAIL-INQUIRIES-6d28d9?style=for-the-badge&logo=gmail&logoColor=white)](mailto:inquiries@aiautomatedsystems.ca?subject=Production%20AI%20systems%20inquiry)
+[![Visit the AI Automated Systems website](https://img.shields.io/badge/WEBSITE-AI_AUTOMATED_SYSTEMS-0f766e?style=for-the-badge)](https://www.aiautomatedsystems.ca)
+[![Connect with Scott Hardie on LinkedIn](https://img.shields.io/badge/LINKEDIN-SCOTT_HARDIE-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
 
 <br />
 
