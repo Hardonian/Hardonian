@@ -8,9 +8,9 @@
 
 **Scott Hardie** · Solutions Architect at McGraw Hill · Independent AI Systems Builder · Toronto, Canada
 
-[![Book a diagnostic](https://img.shields.io/badge/BOOK_A_DIAGNOSTIC-Choose_a_time-f97316?style=for-the-badge)](https://calendly.com/scottrmhardie)
+[![Book a 30-minute diagnostic session](https://img.shields.io/badge/BOOK_A_DIAGNOSTIC-Choose_a_time-f97316?style=for-the-badge)](https://calendly.com/scottrmhardie)
 [![Run the free audit](https://img.shields.io/badge/RUN_THE_FREE_AUDIT-2_minutes-0f766e?style=for-the-badge)](https://www.aiautomatedsystems.ca/audit)
-[![Email](https://img.shields.io/badge/EMAIL-Describe_the_bottleneck-6d28d9?style=for-the-badge)](mailto:inquiries@aiautomatedsystems.ca?subject=Production%20AI%20systems%20inquiry&body=Workflow%20or%20system%3A%0AWhat%20is%20breaking%20or%20costing%20time%3A%0AWhat%20a%20good%20outcome%20looks%20like%3A)
+[![Send an email inquiry describing the bottleneck](https://img.shields.io/badge/EMAIL-Describe_the_bottleneck-6d28d9?style=for-the-badge)](mailto:inquiries@aiautomatedsystems.ca?subject=Production%20AI%20systems%20inquiry&body=Workflow%20or%20system%3A%0AWhat%20is%20breaking%20or%20costing%20time%3A%0AWhat%20a%20good%20outcome%20looks%20like%3A)
 
 [Systems](#proof-backed-systems) · [How I help](#how-i-help) · [Architecture](#how-the-platform-fits-together) · [Lab](#sovereign-ai-lab) · [LinkedIn](https://www.linkedin.com/in/scottrmhardie/)
 
@@ -237,10 +237,10 @@ If you have an AI workflow that is expensive, unreliable, hard to govern, or stu
 
 <div align="center">
 
-[![Book](https://img.shields.io/badge/BOOK-30_MIN_DIAGNOSTIC-f97316?style=for-the-badge)](https://calendly.com/scottrmhardie)
-[![Email](https://img.shields.io/badge/EMAIL-INQUIRIES-6d28d9?style=for-the-badge&logo=gmail&logoColor=white)](mailto:inquiries@aiautomatedsystems.ca?subject=Production%20AI%20systems%20inquiry)
-[![Website](https://img.shields.io/badge/WEBSITE-AI_AUTOMATED_SYSTEMS-0f766e?style=for-the-badge)](https://www.aiautomatedsystems.ca)
-[![LinkedIn](https://img.shields.io/badge/LINKEDIN-SCOTT_HARDIE-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
+[![Book a 30-minute diagnostic session](https://img.shields.io/badge/BOOK-30_MIN_DIAGNOSTIC-f97316?style=for-the-badge)](https://calendly.com/scottrmhardie)
+[![Send an email inquiry describing the bottleneck](https://img.shields.io/badge/EMAIL-INQUIRIES-6d28d9?style=for-the-badge&logo=gmail&logoColor=white)](mailto:inquiries@aiautomatedsystems.ca?subject=Production%20AI%20systems%20inquiry)
+[![Visit the AI Automated Systems website](https://img.shields.io/badge/WEBSITE-AI_AUTOMATED_SYSTEMS-0f766e?style=for-the-badge)](https://www.aiautomatedsystems.ca)
+[![View Scott Hardie's LinkedIn profile](https://img.shields.io/badge/LINKEDIN-SCOTT_HARDIE-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
 
 <br />
 
