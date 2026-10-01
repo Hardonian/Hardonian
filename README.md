@@ -16,7 +16,7 @@
 
 [Architecture Focus](#architecture-focus--systems-philosophy) · [Proof-Backed Systems](#proof-backed-systems) · [Production Invariants](#production-invariants-at-a-glance) · [Architecture Matrix](#architectural-capabilities--evidence-matrix) · [Technical Writing](#technical-writing--architecture-guides) · [Platform Topology](#how-the-platform-fits-together) · [Sovereign AI Lab](#sovereign-ai-lab) · [Engineering Stack](#working-stack) · [About & Track Record](#about)
 
-`ENTERPRISE AI ARCHITECTURE` · `MODEL CONTEXT PROTOCOL (MCP)` · `POSTGRESQL RLS` · `AGENT EVALS` · `FINOPS` · `FORMAL VERIFICATION`
+`ENTERPRISE AI ARCHITECTURE` · `MODEL CONTEXT PROTOCOL (MCP)` · `POSTGRESQL RLS` · `AGENT EVALS` · `AMD EPYC & NPU` · `FINOPS` · `FORMAL VERIFICATION`
 
 </div>
 
@@ -49,7 +49,8 @@ I design and build the infrastructure outside and around the model: observable w
 | **Spend Governance** | Sub-millisecond Go ingestion with hard token quotas | [TokenGoblin](https://github.com/Hardonian/TokenGoblin) ingestion benchmarks & budget cutoff tests |
 | **Execution Trust** | Formally verified state machines and DAG ordering | [veridag](https://github.com/Hardonian/veridag) Quint temporal logic models & conformance specs |
 | **Tool Authorization** | LLM as unprivileged planner; cryptographic approval tokens | [ReadyLayer](https://github.com/Hardonian/ReadyLayer) CI security gates & policy contracts |
-| **Hardware-Informed** | Dedicated 4-tier on-premise GPU/NPU compute lab | [model-tools](https://github.com/Hardonian/model-tools) & [api-tools](https://github.com/Hardonian/api-tools) routing testbeds |
+| **Audit Provenance** | Tamper-evident transaction settlement & replayable proofs | [truthcore](https://github.com/Hardonian/truthcore) & [Settler](https://github.com/Hardonian/Settler) audit chains |
+| **Hardware-Informed** | Dedicated 5-tier on-premise EPYC, NPU & GPU compute cluster | [model-tools](https://github.com/Hardonian/model-tools) & [Sovereign AI Lab](#sovereign-ai-lab) routing testbeds |
 
 ### Choose the shortest path
 
@@ -72,7 +73,9 @@ Field-tested engineering implementations across core production AI competencies,
 | **Multi-Tenant Security & Relational Isolation** | Enforcing mathematical tenant isolation directly in PostgreSQL Row-Level Security (RLS) policies rather than fragile application-level WHERE filters; verified with automated negative penetration test suites. | [Settler](https://github.com/Hardonian/Settler)<br />[Tenant Isolation Guide](OPENAI_CAMPAIGN/content/01_safe_multi_tenant_ai_agents_postgres_rls.md)<br />[Settler Benchmarks](https://github.com/Hardonian/Settler/blob/main/benchmarks/reconciliationBenchmark.ts) |
 | **Inference FinOps & Spend Governance** | High-throughput Go ingestion pipelines measuring cost, usage, latency, and tenant token quotas; automated circuit breakers halting runaway agent loops; budget-governed model cascades (`gpt-4o` → `gpt-4o-mini` → local fallback). | [TokenGoblin](https://github.com/Hardonian/TokenGoblin)<br />[Ingestion Benchmarks](https://github.com/Hardonian/TokenGoblin/blob/main/internal/ingestion/benchmark_test.go)<br />[TokenGoblin Spec](https://github.com/Hardonian/TokenGoblin/blob/main/docs/ARCHITECTURE_AND_SPEC.md) |
 | **Formal Verification & Protocol Design** | Specifying distributed execution semantics and capability security using Quint temporal logic formal models, state invariant checks, and cross-language conformance test vectors. | [veridag](https://github.com/Hardonian/veridag)<br />[Quint Formal Models](https://github.com/Hardonian/veridag/blob/main/formal/README.md)<br />[Protocol Architecture](https://github.com/Hardonian/veridag/blob/main/docs/architecture.md) |
+| **Local-First & Hybrid Model Routing** | Tiered inference pipelines utilizing owned AMD EPYC host compute and Ryzen AI 9 NPU/GPU workers for low-latency classification, tool selection, and embeddings at zero marginal API cost, cascading to frontier cloud LLMs only when needed. | [model-tools](https://github.com/Hardonian/model-tools)<br />[autopilot](https://github.com/Hardonian/autopilot)<br />[Sovereign AI Lab](#sovereign-ai-lab) |
 | **Continuous Evals & CI/CD Delivery** | Automated evaluation batteries scoring tool selection accuracy, argument schemas, prompt injection refusals, and structured outputs; gating PR merges on deterministic quality thresholds. | [ReadyLayer](https://github.com/Hardonian/ReadyLayer)<br />[Production Agent Guide](OPENAI_CAMPAIGN/content/03_from_prototype_to_production_enterprise_agents.md)<br />[Quality Gates CI](https://github.com/Hardonian/ReadyLayer/actions/workflows/security-gates.yml) |
+| **Cryptographic Provenance & Audit Chains** | Immutable Merkle evidence chains and offline-verifiable proofpacks recording all agent tool executions, financial transactions, and state changes for regulatory compliance and audit replay. | [Settler](https://github.com/Hardonian/Settler)<br />[truthcore](https://github.com/Hardonian/truthcore)<br />[veridag](https://github.com/Hardonian/veridag) |
 | **Full-Stack SaaS & Enterprise Integrations** | Modern SaaS delivery with Next.js 16 App Router, Supabase RLS, Prisma, Stripe billing, Kafka messaging, Keycloak OIDC, and enterprise LMS/SIS protocol connectors (LTI, OneRoster). | [ReadyLayer](https://github.com/Hardonian/ReadyLayer)<br />[Settler](https://github.com/Hardonian/Settler)<br />[Enterprise Architecture Record](#about) |
 
 ---
@@ -171,11 +174,12 @@ Each public monorepo includes an `ARCHITECTURE.md` describing its boundary and m
 Hardonia includes an owned, local testbed for model routing, image and video workflows, and failure-mode testing. It is where local-first claims are exercised before they become architecture advice.
 
 | Lane | Hardware | Primary use |
-| --- | --- | --- |
-| **Edge orchestration & NPU** | AMD Ryzen AI 9 HX370 · 50 NPU TOPS · 32 GB | Local agent orchestration, low-latency reasoning, and local eval suites. |
-| **Heavy inference** | NVIDIA V100 · 16 GB | Larger model and video-generation workloads. |
-| **Memory-oriented** | NVIDIA P40 · 24 GB | ComfyUI pipelines, quantized models, and training experiments. |
-| **Interactive** | NVIDIA RTX 3060 · 12 GB | Vision, embeddings, and latency-sensitive workflows. |
+| :--- | :--- | :--- |
+| **Enterprise Server Host & Virtualization** | AMD EPYC · High PCIe lane density · DDR4/DDR5 ECC RAM | Multi-GPU virtualization, heavy Ollama/vLLM endpoints, vector database indexing, container cluster networking. |
+| **Edge Orchestration & NPU** | AMD Ryzen AI 9 HX370 · 50 NPU TOPS · 32 GB | Local agent orchestration, low-latency reasoning, and local eval suites. |
+| **Heavy Inference** | NVIDIA V100 · 16 GB HBM2 | Larger model and video-generation workloads. |
+| **Memory-Oriented** | NVIDIA P40 · 24 GB | ComfyUI pipelines, quantized models, and training experiments. |
+| **Interactive & Vision** | NVIDIA RTX 3060 · 12 GB | Vision, embeddings, and latency-sensitive workflows. |
 
 The lab uses Ollama-compatible routing, ComfyUI, containerized services, and Prometheus/Grafana-style observability. Public implementation lives primarily in [model-tools](https://github.com/Hardonian/model-tools) and [api-tools](https://github.com/Hardonian/api-tools).
 
@@ -270,6 +274,14 @@ The lab uses Ollama-compatible routing, ComfyUI, containerized services, and Pro
 
 <br /><br />
 
+**Compute & Sovereign Hardware**<br />
+![AMD EPYC](https://img.shields.io/badge/AMD_EPYC-ED1C24?style=flat-square&logo=amd&logoColor=white)
+![AMD Ryzen AI NPU](https://img.shields.io/badge/AMD_Ryzen_AI_NPU-50_TOPS-ED1C24?style=flat-square&logo=amd&logoColor=white)
+![NVIDIA V100](https://img.shields.io/badge/NVIDIA_V100-16GB-76B900?style=flat-square&logo=nvidia&logoColor=white)
+![NVIDIA P40](https://img.shields.io/badge/NVIDIA_P40-24GB-76B900?style=flat-square&logo=nvidia&logoColor=white)
+
+<br /><br />
+
 **Infrastructure & Cloud**<br />
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
@@ -304,7 +316,7 @@ I am a Solutions Architect at **McGraw Hill** and build Hardonia independently f
 - **Dual-Discipline Mastery**: Combining high-level enterprise architecture (C-suite technical alignment, procurement, institutional security, FERPA/SOC-2 compliance) with low-level systems implementation (Go distributed control planes, Rust formal models, TypeScript/Next.js production apps, and PostgreSQL kernel-level isolation).
 - **Enterprise Integrations at Scale**: Deep experience architecting mission-critical data exchanges across large-scale distributed systems, identity providers (Keycloak, SAML, OIDC), message buses, and legacy institutional platforms (LMS, SIS, ERP).
 - **Commercial & Delivery Track Record**: Winner of the President's Award for Sales Excellence; proven ability to bridge frontier AI research into reliable, revenue-generating enterprise customer outcomes.
-- **Sovereign Infrastructure**: Hands-on hardware engineering operating an owned GPU/NPU inference cluster for local model evaluations, quantized inference, and private agent pipelines.
+- **Sovereign Infrastructure**: Hands-on hardware systems engineering operating an owned multi-tier AMD EPYC server, AMD Ryzen AI 9 NPU, and NVIDIA GPU cluster for local model evaluations, quantized inference, and private agent pipelines.
 
 ---
 
