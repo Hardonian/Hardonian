@@ -8,12 +8,13 @@
 
 > **Building high-assurance infrastructure around foundation models: deterministic policy boundaries, Model Context Protocol (MCP) gateways, mathematical multi-tenant data isolation, and verified execution.**
 
-[![Target Roles](https://img.shields.io/badge/Target_Roles-Applied_AI_Architect_%7C_Staff_AI_Systems_%7C_Forward_Deployed-0A66C2?style=flat-square)](#executive-summary--role-alignment)
-[![Location](https://img.shields.io/badge/Location-Toronto%2C_ON_(Open_to_Remote_%2F_Relocation)-111827?style=flat-square)](#about)
+[![Focus](https://img.shields.io/badge/Focus-Enterprise_Applied_AI_%7C_Agent_Infrastructure-0A66C2?style=flat-square)](#architecture-focus--systems-philosophy)
+[![Role](https://img.shields.io/badge/Role-Solutions_Architect_%40_McGraw_Hill-111827?style=flat-square)](#about)
+[![Location](https://img.shields.io/badge/Location-Toronto%2C_Canada-4B5563?style=flat-square)](#about)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-scottrmhardie-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
 [![Email](https://img.shields.io/badge/Email-scottrmhardie%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:scottrmhardie@gmail.com)
 
-[Executive Summary](#executive-summary--role-alignment) · [Proof-Backed Systems](#proof-backed-systems) · [Architecture Matrix](#architectural-capabilities--evidence-matrix) · [Technical Writing](#technical-writing--architecture-guides) · [Platform Topology](#how-the-platform-fits-together) · [Sovereign AI Lab](#sovereign-ai-lab) · [Engineering Stack](#working-stack) · [About & Track Record](#about)
+[Architecture Focus](#architecture-focus--systems-philosophy) · [Proof-Backed Systems](#proof-backed-systems) · [Production Invariants](#production-invariants-at-a-glance) · [Architecture Matrix](#architectural-capabilities--evidence-matrix) · [Technical Writing](#technical-writing--architecture-guides) · [Platform Topology](#how-the-platform-fits-together) · [Sovereign AI Lab](#sovereign-ai-lab) · [Engineering Stack](#working-stack) · [About & Track Record](#about)
 
 `ENTERPRISE AI ARCHITECTURE` · `MODEL CONTEXT PROTOCOL (MCP)` · `POSTGRESQL RLS` · `AGENT EVALS` · `FINOPS` · `FORMAL VERIFICATION`
 
@@ -21,7 +22,7 @@
 
 ---
 
-## Executive Summary & Role Alignment
+## Architecture Focus & Systems Philosophy
 
 AI demos are easy. Production enterprise systems must survive retries, partial failures, hostile inputs, prompt injections, runaway inference spend, model drift, and regulatory scrutiny under strict enterprise boundaries.
 
@@ -33,27 +34,37 @@ I design and build the infrastructure outside and around the model: observable w
 | --- | --- | --- |
 | Capture model, tool, cost, and transaction events with sub-millisecond telemetry. | Route workloads, enforce capability policies, isolate risk, and recover safely. | Replay decisions, verify state invariants, reconcile transactions, and export audit evidence. |
 
-### Target Role Alignment for Frontier AI & Enterprise Teams
+### Systems Architecture Disciplines
 
-- **Applied AI Architect (Technical Success & Enterprise Solutions)**: Senior technical advisor guiding Fortune 500 & institutional clients through secure agent architectures, discovery, evaluations, and production adoption.
-- **Staff / Principal AI Systems Engineer (Agent Infrastructure)**: Systems-level engineering of distributed agent control planes, MCP gateways, sandboxed tool proxies, model fallback cascades, and real-time inference telemetry.
-- **Forward Deployed Engineer (FDE / Enterprise Delivery)**: High-velocity customer-embedded engineering connecting LLMs to complex enterprise data fabrics, legacy platforms (ERP, SIS, LMS, CRM), and relational RLS boundaries.
-- **AI Platform & FinOps Lead**: Designing token routing architectures, tenant budget quotas, latency/cost trade-off matrices, and automated continuous evaluation batteries.
+- **Enterprise Applied AI Architecture**: Guiding institutional and enterprise stakeholders through secure agent topologies, governance boundaries, legacy data integrations, and scalable production deployment.
+- **Distributed Agent Infrastructure & MCP**: Engineering resilient agent control planes, sandboxed Model Context Protocol (MCP) gateways, policy proxies, and deterministic model failover cascades.
+- **Data Boundary & Multi-Tenant Security**: Enforcing mathematical cross-tenant isolation directly in database kernels (PostgreSQL RLS) with automated negative penetration test batteries.
+- **Inference FinOps & Execution Observability**: Architecting high-throughput Go ingestion pipelines, real-time token spend quotas, latency/cost routing trade-offs, and continuous evaluation suites.
+
+### Production Invariants at a Glance
+
+| Dimension | Architectural Standard | Verifiable System Proof |
+| :--- | :--- | :--- |
+| **Tenant Isolation** | Kernel-enforced PostgreSQL Row-Level Security (RLS) | [Settler](https://github.com/Hardonian/Settler) automated cross-tenant penetration test suites |
+| **Spend Governance** | Sub-millisecond Go ingestion with hard token quotas | [TokenGoblin](https://github.com/Hardonian/TokenGoblin) ingestion benchmarks & budget cutoff tests |
+| **Execution Trust** | Formally verified state machines and DAG ordering | [veridag](https://github.com/Hardonian/veridag) Quint temporal logic models & conformance specs |
+| **Tool Authorization** | LLM as unprivileged planner; cryptographic approval tokens | [ReadyLayer](https://github.com/Hardonian/ReadyLayer) CI security gates & policy contracts |
+| **Hardware-Informed** | Dedicated 4-tier on-premise GPU/NPU compute lab | [model-tools](https://github.com/Hardonian/model-tools) & [api-tools](https://github.com/Hardonian/api-tools) routing testbeds |
 
 ### Choose the shortest path
 
 | If you are… | Start here | What you get |
 | --- | --- | --- |
-| **A Big Tech recruiter or engineering leader** | **[Review the Architecture Matrix](#architectural-capabilities--evidence-matrix)** | Direct mapping to Staff/Principal competencies, verified codebases, formal models, and CI workflows. |
-| **Reviewing engineering depth & code** | **[Inspect the public evidence](#proof-backed-systems)** | 4 canonical open-source systems with benchmarks, test suites, and conservative maturity labels. |
-| **An operations or engineering leader** | **[Book a free 30-minute diagnostic](https://calendly.com/scottrmhardie)** | A constraint map, failure-mode assessment, and concrete next steps for brittle AI workflows. |
+| **Reviewing engineering architecture & code** | **[Inspect the public evidence](#proof-backed-systems)** | 4 canonical open-source systems with benchmarks, test suites, and conservative maturity labels. |
+| **Exploring production AI capabilities** | **[Inspect the Architecture Matrix](#architectural-capabilities--evidence-matrix)** | Cross-system mapping of MCP gateways, Postgres RLS multi-tenancy, formal Quint verification, and CI quality gates. |
+| **An enterprise or engineering leader** | **[Book a free 30-minute diagnostic](https://calendly.com/scottrmhardie)** | A constraint map, failure-mode assessment, and concrete next steps for brittle AI workflows. |
 | **Evaluating private or local AI** | **[Run the free AI lab audit](https://www.aiautomatedsystems.ca/audit)** | A fast readiness signal before spending on infrastructure or local hardware. |
 
 ---
 
 ## Architectural Capabilities & Evidence Matrix
 
-For technical hiring teams evaluating systems depth, this matrix maps core production AI competencies directly to public repositories, verified test suites, and engineering guides:
+Field-tested engineering implementations across core production AI competencies, mapped to public repositories, verified test suites, and technical guides:
 
 | Competency Domain | Production Implementation Pattern | Evidence & Repositories |
 | --- | --- | --- |
@@ -94,10 +105,13 @@ _Public project metadata last verified **2026-10-01** · [source manifest](profi
 Field-tested engineering guides grounded in verified production code and open-source infrastructure:
 
 1. **[Building Safe Multi-Tenant AI Agents with Postgres RLS](OPENAI_CAMPAIGN/content/01_safe_multi_tenant_ai_agents_postgres_rls.md)**  
+   `POSTGRESQL RLS` · `NEGATIVE PENETRATION TESTING` · `KERNEL-ENFORCED MULTI-TENANCY`  
    _Why application-level filtering fails in autonomous agent workflows, and how to enforce mathematical tenant boundaries via PostgreSQL Row-Level Security with automated negative penetration tests._
 2. **[Enterprise Tool Calling: Why Authorization Belongs Outside the Model](OPENAI_CAMPAIGN/content/02_enterprise_tool_calling_authorization_outside_model.md)**  
+   `MODEL CONTEXT PROTOCOL (MCP)` · `CRYPTOGRAPHIC HITL TOKENS` · `UNPRIVILEGED PLANNERS`  
    _Treating the LLM as an unprivileged planner; implementing policy-gated MCP reverse proxies with single-use cryptographic approval tokens for privileged side effects._
 3. **[From Prototype to Production: Architecture for Enterprise AI Agents](OPENAI_CAMPAIGN/content/03_from_prototype_to_production_enterprise_agents.md)**  
+   `THE SIX PRODUCTION PILLARS` · `CONTINUOUS CI EVALS` · `OPENTELEMETRY TRACING`  
    _The six production pillars: model abstraction, tool execution boundaries, continuous CI/CD evaluations, OpenTelemetry observability, and token spend governance._
 
 ---
@@ -296,7 +310,7 @@ I am a Solutions Architect at **McGraw Hill** and build Hardonia independently f
 
 ## Bring the bottleneck
 
-If you have an AI workflow that is expensive, unreliable, hard to govern, or stuck between prototype and production—or if you are looking to discuss Senior, Staff, or Principal Applied AI and Systems Engineering opportunities—reach out directly:
+If you have an AI workflow that is expensive, unreliable, hard to govern, or stuck between prototype and production—or want to connect on high-assurance AI systems architecture and enterprise engineering—reach out directly:
 
 <div align="center">
 
