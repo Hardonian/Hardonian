@@ -15,7 +15,7 @@
 | **NPU / Acceleration** | AMD XDNA 2 NPU (50 TOPS) + AMD Radeon 890M iGPU (RDNA 3.5, 16 CUs) | Hardware spec | Verified |
 | **Physical Memory** | 32 GB LPDDR5X (33,949,601,792 bytes) | `Win32_ComputerSystem` | Verified |
 | **Storage (Primary)** | Drive `C:` — ~111 GB Free of 930 GB total | `Get-PSDrive` | Healthy |
-| **Storage (Secondary)**| Drive `D:` — ~1.14 TB Free of 1.86 TB total | `Get-PSDrive` | Plentiful |
+| **Storage (Secondary)** | Drive `D:` — ~1.14 TB Free of 1.86 TB total | `Get-PSDrive` | Plentiful |
 | **Operating System** | Windows 11 Pro Insider Preview Build 29671 | `Win32_OperatingSystem` | Verified |
 | **WSL State** | WSL installed; background execution operates directly in native Windows PowerShell / cmd | `wsl` probe | Operational |
 
@@ -30,7 +30,7 @@
 | **Node.js** | `v24.15.0` | Runtime for Next.js App Router, TypeScript agents | **PASS** |
 | **npm** | `11.12.1` | Package management | **PASS** |
 | **pnpm** | `11.8.0` | High-efficiency monorepo / package management | **PASS** |
-| **Python Package Mgr**| `uv` (`C:\Users\scott\.local\bin\uv.exe`) | Next-generation Python dependency & runtime manager | **PASS** |
+| **Python Package Mgr** | `uv` (`C:\Users\scott\.local\bin\uv.exe`) | Next-generation Python dependency & runtime manager | **PASS** |
 | **Python Runtime** | CPython 3.13.9 (`AppData\Roaming\uv\python\...`) & CPython 3.12.10 | AI evaluation suites, data pipelines, model runners | **PASS** |
 | **Go** | `go1.26.3 windows/amd64` | High-throughput agent infrastructure, TokenGoblin | **PASS** |
 | **Rust / Cargo** | Rust toolchain present (veridag, b2b suites) | Deterministic systems, Quint/conformance harnesses | **PASS** |
@@ -60,7 +60,7 @@
 
 - **Configured Git User**: `Scott Hardie`
 - **Configured Git Email**: `scottrmhardie@gmail.com`
-- **GitHub Organization / Username**: `Hardonian` (https://github.com/Hardonian)
+- **GitHub Organization / Username**: `Hardonian` (<https://github.com/Hardonian>)
 - **Profile Repository**: `c:\Users\scott\GitHub\Hardonian` (maps to `https://github.com/Hardonian/Hardonian.git`)
 - **Remote Access Status**: Verified working via HTTPS (`git ls-remote` returns HEAD cleanly).
 
@@ -69,8 +69,9 @@
 ## 5. Security & Secret Hygiene Review
 
 In strict compliance with Core Execution Principles #6 and #7:
+
 1. **Shell Environment Keys**: No live cloud API keys (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `SUPABASE_KEY`, etc.) are exposed in the system environment.
-2. **Environment Files**: Checked 143 `.env*` files across local trees. 98% are cleanly committed `.env.example` templates. 
+2. **Environment Files**: Checked 143 `.env*` files across local trees. 98% are cleanly committed `.env.example` templates.
 3. **Remotes Audit**: Detected a historical PAT embedded in the remote URL of `TokenGoblin/.git/config`. Tested against GitHub API: returned `HTTP 401: Unauthorized` (expired / revoked).
    - *Action Item*: Clean up local remote URL to standard HTTPS (`https://github.com/Hardonian/TokenGoblin.git`) to prevent local credential confusion.
 

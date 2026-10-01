@@ -4,7 +4,7 @@
 
 # Scott Hardie
 
-### Enterprise Applied AI Architect · AI Agents · Enterprise Integrations · Production AI Systems
+## Enterprise Applied AI Architect · AI Agents · Enterprise Integrations · Production AI Systems
 
 > **Building production-grade agent infrastructure, enterprise AI integrations, and trustworthy multi-tenant AI systems.**
 
@@ -66,11 +66,11 @@ _Public project metadata last verified **2026-10-01** · [source manifest](profi
 Field-tested engineering guides grounded in verified production code and open-source infrastructure:
 
 1. **[Building Safe Multi-Tenant AI Agents with Postgres RLS](OPENAI_CAMPAIGN/content/01_safe_multi_tenant_ai_agents_postgres_rls.md)**  
-   *Why application-level filtering fails in agentic workflows, and how to enforce mathematical tenant boundaries via PostgreSQL Row-Level Security with automated negative penetration tests.*
+   _Why application-level filtering fails in agentic workflows, and how to enforce mathematical tenant boundaries via PostgreSQL Row-Level Security with automated negative penetration tests._
 2. **[Enterprise Tool Calling: Why Authorization Belongs Outside the Model](OPENAI_CAMPAIGN/content/02_enterprise_tool_calling_authorization_outside_model.md)**  
-   *Treating the LLM as an unprivileged planner; implementing policy-gated MCP reverse proxies with single-use cryptographic approval tokens for privileged side effects.*
+   _Treating the LLM as an unprivileged planner; implementing policy-gated MCP reverse proxies with single-use cryptographic approval tokens for privileged side effects._
 3. **[From Prototype to Production: Architecture for Enterprise AI Agents](OPENAI_CAMPAIGN/content/03_from_prototype_to_production_enterprise_agents.md)**  
-   *The six production pillars: model abstraction, tool execution boundaries, continuous CI/CD evaluations, OpenTelemetry observability, and token spend governance.*
+   _The six production pillars: model abstraction, tool execution boundaries, continuous CI/CD evaluations, OpenTelemetry observability, and token spend governance._
 
 ---
 
