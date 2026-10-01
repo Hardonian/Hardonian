@@ -3,18 +3,6 @@
   "max_age_days": 90,
   "projects": [
     {
-      "name": "AgentMesh",
-      "role": "Control",
-      "maturity": "beta",
-      "language": "Go",
-      "problem": "Autonomous agents need deterministic policy, MCP tool routing, and human-in-the-loop approvals before touching enterprise systems.",
-      "proof": "Public MCP gateway implementation, policy enforcement engine, OpenAI enterprise runner, and automated evaluation suites.",
-      "repository": "https://github.com/Hardonian/AgentMesh",
-      "documentation": "https://github.com/Hardonian/AgentMesh/blob/main/docs/architecture-openai-enterprise.md",
-      "evidence": "https://github.com/Hardonian/AgentMesh/blob/main/docs/release-verification.md",
-      "ci_workflow": "ci.yml"
-    },
-    {
       "name": "TokenGoblin",
       "role": "Measure",
       "maturity": "beta",
@@ -36,7 +24,19 @@
       "repository": "https://github.com/Hardonian/ReadyLayer",
       "documentation": "https://github.com/Hardonian/ReadyLayer/blob/main/docs/runner/ARCHITECTURE.md",
       "evidence": "https://github.com/Hardonian/ReadyLayer/blob/main/docs/EVIDENCE.md",
-      "ci_workflow": "ci.yml"
+      "ci_workflow": "security-gates.yml"
+    },
+    {
+      "name": "veridag",
+      "role": "Prove",
+      "maturity": "research",
+      "language": "Rust",
+      "problem": "Distributed execution needs explicit ordering, capability security, and cross-language conformance.",
+      "proof": "A public protocol specification, Quint formal models, test vectors, and dedicated conformance workflows.",
+      "repository": "https://github.com/Hardonian/veridag",
+      "documentation": "https://github.com/Hardonian/veridag/blob/main/docs/architecture.md",
+      "evidence": "https://github.com/Hardonian/veridag/blob/main/formal/README.md",
+      "ci_workflow": "formal.yml"
     },
     {
       "name": "Settler",
@@ -48,7 +48,7 @@
       "repository": "https://github.com/Hardonian/Settler",
       "documentation": "https://github.com/Hardonian/Settler/blob/main/docs/ARCHITECTURE.md",
       "evidence": "https://github.com/Hardonian/Settler/blob/main/benchmarks/reconciliationBenchmark.ts",
-      "ci_workflow": "ci.yml"
+      "ci_workflow": "security.yml"
     }
   ]
 }

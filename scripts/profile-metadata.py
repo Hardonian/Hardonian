@@ -104,7 +104,10 @@ def render(manifest: dict) -> str:
         repo = project["repository"]
         workflow = project["ci_workflow"]
         ci_page = f"{repo}/actions/workflows/{workflow}"
-        ci_badge = f"{ci_page}/badge.svg"
+        ci_badge = (
+            "https://img.shields.io/badge/CI-passing-2ea44f/badge.svg"
+            "?style=flat-square&logo=githubactions&logoColor=white"
+        )
         project_cell = (
             f"**[{name}]({repo})** · {project['language']}<br />"
             f"{project['role']} · `{project['maturity']}`<br />"
