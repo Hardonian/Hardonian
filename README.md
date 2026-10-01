@@ -34,6 +34,38 @@ I design and build the infrastructure outside and around the model: observable w
 | --- | --- | --- |
 | Capture model, tool, cost, and transaction events with sub-millisecond telemetry. | Route workloads, enforce capability policies, isolate risk, and recover safely. | Replay decisions, verify state invariants, reconcile transactions, and export audit evidence. |
 
+### Enterprise Agent Execution Lifecycle
+
+```text
+[Untrusted Input / Event]
+           │
+           ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ Ingress & FinOps Guardrails (TokenGoblin)                       │
+│ • Daily tenant budget quota check ($50 hard cap)                │
+│ • Sub-millisecond token telemetry & latency tracking            │
+└──────────────────────────────┬──────────────────────────────────┘
+                               ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ Unprivileged Model Planner (gpt-4o / o3-mini / vLLM)            │
+│ • Zero execution privileges inside the context window           │
+│ • Emits typed, candidate tool intent via Model Context Protocol │
+└──────────────────────────────┬──────────────────────────────────┘
+                               ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ MCP Policy Firewall & Authorization Gateway                     │
+│ ├── READ Operation: Auto-approved under tenant scope            │
+│ ├── WRITE Operation: Scoped execution + immutable audit log     │
+│ └── DESTRUCTIVE Operation: HALTED for Cryptographic HITL Token  │
+└──────────────────────────────┬──────────────────────────────────┘
+                               ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ Relational Kernel & Settlement (Settler & PostgreSQL RLS)       │
+│ • Mathematical cross-tenant isolation (zero leakage)            │
+│ • Merkle evidence packet generated for replayable audit log     │
+└─────────────────────────────────────────────────────────────────┘
+```
+
 ### Systems Architecture Disciplines
 
 - **Enterprise Applied AI Architecture**: Guiding institutional and enterprise stakeholders through secure agent topologies, governance boundaries, legacy data integrations, and scalable production deployment.
@@ -116,6 +148,9 @@ Field-tested engineering guides grounded in verified production code and open-so
 3. **[From Prototype to Production: Architecture for Enterprise AI Agents](OPENAI_CAMPAIGN/content/03_from_prototype_to_production_enterprise_agents.md)**  
    `THE SIX PRODUCTION PILLARS` · `CONTINUOUS CI EVALS` · `OPENTELEMETRY TRACING`  
    _The six production pillars: model abstraction, tool execution boundaries, continuous CI/CD evaluations, OpenTelemetry observability, and token spend governance._
+4. **[Hardonia Architecture Playbook](architecture-playbook/README.md)**  
+   `SYSTEM TOPOLOGY` · `OPERATING LOOPS` · `CAPABILITY BOUNDARIES`  
+   _Public architecture notes on bounded context separation, data ownership, cutover controls, and provider-correlated evidence verification._
 
 ---
 
@@ -135,6 +170,8 @@ Every engagement starts with the workflow—not a predetermined model or platfor
 ## How the platform fits together
 
 <img src="assets/operating-loop.svg" alt="Architecture, implementation, verification, product delivery, customer surface, and measurement feedback loop" width="100%" />
+
+Detailed capability mappings and operational boundaries are documented in the [Architecture Playbook](architecture-playbook/README.md).
 
 Seven monorepos keep related systems coherent while preserving clear boundaries:
 
@@ -316,6 +353,7 @@ I am a Solutions Architect at **McGraw Hill** and build Hardonia independently f
 - **Dual-Discipline Mastery**: Combining high-level enterprise architecture (C-suite technical alignment, procurement, institutional security, FERPA/SOC-2 compliance) with low-level systems implementation (Go distributed control planes, Rust formal models, TypeScript/Next.js production apps, and PostgreSQL kernel-level isolation).
 - **Enterprise Integrations at Scale**: Deep experience architecting mission-critical data exchanges across large-scale distributed systems, identity providers (Keycloak, SAML, OIDC), message buses, and legacy institutional platforms (LMS, SIS, ERP).
 - **Commercial & Delivery Track Record**: Winner of the President's Award for Sales Excellence; proven ability to bridge frontier AI research into reliable, revenue-generating enterprise customer outcomes.
+- **Open Standards & Protocol Leadership**: Deep domain fluency in open standards across education and enterprise systems (LTI 1.3 Advantage, OneRoster 1.2, OAuth 2.0 / Keycloak OIDC, SCIM, Model Context Protocol, and OpenTelemetry trace propagation).
 - **Sovereign Infrastructure**: Hands-on hardware systems engineering operating an owned multi-tier AMD EPYC server, AMD Ryzen AI 9 NPU, and NVIDIA GPU cluster for local model evaluations, quantized inference, and private agent pipelines.
 
 ---
