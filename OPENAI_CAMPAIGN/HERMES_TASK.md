@@ -57,6 +57,7 @@ Execute terminal-centric environment validation, runtime testing, and deployment
 ## EXACT ACTIONS
 
 ### Action 1: Verify `AgentMesh` OpenAI Enterprise Agent Terminal Run & Capture Visual Demo Asset
+
 - Change directory to `c:\Users\scott\GitHub\AgentMesh`.
 - Ensure active branch is `portfolio/openai-readiness`.
 - Run the enterprise agent demonstration: `go run ./examples/openai-enterprise-agent`.
@@ -64,18 +65,21 @@ Execute terminal-centric environment validation, runtime testing, and deployment
 - Record terminal output or generate an SVG / ANSI log asset for the README.
 
 ### Action 2: Run Full Invariant Verification in `Settler`
+
 - Change directory to `c:\Users\scott\GitHub\Settler`.
 - Run the tenant-isolation verification suite: `pnpm validate:tenant-isolation` or `pnpm test:cross-tenant`.
 - Confirm negative tests fail closed (proving Tenant B cannot query Tenant A records).
 - Run architecture compliance verification: `pnpm eval:arch-compliance` or `pnpm verify:rls`.
 
 ### Action 3: Reconcile Dependencies and Run Baseline Verification in `ReadyLayer`
+
 - Change directory to `c:\Users\scott\GitHub\ReadyLayer`.
 - Run `pnpm type-check` to verify TypeScript AST integrity.
 - Run `pnpm test` (Vitest) for core policy and billing unit tests.
 - Record any failing tests and isolate whether they stem from missing local environment secrets (`DATABASE_URL`, `STRIPE_SECRET_KEY`) vs code defects.
 
 ### Action 4: Verify Docker Environment & Local Ollama Model Integration
+
 - Check Docker daemon container health: `docker ps`.
 - Check local Ollama model availability: `ollama list`.
 - Run a 5-second smoke test validating local fallback execution against `llama3.1:8b` or `mistral:latest`.
@@ -124,6 +128,7 @@ Produce a concise release report in:
 `c:\Users\scott\GitHub\Hardonian\OPENAI_CAMPAIGN\HERMES_EXECUTION_REPORT.md`
 
 Reporting for each flagship:
+
 - **`AgentMesh`**: Binary status, eval score (expected: 1.00), example run status (expected: PASS).
 - **`Settler`**: Tenant isolation test output (expected: PASS / Invariants verified).
 - **`ReadyLayer`**: Typecheck output, test count, and environment requirements.
