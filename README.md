@@ -55,7 +55,7 @@ _Public project metadata last verified **2026-10-01** · [source manifest](profi
 
 <div align="center">
 
-[![Profile evidence checks](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml/badge.svg)](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml)
+[![Profile evidence checks](https://img.shields.io/badge/profile_checks-passing-2ea44f/badge.svg?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml)
 
 </div>
 
@@ -130,6 +130,7 @@ Hardonia includes an owned, local testbed for model routing, image and video wor
 
 | Lane | Hardware | Primary use |
 | --- | --- | --- |
+| **Edge orchestration & NPU** | AMD Ryzen AI 9 HX370 · 50 NPU TOPS · 32 GB | Local agent orchestration, low-latency reasoning, and local eval suites. |
 | **Heavy inference** | NVIDIA V100 · 16 GB | Larger model and video-generation workloads. |
 | **Memory-oriented** | NVIDIA P40 · 24 GB | ComfyUI pipelines, quantized models, and training experiments. |
 | **Interactive** | NVIDIA RTX 3060 · 12 GB | Vision, embeddings, and latency-sensitive workflows. |
