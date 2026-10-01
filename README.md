@@ -2,19 +2,15 @@
 
 <img src="assets/hardonia-system-map.svg" alt="Hardonia production AI systems: observe, control, execute, prove, and reconcile" width="100%" />
 
-# HARDONIA
+# Scott Hardie
 
-<p><strong>Production AI systems that survive contact with reality</strong></p>
+### Enterprise Applied AI Architect · AI Agents · Enterprise Integrations · Production AI Systems
 
-**Scott Hardie** · Solutions Architect at McGraw Hill · Independent AI Systems Builder · Toronto, Canada
+> **Building production-grade agent infrastructure, enterprise AI integrations, and trustworthy multi-tenant AI systems.**
 
-[![Book a diagnostic](https://img.shields.io/badge/BOOK_A_DIAGNOSTIC-Choose_a_time-f97316?style=for-the-badge)](https://calendly.com/scottrmhardie)
-[![Run the free audit](https://img.shields.io/badge/RUN_THE_FREE_AUDIT-2_minutes-0f766e?style=for-the-badge)](https://www.aiautomatedsystems.ca/audit)
-[![Email](https://img.shields.io/badge/EMAIL-Describe_the_bottleneck-6d28d9?style=for-the-badge)](mailto:inquiries@aiautomatedsystems.ca?subject=Production%20AI%20systems%20inquiry&body=Workflow%20or%20system%3A%0AWhat%20is%20breaking%20or%20costing%20time%3A%0AWhat%20a%20good%20outcome%20looks%20like%3A)
+[Flagship Systems](#proof-backed-systems) · [Technical Writing](#technical-writing--architecture-guides) · [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) · [Email](mailto:scottrmhardie@gmail.com)
 
-[Systems](#proof-backed-systems) · [How I help](#how-i-help) · [Architecture](#how-the-platform-fits-together) · [Lab](#sovereign-ai-lab) · [LinkedIn](https://www.linkedin.com/in/scottrmhardie/)
-
-`PRODUCTION AI` · `AGENT CONTROL PLANES` · `LOCAL INFERENCE` · `FINOPS` · `VERIFICATION`
+`ENTERPRISE AI ARCHITECTURE` · `MODEL CONTEXT PROTOCOL (MCP)` · `POSTGRESQL RLS` · `AGENT EVALS` · `FINOPS`
 
 </div>
 
@@ -47,13 +43,13 @@ I design and build the infrastructure around the model: observable workflows, ex
 These are the four clearest public examples of the approach. The table is generated from a [versioned manifest](profile-projects.json), checked against GitHub every week, and deliberately separates released, beta, and research work.
 
 <!-- profile-projects:start -->
-_Public project metadata last verified **2026-09-26** · [source manifest](profile-projects.json) · [verification policy](CONTRIBUTING.md#project-metadata)_
+_Public project metadata last verified **2026-10-01** · [source manifest](profile-projects.json) · [verification policy](CONTRIBUTING.md#project-metadata)_
 
 | Project | Problem | Public evidence |
 | --- | --- | --- |
+| **[AgentMesh](https://github.com/Hardonian/AgentMesh)** · Go<br />Control · `beta`<br />[![AgentMesh CI](https://github.com/Hardonian/AgentMesh/actions/workflows/ci.yml/badge.svg)](https://github.com/Hardonian/AgentMesh/actions/workflows/ci.yml) | Autonomous agents need deterministic policy, MCP tool routing, and human-in-the-loop approvals before touching enterprise systems. | Public MCP gateway implementation, policy enforcement engine, OpenAI enterprise runner, and automated evaluation suites.<br />[Architecture](https://github.com/Hardonian/AgentMesh/blob/main/docs/architecture-openai-enterprise.md) · [Evidence](https://github.com/Hardonian/AgentMesh/blob/main/docs/release-verification.md) |
 | **[TokenGoblin](https://github.com/Hardonian/TokenGoblin)** · Go<br />Measure · `beta`<br />[![TokenGoblin CI](https://github.com/Hardonian/TokenGoblin/actions/workflows/ci.yml/badge.svg)](https://github.com/Hardonian/TokenGoblin/actions/workflows/ci.yml) | LLM workloads need cost, usage, and routing data before teams can control inference spend. | Public ingestion benchmarks, cost and routing tests, and a repository-level CI workflow.<br />[Architecture](https://github.com/Hardonian/TokenGoblin/blob/main/docs/ARCHITECTURE_AND_SPEC.md) · [Evidence](https://github.com/Hardonian/TokenGoblin/blob/main/internal/ingestion/benchmark_test.go) |
 | **[ReadyLayer](https://github.com/Hardonian/ReadyLayer)** · TypeScript<br />Govern · `beta`<br />[![ReadyLayer CI](https://github.com/Hardonian/ReadyLayer/actions/workflows/ci.yml/badge.svg)](https://github.com/Hardonian/ReadyLayer/actions/workflows/ci.yml) | AI-assisted delivery needs policy, review, and evidence before generated changes reach production. | Public policy contracts, evidence export documentation, test suites, and CI quality gates.<br />[Architecture](https://github.com/Hardonian/ReadyLayer/blob/main/docs/runner/ARCHITECTURE.md) · [Evidence](https://github.com/Hardonian/ReadyLayer/blob/main/docs/EVIDENCE.md) |
-| **[veridag](https://github.com/Hardonian/veridag)** · Rust<br />Prove · `research`<br />[![veridag CI](https://github.com/Hardonian/veridag/actions/workflows/formal.yml/badge.svg)](https://github.com/Hardonian/veridag/actions/workflows/formal.yml) | Distributed execution needs explicit ordering, capability security, and cross-language conformance. | A public protocol specification, Quint formal models, test vectors, and dedicated conformance workflows.<br />[Architecture](https://github.com/Hardonian/veridag/blob/main/docs/architecture.md) · [Evidence](https://github.com/Hardonian/veridag/blob/main/formal/README.md) |
 | **[Settler](https://github.com/Hardonian/Settler)** · TypeScript<br />Reconcile · `beta`<br />[![Settler CI](https://github.com/Hardonian/Settler/actions/workflows/ci.yml/badge.svg)](https://github.com/Hardonian/Settler/actions/workflows/ci.yml) | Payment, banking, and operational records diverge unless matching and evidence rules are explicit. | Public reconciliation benchmark source and checked-in snapshots, with CI and security-invariant workflows.<br />[Architecture](https://github.com/Hardonian/Settler/blob/main/docs/ARCHITECTURE.md) · [Evidence](https://github.com/Hardonian/Settler/blob/main/benchmarks/reconciliationBenchmark.ts) |
 <!-- profile-projects:end -->
 
@@ -62,6 +58,19 @@ _Public project metadata last verified **2026-09-26** · [source manifest](profi
 [![Profile evidence checks](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml/badge.svg)](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml)
 
 </div>
+
+---
+
+## Technical Writing & Architecture Guides
+
+Field-tested engineering guides grounded in verified production code and open-source infrastructure:
+
+1. **[Building Safe Multi-Tenant AI Agents with Postgres RLS](OPENAI_CAMPAIGN/content/01_safe_multi_tenant_ai_agents_postgres_rls.md)**  
+   *Why application-level filtering fails in agentic workflows, and how to enforce mathematical tenant boundaries via PostgreSQL Row-Level Security with automated negative penetration tests.*
+2. **[Enterprise Tool Calling: Why Authorization Belongs Outside the Model](OPENAI_CAMPAIGN/content/02_enterprise_tool_calling_authorization_outside_model.md)**  
+   *Treating the LLM as an unprivileged planner; implementing policy-gated MCP reverse proxies with single-use cryptographic approval tokens for privileged side effects.*
+3. **[From Prototype to Production: Architecture for Enterprise AI Agents](OPENAI_CAMPAIGN/content/03_from_prototype_to_production_enterprise_agents.md)**  
+   *The six production pillars: model abstraction, tool execution boundaries, continuous CI/CD evaluations, OpenTelemetry observability, and token spend governance.*
 
 ---
 
