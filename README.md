@@ -212,7 +212,7 @@ Hardonia includes an owned, local testbed for model routing, image and video wor
 
 | Lane | Hardware | Primary use |
 | :--- | :--- | :--- |
-| **Enterprise Server Host & Virtualization** | AMD EPYC · High PCIe lane density · DDR4/DDR5 ECC RAM | Multi-GPU virtualization, heavy Ollama/vLLM endpoints, vector database indexing, container cluster networking. |
+| **Enterprise Server Host & Virtualization** | AMD EPYC | Multi-GPU virtualization, heavy Ollama/vLLM endpoints, vector database indexing, container cluster networking. |
 | **Edge Orchestration & NPU** | AMD Ryzen AI 9 HX370 · 50 NPU TOPS · 32 GB | Local agent orchestration, low-latency reasoning, and local eval suites. |
 | **Heavy Inference** | NVIDIA V100 · 16 GB HBM2 | Larger model and video-generation workloads. |
 | **Memory-Oriented** | NVIDIA P40 · 24 GB | ComfyUI pipelines, quantized models, and training experiments. |
