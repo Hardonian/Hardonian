@@ -8,11 +8,11 @@
 
 > **Building high-assurance infrastructure around foundation models: deterministic policy boundaries, Model Context Protocol (MCP) gateways, mathematical multi-tenant data isolation, and verified execution.**
 
-[![Focus](https://img.shields.io/badge/Focus-Enterprise_Applied_AI_%7C_Agent_Infrastructure-0A66C2?style=flat-square)](#architecture-focus--systems-philosophy)
-[![Role](https://img.shields.io/badge/Role-Solutions_Architect_%40_McGraw_Hill-111827?style=flat-square)](#about)
-[![Location](https://img.shields.io/badge/Location-Toronto%2C_Canada-4B5563?style=flat-square)](#about)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-scottrmhardie-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
-[![Email](https://img.shields.io/badge/Email-scottrmhardie%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:scottrmhardie@gmail.com)
+[![Architecture Focus: Enterprise Applied AI](https://img.shields.io/badge/Focus-Enterprise_Applied_AI_%7C_Agent_Infrastructure-0A66C2?style=flat-square)](#architecture-focus--systems-philosophy)
+[![Role: Solutions Architect at McGraw Hill](https://img.shields.io/badge/Role-Solutions_Architect_%40_McGraw_Hill-111827?style=flat-square)](#about)
+[![Location: Toronto, Canada](https://img.shields.io/badge/Location-Toronto%2C_Canada-4B5563?style=flat-square)](#about)
+[![Connect with Scott Hardie on LinkedIn](https://img.shields.io/badge/LinkedIn-scottrmhardie-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
+[![Send an email inquiry to Scott Hardie](https://img.shields.io/badge/Email-scottrmhardie%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:scottrmhardie@gmail.com?subject=Inquiry:%20AI%20Systems%20Architecture)
 
 [Architecture Focus](#architecture-focus--systems-philosophy) · [Proof-Backed Systems](#proof-backed-systems) · [Production Invariants](#production-invariants-at-a-glance) · [Architecture Matrix](#architectural-capabilities--evidence-matrix) · [Technical Writing](#technical-writing--architecture-guides) · [Platform Topology](#how-the-platform-fits-together) · [Sovereign AI Lab](#sovereign-ai-lab) · [Engineering Stack](#working-stack) · [About & Track Record](#about)
 
@@ -364,10 +364,10 @@ If you have an AI workflow that is expensive, unreliable, hard to govern, or stu
 
 <div align="center">
 
-[![Book](https://img.shields.io/badge/BOOK-30_MIN_DIAGNOSTIC-f97316?style=for-the-badge)](https://calendly.com/scottrmhardie)
-[![Email](https://img.shields.io/badge/EMAIL-DIRECT-6d28d9?style=for-the-badge&logo=gmail&logoColor=white)](mailto:scottrmhardie@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LINKEDIN-SCOTT_HARDIE-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
-[![Website](https://img.shields.io/badge/WEBSITE-AI_AUTOMATED_SYSTEMS-0f766e?style=for-the-badge)](https://www.aiautomatedsystems.ca)
+[![Book a 30-minute diagnostic](https://img.shields.io/badge/BOOK-30_MIN_DIAGNOSTIC-f97316?style=for-the-badge)](https://calendly.com/scottrmhardie)
+[![Send an email inquiry to Scott Hardie](https://img.shields.io/badge/EMAIL-DIRECT-6d28d9?style=for-the-badge&logo=gmail&logoColor=white)](mailto:scottrmhardie@gmail.com?subject=Inquiry:%20AI%20Systems%20Architecture)
+[![Connect with Scott Hardie on LinkedIn](https://img.shields.io/badge/LINKEDIN-SCOTT_HARDIE-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
+[![Visit AI Automated Systems website](https://img.shields.io/badge/WEBSITE-AI_AUTOMATED_SYSTEMS-0f766e?style=for-the-badge)](https://www.aiautomatedsystems.ca)
 
 <br />
 
