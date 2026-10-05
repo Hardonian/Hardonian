@@ -21,3 +21,7 @@
 ## 2024-08-27 - Pre-filled Mailto Subjects
 **Learning:** Generic or incomplete subject lines in mailto links force users to manually contextualize their inquiry, increasing friction.
 **Action:** Always pre-fill mailto links with highly descriptive `subject` parameters (e.g., `?subject=Inquiry:%20Product%20Name%20Enterprise%20Pricing`) to reduce user friction and improve the outreach experience.
+
+## 2026-10-01 - Descriptive Image-Only Link Alt Texts
+**Learning:** Using the visual description of a badge (e.g., "TokenGoblin CI") as the `alt` text for an image-only link creates a confusing experience for screen reader users, who hear the image description instead of the link's destination or action.
+**Action:** Always ensure that the `alt` text for image-only links (like markdown badges wrapped in links) describes the action or destination of the link (e.g., "View TokenGoblin GitHub Actions CI workflow" or "Jump to Architecture Focus section"), rather than just describing the image visually.
