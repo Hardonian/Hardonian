@@ -8,9 +8,9 @@
 
 > **Building high-assurance infrastructure around foundation models: deterministic policy boundaries, Model Context Protocol (MCP) gateways, mathematical multi-tenant data isolation, and verified execution.**
 
-[![Architecture Focus: Enterprise Applied AI](https://img.shields.io/badge/Focus-Enterprise_Applied_AI_%7C_Agent_Infrastructure-0A66C2?style=flat-square)](#architecture-focus--systems-philosophy)
-[![Role: Solutions Architect at McGraw Hill](https://img.shields.io/badge/Role-Solutions_Architect_%40_McGraw_Hill-111827?style=flat-square)](#about)
-[![Location: Toronto, Canada](https://img.shields.io/badge/Location-Toronto%2C_Canada-4B5563?style=flat-square)](#about)
+[![Jump to Architecture Focus section](https://img.shields.io/badge/Focus-Enterprise_Applied_AI_%7C_Agent_Infrastructure-0A66C2?style=flat-square)](#architecture-focus--systems-philosophy)
+[![Jump to About section for role details](https://img.shields.io/badge/Role-Solutions_Architect_%40_McGraw_Hill-111827?style=flat-square)](#about)
+[![Jump to About section for location details](https://img.shields.io/badge/Location-Toronto%2C_Canada-4B5563?style=flat-square)](#about)
 [![Connect with Scott Hardie on LinkedIn](https://img.shields.io/badge/LinkedIn-scottrmhardie-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
 [![Send an email inquiry to Scott Hardie](https://img.shields.io/badge/Email-scottrmhardie%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:scottrmhardie@gmail.com?subject=Inquiry:%20AI%20Systems%20Architecture)
 
@@ -117,7 +117,7 @@ Field-tested engineering implementations across core production AI competencies,
 These are the four clearest public examples of the approach. The table is generated from a [versioned manifest](profile-projects.json), checked against GitHub every week, and deliberately separates released, beta, and research work.
 
 <!-- profile-projects:start -->
-_Public project metadata last verified **2026-10-01** · [source manifest](profile-projects.json) · [verification policy](CONTRIBUTING.md#project-metadata)_
+_Public project metadata last verified **2026-10-05** · [source manifest](profile-projects.json) · [verification policy](CONTRIBUTING.md#project-metadata)_
 
 | Project | Problem | Public evidence |
 | --- | --- | --- |
@@ -129,7 +129,7 @@ _Public project metadata last verified **2026-10-01** · [source manifest](profi
 
 <div align="center">
 
-[![Profile evidence checks](https://img.shields.io/badge/profile_checks-passing-2ea44f/badge.svg?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml)
+[![View Profile evidence checks GitHub Actions workflow](https://img.shields.io/badge/profile_checks-passing-2ea44f/badge.svg?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml)
 
 </div>
 
@@ -177,7 +177,7 @@ Seven monorepos keep related systems coherent while preserving clear boundaries:
 
 | Boundary | Public monorepos | Responsibility |
 | --- | --- | --- |
-| **Observe + control** | [agent-edge](https://github.com/Hardonian/agent-edge) · [agent-infra](https://github.com/Hardonian/agent-infra) | Agent traffic, policy, governance, mission state, and MCP boundaries. |
+| **Observe + control** | agent-edge · [agent-infra](https://github.com/Hardonian/agent-infra) | Agent traffic, policy, governance, mission state, and MCP boundaries. |
 | **Model + execute** | [model-tools](https://github.com/Hardonian/model-tools) · [autopilot](https://github.com/Hardonian/autopilot) | Inference routing, GPU fit, and runnerless ops, support, growth, and FinOps workflows. |
 | **Integrate + operate** | [api-tools](https://github.com/Hardonian/api-tools) · [ops-tools](https://github.com/Hardonian/ops-tools) | APIs, webhooks, continuity, drift inspection, and golden paths. |
 | **Consumer outcomes** | [consumer-tools](https://github.com/Hardonian/consumer-tools) | Warranty, review intelligence, and inbox automation. |
@@ -239,7 +239,7 @@ The lab uses Ollama-compatible routing, ComfyUI, containerized services, and Pro
 - [Keys](https://github.com/Hardonian/Keys) — auditable mission control for constrained agents.
 - [truthcore](https://github.com/Hardonian/truthcore) — verification kernel and offline evidence reports.
 - [Zeo](https://github.com/Hardonian/Zeo) — governance, policy enforcement, and deterministic audit trails.
-- [agent-governance](https://github.com/Hardonian/agent-governance) — enforceable agent laws and a governance gateway.
+- agent-governance — enforceable agent laws and a governance gateway.
 
 </details>
 
