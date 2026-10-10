@@ -3,6 +3,7 @@ import importlib.util
 import unittest
 from copy import deepcopy
 from pathlib import Path
+from unittest.mock import MagicMock, patch
 
 SPEC = importlib.util.spec_from_file_location(
     "profile_metadata", Path(__file__).parents[1] / "scripts/profile-metadata.py"
@@ -76,6 +77,36 @@ class ProfileMetadataTests(unittest.TestCase):
             today=dt.date(2027, 1, 1),
             enforce_freshness=False,
         )
+
+    @patch.object(metadata, "validate_manifest")
+    @patch.object(metadata, "README_PATH", new_callable=MagicMock)
+    def test_check_passes_when_readme_in_sync(self, mock_readme_path, mock_validate):
+        manifest = valid_manifest()
+        rendered = metadata.render(manifest)
+        in_sync_readme = f"before\n{rendered}\nafter\n"
+        mock_readme_path.read_text.return_value = in_sync_readme
+        metadata.check(manifest)
+        mock_validate.assert_called_once_with(manifest)
+
+    @patch.object(metadata, "validate_manifest")
+    @patch.object(metadata, "README_PATH", new_callable=MagicMock)
+    def test_check_raises_when_readme_out_of_sync(self, mock_readme_path, mock_validate):
+        manifest = valid_manifest()
+        out_of_sync_readme = "before\n<!-- profile-projects:start -->\nold\n<!-- profile-projects:end -->\nafter\n"
+        mock_readme_path.read_text.return_value = out_of_sync_readme
+        with self.assertRaisesRegex(metadata.MetadataError, "out of sync"):
+            metadata.check(manifest)
+
+    @patch.object(metadata, "verify_remote")
+    @patch.object(metadata, "validate_manifest")
+    @patch.object(metadata, "README_PATH", new_callable=MagicMock)
+    def test_check_calls_verify_remote_when_remote_true(self, mock_readme_path, mock_validate, mock_verify):
+        manifest = valid_manifest()
+        rendered = metadata.render(manifest)
+        in_sync_readme = f"before\n{rendered}\nafter\n"
+        mock_readme_path.read_text.return_value = in_sync_readme
+        metadata.check(manifest, remote=True)
+        mock_verify.assert_called_once_with(manifest)
 
 
 if __name__ == "__main__":

@@ -11,7 +11,7 @@ from collections import defaultdict
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
-ALLOWED_WARNING_CODES = {403, 429, 530, 999}
+ALLOWED_WARNING_CODES = {403, 429, 503, 530, 999}
 USER_AGENT = "Hardonian-profile-audit/1.0"
 REQUEST_TIMEOUT_SECONDS = 8
 TRANSIENT_ATTEMPTS = 2
