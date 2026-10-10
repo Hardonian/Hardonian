@@ -180,8 +180,8 @@ def check(manifest: dict, *, remote: bool = False) -> None:
     validate_manifest(manifest)
     if remote:
         verify_remote(manifest)
-    expected = replace_generated_section(README_PATH.read_text(encoding="utf-8"), render(manifest))
     actual = README_PATH.read_text(encoding="utf-8")
+    expected = replace_generated_section(actual, render(manifest))
     if actual != expected:
         raise MetadataError("README project metadata is out of sync; run with --refresh")
 
