@@ -117,12 +117,9 @@ def check_url(raw: str, target: str) -> tuple[str, tuple | str]:
         return "fail", (raw, "ERROR", str(exc))
 
 
-def audit(readme: Path = Path("README.md")) -> int:
-    root = readme.parent.resolve()
-    urls = list(dict.fromkeys(extract_urls(readme.read_text(encoding="utf-8"))))
+def collect_and_validate_links(urls: list[str], root: Path) -> tuple[list[tuple[str, str]], list]:
     failures = []
     external = []
-
     for raw in urls:
         if raw.startswith(("#", "mailto:")):
             continue
@@ -138,7 +135,13 @@ def audit(readme: Path = Path("README.md")) -> int:
                 print(f"LOCAL 200 {raw}")
         elif target is not None:
             external.append((raw, target))
+    return external, failures
 
+
+def check_external_links(external: list[tuple[str, str]]) -> list:
+    failures = []
+    if not external:
+        return failures
     with concurrent.futures.ThreadPoolExecutor(max_workers=min(8, max(1, len(external)))) as pool:
         futures = {pool.submit(check_url, raw, target): raw for raw, target in external}
         for future in concurrent.futures.as_completed(futures):
@@ -148,14 +151,25 @@ def audit(readme: Path = Path("README.md")) -> int:
                 print(f"FAIL {detail[1]} {detail[0]}")
             else:
                 print(detail)
+    return failures
 
+
+def report_results(urls_count: int, failures: list) -> int:
     if failures:
         print("FAILURES", len(failures))
         for failure in failures:
             print(failure)
         return 1
-    print(f"CHECKED {len(urls)} UNIQUE_LINKS_AND_IMAGES; FAILURES 0")
+    print(f"CHECKED {urls_count} UNIQUE_LINKS_AND_IMAGES; FAILURES 0")
     return 0
+
+
+def audit(readme: Path = Path("README.md")) -> int:
+    root = readme.parent.resolve()
+    urls = list(dict.fromkeys(extract_urls(readme.read_text(encoding="utf-8"))))
+    external, failures = collect_and_validate_links(urls, root)
+    failures.extend(check_external_links(external))
+    return report_results(len(urls), failures)
 
 
 if __name__ == "__main__":

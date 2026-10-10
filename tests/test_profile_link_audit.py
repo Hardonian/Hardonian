@@ -111,6 +111,28 @@ class ProfileLinkAuditTests(unittest.TestCase):
         self.assertEqual(status, "fail")
         self.assertEqual(detail[1], 404)
 
+    def test_collect_and_validate_links(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "exists.md").write_text("hello")
+            urls = ["#anchor", "mailto:test@example.com", "exists.md", "missing.md", "https://example.com"]
+            with patch("sys.stdout", new=io.StringIO()):
+                external, failures = audit.collect_and_validate_links(urls, root)
+            self.assertEqual(external, [("https://example.com", "https://example.com")])
+            self.assertEqual(len(failures), 1)
+            self.assertEqual(failures[0][1], "LOCAL_MISSING")
+
+    def test_report_results(self):
+        with patch("sys.stdout", new=io.StringIO()) as fake_out:
+            code = audit.report_results(5, [])
+            self.assertEqual(code, 0)
+            self.assertIn("CHECKED 5 UNIQUE_LINKS_AND_IMAGES", fake_out.getvalue())
+
+        with patch("sys.stdout", new=io.StringIO()) as fake_out:
+            code = audit.report_results(5, [("test", "FAIL", "reason")])
+            self.assertEqual(code, 1)
+            self.assertIn("FAILURES 1", fake_out.getvalue())
+
 
 if __name__ == "__main__":
     unittest.main()
