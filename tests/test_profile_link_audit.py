@@ -112,5 +112,54 @@ class ProfileLinkAuditTests(unittest.TestCase):
         self.assertEqual(detail[1], 404)
 
 
+
+    @patch.object(audit, "check_url")
+    def test_audit_success(self, mock_check_url):
+        mock_check_url.return_value = ("ok", "OK 200 https://example.com")
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            doc = root / "doc.md"
+            doc.write_text("# Test")
+            readme = root / "README.md"
+            readme.write_text("[Doc](doc.md) [Anchor](#section) [Mail](mailto:test@example.com) [Ext](https://example.com)")
+            with patch("sys.stdout", new=io.StringIO()):
+                result = audit.audit(readme)
+            self.assertEqual(result, 0)
+            mock_check_url.assert_called_once_with("https://example.com", "https://example.com")
+
+    @patch.object(audit, "check_url")
+    def test_audit_external_warning_returns_zero(self, mock_check_url):
+        mock_check_url.return_value = ("warn", "WARN 429 https://example.com")
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = root / "README.md"
+            readme.write_text("[Ext](https://example.com)")
+            with patch("sys.stdout", new=io.StringIO()):
+                result = audit.audit(readme)
+            self.assertEqual(result, 0)
+
+    @patch.object(audit, "check_url")
+    def test_audit_external_failure_returns_one(self, mock_check_url):
+        mock_check_url.return_value = ("fail", ("https://example.com", 404, "Not Found"))
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = root / "README.md"
+            readme.write_text("[Ext](https://example.com)")
+            with patch("sys.stdout", new=io.StringIO()):
+                result = audit.audit(readme)
+            self.assertEqual(result, 1)
+
+    @patch.object(audit, "resolve_link")
+    def test_audit_unsafe_url_returns_one(self, mock_resolve_link):
+        mock_resolve_link.side_effect = audit.UnsafeURL("Unsafe link")
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = root / "README.md"
+            readme.write_text("[Unsafe](http://unsafe.com)")
+            with patch("sys.stdout", new=io.StringIO()):
+                result = audit.audit(readme)
+            self.assertEqual(result, 1)
+
+
 if __name__ == "__main__":
     unittest.main()
