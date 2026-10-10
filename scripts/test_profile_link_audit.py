@@ -20,7 +20,7 @@ class TestProfileLinkAudit(unittest.TestCase):
     def test_http_error_handling(self, mock_read_text, mock_build_opener, mock_validate):
         mock_read_text.return_value = "Here is a test URL: [test](https://example.com/test)"
         opener = MagicMock()
-        opener.open.side_effect = urllib.error.HTTPError(url='https://example.com/test', code=500, msg='Internal Server Error', hdrs={}, fp=None)
+        opener.open.side_effect = urllib.error.HTTPError(url='https://example.com/test', code=404, msg='Not Found', hdrs={}, fp=None)
         mock_build_opener.return_value = opener
 
         with patch('sys.stdout', new=io.StringIO()):
