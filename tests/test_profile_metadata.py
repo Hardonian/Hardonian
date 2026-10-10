@@ -1,6 +1,7 @@
 import datetime as dt
 import importlib.util
 import unittest
+import unittest.mock
 from copy import deepcopy
 from pathlib import Path
 
@@ -76,6 +77,30 @@ class ProfileMetadataTests(unittest.TestCase):
             today=dt.date(2027, 1, 1),
             enforce_freshness=False,
         )
+
+
+    def test_verify_remote_calls_request_concurrently_for_all_urls(self):
+        manifest = valid_manifest()
+        requested_urls = []
+
+        def mock_request(url):
+            requested_urls.append(url)
+
+        with unittest.mock.patch.object(metadata, "request", side_effect=mock_request):
+            metadata.verify_remote(manifest)
+
+        self.assertEqual(len(requested_urls), 16)
+
+    def test_verify_remote_propagates_exceptions(self):
+        manifest = valid_manifest()
+
+        def mock_request(url):
+            if "ci.yml" in url:
+                raise metadata.MetadataError(f"HTTP 404: {url}")
+
+        with unittest.mock.patch.object(metadata, "request", side_effect=mock_request):
+            with self.assertRaisesRegex(metadata.MetadataError, "HTTP 404"):
+                metadata.verify_remote(manifest)
 
 
 if __name__ == "__main__":
