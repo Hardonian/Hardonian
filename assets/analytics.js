@@ -2,7 +2,11 @@
 <!-- AI Automated Systems Analytics -->
 <script>
 (function() {
-    const sessionId = sessionStorage.getItem('aas_sid') || ('s' + Date.now() + Math.random().toString(36).substr(2, 8));
+    const getRandomValues = (typeof crypto !== 'undefined' && crypto.getRandomValues) ? (arr) => crypto.getRandomValues(arr) : (arr) => arr;
+    const randomArray = new Uint8Array(8);
+    getRandomValues(randomArray);
+    const randomHex = Array.from(randomArray, b => b.toString(16).padStart(2, '0')).join('');
+    const sessionId = sessionStorage.getItem('aas_sid') || ('s' + Date.now() + randomHex);
     sessionStorage.setItem('aas_sid', sessionId);
 
 
