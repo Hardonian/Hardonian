@@ -9,6 +9,7 @@ import urllib.error
 import urllib.request
 from collections import defaultdict
 from pathlib import Path
+from typing import Any
 from urllib.parse import unquote, urlparse
 
 ALLOWED_WARNING_CODES = {403, 429, 530, 999}
@@ -50,7 +51,16 @@ def validate_public_http_url(target: str) -> None:
 
 
 class ValidatingRedirectHandler(urllib.request.HTTPRedirectHandler):
-    def redirect_request(self, req, fp, code, msg, headers, newurl):
+    def redirect_request(
+        self,
+        req: urllib.request.Request,
+        fp: Any,
+        code: int,
+        msg: str,
+        headers: Any,
+        newurl: str,
+    ) -> urllib.request.Request | None:
+        """Return a Request or None in response to a redirect after validating security."""
         validate_public_http_url(newurl)
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
@@ -88,7 +98,7 @@ def is_transient_network_error(exc: BaseException) -> bool:
     return False
 
 
-def check_url(raw: str, target: str) -> tuple[str, tuple | str]:
+def check_url(raw: str, target: str) -> tuple[str, tuple[str, int | str, str] | str]:
     try:
         validate_public_http_url(target)
         opener = urllib.request.build_opener(ValidatingRedirectHandler())
@@ -108,11 +118,12 @@ def check_url(raw: str, target: str) -> tuple[str, tuple | str]:
                 return "fail", (raw, exc.code, str(exc))
             except Exception as exc:
                 if not is_transient_network_error(exc):
-                    return "fail", (raw, "ERROR", str(exc))
+                    return "fail", ("ERROR", str(exc)) if isinstance(raw, tuple) else (raw, "ERROR", str(exc))
                 if attempt < TRANSIENT_ATTEMPTS:
                     time.sleep(0.25 * attempt)
                     continue
                 return "warn", f"WARN TRANSIENT {raw} ({exc})"
+        return "fail", (raw, "ERROR", "max attempts exceeded")
     except Exception as exc:
         return "fail", (raw, "ERROR", str(exc))
 
@@ -120,7 +131,7 @@ def check_url(raw: str, target: str) -> tuple[str, tuple | str]:
 def audit(readme: Path = Path("README.md")) -> int:
     root = readme.parent.resolve()
     urls = list(dict.fromkeys(extract_urls(readme.read_text(encoding="utf-8"))))
-    failures = []
+    failures: list[tuple[str, int | str, str]] = []
     external = []
 
     for raw in urls:
@@ -144,8 +155,12 @@ def audit(readme: Path = Path("README.md")) -> int:
         for future in concurrent.futures.as_completed(futures):
             status, detail = future.result()
             if status == "fail":
-                failures.append(detail)
-                print(f"FAIL {detail[1]} {detail[0]}")
+                if isinstance(detail, tuple):
+                    failures.append(detail)
+                    print(f"FAIL {detail[1]} {detail[0]}")
+                else:
+                    failures.append((futures[future], "FAIL", detail))
+                    print(f"FAIL {detail}")
             else:
                 print(detail)
 
