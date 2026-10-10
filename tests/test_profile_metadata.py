@@ -1,6 +1,7 @@
 import datetime as dt
 import importlib.util
 import unittest
+from unittest.mock import patch
 from copy import deepcopy
 from pathlib import Path
 
@@ -76,6 +77,20 @@ class ProfileMetadataTests(unittest.TestCase):
             today=dt.date(2027, 1, 1),
             enforce_freshness=False,
         )
+
+    @patch.object(metadata, "request")
+    def test_verify_remote_makes_expected_requests(self, mock_request):
+        manifest = valid_manifest()
+        metadata.verify_remote(manifest)
+        self.assertEqual(mock_request.call_count, len(manifest["projects"]) * 4)
+        project = manifest["projects"][0]
+        name = project["name"]
+        mock_request.assert_any_call(f"https://api.github.com/repos/Hardonian/{name}")
+        mock_request.assert_any_call(
+            f"https://api.github.com/repos/Hardonian/{name}/actions/workflows/{project['ci_workflow']}"
+        )
+        mock_request.assert_any_call(metadata.github_api_url(project["documentation"]))
+        mock_request.assert_any_call(metadata.github_api_url(project["evidence"]))
 
 
 if __name__ == "__main__":
