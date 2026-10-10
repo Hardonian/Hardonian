@@ -11,7 +11,7 @@ from collections import defaultdict
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
-ALLOWED_WARNING_CODES = {403, 429, 530, 999}
+ALLOWED_WARNING_CODES = {403, 429, 502, 503, 504, 530, 999}
 USER_AGENT = "Hardonian-profile-audit/1.0"
 REQUEST_TIMEOUT_SECONDS = 8
 TRANSIENT_ATTEMPTS = 2
@@ -99,10 +99,20 @@ def check_url(raw: str, target: str) -> tuple[str, tuple | str]:
                 with HOST_SEMAPHORES[hostname]:
                     with opener.open(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
                         code = response.status
+                        if code in {502, 503, 504}:
+                            if attempt < TRANSIENT_ATTEMPTS:
+                                time.sleep(0.25 * attempt)
+                                continue
+                            return "warn", f"WARN {code} {raw}"
                         if code >= 400 and code not in ALLOWED_WARNING_CODES:
                             return "fail", (raw, code, response.headers.get("content-type", ""))
                         return "ok", f"OK {code} {raw}"
             except urllib.error.HTTPError as exc:
+                if exc.code in {502, 503, 504}:
+                    if attempt < TRANSIENT_ATTEMPTS:
+                        time.sleep(0.25 * attempt)
+                        continue
+                    return "warn", f"WARN {exc.code} {raw}"
                 if exc.code in ALLOWED_WARNING_CODES:
                     return "warn", f"WARN {exc.code} {raw}"
                 return "fail", (raw, exc.code, str(exc))
