@@ -1,6 +1,8 @@
+import json
 import datetime as dt
 import importlib.util
 import unittest
+from unittest.mock import patch, MagicMock
 from copy import deepcopy
 from pathlib import Path
 
@@ -76,6 +78,29 @@ class ProfileMetadataTests(unittest.TestCase):
             today=dt.date(2027, 1, 1),
             enforce_freshness=False,
         )
+
+
+
+    def test_load_manifest_default_path(self):
+        sample_manifest = valid_manifest()
+        with patch("pathlib.Path.read_text", return_value=json.dumps(sample_manifest)) as mock_read:
+            result = metadata.load_manifest()
+            self.assertEqual(result, sample_manifest)
+            mock_read.assert_called_once_with(encoding="utf-8")
+
+    def test_load_manifest_custom_path(self):
+        sample_manifest = valid_manifest()
+        mock_path = MagicMock(spec=Path)
+        mock_path.read_text.return_value = json.dumps(sample_manifest)
+        result = metadata.load_manifest(mock_path)
+        self.assertEqual(result, sample_manifest)
+        mock_path.read_text.assert_called_once_with(encoding="utf-8")
+
+    def test_load_manifest_invalid_json(self):
+        mock_path = MagicMock(spec=Path)
+        mock_path.read_text.return_value = "{ invalid json }"
+        with self.assertRaises(json.JSONDecodeError):
+            metadata.load_manifest(mock_path)
 
 
 if __name__ == "__main__":
