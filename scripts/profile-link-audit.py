@@ -88,6 +88,37 @@ def is_transient_network_error(exc: BaseException) -> bool:
     return False
 
 
+def _fetch_url(opener: urllib.request.OpenerDirector, request: urllib.request.Request, hostname: str, raw: str) -> tuple[str, tuple | str]:
+    with HOST_SEMAPHORES[hostname]:
+        with opener.open(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
+            code = response.status
+            if code >= 400 and code not in ALLOWED_WARNING_CODES:
+                return "fail", (raw, code, response.headers.get("content-type", ""))
+            return "ok", f"OK {code} {raw}"
+
+
+def _check_url_attempt(
+    opener: urllib.request.OpenerDirector,
+    request: urllib.request.Request,
+    hostname: str,
+    raw: str,
+    attempt: int,
+) -> tuple[str, tuple | str]:
+    try:
+        return _fetch_url(opener, request, hostname, raw)
+    except urllib.error.HTTPError as exc:
+        if exc.code in ALLOWED_WARNING_CODES:
+            return "warn", f"WARN {exc.code} {raw}"
+        return "fail", (raw, exc.code, str(exc))
+    except Exception as exc:
+        if not is_transient_network_error(exc):
+            return "fail", (raw, "ERROR", str(exc))
+        if attempt < TRANSIENT_ATTEMPTS:
+            time.sleep(0.25 * attempt)
+            return "retry", ""
+        return "warn", f"WARN TRANSIENT {raw} ({exc})"
+
+
 def check_url(raw: str, target: str) -> tuple[str, tuple | str]:
     try:
         validate_public_http_url(target)
@@ -95,24 +126,10 @@ def check_url(raw: str, target: str) -> tuple[str, tuple | str]:
         request = urllib.request.Request(target, headers={"User-Agent": USER_AGENT})
         hostname = urlparse(target).hostname or ""
         for attempt in range(1, TRANSIENT_ATTEMPTS + 1):
-            try:
-                with HOST_SEMAPHORES[hostname]:
-                    with opener.open(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
-                        code = response.status
-                        if code >= 400 and code not in ALLOWED_WARNING_CODES:
-                            return "fail", (raw, code, response.headers.get("content-type", ""))
-                        return "ok", f"OK {code} {raw}"
-            except urllib.error.HTTPError as exc:
-                if exc.code in ALLOWED_WARNING_CODES:
-                    return "warn", f"WARN {exc.code} {raw}"
-                return "fail", (raw, exc.code, str(exc))
-            except Exception as exc:
-                if not is_transient_network_error(exc):
-                    return "fail", (raw, "ERROR", str(exc))
-                if attempt < TRANSIENT_ATTEMPTS:
-                    time.sleep(0.25 * attempt)
-                    continue
-                return "warn", f"WARN TRANSIENT {raw} ({exc})"
+            status, detail = _check_url_attempt(opener, request, hostname, raw, attempt)
+            if status != "retry":
+                return status, detail
+        return "warn", f"WARN TRANSIENT {raw} (transient error)"
     except Exception as exc:
         return "fail", (raw, "ERROR", str(exc))
 

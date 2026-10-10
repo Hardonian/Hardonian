@@ -177,7 +177,7 @@ Seven monorepos keep related systems coherent while preserving clear boundaries:
 
 | Boundary | Public monorepos | Responsibility |
 | --- | --- | --- |
-| **Observe + control** | [agent-edge](https://github.com/Hardonian/agent-edge) · [agent-infra](https://github.com/Hardonian/agent-infra) | Agent traffic, policy, governance, mission state, and MCP boundaries. |
+| **Observe + control** | `agent-edge` · [agent-infra](https://github.com/Hardonian/agent-infra) | Agent traffic, policy, governance, mission state, and MCP boundaries. |
 | **Model + execute** | [model-tools](https://github.com/Hardonian/model-tools) · [autopilot](https://github.com/Hardonian/autopilot) | Inference routing, GPU fit, and runnerless ops, support, growth, and FinOps workflows. |
 | **Integrate + operate** | [api-tools](https://github.com/Hardonian/api-tools) · [ops-tools](https://github.com/Hardonian/ops-tools) | APIs, webhooks, continuity, drift inspection, and golden paths. |
 | **Consumer outcomes** | [consumer-tools](https://github.com/Hardonian/consumer-tools) | Warranty, review intelligence, and inbox automation. |
@@ -187,7 +187,7 @@ Seven monorepos keep related systems coherent while preserving clear boundaries:
 
 ```text
 signal                     policy                      execution
-agent-edge ──────────────► agent-infra ──────────────► autopilot
+`agent-edge` ──────────────► agent-infra ──────────────► autopilot
 packet capture             control plane               ops / finops
 mesh edge                  agent mesh                  growth / support
                            MCP firewall
@@ -239,7 +239,7 @@ The lab uses Ollama-compatible routing, ComfyUI, containerized services, and Pro
 - [Keys](https://github.com/Hardonian/Keys) — auditable mission control for constrained agents.
 - [truthcore](https://github.com/Hardonian/truthcore) — verification kernel and offline evidence reports.
 - [Zeo](https://github.com/Hardonian/Zeo) — governance, policy enforcement, and deterministic audit trails.
-- [agent-governance](https://github.com/Hardonian/agent-governance) — enforceable agent laws and a governance gateway.
+- `agent-governance` — enforceable agent laws and a governance gateway.
 
 </details>
 
