@@ -88,10 +88,13 @@ def is_transient_network_error(exc: BaseException) -> bool:
     return False
 
 
-def check_url(raw: str, target: str) -> tuple[str, tuple | str]:
+def check_url(
+    raw: str, target: str, opener: urllib.request.OpenerDirector | None = None
+) -> tuple[str, tuple | str]:
     try:
         validate_public_http_url(target)
-        opener = urllib.request.build_opener(ValidatingRedirectHandler())
+        if opener is None:
+            opener = urllib.request.build_opener(ValidatingRedirectHandler())
         request = urllib.request.Request(target, headers={"User-Agent": USER_AGENT})
         hostname = urlparse(target).hostname or ""
         for attempt in range(1, TRANSIENT_ATTEMPTS + 1):
@@ -139,8 +142,9 @@ def audit(readme: Path = Path("README.md")) -> int:
         elif target is not None:
             external.append((raw, target))
 
+    opener = urllib.request.build_opener(ValidatingRedirectHandler())
     with concurrent.futures.ThreadPoolExecutor(max_workers=min(8, max(1, len(external)))) as pool:
-        futures = {pool.submit(check_url, raw, target): raw for raw, target in external}
+        futures = {pool.submit(check_url, raw, target, opener): raw for raw, target in external}
         for future in concurrent.futures.as_completed(futures):
             status, detail = future.result()
             if status == "fail":
