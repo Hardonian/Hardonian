@@ -28,12 +28,11 @@ class UnsafeURL(ValueError):
 
 
 def extract_urls(text: str) -> list[str]:
-    pattern = r'!\[[^]]*\]\(([^)]+)\)|\[[^]]*\]\(([^)]+)\)|<(?:a|img)[^>]+(?:href|src)=["\']([^"\']+)'
+    pattern = r'!\[[^]]*\]\(([^)]*)\)|\[[^]]*\]\(([^)]*)\)|<(?:a|img)[^>]+(?:href|src)=["\']([^"\']*)'
     urls = []
     for match in re.finditer(pattern, text):
-        value = next((item for item in match.groups() if item), "")
-        if value:
-            urls.append(value.strip().split(" ")[0])
+        value = next((item for item in match.groups() if item is not None), "")
+        urls.append(value.strip().split(" ")[0])
     return urls
 
 
@@ -139,6 +138,8 @@ class ValidatingRedirectHandler(urllib.request.HTTPRedirectHandler):
 
 
 def resolve_link(raw: str, root: Path) -> tuple[str | None, Path | None]:
+    if not raw.strip():
+        raise UnsafeURL(f"empty URL: '{raw}'")
     if raw.startswith(("http://", "https://")):
         return raw, None
 
