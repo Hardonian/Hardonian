@@ -1,3 +1,4 @@
+import json
 import datetime as dt
 import importlib.util
 import unittest
@@ -168,6 +169,29 @@ class ProfileMetadataTests(unittest.TestCase):
         with unittest.mock.patch.object(metadata, "request", side_effect=mock_request):
             with self.assertRaisesRegex(metadata.MetadataError, "HTTP 404"):
                 metadata.verify_remote(manifest)
+
+
+
+    def test_load_manifest_default_path(self):
+        sample_manifest = valid_manifest()
+        with patch("pathlib.Path.read_text", return_value=json.dumps(sample_manifest)) as mock_read:
+            result = metadata.load_manifest()
+            self.assertEqual(result, sample_manifest)
+            mock_read.assert_called_once_with(encoding="utf-8")
+
+    def test_load_manifest_custom_path(self):
+        sample_manifest = valid_manifest()
+        mock_path = MagicMock(spec=Path)
+        mock_path.read_text.return_value = json.dumps(sample_manifest)
+        result = metadata.load_manifest(mock_path)
+        self.assertEqual(result, sample_manifest)
+        mock_path.read_text.assert_called_once_with(encoding="utf-8")
+
+    def test_load_manifest_invalid_json(self):
+        mock_path = MagicMock(spec=Path)
+        mock_path.read_text.return_value = "{ invalid json }"
+        with self.assertRaises(json.JSONDecodeError):
+            metadata.load_manifest(mock_path)
 
 
 if __name__ == "__main__":
