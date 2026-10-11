@@ -107,6 +107,7 @@ class ProfileMetadataTests(unittest.TestCase):
         mock_readme_path.read_text.return_value = in_sync_readme
         metadata.check(manifest, remote=True)
         mock_verify.assert_called_once_with(manifest)
+        mock_validate.assert_called_once_with(manifest)
 
 
 if __name__ == "__main__":
