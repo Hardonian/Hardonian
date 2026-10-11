@@ -138,7 +138,7 @@ class ValidatingRedirectHandler(urllib.request.HTTPRedirectHandler):
 
 
 def resolve_link(raw: str, root: Path) -> tuple[str | None, Path | None]:
-    if not raw or not raw.strip():
+    if not raw.strip():
         raise UnsafeURL(f"empty URL: '{raw}'")
     if raw.startswith(("http://", "https://")):
         return raw, None
