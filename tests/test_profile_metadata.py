@@ -194,5 +194,65 @@ class ProfileMetadataTests(unittest.TestCase):
             metadata.load_manifest(mock_path)
 
 
+    @patch("os.environ.get", return_value=None)
+    @patch("urllib.request.urlopen")
+    def test_request_success_without_token(self, mock_urlopen, mock_env):
+        mock_response = MagicMock()
+        mock_response.status = 200
+        mock_response.__enter__.return_value = mock_response
+        mock_urlopen.return_value = mock_response
+
+        metadata.request("https://api.github.com/repos/Hardonian/test")
+
+        mock_urlopen.assert_called_once()
+        req = mock_urlopen.call_args[0][0]
+        self.assertEqual(req.get_header("User-Agent"), metadata.USER_AGENT)
+        self.assertIsNone(req.get_header("Authorization"))
+
+    @patch("os.environ.get", return_value="test_token_123")
+    @patch("urllib.request.urlopen")
+    def test_request_success_with_token(self, mock_urlopen, mock_env):
+        mock_response = MagicMock()
+        mock_response.status = 200
+        mock_response.__enter__.return_value = mock_response
+        mock_urlopen.return_value = mock_response
+
+        metadata.request("https://api.github.com/repos/Hardonian/test")
+
+        mock_urlopen.assert_called_once()
+        req = mock_urlopen.call_args[0][0]
+        self.assertEqual(req.get_header("Authorization"), "Bearer test_token_123")
+
+    @patch("os.environ.get", return_value=None)
+    @patch("urllib.request.urlopen")
+    def test_request_status_error(self, mock_urlopen, mock_env):
+        mock_response = MagicMock()
+        mock_response.status = 404
+        mock_response.__enter__.return_value = mock_response
+        mock_urlopen.return_value = mock_response
+
+        with self.assertRaisesRegex(metadata.MetadataError, "HTTP 404"):
+            metadata.request("https://api.github.com/repos/Hardonian/test")
+
+    @patch("os.environ.get", return_value=None)
+    @patch("urllib.request.urlopen")
+    def test_request_rate_limit_exceeded(self, mock_urlopen, mock_env):
+        headers = {"X-RateLimit-Remaining": "0"}
+        exc = urllib.error.HTTPError("url", 403, "Forbidden", headers, None)
+        mock_urlopen.side_effect = exc
+
+        with self.assertRaisesRegex(metadata.MetadataError, "GitHub API rate limit exhausted"):
+            metadata.request("https://api.github.com/repos/Hardonian/test")
+
+    @patch("os.environ.get", return_value=None)
+    @patch("urllib.request.urlopen")
+    def test_request_other_http_error_passthrough(self, mock_urlopen, mock_env):
+        exc = urllib.error.HTTPError("url", 500, "Internal Server Error", {}, None)
+        mock_urlopen.side_effect = exc
+
+        with self.assertRaises(urllib.error.HTTPError):
+            metadata.request("https://api.github.com/repos/Hardonian/test")
+
+
 if __name__ == "__main__":
     unittest.main()
