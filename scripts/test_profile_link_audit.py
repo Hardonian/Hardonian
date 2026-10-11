@@ -20,7 +20,7 @@ class TestProfileLinkAudit(unittest.TestCase):
     def test_http_error_handling(self, mock_read_text, mock_build_opener, mock_validate):
         mock_read_text.return_value = "Here is a test URL: [test](https://example.com/test)"
         opener = MagicMock()
-        opener.open.side_effect = urllib.error.HTTPError(url='https://example.com/test', code=500, msg='Internal Server Error', hdrs={}, fp=None)
+        opener.open.side_effect = urllib.error.HTTPError(url='https://example.com/test', code=404, msg='Not Found', hdrs={}, fp=None)
         mock_build_opener.return_value = opener
 
         with patch('sys.stdout', new=io.StringIO()):
@@ -73,6 +73,22 @@ class TestProfileLinkAudit(unittest.TestCase):
             result = profile_link_audit.audit()
 
         self.assertEqual(result, 0)
+
+    @patch('profile_link_audit.validate_public_http_url')
+    @patch('profile_link_audit.urllib.request.build_opener')
+    @patch('profile_link_audit.Path.read_text')
+    def test_empty_url_handling(self, mock_read_text, mock_build_opener, mock_validate):
+        mock_read_text.return_value = 'Here is an empty markdown link: [empty]() and empty HTML tag: <a href="">'
+        opener = MagicMock()
+        mock_response = MagicMock()
+        mock_response.status = 200
+        opener.open.return_value.__enter__.return_value = mock_response
+        mock_build_opener.return_value = opener
+
+        with patch('sys.stdout', new=io.StringIO()):
+            result = profile_link_audit.audit()
+
+        self.assertEqual(result, 1)
 
 
 if __name__ == '__main__':

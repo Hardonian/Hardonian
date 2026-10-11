@@ -19,6 +19,20 @@ class ProfileLinkAuditTests(unittest.TestCase):
             ["products/a.md", "assets/a.png", "https://example.com"],
         )
 
+    @patch.object(audit.socket, "getaddrinfo")
+    def test_safe_connection_blocks_private_ip(self, mock_getaddrinfo):
+        mock_getaddrinfo.return_value = [(socket.AF_INET, socket.SOCK_STREAM, 6, "", ("127.0.0.1", 80))]
+        conn = audit.SafeHTTPConnection("example.com", 80)
+        with self.assertRaises(audit.UnsafeURL):
+            conn.connect()
+
+    @patch.object(audit.socket, "getaddrinfo")
+    def test_safe_https_connection_blocks_private_ip(self, mock_getaddrinfo):
+        mock_getaddrinfo.return_value = [(socket.AF_INET, socket.SOCK_STREAM, 6, "", ("169.254.169.254", 443))]
+        conn = audit.SafeHTTPSConnection("example.com", 443)
+        with self.assertRaises(audit.UnsafeURL):
+            conn.connect()
+
     def test_rejects_repository_path_traversal(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -110,6 +124,95 @@ class ProfileLinkAuditTests(unittest.TestCase):
 
         self.assertEqual(status, "fail")
         self.assertEqual(detail[1], 404)
+
+    def test_collect_and_validate_links(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "exists.md").write_text("hello")
+            urls = ["#anchor", "mailto:test@example.com", "exists.md", "missing.md", "https://example.com"]
+            with patch("sys.stdout", new=io.StringIO()):
+                external, failures = audit.collect_and_validate_links(urls, root)
+            self.assertEqual(external, [("https://example.com", "https://example.com")])
+            self.assertEqual(len(failures), 1)
+            self.assertEqual(failures[0][1], "LOCAL_MISSING")
+
+    def test_report_results(self):
+        with patch("sys.stdout", new=io.StringIO()) as fake_out:
+            code = audit.report_results(5, [])
+            self.assertEqual(code, 0)
+            self.assertIn("CHECKED 5 UNIQUE_LINKS_AND_IMAGES", fake_out.getvalue())
+
+        with patch("sys.stdout", new=io.StringIO()) as fake_out:
+            code = audit.report_results(5, [("test", "FAIL", "reason")])
+            self.assertEqual(code, 1)
+            self.assertIn("FAILURES 1", fake_out.getvalue())
+
+
+
+    @patch.object(audit, "check_url")
+    def test_audit_success(self, mock_check_url):
+        mock_check_url.return_value = ("ok", "OK 200 https://example.com")
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            doc = root / "doc.md"
+            doc.write_text("# Test")
+            readme = root / "README.md"
+            readme.write_text("[Doc](doc.md) [Anchor](#section) [Mail](mailto:test@example.com) [Ext](https://example.com)")
+            with patch("sys.stdout", new=io.StringIO()):
+                result = audit.audit(readme)
+            self.assertEqual(result, 0)
+            mock_check_url.assert_called_once_with("https://example.com", "https://example.com")
+
+    @patch.object(audit, "check_url")
+    def test_audit_external_warning_returns_zero(self, mock_check_url):
+        mock_check_url.return_value = ("warn", "WARN 429 https://example.com")
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = root / "README.md"
+            readme.write_text("[Ext](https://example.com)")
+            with patch("sys.stdout", new=io.StringIO()):
+                result = audit.audit(readme)
+            self.assertEqual(result, 0)
+
+    @patch.object(audit, "check_url")
+    def test_audit_external_failure_returns_one(self, mock_check_url):
+        mock_check_url.return_value = ("fail", ("https://example.com", 404, "Not Found"))
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = root / "README.md"
+            readme.write_text("[Ext](https://example.com)")
+            with patch("sys.stdout", new=io.StringIO()):
+                result = audit.audit(readme)
+            self.assertEqual(result, 1)
+
+    @patch.object(audit, "resolve_link")
+    def test_audit_unsafe_url_returns_one(self, mock_resolve_link):
+        mock_resolve_link.side_effect = audit.UnsafeURL("Unsafe link")
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            readme = root / "README.md"
+            readme.write_text("[Unsafe](http://unsafe.com)")
+            with patch("sys.stdout", new=io.StringIO()):
+                result = audit.audit(readme)
+            self.assertEqual(result, 1)
+
+
+    @patch.object(audit.time, "sleep")
+    @patch.object(audit, "validate_public_http_url")
+    @patch.object(audit.urllib.request, "build_opener")
+    def test_503_service_unavailable_is_retried_and_warned(self, build_opener, validate, sleep):
+        opener = MagicMock()
+        opener.open.side_effect = urllib.error.HTTPError(
+            "https://github.com/test", 503, "Service Unavailable", {}, io.BytesIO(b"")
+        )
+        build_opener.return_value = opener
+
+        status, detail = audit.check_url("https://github.com/test", "https://github.com/test")
+
+        self.assertEqual(status, "warn")
+        self.assertIn("WARN 503", detail)
+        self.assertEqual(opener.open.call_count, 2)
+        sleep.assert_called_once()
 
 
 if __name__ == "__main__":
