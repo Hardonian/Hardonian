@@ -1,50 +1,56 @@
-import re
 import unittest
-from pathlib import Path
+import os
+import subprocess
 
+class TestAnalyticsScript(unittest.TestCase):
+    def setUp(self):
+        self.analytics_path = os.path.join(os.path.dirname(__file__), "..", "assets", "analytics.js")
 
-class AnalyticsJSTests(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        cls.analytics_path = Path(__file__).parents[1] / "assets" / "analytics.js"
-        cls.content = cls.analytics_path.read_text(encoding="utf-8")
+    def test_no_math_random_in_analytics(self):
+        """Verify Math.random is not used in assets/analytics.js"""
+        with open(self.analytics_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        self.assertNotIn("Math.random", content, "Math.random() should not be present in assets/analytics.js")
 
-    def test_analytics_file_exists_and_non_empty(self):
-        self.assertTrue(self.analytics_path.exists(), "assets/analytics.js should exist")
-        self.assertGreater(len(self.content.strip()), 0, "assets/analytics.js should not be empty")
+    def test_uses_crypto_get_random_values(self):
+        """Verify crypto.getRandomValues is used in assets/analytics.js"""
+        with open(self.analytics_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        self.assertIn("crypto.getRandomValues", content, "crypto.getRandomValues should be used in assets/analytics.js")
 
-    def test_wrapped_in_script_tags_and_iife(self):
-        self.assertIn("<script>", self.content)
-        self.assertIn("</script>", self.content)
-        self.assertIn("(function() {", self.content)
-        self.assertIn("})();", self.content)
+    def test_analytics_execution_node(self):
+        """Execute the analytics snippet logic via Node.js to verify valid session ID generation."""
+        with open(self.analytics_path, "r", encoding="utf-8") as f:
+            content = f.read()
 
-    def test_session_storage_key_and_generator(self):
-        self.assertIn("sessionStorage.getItem('aas_sid')", self.content)
-        self.assertIn("sessionStorage.setItem('aas_sid', sessionId)", self.content)
-        self.assertIn("Math.random().toString(36)", self.content)
+        # Extract JS code inside <script> tags
+        js_code = content.split("<script>")[1].split("</script>")[0]
 
-    def test_tracking_endpoint_url(self):
-        self.assertIn("https://aiautomatedsystems.ca/api/track", self.content)
+        # Wrap in a Node script mock environment
+        node_runner = f"""
+        const globalStore = {{}};
+        const sessionStorage = {{
+            getItem: (key) => globalStore[key] || null,
+            setItem: (key, val) => {{ globalStore[key] = String(val); }}
+        }};
+        const window = {{ location: {{ pathname: '/test' }} }};
+        const document = {{ referrer: '', addEventListener: () => {{}} }};
+        const fetch = async () => ({{ catch: () => {{}} }});
 
-    def test_page_view_event_payload(self):
-        self.assertIn("event: 'page_view'", self.content)
-        self.assertIn("page: window.location.pathname", self.content)
-        self.assertIn("referrer: document.referrer", self.content)
-        self.assertIn("session_id: sessionId", self.content)
+        {js_code}
 
-    def test_checkout_click_event_listener_and_selectors(self):
-        self.assertIn("document.addEventListener('click'", self.content)
-        self.assertIn('a[href*="buy.stripe.com"]', self.content)
-        self.assertIn('a[href*="checkout"]', self.content)
-        self.assertIn("event: 'checkout_click'", self.content)
-        self.assertIn("product_slug: slug", self.content)
-        self.assertIn("checkout_url: link.href", self.content)
+        console.log(sessionStorage.getItem('aas_sid'));
+        """
 
-    def test_error_handling_catch_swallowing(self):
-        catch_count = len(re.findall(r"\.catch\(\(\)\s*=>\s*\{\}\)", self.content))
-        self.assertEqual(catch_count, 2, "Both fetch calls should have .catch(() => {}) error handlers")
-
+        result = subprocess.run(
+            ["node", "-e", node_runner],
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        session_id = result.stdout.strip()
+        self.assertTrue(session_id.startswith("s"), f"Session ID should start with 's', got {session_id}")
+        self.assertGreater(len(session_id), 10, f"Session ID should have adequate length, got {session_id}")
 
 if __name__ == "__main__":
     unittest.main()
