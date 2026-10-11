@@ -206,7 +206,7 @@ class ProfileMetadataTests(unittest.TestCase):
 
         mock_urlopen.assert_called_once()
         req = mock_urlopen.call_args[0][0]
-        self.assertEqual(req.get_header("User-agent"), metadata.USER_AGENT)
+        self.assertEqual(req.get_header("User-Agent"), metadata.USER_AGENT)
         self.assertIsNone(req.get_header("Authorization"))
 
     @patch("os.environ.get", return_value="test_token_123")
