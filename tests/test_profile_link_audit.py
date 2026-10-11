@@ -117,7 +117,9 @@ class ProfileLinkAuditTests(unittest.TestCase):
     @patch.object(audit.urllib.request, "build_opener")
     def test_503_service_unavailable_is_retried_and_warned(self, build_opener, validate, sleep):
         opener = MagicMock()
-        opener.open.side_effect = urllib.error.HTTPError(
+            opener.open.side_effect = urllib.error.HTTPError(
+                "https://github.com/test", 503, "Service Unavailable", {}, io.BytesIO(b"")
+            )
             "https://github.com/test", 503, "Service Unavailable", {}, None
         )
         build_opener.return_value = opener
