@@ -19,6 +19,18 @@ class ProfileLinkAuditTests(unittest.TestCase):
             ["products/a.md", "assets/a.png", "https://example.com"],
         )
 
+    def test_extract_urls_with_empty_urls(self):
+        self.assertEqual(
+            audit.extract_urls("[Doc](products/a.md) [Empty]() ![]() <a href=\"\"> <img src=\"\">"),
+            ["products/a.md", "", "", "", ""],
+        )
+
+    def test_rejects_empty_url_target(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            with self.assertRaises(audit.UnsafeURL):
+                audit.resolve_link("", root)
+
     def test_rejects_repository_path_traversal(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
