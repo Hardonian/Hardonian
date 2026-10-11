@@ -19,6 +19,20 @@ class ProfileLinkAuditTests(unittest.TestCase):
             ["products/a.md", "assets/a.png", "https://example.com"],
         )
 
+    @patch.object(audit.socket, "getaddrinfo")
+    def test_safe_connection_blocks_private_ip(self, mock_getaddrinfo):
+        mock_getaddrinfo.return_value = [(socket.AF_INET, socket.SOCK_STREAM, 6, "", ("127.0.0.1", 80))]
+        conn = audit.SafeHTTPConnection("example.com", 80)
+        with self.assertRaises(audit.UnsafeURL):
+            conn.connect()
+
+    @patch.object(audit.socket, "getaddrinfo")
+    def test_safe_https_connection_blocks_private_ip(self, mock_getaddrinfo):
+        mock_getaddrinfo.return_value = [(socket.AF_INET, socket.SOCK_STREAM, 6, "", ("169.254.169.254", 443))]
+        conn = audit.SafeHTTPSConnection("example.com", 443)
+        with self.assertRaises(audit.UnsafeURL):
+            conn.connect()
+
     def test_rejects_repository_path_traversal(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
