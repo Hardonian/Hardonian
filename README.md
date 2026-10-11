@@ -173,7 +173,7 @@ Every engagement starts with the workflow—not a predetermined model or platfor
 
 Detailed capability mappings and operational boundaries are documented in the [Architecture Playbook](architecture-playbook/README.md).
 
-Seven monorepos keep related systems coherent while preserving clear boundaries:
+Six monorepos keep related systems coherent while preserving clear boundaries:
 
 | Boundary | Public monorepos | Responsibility |
 | --- | --- | --- |
@@ -187,7 +187,7 @@ Seven monorepos keep related systems coherent while preserving clear boundaries:
 
 ```text
 signal                     policy                      execution
-agent-edge ──────────────► agent-infra ──────────────► autopilot
+agent-infra ──────────────► autopilot
 packet capture             control plane               ops / finops
 mesh edge                  agent mesh                  growth / support
                            MCP firewall
