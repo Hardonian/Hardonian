@@ -161,7 +161,9 @@ def is_transient_network_error(exc: BaseException) -> bool:
     return False
 
 
-def check_url(raw: str, target: str) -> tuple[str, tuple | str]:
+def check_url(
+    raw: str, target: str, opener: urllib.request.OpenerDirector | None = None
+) -> tuple[str, tuple | str]:
     try:
         validate_public_http_url(target)
         opener = urllib.request.build_opener(SafeHTTPHandler(), SafeHTTPSHandler(), ValidatingRedirectHandler())
@@ -216,7 +218,7 @@ def check_external_links(external: list[tuple[str, str]]) -> list:
     if not external:
         return failures
     with concurrent.futures.ThreadPoolExecutor(max_workers=min(8, max(1, len(external)))) as pool:
-        futures = {pool.submit(check_url, raw, target): raw for raw, target in external}
+        futures = {pool.submit(check_url, raw, target, opener): raw for raw, target in external}
         for future in concurrent.futures.as_completed(futures):
             status, detail = future.result()
             if status == "fail":
