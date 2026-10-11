@@ -170,24 +170,10 @@ def check_url(
         request = urllib.request.Request(target, headers={"User-Agent": USER_AGENT})
         hostname = urlparse(target).hostname or ""
         for attempt in range(1, TRANSIENT_ATTEMPTS + 1):
-            try:
-                with HOST_SEMAPHORES[hostname]:
-                    with opener.open(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
-                        code = response.status
-                        if code >= 400 and code not in ALLOWED_WARNING_CODES:
-                            return "fail", (raw, code, response.headers.get("content-type", ""))
-                        return "ok", f"OK {code} {raw}"
-            except urllib.error.HTTPError as exc:
-                if exc.code in ALLOWED_WARNING_CODES:
-                    return "warn", f"WARN {exc.code} {raw}"
-                return "fail", (raw, exc.code, str(exc))
-            except Exception as exc:
-                if not is_transient_network_error(exc):
-                    return "fail", (raw, "ERROR", str(exc))
-                if attempt < TRANSIENT_ATTEMPTS:
-                    time.sleep(0.25 * attempt)
-                    continue
-                return "warn", f"WARN TRANSIENT {raw} ({exc})"
+            status, detail = _check_url_attempt(opener, request, hostname, raw, attempt)
+            if status != "retry":
+                return status, detail
+        return "warn", f"WARN TRANSIENT {raw} (transient error)"
     except Exception as exc:
         return "fail", (raw, "ERROR", str(exc))
 
