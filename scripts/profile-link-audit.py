@@ -10,6 +10,7 @@ import http.client
 import urllib.request
 from collections import defaultdict
 from pathlib import Path
+from typing import Any
 from urllib.parse import unquote, urlparse
 
 ALLOWED_WARNING_CODES = {403, 429, 500, 502, 503, 504, 530, 999}
@@ -123,7 +124,16 @@ class SafeHTTPSHandler(urllib.request.HTTPSHandler):
 
 
 class ValidatingRedirectHandler(urllib.request.HTTPRedirectHandler):
-    def redirect_request(self, req, fp, code, msg, headers, newurl):
+    def redirect_request(
+        self,
+        req: urllib.request.Request,
+        fp: Any,
+        code: int,
+        msg: str,
+        headers: Any,
+        newurl: str,
+    ) -> urllib.request.Request | None:
+        """Return a Request or None in response to a redirect after validating security."""
         validate_public_http_url(newurl)
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
@@ -208,8 +218,12 @@ def check_external_links(external: list[tuple[str, str]]) -> list:
         for future in concurrent.futures.as_completed(futures):
             status, detail = future.result()
             if status == "fail":
-                failures.append(detail)
-                print(f"FAIL {detail[1]} {detail[0]}")
+                if isinstance(detail, tuple):
+                    failures.append(detail)
+                    print(f"FAIL {detail[1]} {detail[0]}")
+                else:
+                    failures.append((futures[future], "FAIL", detail))
+                    print(f"FAIL {detail}")
             else:
                 print(detail)
     return failures
