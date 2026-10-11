@@ -10,6 +10,7 @@ import os
 import sys
 import urllib.error
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from urllib.parse import quote, urlparse
 
@@ -165,15 +166,25 @@ def github_api_url(url: str) -> str:
 
 
 def verify_remote(manifest: dict) -> None:
+    urls: list[str] = []
     for project in manifest["projects"]:
         name = project["name"]
-        request(f"https://api.github.com/repos/Hardonian/{name}")
-        request(
+        urls.append(f"https://api.github.com/repos/Hardonian/{name}")
+        urls.append(
             f"https://api.github.com/repos/Hardonian/{name}/actions/workflows/"
             f"{project['ci_workflow']}"
         )
-        request(github_api_url(project["documentation"]))
-        request(github_api_url(project["evidence"]))
+        urls.append(github_api_url(project["documentation"]))
+        urls.append(github_api_url(project["evidence"]))
+
+    if not urls:
+        return
+
+    max_workers = min(16, len(urls))
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = [executor.submit(request, url) for url in urls]
+        for future in as_completed(futures):
+            future.result()
 
 
 def check(manifest: dict, *, remote: bool = False) -> None:
