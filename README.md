@@ -47,7 +47,7 @@ I design and build the infrastructure outside and around the model: observable w
 └──────────────────────────────┬──────────────────────────────────┘
                                ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ Unprivileged Model Planner (frontier cloud LLM via OpenAI / Anthropic / vLLM) │
+│ Unprivileged Model Planner (frontier LLMs / vLLM)               │
 │ • Zero execution privileges inside the context window           │
 │ • Emits typed, candidate tool intent via Model Context Protocol │
 └──────────────────────────────┬──────────────────────────────────┘
