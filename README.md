@@ -213,10 +213,10 @@ Hardonia includes an owned, local testbed for model routing, image and video wor
 | Lane | Hardware | Primary use |
 | :--- | :--- | :--- |
 | **Enterprise Server Host & Virtualization** | AMD EPYC 7452 · Zen 2 · 32C / 64T · 2.35–3.35 GHz · 128 MB L3 · 168 GB DDR4 ECC · SP3 |  Built for sovereign compute, agent infrastructure, model serving, and experimentation. |
-| **Edge Orchestration & NPU** | AMD Ryzen AI 9 HX370 · 50 NPU TOPS · 48 GB + Radxa Dragon Q6A  Qualcomm QCS6490 · 8-core Kryo · Adreno 643 · Hexagon AI · 12 TOPS · 16 GB LPDDR5 | Local inference, vision & sensor intelligence. |
-| **Heavy Inference** | NVIDIA V100 · 16 GB HBM2 | Larger model and video-generation workloads. |
-| **Memory-Oriented** | NVIDIA P40 · 24 GB | ComfyUI pipelines, quantized models, and training experiments. |
-| **Interactive & Vision** | NVIDIA RTX 3060 · 12 GB | Vision, embeddings, and latency-sensitive workflows. |
+| **Edge Orchestration & NPU** | AMD Ryzen AI 9 HX370 · **80 TOPS SoC** (50 NPU + CPU/GPU) · 48 GB + Radxa Dragon Q6A · Qualcomm QCS6490 · 8-core Kryo · Adreno 643 · Hexagon AI · 12 TOPS · 16 GB LPDDR5 | Local inference, vision & sensor intelligence. |
+| **Heavy Inference** | NVIDIA V100 · 16 GB HBM2 · **56 INT8 TOPS** | Larger model and video-generation workloads. |
+| **Memory-Oriented** | NVIDIA P40 · 24 GB · **47 INT8 TOPS** | ComfyUI pipelines, quantized models, and training experiments. |
+| **Interactive & Vision** | NVIDIA RTX 3060 · 12 GB · **102 INT8 TOPS** dense | Vision, embeddings, and latency-sensitive workflows. |
 
 The lab uses Ollama-compatible routing, ComfyUI, containerized services, and Prometheus/Grafana-style observability. Public implementation lives primarily in [model-tools](https://github.com/Hardonian/model-tools) and [api-tools](https://github.com/Hardonian/api-tools).
 
@@ -310,11 +310,13 @@ The lab uses Ollama-compatible routing, ComfyUI, containerized services, and Pro
 
 <br /><br />
 
-**Compute & Sovereign Hardware**<br />
-![AMD EPYC](https://img.shields.io/badge/AMD_EPYC-ED1C24?style=flat-square&logo=amd&logoColor=white)
+**Compute & Sovereign Hardware** — ~285 INT8 TOPS across owned accelerators<br />
+![AMD EPYC 7452](https://img.shields.io/badge/AMD_EPYC_7452-32C_64T-ED1C24?style=flat-square&logo=amd&logoColor=white)
+![AMD Ryzen AI 9 HX 370](https://img.shields.io/badge/AMD_Ryzen_AI_9_HX370-80_TOPS_SoC-ED1C24?style=flat-square&logo=amd&logoColor=white)
 ![AMD Ryzen AI NPU](https://img.shields.io/badge/AMD_Ryzen_AI_NPU-50_TOPS-ED1C24?style=flat-square&logo=amd&logoColor=white)
-![NVIDIA V100](https://img.shields.io/badge/NVIDIA_V100-16GB-76B900?style=flat-square&logo=nvidia&logoColor=white)
-![NVIDIA P40](https://img.shields.io/badge/NVIDIA_P40-24GB-76B900?style=flat-square&logo=nvidia&logoColor=white)
+![NVIDIA V100](https://img.shields.io/badge/NVIDIA_V100-16GB_56_INT8-76B900?style=flat-square&logo=nvidia&logoColor=white)
+![NVIDIA P40](https://img.shields.io/badge/NVIDIA_P40-24GB_47_INT8-76B900?style=flat-square&logo=nvidia&logoColor=white)
+![NVIDIA RTX 3060](https://img.shields.io/badge/NVIDIA_RTX_3060-12GB_102_INT8-76B900?style=flat-square&logo=nvidia&logoColor=white)
 
 <br /><br />
 
