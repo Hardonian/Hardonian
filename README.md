@@ -173,7 +173,7 @@ Every engagement starts with the workflow—not a predetermined model or platfor
 
 Detailed capability mappings and operational boundaries are documented in the [Architecture Playbook](architecture-playbook/README.md).
 
-Seven monorepos keep related systems coherent while preserving clear boundaries:
+Six monorepos keep related systems coherent while preserving clear boundaries:
 
 | Boundary | Public monorepos | Responsibility |
 | --- | --- | --- |
