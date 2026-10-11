@@ -186,8 +186,8 @@ Six monorepos keep related systems coherent while preserving clear boundaries:
 <summary><strong>Open the component map</strong></summary>
 
 ```text
-policy                                                 execution
-agent-infra ─────────────────────────────────────────► autopilot
+signal                     policy                      execution
+agent-infra ──────────────► autopilot
 packet capture             control plane               ops / finops
 mesh edge                  agent mesh                  growth / support
                            MCP firewall
