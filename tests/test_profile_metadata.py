@@ -1,8 +1,11 @@
+import json
 import datetime as dt
 import importlib.util
 import unittest
+import unittest.mock
 from copy import deepcopy
 from pathlib import Path
+from unittest.mock import patch
 
 SPEC = importlib.util.spec_from_file_location(
     "profile_metadata", Path(__file__).parents[1] / "scripts/profile-metadata.py"
@@ -76,6 +79,179 @@ class ProfileMetadataTests(unittest.TestCase):
             today=dt.date(2027, 1, 1),
             enforce_freshness=False,
         )
+
+    @patch.object(metadata, "README_PATH")
+    @patch.object(metadata, "MANIFEST_PATH")
+    @patch.object(metadata, "verify_remote")
+    def test_refresh_updates_manifest_and_readme_with_remote(self, mock_verify_remote, mock_manifest_path, mock_readme_path):
+        manifest = valid_manifest()
+        mock_readme_path.read_text.return_value = (
+            "header\n<!-- profile-projects:start -->\nold\n<!-- profile-projects:end -->\nfooter\n"
+        )
+
+        today_mock = dt.date(2026, 10, 10)
+        with patch("datetime.datetime") as mock_datetime:
+            mock_datetime.now.return_value.date.return_value = today_mock
+            metadata.refresh(manifest, remote=True)
+
+        mock_verify_remote.assert_called_once_with(manifest)
+        self.assertEqual(manifest["verified_on"], "2026-10-10")
+        mock_manifest_path.write_text.assert_called_once()
+        mock_readme_path.write_text.assert_called_once()
+        written_readme = mock_readme_path.write_text.call_args[0][0]
+        self.assertIn("Public project metadata last verified **2026-10-10**", written_readme)
+
+    @patch.object(metadata, "README_PATH")
+    @patch.object(metadata, "MANIFEST_PATH")
+    @patch.object(metadata, "verify_remote")
+    def test_refresh_skips_remote_when_remote_false(self, mock_verify_remote, mock_manifest_path, mock_readme_path):
+        manifest = valid_manifest()
+        manifest["verified_on"] = "2020-01-01"  # stale manifest
+        mock_readme_path.read_text.return_value = (
+            "header\n<!-- profile-projects:start -->\nold\n<!-- profile-projects:end -->\nfooter\n"
+        )
+
+        today_mock = dt.date(2026, 10, 10)
+        with patch("datetime.datetime") as mock_datetime:
+            mock_datetime.now.return_value.date.return_value = today_mock
+            metadata.refresh(manifest, remote=False)
+
+        mock_verify_remote.assert_not_called()
+        self.assertEqual(manifest["verified_on"], "2026-10-10")
+        mock_manifest_path.write_text.assert_called_once()
+        mock_readme_path.write_text.assert_called_once()
+
+    @patch.object(metadata, "README_PATH")
+    @patch.object(metadata, "verify_remote")
+    def test_check_passes_when_synced(self, mock_verify_remote, mock_readme_path):
+        manifest = valid_manifest()
+        rendered = metadata.render(manifest)
+        synced_readme = f"header\n{rendered}\nfooter\n"
+        mock_readme_path.read_text.return_value = synced_readme
+
+        with patch("datetime.datetime") as mock_datetime:
+            mock_datetime.now.return_value.date.return_value = dt.date(2026, 9, 19)
+            metadata.check(manifest, remote=True)
+
+        mock_verify_remote.assert_called_once_with(manifest)
+
+    @patch.object(metadata, "README_PATH")
+    def test_check_raises_metadata_error_when_out_of_sync(self, mock_readme_path):
+        manifest = valid_manifest()
+        out_of_sync_readme = "header\n<!-- profile-projects:start -->\noutdated\n<!-- profile-projects:end -->\nfooter\n"
+        mock_readme_path.read_text.return_value = out_of_sync_readme
+
+        with patch("datetime.datetime") as mock_datetime:
+            mock_datetime.now.return_value.date.return_value = dt.date(2026, 9, 19)
+            with self.assertRaisesRegex(metadata.MetadataError, "out of sync"):
+                metadata.check(manifest, remote=False)
+
+
+    def test_verify_remote_calls_request_concurrently_for_all_urls(self):
+        manifest = valid_manifest()
+        requested_urls = []
+
+        def mock_request(url):
+            requested_urls.append(url)
+
+        with unittest.mock.patch.object(metadata, "request", side_effect=mock_request):
+            metadata.verify_remote(manifest)
+
+        self.assertEqual(len(requested_urls), 16)
+
+    def test_verify_remote_propagates_exceptions(self):
+        manifest = valid_manifest()
+
+        def mock_request(url):
+            if "ci.yml" in url:
+                raise metadata.MetadataError(f"HTTP 404: {url}")
+
+        with unittest.mock.patch.object(metadata, "request", side_effect=mock_request):
+            with self.assertRaisesRegex(metadata.MetadataError, "HTTP 404"):
+                metadata.verify_remote(manifest)
+
+
+
+    def test_load_manifest_default_path(self):
+        sample_manifest = valid_manifest()
+        with patch("pathlib.Path.read_text", return_value=json.dumps(sample_manifest)) as mock_read:
+            result = metadata.load_manifest()
+            self.assertEqual(result, sample_manifest)
+            mock_read.assert_called_once_with(encoding="utf-8")
+
+    def test_load_manifest_custom_path(self):
+        sample_manifest = valid_manifest()
+        mock_path = MagicMock(spec=Path)
+        mock_path.read_text.return_value = json.dumps(sample_manifest)
+        result = metadata.load_manifest(mock_path)
+        self.assertEqual(result, sample_manifest)
+        mock_path.read_text.assert_called_once_with(encoding="utf-8")
+
+    def test_load_manifest_invalid_json(self):
+        mock_path = MagicMock(spec=Path)
+        mock_path.read_text.return_value = "{ invalid json }"
+        with self.assertRaises(json.JSONDecodeError):
+            metadata.load_manifest(mock_path)
+
+
+    @patch("os.environ.get", return_value=None)
+    @patch("urllib.request.urlopen")
+    def test_request_success_without_token(self, mock_urlopen, mock_env):
+        mock_response = MagicMock()
+        mock_response.status = 200
+        mock_response.__enter__.return_value = mock_response
+        mock_urlopen.return_value = mock_response
+
+        metadata.request("https://api.github.com/repos/Hardonian/test")
+
+        mock_urlopen.assert_called_once()
+        req = mock_urlopen.call_args[0][0]
+        self.assertEqual(req.get_header("User-Agent"), metadata.USER_AGENT)
+        self.assertIsNone(req.get_header("Authorization"))
+
+    @patch("os.environ.get", return_value="test_token_123")
+    @patch("urllib.request.urlopen")
+    def test_request_success_with_token(self, mock_urlopen, mock_env):
+        mock_response = MagicMock()
+        mock_response.status = 200
+        mock_response.__enter__.return_value = mock_response
+        mock_urlopen.return_value = mock_response
+
+        metadata.request("https://api.github.com/repos/Hardonian/test")
+
+        mock_urlopen.assert_called_once()
+        req = mock_urlopen.call_args[0][0]
+        self.assertEqual(req.get_header("Authorization"), "Bearer test_token_123")
+
+    @patch("os.environ.get", return_value=None)
+    @patch("urllib.request.urlopen")
+    def test_request_status_error(self, mock_urlopen, mock_env):
+        mock_response = MagicMock()
+        mock_response.status = 404
+        mock_response.__enter__.return_value = mock_response
+        mock_urlopen.return_value = mock_response
+
+        with self.assertRaisesRegex(metadata.MetadataError, "HTTP 404"):
+            metadata.request("https://api.github.com/repos/Hardonian/test")
+
+    @patch("os.environ.get", return_value=None)
+    @patch("urllib.request.urlopen")
+    def test_request_rate_limit_exceeded(self, mock_urlopen, mock_env):
+        headers = {"X-RateLimit-Remaining": "0"}
+        exc = urllib.error.HTTPError("url", 403, "Forbidden", headers, None)
+        mock_urlopen.side_effect = exc
+
+        with self.assertRaisesRegex(metadata.MetadataError, "GitHub API rate limit exhausted"):
+            metadata.request("https://api.github.com/repos/Hardonian/test")
+
+    @patch("os.environ.get", return_value=None)
+    @patch("urllib.request.urlopen")
+    def test_request_other_http_error_passthrough(self, mock_urlopen, mock_env):
+        exc = urllib.error.HTTPError("url", 500, "Internal Server Error", {}, None)
+        mock_urlopen.side_effect = exc
+
+        with self.assertRaises(urllib.error.HTTPError):
+            metadata.request("https://api.github.com/repos/Hardonian/test")
 
 
 if __name__ == "__main__":
