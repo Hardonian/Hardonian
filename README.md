@@ -187,7 +187,7 @@ Seven monorepos keep related systems coherent while preserving clear boundaries:
 
 ```text
 signal                     policy                      execution
-                           agent-infra ──────────────► autopilot
+agent-infra ──────────────► autopilot
 packet capture             control plane               ops / finops
 mesh edge                  agent mesh                  growth / support
                            MCP firewall
