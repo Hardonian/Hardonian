@@ -112,7 +112,7 @@ def render(manifest: dict) -> str:
         project_cell = (
             f"**[{name}]({repo})** · {project['language']}<br />"
             f"{project['role']} · `{project['maturity']}`<br />"
-            f"[![{name} CI]({ci_badge})]({ci_page})"
+            f"[![View {name} GitHub Actions CI workflow]({ci_badge})]({ci_page})"
         )
         evidence_cell = (
             f"{project['proof']}<br />"
