@@ -11,7 +11,7 @@ Standard Flux workflows output plasticky skin, blow out specular highlights, and
 
 ## Deliverable
 
-Validated ComfyUI API workflow graph, zero-code Python CLI runner, turnkey FastAPI REST microservice, 1-click model downloaders, VRAM optimization profiles (6GB–24GB+), and pre-flight diagnostics.
+Validated ComfyUI API workflow graph, zero-code Python CLI runner, turnkey FastAPI REST microservice, 1-step model downloaders, VRAM optimization profiles (6GB–24GB+), and pre-flight diagnostics.
 
 **Requirements:** Tested on 8GB+ VRAM (optimized for RTX 3060/4070/4090).
 

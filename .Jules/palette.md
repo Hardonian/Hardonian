@@ -25,3 +25,7 @@
 ## 2026-10-01 - Descriptive Image-Only Link Alt Texts
 **Learning:** Using the visual description of a badge (e.g., "TokenGoblin CI") as the `alt` text for an image-only link creates a confusing experience for screen reader users, who hear the image description instead of the link's destination or action.
 **Action:** Always ensure that the `alt` text for image-only links (like markdown badges wrapped in links) describes the action or destination of the link (e.g., "View TokenGoblin GitHub Actions CI workflow" or "Jump to Architecture Focus section"), rather than just describing the image visually.
+
+## 2024-07-27 - Device-Agnostic Terminology Update
+**Learning:** Replaced "1-click" with "1-step" in product feature descriptions to adhere to device-agnostic language guidelines, making the UI copy more inclusive.
+**Action:** Use "1-step" instead of "1-click" when describing automated setup or downloading processes.
