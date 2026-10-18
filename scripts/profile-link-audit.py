@@ -172,6 +172,34 @@ def is_transient_network_error(exc: BaseException) -> bool:
     return False
 
 
+
+def _check_url_attempt(
+    opener: urllib.request.OpenerDirector,
+    request: urllib.request.Request,
+    hostname: str,
+    raw: str,
+    attempt: int,
+) -> tuple[str, tuple | str]:
+    semaphore = HOST_SEMAPHORES[hostname]
+    with semaphore:
+        try:
+            with opener.open(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
+                if response.status in ALLOWED_WARNING_CODES:
+                    return "warn", f"WARN {response.status} {raw}"
+                if response.status >= 400:
+                    return "fail", (raw, "ERROR", f"HTTP {response.status}")
+                return "ok", f"OK 200 {raw}"
+        except urllib.error.HTTPError as exc:
+            if exc.code in ALLOWED_WARNING_CODES:
+                return "warn", f"WARN {exc.code} {raw}"
+            return "fail", (raw, "ERROR", f"HTTP {exc.code}")
+        except Exception as exc:
+            if is_transient_network_error(exc) and attempt < TRANSIENT_ATTEMPTS:
+                time.sleep(2**attempt)
+                return "retry", "retry"
+            raise
+
+
 def check_url(
     raw: str, target: str, opener: urllib.request.OpenerDirector | None = None
 ) -> tuple[str, tuple | str]:
@@ -215,7 +243,7 @@ def check_external_links(external: list[tuple[str, str]]) -> list:
     if not external:
         return failures
     with concurrent.futures.ThreadPoolExecutor(max_workers=min(8, max(1, len(external)))) as pool:
-        futures = {pool.submit(check_url, raw, target, opener): raw for raw, target in external}
+        futures = {pool.submit(check_url, raw, target): raw for raw, target in external}
         for future in concurrent.futures.as_completed(futures):
             status, detail = future.result()
             if status == "fail":
