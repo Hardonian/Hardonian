@@ -15,7 +15,7 @@ Toronto, Canada · [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) · [Em
 **Interested in:** teams shipping high-assurance AI, developer platforms, agent infrastructure, and enterprise-scale systems.
 
 [![Focus: Applied AI and platform infrastructure](https://img.shields.io/badge/Focus-Applied_AI_%7C_Platform_Infrastructure-0A66C2?style=flat-square)](#what-i-build)
-[![Current role: Solutions Architect at McGraw Hill](https://img.shields.io/badge/Current-Solutions_Architect_%40_McGraw_Hill-111827?style=flat-square)](#about)
+[![Solutions Architect at McGraw Hill](https://img.shields.io/badge/McGraw_Hill-Solutions_Architect-111827?style=flat-square)](#about)
 [![Location: Toronto, Canada](https://img.shields.io/badge/Location-Toronto%2C_Canada-4B5563?style=flat-square)](#about)
 [![Connect with Scott Hardie on LinkedIn](https://img.shields.io/badge/LinkedIn-scottrmhardie-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
 
