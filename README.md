@@ -4,117 +4,98 @@
 
 # Scott Hardie
 
-## Enterprise Applied AI Architect · AI Agents & Systems Infrastructure · Solutions Architecture
+### Senior Applied AI / Platform Engineer · Distributed Systems · Enterprise Architecture
 
-> **Building high-assurance infrastructure around foundation models: deterministic policy boundaries, Model Context Protocol (MCP) gateways, mathematical multi-tenant data isolation, and verified execution.**
+Toronto, Canada · [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) · [Email](mailto:scottrmhardie@gmail.com?subject=Role%20or%20systems%20conversation)
 
-[![Jump to Architecture Focus section](https://img.shields.io/badge/Focus-Enterprise_Applied_AI_%7C_Agent_Infrastructure-0A66C2?style=flat-square)](#architecture-focus--systems-philosophy)
-[![Jump to About section for role details](https://img.shields.io/badge/Role-Solutions_Architect_%40_McGraw_Hill-111827?style=flat-square)](#about)
-[![Jump to About section for location details](https://img.shields.io/badge/Location-Toronto%2C_Canada-4B5563?style=flat-square)](#about)
+> I build the systems around foundation models that make them safe to operate: policy-gated tool execution, tenant-isolated data, measurable inference cost, observable workflows, and evidence you can replay.
+
+**Target roles:** Senior/Staff Applied AI Engineer · AI Platform Engineer · Distributed Systems Engineer · Solutions Architect
+
+**Interested in:** teams shipping high-assurance AI, developer platforms, agent infrastructure, and enterprise-scale systems.
+
+[![Focus: Applied AI and platform infrastructure](https://img.shields.io/badge/Focus-Applied_AI_%7C_Platform_Infrastructure-0A66C2?style=flat-square)](#what-i-build)
+[![Current role: Solutions Architect at McGraw Hill](https://img.shields.io/badge/Current-Solutions_Architect_%40_McGraw_Hill-111827?style=flat-square)](#about)
+[![Location: Toronto, Canada](https://img.shields.io/badge/Location-Toronto%2C_Canada-4B5563?style=flat-square)](#about)
 [![Connect with Scott Hardie on LinkedIn](https://img.shields.io/badge/LinkedIn-scottrmhardie-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
-[![Send an email inquiry to Scott Hardie](https://img.shields.io/badge/Email-scottrmhardie%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:scottrmhardie@gmail.com?subject=Inquiry:%20AI%20Systems%20Architecture)
 
-[Architecture Focus](#architecture-focus--systems-philosophy) · [Proof-Backed Systems](#proof-backed-systems) · [Production Invariants](#production-invariants-at-a-glance) · [Architecture Matrix](#architectural-capabilities--evidence-matrix) · [Technical Writing](#technical-writing--architecture-guides) · [Platform Topology](#how-the-platform-fits-together) · [Sovereign AI Lab](#sovereign-ai-lab) · [Engineering Stack](#working-stack) · [About & Track Record](#about)
-
-`ENTERPRISE AI ARCHITECTURE` · `MODEL CONTEXT PROTOCOL (MCP)` · `POSTGRESQL RLS` · `AGENT EVALS` · `AMD EPYC & NPU` · `FINOPS` · `FORMAL VERIFICATION`
+`APPLIED AI` · `DISTRIBUTED SYSTEMS` · `MCP` · `POSTGRESQL RLS` · `AGENT EVALS` · `FORMAL VERIFICATION`
 
 </div>
 
 ---
 
-## Architecture Focus & Systems Philosophy
+## Why I am a strong engineering hire
 
-AI demos are easy. Production enterprise systems must survive retries, partial failures, hostile inputs, prompt injections, runaway inference spend, model drift, and regulatory scrutiny under strict enterprise boundaries.
+- **I bridge architecture and implementation.** I can align stakeholders on a system boundary, then build the Go, Rust, TypeScript, Python, database, and CI pieces that make the boundary real.
+- **I treat AI as a production systems problem.** Models are useful; the surrounding controls determine whether a system is reliable, secure, affordable, and supportable.
+- **I make claims inspectable.** My public work includes specifications, benchmarks, negative security tests, formal models, conformance vectors, and CI quality gates—not just screenshots or demos.
+- **I understand enterprise delivery.** My work spans customer-facing architecture, identity and data integrations, institutional security, procurement conversations, and the operational constraints that decide whether a system ships.
 
-I design and build the infrastructure outside and around the model: observable workflows, explicit policy boundaries, capability-gated tool execution, replayable evidence, and mathematically isolated multi-tenant data fabrics.
+## What I build
 
-> **Intelligence can be probabilistic. Infrastructure cannot.**
-
-| Observe | Control | Prove |
+| Area | How I approach it | Public proof |
 | --- | --- | --- |
-| Capture model, tool, cost, and transaction events with sub-millisecond telemetry. | Route workloads, enforce capability policies, isolate risk, and recover safely. | Replay decisions, verify state invariants, reconcile transactions, and export audit evidence. |
+| **AI platform and agent infrastructure** | Keep the model unprivileged; put capability discovery, authorization, retries, budgets, and side effects behind explicit services. | [ReadyLayer](https://github.com/Hardonian/ReadyLayer) · [agent-infra](https://github.com/Hardonian/agent-infra) |
+| **Secure multi-tenant systems** | Enforce tenant boundaries in the database kernel with PostgreSQL RLS and test the negative cases automatically. | [Settler](https://github.com/Hardonian/Settler) |
+| **Inference economics and operations** | Measure tokens, latency, routing, and spend; use hard quotas and fallbacks to keep inference predictable. | [TokenGoblin](https://github.com/Hardonian/TokenGoblin) |
+| **Reliable distributed execution** | Specify state transitions, ordering, and capability rules; validate implementations against formal models and conformance vectors. | [veridag](https://github.com/Hardonian/veridag) |
 
-### Enterprise Agent Execution Lifecycle
+## Start here
 
-```text
-[Untrusted Input / Event]
-           │
-           ▼
-┌─────────────────────────────────────────────────────────────────┐
-│ Ingress & FinOps Guardrails (TokenGoblin)                       │
-│ • Daily tenant budget quota check ($50 hard cap)                │
-│ • Sub-millisecond token telemetry & latency tracking            │
-└──────────────────────────────┬──────────────────────────────────┘
-                               ▼
-┌─────────────────────────────────────────────────────────────────┐
-│ Unprivileged Model Planner (frontier LLMs / vLLM)               │
-│ • Zero execution privileges inside the context window           │
-│ • Emits typed, candidate tool intent via Model Context Protocol │
-└──────────────────────────────┬──────────────────────────────────┘
-                               ▼
-┌─────────────────────────────────────────────────────────────────┐
-│ MCP Policy Firewall & Authorization Gateway                     │
-│ ├── READ Operation: Auto-approved under tenant scope            │
-│ ├── WRITE Operation: Scoped execution + immutable audit log     │
-│ └── DESTRUCTIVE Operation: HALTED for Cryptographic HITL Token  │
-└──────────────────────────────┬──────────────────────────────────┘
-                               ▼
-┌─────────────────────────────────────────────────────────────────┐
-│ Relational Kernel & Settlement (Settler & PostgreSQL RLS)       │
-│ • Mathematical cross-tenant isolation (zero leakage)            │
-│ • Merkle evidence packet generated for replayable audit log     │
-└─────────────────────────────────────────────────────────────────┘
-```
+If you are reviewing this profile for a role, these are the fastest paths to signal:
 
-### Systems Architecture Disciplines
-
-- **Enterprise Applied AI Architecture**: Guiding institutional and enterprise stakeholders through secure agent topologies, governance boundaries, legacy data integrations, and scalable production deployment.
-- **Distributed Agent Infrastructure & MCP**: Engineering resilient agent control planes, sandboxed Model Context Protocol (MCP) gateways, policy proxies, and deterministic model failover cascades.
-- **Data Boundary & Multi-Tenant Security**: Enforcing mathematical cross-tenant isolation directly in database kernels (PostgreSQL RLS) with automated negative penetration test batteries.
-- **Inference FinOps & Execution Observability**: Architecting high-throughput Go ingestion pipelines, real-time token spend quotas, latency/cost routing trade-offs, and continuous evaluation suites.
-
-### Production Invariants at a Glance
-
-| Dimension | Architectural Standard | Verifiable System Proof |
-| :--- | :--- | :--- |
-| **Tenant Isolation** | Kernel-enforced PostgreSQL Row-Level Security (RLS) | [Settler](https://github.com/Hardonian/Settler) automated cross-tenant penetration test suites |
-| **Spend Governance** | Sub-millisecond Go ingestion with hard token quotas | [TokenGoblin](https://github.com/Hardonian/TokenGoblin) ingestion benchmarks & budget cutoff tests |
-| **Execution Trust** | Formally verified state machines and DAG ordering | [veridag](https://github.com/Hardonian/veridag) Quint temporal logic models & conformance specs |
-| **Tool Authorization** | LLM as unprivileged planner; cryptographic approval tokens | [ReadyLayer](https://github.com/Hardonian/ReadyLayer) CI security gates & policy contracts |
-| **Audit Provenance** | Tamper-evident transaction settlement & replayable proofs | [truthcore](https://github.com/Hardonian/truthcore) & [Settler](https://github.com/Hardonian/Settler) audit chains |
-| **Hardware-Informed** | Dedicated 5-tier on-premise EPYC, NPU & GPU compute cluster | [model-tools](https://github.com/Hardonian/model-tools) & [Sovereign AI Lab](#sovereign-ai-lab) routing testbeds |
-
-### Choose the shortest path
-
-| If you are… | Start here | What you get |
-| --- | --- | --- |
-| **Reviewing engineering architecture & code** | **[Inspect the public evidence](#proof-backed-systems)** | 4 canonical open-source systems with benchmarks, test suites, and conservative maturity labels. |
-| **Exploring production AI capabilities** | **[Inspect the Architecture Matrix](#architectural-capabilities--evidence-matrix)** | Cross-system mapping of MCP gateways, Postgres RLS multi-tenancy, formal Quint verification, and CI quality gates. |
-| **An enterprise or engineering leader** | **[Book a free 30-minute diagnostic](https://calendly.com/scottrmhardie)** | A constraint map, failure-mode assessment, and concrete next steps for brittle AI workflows. |
-| **Evaluating private or local AI** | **[Run the free AI lab audit](https://www.aiautomatedsystems.ca/audit)** | A fast readiness signal before spending on infrastructure or local hardware. |
+- **[Four canonical systems](#proof-backed-systems)** — the clearest portfolio of measurable, governed, and verifiable AI infrastructure.
+- **[Architecture and technical writing](#technical-writing)** — how I reason about production AI beyond model selection.
+- **[Working stack](#working-stack)** — the languages, data systems, inference tooling, and infrastructure I use.
+- **[About and contact](#about)** — current role, enterprise background, and the best way to reach me.
 
 ---
 
-## Architectural Capabilities & Evidence Matrix
+## Architecture at a glance
 
-Field-tested engineering implementations across core production AI competencies, mapped to public repositories, verified test suites, and technical guides:
+Production AI needs deterministic boundaries around probabilistic components. The model proposes; typed policy services decide what may happen; execution systems perform only authorized work; evidence makes the result inspectable.
 
-| Competency Domain | Production Implementation Pattern | Evidence & Repositories |
-| --- | --- | --- |
-| **Agent Control Planes & MCP Gateways** | Treating the LLM as an unprivileged planner; implementing policy-gated Model Context Protocol (MCP) reverse proxies with dynamic tool discovery, input sanitization, and cryptographic single-use approval tokens for destructive side effects. | [ReadyLayer](https://github.com/Hardonian/ReadyLayer)<br />[agent-infra](https://github.com/Hardonian/agent-infra)<br />[Tool Authorization Guide](OPENAI_CAMPAIGN/content/02_enterprise_tool_calling_authorization_outside_model.md) |
-| **Multi-Tenant Security & Relational Isolation** | Enforcing mathematical tenant isolation directly in PostgreSQL Row-Level Security (RLS) policies rather than fragile application-level WHERE filters; verified with automated negative penetration test suites. | [Settler](https://github.com/Hardonian/Settler)<br />[Tenant Isolation Guide](OPENAI_CAMPAIGN/content/01_safe_multi_tenant_ai_agents_postgres_rls.md)<br />[Settler Benchmarks](https://github.com/Hardonian/Settler/blob/main/benchmarks/reconciliationBenchmark.ts) |
-| **Inference FinOps & Spend Governance** | High-throughput Go ingestion pipelines measuring cost, usage, latency, and tenant token quotas; automated circuit breakers halting runaway agent loops; budget-governed model cascades (`frontier` → `mid-tier` → local fallback). | [TokenGoblin](https://github.com/Hardonian/TokenGoblin)<br />[Ingestion Benchmarks](https://github.com/Hardonian/TokenGoblin/blob/main/internal/ingestion/benchmark_test.go)<br />[TokenGoblin Spec](https://github.com/Hardonian/TokenGoblin/blob/main/docs/ARCHITECTURE_AND_SPEC.md) |
-| **Formal Verification & Protocol Design** | Specifying distributed execution semantics and capability security using Quint temporal logic formal models, state invariant checks, and cross-language conformance test vectors. | [veridag](https://github.com/Hardonian/veridag)<br />[Quint Formal Models](https://github.com/Hardonian/veridag/blob/main/formal/README.md)<br />[Protocol Architecture](https://github.com/Hardonian/veridag/blob/main/docs/architecture.md) |
-| **Local-First & Hybrid Model Routing** | Tiered inference pipelines utilizing owned AMD EPYC host compute and Ryzen AI 9 NPU/GPU workers for low-latency classification, tool selection, and embeddings at zero marginal API cost, cascading to frontier cloud LLMs only when needed. | [model-tools](https://github.com/Hardonian/model-tools)<br />[autopilot](https://github.com/Hardonian/autopilot)<br />[Sovereign AI Lab](#sovereign-ai-lab) |
-| **Continuous Evals & CI/CD Delivery** | Automated evaluation batteries scoring tool selection accuracy, argument schemas, prompt injection refusals, and structured outputs; gating PR merges on deterministic quality thresholds. | [ReadyLayer](https://github.com/Hardonian/ReadyLayer)<br />[Production Agent Guide](OPENAI_CAMPAIGN/content/03_from_prototype_to_production_enterprise_agents.md)<br />[Quality Gates CI](https://github.com/Hardonian/ReadyLayer/actions/workflows/security-gates.yml) |
-| **Cryptographic Provenance & Audit Chains** | Immutable Merkle evidence chains and offline-verifiable proofpacks recording all agent tool executions, financial transactions, and state changes for regulatory compliance and audit replay. | [Settler](https://github.com/Hardonian/Settler)<br />[truthcore](https://github.com/Hardonian/truthcore)<br />[veridag](https://github.com/Hardonian/veridag) |
-| **Full-Stack SaaS & Enterprise Integrations** | Modern SaaS delivery with Next.js 16 App Router, Supabase RLS, Prisma, Stripe billing, Kafka messaging, Keycloak OIDC, and enterprise LMS/SIS protocol connectors (LTI, OneRoster). | [ReadyLayer](https://github.com/Hardonian/ReadyLayer)<br />[Settler](https://github.com/Hardonian/Settler)<br />[Enterprise Architecture Record](#about) |
+```text
+untrusted input / event
+          │
+          ▼
+┌──────────────────────────────────────────────────────────────┐
+│ Observe: ingress, token spend, latency, traces, tenant scope │
+└───────────────────────────┬──────────────────────────────────┘
+                            ▼
+┌──────────────────────────────────────────────────────────────┐
+│ Plan: unprivileged model emits typed candidate tool intent    │
+└───────────────────────────┬──────────────────────────────────┘
+                            ▼
+┌──────────────────────────────────────────────────────────────┐
+│ Control: MCP policy gateway authorizes reads, writes, and HITL│
+└───────────────────────────┬──────────────────────────────────┘
+                            ▼
+┌──────────────────────────────────────────────────────────────┐
+│ Execute: isolated services, RLS data access, idempotent jobs │
+└───────────────────────────┬──────────────────────────────────┘
+                            ▼
+┌──────────────────────────────────────────────────────────────┐
+│ Prove: audit chain, invariants, reconciliation, replayable log│
+└──────────────────────────────────────────────────────────────┘
+```
+
+> **Intelligence can be probabilistic. Infrastructure cannot.**
+
+### Engineering principles
+
+- **Evidence over confidence:** if a run cannot be inspected or replayed, it is not production-ready.
+- **Determinism at the edges:** keep probabilistic behavior inside explicit schemas, policies, state machines, and execution limits.
+- **Security in the kernel:** enforce tenant isolation and authorization where a missed application check cannot bypass them.
+- **Boring reliability wins:** idempotency, retries, observable queues, and clear failure paths beat hidden cleverness.
+- **Cost is a correctness constraint:** runaway inference spend is an operational failure, not merely a finance problem.
 
 ---
 
 ## Proof-backed systems
 
-These are the four clearest public examples of the approach. The table is generated from a [versioned manifest](profile-projects.json), checked against GitHub every week, and deliberately separates released, beta, and research work.
+These four repositories are the most representative public evidence of how I work. The table is generated from a [versioned manifest](profile-projects.json), checked against GitHub weekly, and separates released, beta, and research work.
 
 <!-- profile-projects:start -->
 _Public project metadata last verified **2026-10-14** · [source manifest](profile-projects.json) · [verification policy](CONTRIBUTING.md#project-metadata)_
@@ -135,151 +116,14 @@ _Public project metadata last verified **2026-10-14** · [source manifest](profi
 
 ---
 
-## Technical Writing & Architecture Guides
+## Technical writing
 
-Field-tested engineering guides grounded in verified production code and open-source infrastructure:
+I publish architecture notes that are grounded in the systems above:
 
-1. **[Building Safe Multi-Tenant AI Agents with Postgres RLS](OPENAI_CAMPAIGN/content/01_safe_multi_tenant_ai_agents_postgres_rls.md)**  
-   `POSTGRESQL RLS` · `NEGATIVE PENETRATION TESTING` · `KERNEL-ENFORCED MULTI-TENANCY`  
-   _Why application-level filtering fails in autonomous agent workflows, and how to enforce mathematical tenant boundaries via PostgreSQL Row-Level Security with automated negative penetration tests._
-2. **[Enterprise Tool Calling: Why Authorization Belongs Outside the Model](OPENAI_CAMPAIGN/content/02_enterprise_tool_calling_authorization_outside_model.md)**  
-   `MODEL CONTEXT PROTOCOL (MCP)` · `CRYPTOGRAPHIC HITL TOKENS` · `UNPRIVILEGED PLANNERS`  
-   _Treating the LLM as an unprivileged planner; implementing policy-gated MCP reverse proxies with single-use cryptographic approval tokens for privileged side effects._
-3. **[From Prototype to Production: Architecture for Enterprise AI Agents](OPENAI_CAMPAIGN/content/03_from_prototype_to_production_enterprise_agents.md)**  
-   `THE SIX PRODUCTION PILLARS` · `CONTINUOUS CI EVALS` · `OPENTELEMETRY TRACING`  
-   _The six production pillars: model abstraction, tool execution boundaries, continuous CI/CD evaluations, OpenTelemetry observability, and token spend governance._
-4. **[Hardonia Architecture Playbook](architecture-playbook/README.md)**  
-   `SYSTEM TOPOLOGY` · `OPERATING LOOPS` · `CAPABILITY BOUNDARIES`  
-   _Public architecture notes on bounded context separation, data ownership, cutover controls, and provider-correlated evidence verification._
-
----
-
-## How I help
-
-| Engagement | Best when | Outcome |
-| --- | --- | --- |
-| **AI clarity audit** | The opportunity is real, but the workflow and risk boundaries are not yet clear. | A decision-ready map of constraints, ownership, ROI assumptions, and the smallest safe pilot. |
-| **Stabilization sprint** | An AI workflow is live but flaky, opaque, or expensive. | Explicit contracts, retries, telemetry, fallbacks, acceptance tests, and an operator runbook. |
-| **Governance architecture** | Agents or models can take consequential actions. | Approval boundaries, policy gates, audit trails, incident paths, and evidence you can inspect. |
-| **Local AI systems** | Data control, predictable cost, or offline capability matters. | Model and hardware fit, routing, deployment, observability, and a practical operating plan. |
-
-Every engagement starts with the workflow—not a predetermined model or platform. See the [service details](https://www.aiautomatedsystems.ca/services), [case studies](https://www.aiautomatedsystems.ca/case-studies), or [book a diagnostic](https://calendly.com/scottrmhardie).
-
----
-
-## How the platform fits together
-
-<img src="assets/operating-loop.svg" alt="Architecture, implementation, verification, product delivery, customer surface, and measurement feedback loop" width="100%" />
-
-Detailed capability mappings and operational boundaries are documented in the [Architecture Playbook](architecture-playbook/README.md).
-
-Six monorepos keep related systems coherent while preserving clear boundaries:
-
-| Boundary | Public monorepos | Responsibility |
-| --- | --- | --- |
-| **Observe + control** | [agent-infra](https://github.com/Hardonian/agent-infra) | Agent traffic, policy, governance, mission state, and MCP boundaries. |
-| **Model + execute** | [model-tools](https://github.com/Hardonian/model-tools) · [autopilot](https://github.com/Hardonian/autopilot) | Inference routing, GPU fit, and runnerless ops, support, growth, and FinOps workflows. |
-| **Integrate + operate** | [api-tools](https://github.com/Hardonian/api-tools) · [ops-tools](https://github.com/Hardonian/ops-tools) | APIs, webhooks, continuity, drift inspection, and golden paths. |
-| **Consumer outcomes** | [consumer-tools](https://github.com/Hardonian/consumer-tools) | Warranty, review intelligence, and inbox automation. |
-
-<details>
-<summary><strong>Open the component map</strong></summary>
-
-```text
-signal                     policy                      execution
-agent-infra ──────────────► autopilot
-packet capture             control plane               ops / finops
-mesh edge                  agent mesh                  growth / support
-                           MCP firewall
-      │                          │                          │
-      └──────────────────── model-tools ◄───────────────────┘
-                          inference / routing
-                                  │
-                          local GPU testbed
-                                  │
-                      evidence / reconciliation
-```
-
-Each public monorepo includes an `ARCHITECTURE.md` describing its boundary and migration history.
-
-</details>
-
----
-
-## Sovereign AI lab
-
-Hardonia includes an owned, local testbed for model routing, image and video workflows, and failure-mode testing. It is where local-first claims are exercised before they become architecture advice.
-
-| Lane | Hardware | Primary use |
-| :--- | :--- | :--- |
-| **Enterprise Server Host & Virtualization** | AMD EPYC 7452 · Zen 2 · 32C / 64T · 2.35–3.35 GHz · 128 MB L3 · 168 GB DDR4 ECC · SP3 |  Built for sovereign compute, agent infrastructure, model serving, and experimentation. |
-| **Edge Orchestration & NPU** | AMD Ryzen AI 9 HX370 · **80 TOPS SoC** (50 NPU + CPU/GPU) · 48 GB + Radxa Dragon Q6A · Qualcomm QCS6490 · 8-core Kryo · Adreno 643 · Hexagon AI · ~12 TOPS (est.) · 16 GB LPDDR5 | Local inference, vision & sensor intelligence. |
-| **Heavy Inference** | NVIDIA V100 · 16 GB HBM2 · **56 INT8 TOPS** | Larger model and video-generation workloads. |
-| **Memory-Oriented** | NVIDIA P40 · 24 GB · **47 INT8 TOPS** | ComfyUI pipelines, quantized models, and training experiments. |
-| **Interactive & Vision** | NVIDIA RTX 3060 · 12 GB · **102 INT8 TOPS** dense | Vision, embeddings, and latency-sensitive workflows. |
-
-The lab uses Ollama-compatible routing, ComfyUI, containerized services, and Prometheus/Grafana-style observability. Public implementation lives primarily in [model-tools](https://github.com/Hardonian/model-tools) and [api-tools](https://github.com/Hardonian/api-tools).
-
-<details>
-<summary><strong>Decision-layer experiment: where Jev fits</strong></summary>
-
-[TypeSafe Jev](https://typesafe.ai) is being evaluated for low-cost typed classification where a general-purpose LLM is unnecessary—for example intent classification, routing, and tool-selection gates. It complements deterministic policy; it does not replace it. TypeSafe currently lists input pricing at $42 per billion tokens.
-
-</details>
-
----
-
-## More of the portfolio
-
-<details>
-<summary><strong>Trust, execution, and agent systems</strong></summary>
-
-- [Requiem](https://github.com/Hardonian/Requiem) — unified AI control plane and execution contracts.
-- [Nautilus](https://github.com/Hardonian/Nautilus) — local AI execution, orchestration, and policy enforcement.
-- [Keys](https://github.com/Hardonian/Keys) — auditable mission control for constrained agents.
-- [truthcore](https://github.com/Hardonian/truthcore) — verification kernel and offline evidence reports.
-- [Zeo](https://github.com/Hardonian/Zeo) — governance, policy enforcement, and deterministic audit trails.
-
-</details>
-
-<details>
-<summary><strong>Applied systems and simulation</strong></summary>
-
-- [SawyerCore](https://github.com/Hardonian/SawyerCore) — deterministic edge-AI runtime and agent simulation.
-- [WorldForge](https://github.com/Hardonian/WorldForge) — deterministic, moddable simulation runtime.
-- [World26](https://github.com/Hardonian/World26) — open planetary-systems simulator.
-- [FlexibleAccessible](https://github.com/Hardonian/FlexibleAccessible) — accessibility auditing and remediation workflows.
-- [MortgageMatchPro](https://github.com/Hardonian/MortgageMatchPro) — mortgage scenario and matching platform.
-
-</details>
-
-<details>
-<summary><strong>Productized audits, kits, and workflows</strong></summary>
-
-| Starting point | Intended outcome |
-| --- | --- |
-| [SaaS repo rescue](products/repo-rescue-saas-audit.md) | Find auth, billing, webhook, RLS, and reliability gaps before they leak revenue. |
-| [TokenGoblin cost optimizer](products/tokengoblin-cost-optimizer.md) | Measure and control model-inference spend. |
-| [Local AI lab audit](products/local-ai-lab-audit.md) | Review hardware fit, routing, security, and operating posture. |
-| [AI command center](products/ai-command-center-setup.md) | Replace operational blind spots with health and priority signals. |
-| [ComfyUI workflow packs](products/comfyui-workflow-packs.md) | Run repeatable private image-production workflows on owned compute. |
-
-[Browse the full catalog →](https://www.aiautomatedsystems.ca/catalog)
-
-</details>
-
----
-
-## Operating principles
-
-| Principle | Working rule |
-| --- | --- |
-| **Evidence over confidence** | If a run cannot be inspected or replayed, it is not production-ready. |
-| **Local-first where it earns its keep** | Own the compute, data boundary, fallback path, and cost model when the trade-off is justified. |
-| **Determinism at the edges** | Keep probabilistic intelligence inside explicit policy, schema, and execution constraints. |
-| **Boring reliability wins** | Idempotency, row-level security, state machines, and observable queues beat hidden cleverness. |
-| **Revenue is a reconciled event** | A dashboard row is not money; provider-correlated settlement evidence is money. |
-| **Fix the smallest root cause** | Isolate the failure, repair it surgically, prove the result, then ship. |
+1. **[Building Safe Multi-Tenant AI Agents with Postgres RLS](OPENAI_CAMPAIGN/content/01_safe_multi_tenant_ai_agents_postgres_rls.md)** — why application-level filtering fails in autonomous workflows, and how to enforce tenant boundaries in PostgreSQL.
+2. **[Enterprise Tool Calling: Why Authorization Belongs Outside the Model](OPENAI_CAMPAIGN/content/02_enterprise_tool_calling_authorization_outside_model.md)** — policy-gated MCP reverse proxies, unprivileged planners, and single-use approval tokens.
+3. **[From Prototype to Production: Architecture for Enterprise AI Agents](OPENAI_CAMPAIGN/content/03_from_prototype_to_production_enterprise_agents.md)** — model abstraction, execution boundaries, CI evaluations, observability, and token-spend governance.
+4. **[Hardonia Architecture Playbook](architecture-playbook/README.md)** — system topology, bounded contexts, operating loops, and evidence verification.
 
 ---
 
@@ -287,7 +131,7 @@ The lab uses Ollama-compatible routing, ComfyUI, containerized services, and Pro
 
 <div align="center">
 
-**Systems & Core Backend**<br />
+**Languages & systems**<br />
 ![Rust](https://img.shields.io/badge/Rust-111827?style=flat-square&logo=rust&logoColor=white)
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
@@ -295,41 +139,35 @@ The lab uses Ollama-compatible routing, ComfyUI, containerized services, and Pro
 
 <br /><br />
 
-**Data, Isolation & Security**<br />
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL_RLS-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+**Data, security & observability**<br />
+![PostgreSQL RLS](https://img.shields.io/badge/PostgreSQL_RLS-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
-
-<br /><br />
-
-**AI, Agents & Inference**<br />
-![Model Context Protocol](https://img.shields.io/badge/MCP-Protocol-6d28d9?style=flat-square)
-![NVIDIA CUDA](https://img.shields.io/badge/NVIDIA_CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
 ![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-000000?style=flat-square&logo=opentelemetry&logoColor=white)
 
 <br /><br />
 
-**Compute & Sovereign Hardware** — ~285 INT8 TOPS across owned accelerators<br />
-![AMD EPYC 7452](https://img.shields.io/badge/AMD_EPYC_7452-32C_64T-ED1C24?style=flat-square&logo=amd&logoColor=white)
-![AMD Ryzen AI 9 HX 370](https://img.shields.io/badge/AMD_Ryzen_AI_9_HX370-80_TOPS_SoC-ED1C24?style=flat-square&logo=amd&logoColor=white)
-![AMD Ryzen AI NPU](https://img.shields.io/badge/AMD_Ryzen_AI_NPU-50_TOPS-ED1C24?style=flat-square&logo=amd&logoColor=white)
-![NVIDIA V100](https://img.shields.io/badge/NVIDIA_V100-16GB_56_INT8-76B900?style=flat-square&logo=nvidia&logoColor=white)
-![NVIDIA P40](https://img.shields.io/badge/NVIDIA_P40-24GB_47_INT8-76B900?style=flat-square&logo=nvidia&logoColor=white)
-![NVIDIA RTX 3060](https://img.shields.io/badge/NVIDIA_RTX_3060-12GB_102_INT8-76B900?style=flat-square&logo=nvidia&logoColor=white)
-
-<br /><br />
-
-**Infrastructure & Cloud**<br />
+**AI, agents & infrastructure**<br />
+![Model Context Protocol](https://img.shields.io/badge/MCP-Protocol-6d28d9?style=flat-square)
+![NVIDIA CUDA](https://img.shields.io/badge/NVIDIA_CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=111827)
-![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=flat-square&logo=next.js&logoColor=white)
 
 </div>
 
 <details>
-<summary><strong>Verify this profile locally</strong></summary>
+<summary><strong>Local compute and inference lab</strong></summary>
+
+I run a private, owned testbed for local model routing, quantized inference, image/video workflows, and failure-mode testing. The hardware includes an AMD EPYC 7452 server, AMD Ryzen AI 9 HX370 NPU/GPU compute, NVIDIA V100/P40/RTX 3060 accelerators, Ollama-compatible routing, ComfyUI, containers, and Prometheus/Grafana-style observability.
+
+Public implementation lives primarily in [model-tools](https://github.com/Hardonian/model-tools), [autopilot](https://github.com/Hardonian/autopilot), and [api-tools](https://github.com/Hardonian/api-tools).
+
+</details>
+
+<details>
+<summary><strong>Verify the profile locally</strong></summary>
 
 ```bash
 git clone https://github.com/Hardonian/Hardonian.git
@@ -347,28 +185,29 @@ The checks reject stale project metadata, missing public evidence, broken local 
 
 ## About
 
-I am a Solutions Architect at **McGraw Hill** and build Hardonia independently from Toronto. Alongside that work, I contribute part-time expertise to confidential frontier-AI evaluation and systems initiatives; client, model, dataset, and internal research details remain private.
+I am a **Solutions Architect at McGraw Hill** and build Hardonia independently from Toronto. My work combines enterprise architecture and hands-on systems implementation: customer-facing technical strategy, distributed control planes, formal models, production TypeScript applications, and PostgreSQL isolation.
 
-### Engineering & Enterprise Profile
+I also contribute part-time expertise to confidential frontier-AI evaluation and systems initiatives; client, model, dataset, and internal research details remain private.
 
-- **Dual-Discipline Mastery**: Combining high-level enterprise architecture (C-suite technical alignment, procurement, institutional security, FERPA/SOC-2 compliance) with low-level systems implementation (Go distributed control planes, Rust formal models, TypeScript/Next.js production apps, and PostgreSQL kernel-level isolation).
-- **Enterprise Integrations at Scale**: Deep experience architecting mission-critical data exchanges across large-scale distributed systems, identity providers (Keycloak, SAML, OIDC), message buses, and legacy institutional platforms (LMS, SIS, ERP).
-- **Commercial & Delivery Track Record**: Winner of the President's Award for Sales Excellence; proven ability to bridge frontier AI research into reliable, revenue-generating enterprise customer outcomes.
-- **Open Standards & Protocol Leadership**: Deep domain fluency in open standards across education and enterprise systems (LTI 1.3 Advantage, OneRoster 1.2, OAuth 2.0 / Keycloak OIDC, SCIM, Model Context Protocol, and OpenTelemetry trace propagation).
-- **Sovereign Infrastructure**: Hands-on hardware systems engineering operating an owned multi-tier AMD EPYC server, AMD Ryzen AI 9 NPU, and NVIDIA GPU cluster for local model evaluations, quantized inference, and private agent pipelines.
+Selected background:
+
+- Enterprise integrations across identity providers, message buses, LMS/SIS/ERP platforms, and legacy data exchanges.
+- Working knowledge of LTI 1.3 Advantage, OneRoster 1.2, OAuth 2.0, Keycloak OIDC, SCIM, MCP, and OpenTelemetry trace propagation.
+- Institutional security and compliance conversations, including FERPA and SOC 2 requirements.
+- President's Award for Sales Excellence, reflecting the ability to turn difficult technical work into customer and business outcomes.
 
 ---
 
-## Bring the bottleneck
+## Let’s talk
 
-If you have an AI workflow that is expensive, unreliable, hard to govern, or stuck between prototype and production—or want to connect on high-assurance AI systems architecture and enterprise engineering—reach out directly:
+Hiring managers and recruiting teams: the best way to reach me is [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) or [email](mailto:scottrmhardie@gmail.com?subject=Role%20or%20systems%20conversation). I am especially interested in roles where I can help turn ambitious AI capabilities into reliable platform primitives and shipped products.
+
+If you are evaluating the engineering work first, start with [TokenGoblin](https://github.com/Hardonian/TokenGoblin), [ReadyLayer](https://github.com/Hardonian/ReadyLayer), [veridag](https://github.com/Hardonian/veridag), or [Settler](https://github.com/Hardonian/Settler), then follow the architecture links in each project.
 
 <div align="center">
 
-[![Book a 30-minute diagnostic](https://img.shields.io/badge/BOOK-30_MIN_DIAGNOSTIC-f97316?style=for-the-badge)](https://calendly.com/scottrmhardie)
-[![Send an email inquiry to Scott Hardie](https://img.shields.io/badge/EMAIL-DIRECT-6d28d9?style=for-the-badge&logo=gmail&logoColor=white)](mailto:scottrmhardie@gmail.com?subject=Inquiry:%20AI%20Systems%20Architecture)
 [![Connect with Scott Hardie on LinkedIn](https://img.shields.io/badge/LINKEDIN-SCOTT_HARDIE-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
-[![Visit AI Automated Systems website](https://img.shields.io/badge/WEBSITE-AI_AUTOMATED_SYSTEMS-0f766e?style=for-the-badge)](https://www.aiautomatedsystems.ca)
+[![Send an email to Scott Hardie](https://img.shields.io/badge/EMAIL-DIRECT-6d28d9?style=for-the-badge&logo=gmail&logoColor=white)](mailto:scottrmhardie@gmail.com?subject=Role%20or%20systems%20conversation)
 
 <br />
 
