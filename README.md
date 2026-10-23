@@ -37,15 +37,17 @@ Toronto, Canada · [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) · [Em
 | Area | How I approach it | Public proof |
 | --- | --- | --- |
 | **AI platform and agent infrastructure** | Keep the model unprivileged; put capability discovery, authorization, retries, budgets, and side effects behind explicit services. | [ReadyLayer](https://github.com/Hardonian/ReadyLayer) · [agent-infra](https://github.com/Hardonian/agent-infra) |
+| **ML infrastructure and compiler quality** | Turn numerical discrepancies into minimized, reproducible, portable evidence for JAX/OpenXLA investigations. | [XLAxiom](https://github.com/Hardonian/XLAxiom) |
 | **Secure multi-tenant systems** | Enforce tenant boundaries in the database kernel with PostgreSQL RLS and test the negative cases automatically. | [Settler](https://github.com/Hardonian/Settler) |
 | **Inference economics and operations** | Measure tokens, latency, routing, and spend; use hard quotas and fallbacks to keep inference predictable. | [TokenGoblin](https://github.com/Hardonian/TokenGoblin) |
 | **Reliable distributed execution** | Specify state transitions, ordering, and capability rules; validate implementations against formal models and conformance vectors. | [veridag](https://github.com/Hardonian/veridag) |
+| **Formal methods and research software** | Combine exact computation, counterexample search, Python control planes, and Lean 4 kernel-checked witnesses. | [GRAPH-Lab](https://github.com/Hardonian/GRAPH-Lab) |
 
 ## Start here
 
 If you are reviewing this profile for a role, these are the fastest paths to signal:
 
-- **[Four canonical systems](#proof-backed-systems)** — the clearest portfolio of measurable, governed, and verifiable AI infrastructure.
+- **[Flagship portfolio](#what-i-build)** — six systems spanning ML infrastructure, AI developer tooling, LLM operations, distributed execution, enterprise data, and formal methods.
 - **[Architecture and technical writing](#technical-writing)** — how I reason about production AI beyond model selection.
 - **[Working stack](#working-stack)** — the languages, data systems, inference tooling, and infrastructure I use.
 - **[About and contact](#about)** — current role, enterprise background, and the best way to reach me.
