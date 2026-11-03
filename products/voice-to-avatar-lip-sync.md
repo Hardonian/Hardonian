@@ -17,7 +17,7 @@ Validated ComfyUI API workflow graph, zero-code Python CLI runner, turnkey FastA
 
 ## Checkout / Buy
 
-- [Purchase Voice-to-Avatar AI Presenter & Lip-Sync Studio via Stripe](https://buy.stripe.com/voice-avatar-pack)
+Checkout is currently unavailable. The previous checkout link returned access denied when tested.
 
 
 ---

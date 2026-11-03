@@ -17,7 +17,7 @@ Validated ComfyUI API workflow graph, zero-code Python CLI runner, turnkey FastA
 
 ## Checkout / Buy
 
-- [Purchase Game Asset 3D Mesh & PBR Texture Synthesizer via Stripe](https://buy.stripe.com/game-3d-asset-pack)
+Checkout is currently unavailable. The previous checkout link returned access denied when tested.
 
 
 ---

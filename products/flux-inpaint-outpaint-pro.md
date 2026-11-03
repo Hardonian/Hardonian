@@ -17,7 +17,7 @@ Validated ComfyUI API workflow graph, zero-code Python CLI runner, turnkey FastA
 
 ## Checkout / Buy
 
-- [Purchase Flux.1 Fill Infinite Inpainting & Outpainting Pro via Stripe](https://buy.stripe.com/flux-fill-pack)
+Checkout is currently unavailable. The previous checkout link returned access denied when tested.
 
 
 ---

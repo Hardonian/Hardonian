@@ -17,7 +17,7 @@ Validated ComfyUI API workflow graph, zero-code Python CLI runner, turnkey FastA
 
 ## Checkout / Buy
 
-- [Purchase 8K Ultimate SD Upscaler & Facial Restoration Engine via Stripe](https://buy.stripe.com/upscale-8k-pack)
+Checkout is currently unavailable. The previous checkout link returned access denied when tested.
 
 
 ---
