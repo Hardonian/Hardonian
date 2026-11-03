@@ -19,7 +19,6 @@ Validated ComfyUI API workflow graph, zero-code Python CLI runner, turnkey FastA
 
 - [Purchase AI Cinema & High-FPS Video Production Suite via Stripe](https://buy.stripe.com/video-cinema-pack)
 
-- [Purchase AI Cinema & High-FPS Video Production Suite via Gumroad](https://scottrmhardie.gumroad.com/l/video-cinema)
 
 ---
 

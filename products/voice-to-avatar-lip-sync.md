@@ -19,7 +19,6 @@ Validated ComfyUI API workflow graph, zero-code Python CLI runner, turnkey FastA
 
 - [Purchase Voice-to-Avatar AI Presenter & Lip-Sync Studio via Stripe](https://buy.stripe.com/voice-avatar-pack)
 
-- [Purchase Voice-to-Avatar AI Presenter & Lip-Sync Studio via Gumroad](https://scottrmhardie.gumroad.com/l/voice-avatar)
 
 ---
 
