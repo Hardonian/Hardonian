@@ -17,9 +17,7 @@ Validated ComfyUI API workflow graph, zero-code Python CLI runner, turnkey FastA
 
 ## Checkout / Buy
 
-- [Purchase Flux.1 Ultra Portrait Studio & Face Engine via Stripe](https://buy.stripe.com/cNibJ057q21C34C7exb3q0n)
-
-- [Purchase Flux.1 Ultra Portrait Studio & Face Engine via Gumroad](https://scottrmhardie.gumroad.com/l/flux-portrait)
+Checkout is temporarily unavailable while the product and delivery links are verified.
 
 ---
 
