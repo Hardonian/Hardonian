@@ -18,6 +18,7 @@ class StripeCheckoutContainmentTest(unittest.TestCase):
         for page in PAGES:
             with self.subTest(page=page):
                 text = (ROOT / "products" / page).read_text(encoding="utf-8")
+                self.assertIn("## Checkout / Buy", text, f"Missing checkout section in {page}")
                 section = text.split("## Checkout / Buy", 1)[1].split("\n---", 1)[0]
                 self.assertIn("Checkout is currently unavailable", section)
                 self.assertNotIn("](", section)
