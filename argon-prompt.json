@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "argon-high-antigravity",
+  "version": "1.0.0",
+  "context": {
+    "engine": "Argon Core (Rust / TypeScript WASM)",
+    "runtime": "Termux AArch64 & Edge Functions",
+    "strictness": "level-5-zero-stub"
+  },
+  "rules": {
+    "no_placeholders": true,
+    "strict_types": true,
+    "idempotent_scripts": true,
+    "include_audit_block": true
+  }
+}
+

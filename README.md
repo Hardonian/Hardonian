@@ -1,3 +1,45 @@
+<!-- ================================================================= -->
+<!-- [PREPEND TO TOP OF README.MD - HARDONIA CORE ARCHITECTURE BANNER] -->
+<!-- ================================================================= -->
+
+<div align="center">
+
+# ⚡ HARDONIA // FUTUREOS
+### Deterministic Edge Commerce Engine & Autonomous Pipeline Orchestrator
+
+[![Engine Status](https://img.shields.io/badge/ENGINE-ARGON--CORE-00FFE0?style=for-the-badge&logo=rust&logoColor=black)](#)
+[![Execution Tier](https://img.shields.io/badge/RUNTIME-PRISMA--WASM%20%7C%20EDGE-101010?style=for-the-badge&logo=webassembly&logoColor=white)](#)
+[![Architecture](https://img.shields.io/badge/ARCH-AARCH64%20%2F%20TERMUX%20VALIDATED-FF0055?style=for-the-badge&logo=linux&logoColor=white)](#)
+[![State Model](https://img.shields.io/badge/HOMEOSTASIS-SYNAPTIC%20REGULATION-blueviolet?style=for-the-badge)](#)
+[![License](https://img.shields.io/badge/LICENSE-PROPRIETARY%20%2F%20ENTERPRISE-lightgrey?style=for-the-badge)](#)
+
+<p align="center">
+  <strong>Zero-toil autonomous ad-to-conversion pipeline</strong> powered by strict-typing invariants, event-driven state hydration, and localized ARM64 dev parity.
+</p>
+
+```text
+┌─────────────────────────────────────────────────────────────────────────┐
+│                       ARGON SYNAPTIC CONTROL PLANE                      │
+└──────────────┬───────────────────────────┬──────────────────────────────┘
+               │                           │
+               ▼                           ▼
+┌──────────────────────────────┐ ┌────────────────────────────────────────┐
+│   HARDONIA FUTUREOS ENGINE   │ │     PRISMA-WASM / EDGE DATA PLANE      │
+│  Ad-to-Conversion · AIOS 2.0 │ │   Zero-Binary · Postgres RLS · AArch64 │
+└──────────────┬───────────────┘ └─────────┬──────────────────────────────┘
+               │                           │
+               └─────────────┬─────────────┘
+                             ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│               SETTLER.DEV DETERMINISTIC RECONCILIATION LEDGER           │
+│        Cryptographic Trace Audit · Homeostatic Backpressure · Zero-Toil │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+</div>
+
+---
+
 <div align="center">
 
 <img src="assets/hardonia-system-map.svg" alt="Hardonia production AI systems: observe, control, execute, prove, and reconcile" width="100%" />
