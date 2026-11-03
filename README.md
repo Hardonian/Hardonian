@@ -1,48 +1,15 @@
-<!-- ================================================================= -->
-<!-- [PREPEND TO TOP OF README.MD - HARDONIA CORE ARCHITECTURE BANNER] -->
-<!-- ================================================================= -->
-
-<div align="center">
-
-# ⚡ HARDONIA // FUTUREOS
-### Deterministic Edge Commerce Engine & Autonomous Pipeline Orchestrator
-
-[![Engine Status](https://img.shields.io/badge/ENGINE-ARGON--CORE-00FFE0?style=for-the-badge&logo=rust&logoColor=black)](#)
-[![Execution Tier](https://img.shields.io/badge/RUNTIME-PRISMA--WASM%20%7C%20EDGE-101010?style=for-the-badge&logo=webassembly&logoColor=white)](#)
-[![Architecture](https://img.shields.io/badge/ARCH-AARCH64%20%2F%20TERMUX%20VALIDATED-FF0055?style=for-the-badge&logo=linux&logoColor=white)](#)
-[![State Model](https://img.shields.io/badge/HOMEOSTASIS-SYNAPTIC%20REGULATION-blueviolet?style=for-the-badge)](#)
-[![License](https://img.shields.io/badge/LICENSE-PROPRIETARY%20%2F%20ENTERPRISE-lightgrey?style=for-the-badge)](#)
-
-<p align="center">
-  <strong>Zero-toil autonomous ad-to-conversion pipeline</strong> powered by strict-typing invariants, event-driven state hydration, and localized ARM64 dev parity.
-</p>
-
-```text
-┌─────────────────────────────────────────────────────────────────────────┐
-│                       ARGON SYNAPTIC CONTROL PLANE                      │
-└──────────────┬───────────────────────────┬──────────────────────────────┘
-               │                           │
-               ▼                           ▼
-┌──────────────────────────────┐ ┌────────────────────────────────────────┐
-│   HARDONIA FUTUREOS ENGINE   │ │     PRISMA-WASM / EDGE DATA PLANE      │
-│  Ad-to-Conversion · AIOS 2.0 │ │   Zero-Binary · Postgres RLS · AArch64 │
-└──────────────┬───────────────┘ └─────────┬──────────────────────────────┘
-               │                           │
-               └─────────────┬─────────────┘
-                             ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│               SETTLER.DEV DETERMINISTIC RECONCILIATION LEDGER           │
-│        Cryptographic Trace Audit · Homeostatic Backpressure · Zero-Toil │
-└─────────────────────────────────────────────────────────────────────────┘
-```
-
-</div>
-
----
-
 <div align="center">
 
 <img src="assets/hardonia-system-map.svg" alt="Hardonia production AI systems: observe, control, execute, prove, and reconcile" width="100%" />
+
+<br />
+
+[![Engine: Argon Core](https://img.shields.io/badge/ENGINE-ARGON_CORE-2dd4bf?style=flat-square&labelColor=0b101b&logo=rust&logoColor=2dd4bf)](#architecture-at-a-glance)
+[![Runtime: Prisma WASM / Edge](https://img.shields.io/badge/RUNTIME-PRISMA_WASM_%7C_EDGE-38bdf8?style=flat-square&labelColor=0b101b&logo=webassembly&logoColor=38bdf8)](#architecture-at-a-glance)
+[![Architecture: AArch64 / Termux](https://img.shields.io/badge/ARCH-AARCH64_%7C_TERMUX-818cf8?style=flat-square&labelColor=0b101b&logo=linux&logoColor=818cf8)](#working-stack)
+[![Control: Synaptic Regulation](https://img.shields.io/badge/CONTROL-SYNAPTIC_REGULATION-34d399?style=flat-square&labelColor=0b101b)](#proof-backed-systems)
+[![Solutions Architect at McGraw Hill](https://img.shields.io/badge/MCGRAW_HILL-SOLUTIONS_ARCHITECT-94a3b8?style=flat-square&labelColor=0b101b)](#about)
+[![Connect with Scott Hardie on LinkedIn](https://img.shields.io/badge/LINKEDIN-SCOTTRMHARDIE-0A66C2?style=flat-square&labelColor=0b101b&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
 
 # Scott Hardie
 
@@ -56,12 +23,7 @@ Toronto, Canada · [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) · [Em
 
 **Interested in:** teams shipping high-assurance AI, developer platforms, agent infrastructure, and enterprise-scale systems.
 
-[![Focus: Applied AI and platform infrastructure](https://img.shields.io/badge/Focus-Applied_AI_%7C_Platform_Infrastructure-0A66C2?style=flat-square)](#what-i-build)
-[![Solutions Architect at McGraw Hill](https://img.shields.io/badge/McGraw_Hill-Solutions_Architect-111827?style=flat-square)](#about)
-[![Location: Toronto, Canada](https://img.shields.io/badge/Location-Toronto%2C_Canada-4B5563?style=flat-square)](#about)
-[![Connect with Scott Hardie on LinkedIn](https://img.shields.io/badge/LinkedIn-scottrmhardie-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
-
-`APPLIED AI` · `DISTRIBUTED SYSTEMS` · `MCP` · `POSTGRESQL RLS` · `AGENT EVALS` · `FORMAL VERIFICATION`
+`APPLIED AI` · `DISTRIBUTED SYSTEMS` · `MCP` · `POSTGRESQL RLS` · `PRISMA WASM` · `FORMAL VERIFICATION`
 
 </div>
 
@@ -100,30 +62,36 @@ If you are reviewing this profile for a role, these are the fastest paths to sig
 
 Production AI needs deterministic boundaries around probabilistic components. The model proposes; typed policy services decide what may happen; execution systems perform only authorized work; evidence makes the result inspectable.
 
+<div align="center">
+
+<img src="assets/argon-control-plane.svg" alt="Hardonia FutureOS — Argon Synaptic Control Plane Architecture" width="100%" />
+
+</div>
+
+<details>
+<summary><strong>View terminal / ASCII control-plane topology</strong></summary>
+
 ```text
-untrusted input / event
-          │
-          ▼
-┌──────────────────────────────────────────────────────────────┐
-│ Observe: ingress, token spend, latency, traces, tenant scope │
-└───────────────────────────┬──────────────────────────────────┘
-                            ▼
-┌──────────────────────────────────────────────────────────────┐
-│ Plan: unprivileged model emits typed candidate tool intent    │
-└───────────────────────────┬──────────────────────────────────┘
-                            ▼
-┌──────────────────────────────────────────────────────────────┐
-│ Control: MCP policy gateway authorizes reads, writes, and HITL│
-└───────────────────────────┬──────────────────────────────────┘
-                            ▼
-┌──────────────────────────────────────────────────────────────┐
-│ Execute: isolated services, RLS data access, idempotent jobs │
-└───────────────────────────┬──────────────────────────────────┘
-                            ▼
-┌──────────────────────────────────────────────────────────────┐
-│ Prove: audit chain, invariants, reconciliation, replayable log│
-└──────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────┐
+│                       ARGON SYNAPTIC CONTROL PLANE                      │
+│          Observe · Plan · MCP Policy Gateway · Synaptic Quotas          │
+└──────────────┬───────────────────────────┬──────────────────────────────┘
+               │                           │
+               ▼                           ▼
+┌──────────────────────────────┐ ┌────────────────────────────────────────┐
+│   HARDONIA FUTUREOS ENGINE   │ │     PRISMA-WASM / EDGE DATA PLANE      │
+│  Ad-to-Conversion · AIOS 2.0 │ │   Zero-Binary · Postgres RLS · AArch64 │
+└──────────────┬───────────────┘ └─────────┬──────────────────────────────┘
+               │                           │
+               └─────────────┬─────────────┘
+                             ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│               SETTLER.DEV DETERMINISTIC RECONCILIATION LEDGER           │
+│        Cryptographic Trace Audit · Homeostatic Backpressure · Zero-Toil │
+└─────────────────────────────────────────────────────────────────────────┘
 ```
+
+</details>
 
 > **Intelligence can be probabilistic. Infrastructure cannot.**
 
