@@ -17,9 +17,7 @@ Validated ComfyUI API workflow graph, zero-code Python CLI runner, turnkey FastA
 
 ## Checkout / Buy
 
-- [Purchase E-Commerce Commercial Product Studio & Relighting via Stripe](https://buy.stripe.com/cNibJ057q21C34C7exb3q0n)
-
-- [Purchase E-Commerce Commercial Product Studio & Relighting via Gumroad](https://scottrmhardie.gumroad.com/l/cqfiev)
+Checkout is temporarily unavailable while the product and delivery links are verified.
 
 ---
 
