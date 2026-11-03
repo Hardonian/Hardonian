@@ -17,7 +17,7 @@ Validated ComfyUI API workflow graph, zero-code Python CLI runner, turnkey FastA
 
 ## Checkout / Buy
 
-- [Purchase Architectural & Interior Design Pro Suite via Stripe](https://buy.stripe.com/arch-interior-pack)
+Checkout is currently unavailable. The previous checkout link returned access denied when tested.
 
 
 ---

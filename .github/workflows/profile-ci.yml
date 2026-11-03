@@ -62,6 +62,8 @@ jobs:
             fi
           done
           echo "All product pages valid"
+      - name: Test checkout containment
+        run: python3 -m unittest discover -s tests -p 'test_*checkout*.py'
 
   check-github-actions:
     name: Validate Workflow Files

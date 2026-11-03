@@ -17,7 +17,7 @@ Validated ComfyUI API workflow graph, zero-code Python CLI runner, turnkey FastA
 
 ## Checkout / Buy
 
-- [Purchase AI Cinema & High-FPS Video Production Suite via Stripe](https://buy.stripe.com/video-cinema-pack)
+Checkout is currently unavailable. The previous checkout link returned access denied when tested.
 
 
 ---
