@@ -19,7 +19,6 @@ Validated ComfyUI API workflow graph, zero-code Python CLI runner, turnkey FastA
 
 - [Purchase 8K Ultimate SD Upscaler & Facial Restoration Engine via Stripe](https://buy.stripe.com/upscale-8k-pack)
 
-- [Purchase 8K Ultimate SD Upscaler & Facial Restoration Engine via Gumroad](https://scottrmhardie.gumroad.com/l/upscale-8k)
 
 ---
 

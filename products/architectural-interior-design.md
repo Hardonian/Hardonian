@@ -19,7 +19,6 @@ Validated ComfyUI API workflow graph, zero-code Python CLI runner, turnkey FastA
 
 - [Purchase Architectural & Interior Design Pro Suite via Stripe](https://buy.stripe.com/arch-interior-pack)
 
-- [Purchase Architectural & Interior Design Pro Suite via Gumroad](https://scottrmhardie.gumroad.com/l/arch-interior)
 
 ---
 

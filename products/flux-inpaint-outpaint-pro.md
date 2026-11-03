@@ -19,7 +19,6 @@ Validated ComfyUI API workflow graph, zero-code Python CLI runner, turnkey FastA
 
 - [Purchase Flux.1 Fill Infinite Inpainting & Outpainting Pro via Stripe](https://buy.stripe.com/flux-fill-pack)
 
-- [Purchase Flux.1 Fill Infinite Inpainting & Outpainting Pro via Gumroad](https://scottrmhardie.gumroad.com/l/flux-fill)
 
 ---
 

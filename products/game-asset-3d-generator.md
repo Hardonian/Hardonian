@@ -19,7 +19,6 @@ Validated ComfyUI API workflow graph, zero-code Python CLI runner, turnkey FastA
 
 - [Purchase Game Asset 3D Mesh & PBR Texture Synthesizer via Stripe](https://buy.stripe.com/game-3d-asset-pack)
 
-- [Purchase Game Asset 3D Mesh & PBR Texture Synthesizer via Gumroad](https://scottrmhardie.gumroad.com/l/game-3d-asset)
 
 ---
 
