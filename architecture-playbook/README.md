@@ -1,14 +1,50 @@
 # Architecture Playbook
 
+<div align="center">
+
+<img src="../assets/hardonia-system-map.svg" alt="Hardonia production AI systems map" width="100%" />
+
+</div>
+
 Public architecture notes for the Hardonia Sovereign AI Operations platform.
 
 This page explains the migration and product-operations patterns behind the platform. It is reference documentation, not a promise that every route or deployment topology is publicly reachable or production-ready.
+
+---
 
 ## Platform position
 
 `Observe → Control → Operate → Prove → Monetize`
 
 Migration Factory and the AI Lab Command Center sit primarily in the Control and Operate layers. The shared evidence envelope supplies the Prove layer; checkout, audit, compute, and implementation surfaces supply the Monetize layer.
+
+<div align="center">
+
+<img src="../assets/argon-control-plane.svg" alt="Hardonia FutureOS — Argon Synaptic Control Plane Architecture" width="100%" />
+
+</div>
+
+---
+
+## End-to-end deterministic execution trace
+
+Every privileged operation traverses five explicit system boundaries before mutating state or committing to the ledger:
+
+<div align="center">
+
+<img src="../assets/hardonia-live-trace.svg" alt="Hardonia Deterministic Request Trace — OpenTelemetry & Policy Waterfall" width="100%" />
+
+</div>
+
+| Stage | Bounded Context | Enforced Invariant | Verification Artifact |
+| --- | --- | --- | --- |
+| **01 // Observe & Scope** | `Settler` · PostgreSQL Kernel | Session-scoped `app.current_tenant_id` enforced via `FORCE ROW LEVEL SECURITY`. | Negative cross-tenant security tests |
+| **02 // Quota & Routing** | `TokenGoblin` · Go Telemetry | Hard token spend ceiling & latency budget checked prior to model dispatch. | Sub-millisecond ingestion benchmarks |
+| **03 // Policy Gateway** | `ReadyLayer` · `agent-infra` | Unprivileged model emits candidate intent; MCP gateway mints 1-use capability token. | Policy contracts & CI security gates |
+| **04 // Causal Execution** | `veridag` · Rust + Quint | Preconditions and topological ordering verified against Quint formal state models. | Cross-language conformance vectors |
+| **05 // Proof & Reconcile** | `Settler` · Audit Ledger | SHA-256 cryptographic trace leaf appended; 2-way ledger reconciliation verified. | Checked-in reconciliation snapshots |
+
+---
 
 ## Capability map
 
@@ -20,6 +56,16 @@ Migration Factory and the AI Lab Command Center sit primarily in the Control and
 | Operator summary | Authenticated operator API | Raw customer, payment, and local-path data stays private |
 
 Internal source paths and deployment filesystem locations are intentionally omitted from this public page. Use the repository's local runbooks and environment configuration for operator setup.
+
+---
+
+## Flagship bounded domains
+
+<div align="center">
+
+<img src="../assets/hardonia-flagship-bento.svg" alt="Hardonia Flagship Engineering Portfolio — Six Production Systems" width="100%" />
+
+</div>
 
 ## Architecture concerns
 
@@ -47,4 +93,5 @@ Internal source paths and deployment filesystem locations are intentionally omit
 
 ## Changelog
 
+- 2026-11-03: Added visual control-plane schematics, deterministic OpenTelemetry trace waterfall, and bounded-context invariant table.
 - 2026-08-02: Reframed as a public architecture reference and removed internal filesystem-path and route-fulfillment claims.

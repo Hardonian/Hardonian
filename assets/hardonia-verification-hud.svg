@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="310" viewBox="0 0 1600 310" role="img" aria-labelledby="hud-title hud-desc">
+  <title id="hud-title">Hardonia Zero-Trust Local Verification Pipeline</title>
+  <desc id="hud-desc">Automated local verification terminal HUD executing 46 unit tests, remote GitHub API evidence checks across 16 endpoints, and SSRF-hardened link validation.</desc>
+
+  <defs>
+    <style>
+      .mono { font-family: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+      .cursor-blink { animation: blink 1.1s step-end infinite; }
+      @keyframes blink { 50% { opacity: 0; } }
+      @media (prefers-reduced-motion: reduce) { .cursor-blink { animation: none; } }
+      @media (prefers-color-scheme: light) { .chassis-border { stroke: #0f172a; stroke-width: 2.5; } }
+    </style>
+
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05080e"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="310" rx="16" fill="url(#bg-grad)"/>
+  <rect x="1" y="1" width="1598" height="308" rx="15" fill="none" stroke="#1e293b" stroke-width="2" class="chassis-border"/>
+
+  <!-- Terminal Window Header -->
+  <rect x="2" y="2" width="1596" height="42" rx="14" fill="#0b101b"/>
+  <line x1="2" y1="44" x2="1598" y2="44" stroke="#1e293b" stroke-width="1"/>
+  <circle cx="28" cy="23" r="5.5" fill="#f43f5e" opacity="0.8"/>
+  <circle cx="48" cy="23" r="5.5" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="68" cy="23" r="5.5" fill="#10b981" opacity="0.8"/>
+  <text x="800" y="27" class="mono" fill="#94a3b8" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="1.5">hardonia-verify — zsh — 160×24 — LEVEL-5 ZERO-STUB AUDIT</text>
+  <text x="1568" y="27" class="mono" fill="#34d399" font-size="11" font-weight="700" text-anchor="end">EXIT CODE: 0</text>
+
+  <!-- Terminal Output Lines -->
+  <g transform="translate(36, 76)" class="mono" font-size="13">
+    <text x="0" y="0" fill="#38bdf8" font-weight="700">$</text>
+    <text x="18" y="0" fill="#f8fafc">uv run python -m unittest discover tests -v</text>
+    <text x="520" y="0" fill="#34d399" font-weight="700">[PASS]</text>
+    <text x="582" y="0" fill="#94a3b8">46/46 unit tests passing (0.33s) · WebCrypto CSPRNG · SSRF IPv4/IPv6 guard · Checkout containment</text>
+
+    <text x="0" y="42" fill="#38bdf8" font-weight="700">$</text>
+    <text x="18" y="42" fill="#f8fafc">uv run python scripts/profile-metadata.py --check --verify-remote</text>
+    <text x="520" y="42" fill="#34d399" font-weight="700">[PASS]</text>
+    <text x="582" y="42" fill="#94a3b8">4 canonical repos · 16/16 GitHub API artifacts verified · README table &amp; proof SVG synced</text>
+
+    <text x="0" y="84" fill="#38bdf8" font-weight="700">$</text>
+    <text x="18" y="84" fill="#f8fafc">uv run python scripts/profile-link-audit.py</text>
+    <text x="520" y="84" fill="#34d399" font-weight="700">[PASS]</text>
+    <text x="582" y="84" fill="#94a3b8">All local SVG schematics &amp; remote endpoints resolved HTTP 200 · 0 broken or private-IP links</text>
+
+    <line x1="0" y1="116" x2="1528" y2="116" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Summary Telemetry Pills -->
+    <g transform="translate(0, 136)">
+      <rect width="360" height="48" rx="6" fill="#061914" stroke="#10b981" stroke-width="1"/>
+      <text x="18" y="20" fill="#6ee7b7" font-size="10.5" font-weight="700" letter-spacing="1">UNIT &amp; SECURITY INVARIANTS</text>
+      <text x="18" y="38" fill="#f8fafc" font-size="13" font-weight="700">46 / 46 Passing (100%)</text>
+
+      <rect x="388" y="0" width="360" height="48" rx="6" fill="#0c1928" stroke="#38bdf8" stroke-width="1"/>
+      <text x="406" y="20" fill="#7dd3fc" font-size="10.5" font-weight="700" letter-spacing="1">MANIFEST &amp; SVG DRIFT CHECK</text>
+      <text x="406" y="38" fill="#f8fafc" font-size="13" font-weight="700">Deterministic Sync Verified</text>
+
+      <rect x="776" y="0" width="360" height="48" rx="6" fill="#14122d" stroke="#818cf8" stroke-width="1"/>
+      <text x="794" y="20" fill="#a5b4fc" font-size="10.5" font-weight="700" letter-spacing="1">SSRF &amp; LINK INTEGRITY</text>
+      <text x="794" y="38" fill="#f8fafc" font-size="13" font-weight="700">0 Failures · Public DNS Only</text>
+
+      <rect x="1164" y="0" width="364" height="48" rx="6" fill="#0b101b" stroke="#334155" stroke-width="1"/>
+      <text x="1182" y="20" fill="#94a3b8" font-size="10.5" font-weight="700" letter-spacing="1">INTERACTIVE SHELL</text>
+      <text x="1182" y="38" fill="#34d399" font-size="13" font-weight="700">ready@hardonia:~$</text>
+      <rect x="1332" y="25" width="8" height="15" fill="#34d399" class="cursor-blink"/>
+    </g>
+  </g>
+</svg>

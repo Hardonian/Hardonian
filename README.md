@@ -72,6 +72,10 @@ Production AI needs deterministic boundaries around probabilistic components. Th
 
 <img src="assets/argon-control-plane.svg" alt="Hardonia FutureOS — Argon Synaptic Control Plane Architecture" width="100%" />
 
+<br /><br />
+
+<img src="assets/hardonia-live-trace.svg" alt="Hardonia Deterministic Request Trace — OpenTelemetry & Policy Waterfall" width="100%" />
+
 </div>
 
 <details>
@@ -160,6 +164,12 @@ _Public project metadata last verified **2026-10-14** · [source manifest](profi
 
 I publish architecture notes that are grounded in the systems above:
 
+<div align="center">
+
+<img src="assets/hardonia-writing-shelf.svg" alt="Hardonia Technical Writing & Architecture Monographs" width="100%" />
+
+</div>
+
 1. **[Building Safe Multi-Tenant AI Agents with Postgres RLS](OPENAI_CAMPAIGN/content/01_safe_multi_tenant_ai_agents_postgres_rls.md)** — why application-level filtering fails in autonomous workflows, and how to enforce tenant boundaries in PostgreSQL.
 2. **[Enterprise Tool Calling: Why Authorization Belongs Outside the Model](OPENAI_CAMPAIGN/content/02_enterprise_tool_calling_authorization_outside_model.md)** — policy-gated MCP reverse proxies, unprivileged planners, and single-use approval tokens.
 3. **[From Prototype to Production: Architecture for Enterprise AI Agents](OPENAI_CAMPAIGN/content/03_from_prototype_to_production_enterprise_agents.md)** — model abstraction, execution boundaries, CI evaluations, observability, and token-spend governance.
@@ -216,6 +226,14 @@ Public implementation lives primarily in [model-tools](https://github.com/Hardon
 
 <details>
 <summary><strong>Verify the profile locally</strong></summary>
+
+<br />
+
+<div align="center">
+
+<img src="assets/hardonia-verification-hud.svg" alt="Hardonia Zero-Trust Local Verification Pipeline" width="100%" />
+
+</div>
 
 ```bash
 git clone https://github.com/Hardonian/Hardonian.git
