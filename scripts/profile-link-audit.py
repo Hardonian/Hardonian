@@ -1,4 +1,5 @@
 import concurrent.futures
+import http.client
 import ipaddress
 import re
 import socket
@@ -6,7 +7,6 @@ import sys
 import threading
 import time
 import urllib.error
-import http.client
 import urllib.request
 from collections import defaultdict
 from pathlib import Path
@@ -14,6 +14,7 @@ from typing import Any
 from urllib.parse import unquote, urlparse
 
 ALLOWED_WARNING_CODES = {403, 429, 500, 502, 503, 504, 530, 999}
+TRANSIENT_HTTP_CODES = {500, 502, 503, 504, 530}
 USER_AGENT = "Hardonian-profile-audit/1.0"
 REQUEST_TIMEOUT_SECONDS = 8
 TRANSIENT_ATTEMPTS = 2
@@ -172,7 +173,6 @@ def is_transient_network_error(exc: BaseException) -> bool:
     return False
 
 
-
 def _check_url_attempt(
     opener: urllib.request.OpenerDirector,
     request: urllib.request.Request,
@@ -184,19 +184,27 @@ def _check_url_attempt(
     with semaphore:
         try:
             with opener.open(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
+                if response.status in TRANSIENT_HTTP_CODES and attempt < TRANSIENT_ATTEMPTS:
+                    time.sleep(2**attempt)
+                    return "retry", "retry"
                 if response.status in ALLOWED_WARNING_CODES:
                     return "warn", f"WARN {response.status} {raw}"
                 if response.status >= 400:
-                    return "fail", (raw, "ERROR", f"HTTP {response.status}")
+                    return "fail", (raw, response.status, f"HTTP {response.status}")
                 return "ok", f"OK 200 {raw}"
         except urllib.error.HTTPError as exc:
-            if exc.code in ALLOWED_WARNING_CODES:
-                return "warn", f"WARN {exc.code} {raw}"
-            return "fail", (raw, "ERROR", f"HTTP {exc.code}")
-        except Exception as exc:
-            if is_transient_network_error(exc) and attempt < TRANSIENT_ATTEMPTS:
+            if exc.code in TRANSIENT_HTTP_CODES and attempt < TRANSIENT_ATTEMPTS:
                 time.sleep(2**attempt)
                 return "retry", "retry"
+            if exc.code in ALLOWED_WARNING_CODES:
+                return "warn", f"WARN {exc.code} {raw}"
+            return "fail", (raw, exc.code, f"HTTP {exc.code}")
+        except Exception as exc:
+            if is_transient_network_error(exc):
+                if attempt < TRANSIENT_ATTEMPTS:
+                    time.sleep(2**attempt)
+                    return "retry", "retry"
+                return "warn", f"WARN TRANSIENT {raw} ({exc})"
             raise
 
 

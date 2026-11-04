@@ -1,11 +1,12 @@
-import json
 import datetime as dt
 import importlib.util
+import json
 import unittest
 import unittest.mock
+import urllib.error
 from copy import deepcopy
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
 SPEC = importlib.util.spec_from_file_location(
     "profile_metadata", Path(__file__).parents[1] / "scripts/profile-metadata.py"
@@ -43,6 +44,14 @@ class ProfileMetadataTests(unittest.TestCase):
         output = metadata.render(manifest)
         self.assertEqual(output.count("badge.svg"), 4)
         self.assertIn("Public project metadata last verified **2026-09-19**", output)
+
+    def test_renders_proof_matrix_svg(self):
+        manifest = valid_manifest()
+        svg = metadata.render_svg(manifest)
+        self.assertTrue(svg.startswith("<svg"))
+        self.assertIn("VERIFIED: 2026-09-19", svg)
+        for index in range(4):
+            self.assertIn(f"Example{index}", svg)
 
     def test_rejects_stale_metadata(self):
         manifest = valid_manifest()
@@ -146,7 +155,6 @@ class ProfileMetadataTests(unittest.TestCase):
             with self.assertRaisesRegex(metadata.MetadataError, "out of sync"):
                 metadata.check(manifest, remote=False)
 
-
     def test_verify_remote_calls_request_concurrently_for_all_urls(self):
         manifest = valid_manifest()
         requested_urls = []
@@ -170,8 +178,6 @@ class ProfileMetadataTests(unittest.TestCase):
             with self.assertRaisesRegex(metadata.MetadataError, "HTTP 404"):
                 metadata.verify_remote(manifest)
 
-
-
     def test_load_manifest_default_path(self):
         sample_manifest = valid_manifest()
         with patch("pathlib.Path.read_text", return_value=json.dumps(sample_manifest)) as mock_read:
@@ -193,7 +199,6 @@ class ProfileMetadataTests(unittest.TestCase):
         with self.assertRaises(json.JSONDecodeError):
             metadata.load_manifest(mock_path)
 
-
     @patch("os.environ.get", return_value=None)
     @patch("urllib.request.urlopen")
     def test_request_success_without_token(self, mock_urlopen, mock_env):
@@ -206,7 +211,7 @@ class ProfileMetadataTests(unittest.TestCase):
 
         mock_urlopen.assert_called_once()
         req = mock_urlopen.call_args[0][0]
-        self.assertEqual(req.get_header("User-Agent"), metadata.USER_AGENT)
+        self.assertEqual(req.get_header("User-agent"), metadata.USER_AGENT)
         self.assertIsNone(req.get_header("Authorization"))
 
     @patch("os.environ.get", return_value="test_token_123")

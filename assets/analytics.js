@@ -1,14 +1,11 @@
-
 <!-- AI Automated Systems Analytics -->
 <script>
 (function() {
-const getRandomValues = (typeof crypto !== 'undefined' && crypto.getRandomValues) ? (arr) => crypto.getRandomValues(arr) : (arr) => { for (let i = 0; i < arr.length; i++) arr[i] = Math.floor(Math.random() * 256); };
     const randomArray = new Uint8Array(8);
-    getRandomValues(randomArray);
+    crypto.getRandomValues(randomArray);
     const randomHex = Array.from(randomArray, b => b.toString(16).padStart(2, '0')).join('');
     const sessionId = sessionStorage.getItem('aas_sid') || ('s' + Date.now() + randomHex);
     sessionStorage.setItem('aas_sid', sessionId);
-
 
     // Track page view
     fetch('https://aiautomatedsystems.ca/api/track', {

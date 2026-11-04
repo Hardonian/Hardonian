@@ -38,6 +38,12 @@ Toronto, Canada · [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) · [Em
 
 ## What I build
 
+<div align="center">
+
+<img src="assets/hardonia-flagship-bento.svg" alt="Hardonia Flagship Engineering Portfolio — Six Production Systems" width="100%" />
+
+</div>
+
 | Area | How I approach it | Public proof |
 | --- | --- | --- |
 | **AI platform and agent infrastructure** | Keep the model unprivileged; put capability discovery, authorization, retries, budgets, and side effects behind explicit services. | [ReadyLayer](https://github.com/Hardonian/ReadyLayer) · [agent-infra](https://github.com/Hardonian/agent-infra) |
@@ -103,11 +109,33 @@ Production AI needs deterministic boundaries around probabilistic components. Th
 - **Boring reliability wins:** idempotency, retries, observable queues, and clear failure paths beat hidden cleverness.
 - **Cost is a correctness constraint:** runaway inference spend is an operational failure, not merely a finance problem.
 
+<details>
+<summary><strong>Production failure modes &amp; kernel mitigations</strong></summary>
+
+<br />
+
+| Failure Mode | Why Naïve Wrappers Fail | Hardonia Kernel / Protocol Mitigation | Public Proof |
+| --- | --- | --- | --- |
+| **Prompt-injected cross-tenant read/write** | Application-layer `WHERE tenant_id = ?` filters can be omitted by generated queries or bypassed by tool bugs. | Session-scoped JWT claims enforced directly in the PostgreSQL kernel via `FORCE ROW LEVEL SECURITY` and verified by automated negative tests. | [Settler](https://github.com/Hardonian/Settler) · [RLS Note](OPENAI_CAMPAIGN/content/01_safe_multi_tenant_ai_agents_postgres_rls.md) |
+| **Unauthorized tool execution &amp; privilege creep** | Giving the model direct API credentials lets an injected prompt invoke destructive side effects. | Unprivileged planner emits typed intent; an external MCP policy gateway validates capability scope and mints single-use approval tokens. | [ReadyLayer](https://github.com/Hardonian/ReadyLayer) · [MCP Note](OPENAI_CAMPAIGN/content/02_enterprise_tool_calling_authorization_outside_model.md) |
+| **Runaway agent loops &amp; unmeasured token spend** | Retries and multi-step tool loops compound latency and cost before billing alerts fire. | Sub-millisecond token ingestion, tenant-level hard quota circuit breakers, and deterministic fallback model routing. | [TokenGoblin](https://github.com/Hardonian/TokenGoblin) |
+| **Out-of-order distributed state mutation** | Concurrent workers and network retries violate causal ordering when state transitions are implicit. | Quint state-machine specifications, capability-checked causal DAG transitions, and cross-language conformance test vectors. | [veridag](https://github.com/Hardonian/veridag) |
+| **Silent compiler numerical divergence** | Floating-point discrepancies inside large JAX/OpenXLA graphs are intractable to debug manually. | Automated HLO graph delta-minimization that isolates minimal, portable numerical reproducers. | [XLAxiom](https://github.com/Hardonian/XLAxiom) |
+| **Unverified mathematical or algorithmic claims** | Heuristic search scripts can misreport extremal bounds without machine-checked proof obligations. | Python counterexample search paired with Lean 4 kernel-verified proof witnesses (`Zero Axioms`). | [GRAPH-Lab](https://github.com/Hardonian/GRAPH-Lab) |
+
+</details>
+
 ---
 
 ## Proof-backed systems
 
-These four repositories are the most representative public evidence of how I work. The table is generated from a [versioned manifest](profile-projects.json), checked against GitHub weekly, and separates released, beta, and research work.
+These four repositories are the most representative public evidence of how I work. Both the telemetry scorecard and table below are generated from a [versioned manifest](profile-projects.json), checked against GitHub weekly, and separate released, beta, and research work.
+
+<div align="center">
+
+<img src="assets/hardonia-proof-matrix.svg" alt="Hardonia Canonical Proof Scorecard — CI-Verified Evidence Matrix" width="100%" />
+
+</div>
 
 <!-- profile-projects:start -->
 _Public project metadata last verified **2026-10-14** · [source manifest](profile-projects.json) · [verification policy](CONTRIBUTING.md#project-metadata)_
@@ -171,6 +199,14 @@ I publish architecture notes that are grounded in the systems above:
 
 <details>
 <summary><strong>Local compute and inference lab</strong></summary>
+
+<br />
+
+<div align="center">
+
+<img src="assets/hardonia-compute-rack.svg" alt="Hardonia Owned Compute & GPU Inference Lab Topology" width="100%" />
+
+</div>
 
 I run a private, owned testbed for local model routing, quantized inference, image/video workflows, and failure-mode testing. The hardware includes an AMD EPYC 7452 server, AMD Ryzen AI 9 HX370 NPU/GPU compute, NVIDIA V100/P40/RTX 3060 accelerators, Ollama-compatible routing, ComfyUI, containers, and Prometheus/Grafana-style observability.
 
