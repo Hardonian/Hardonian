@@ -1,5 +1,5 @@
 {
-  "verified_on": "2026-10-14",
+  "verified_on": "2026-11-06",
   "max_age_days": 90,
   "projects": [
     {
@@ -41,10 +41,10 @@
     {
       "name": "Settler",
       "role": "Reconcile",
-      "maturity": "beta",
+      "maturity": "stable",
       "language": "TypeScript",
       "problem": "Payment, banking, and operational records diverge unless matching and evidence rules are explicit.",
-      "proof": "Public reconciliation benchmark source and checked-in snapshots, with CI and security-invariant workflows.",
+      "proof": "Multi-tenant reconciliation engine v1.8.0, 20+ CI gates, public benchmark suite, and cryptographically verified release artifacts.",
       "repository": "https://github.com/Hardonian/Settler",
       "documentation": "https://github.com/Hardonian/Settler/blob/main/docs/ARCHITECTURE.md",
       "evidence": "https://github.com/Hardonian/Settler/blob/main/benchmarks/reconciliationBenchmark.ts",

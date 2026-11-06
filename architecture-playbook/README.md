@@ -67,6 +67,21 @@ Internal source paths and deployment filesystem locations are intentionally omit
 
 </div>
 
+## Verified Production Releases
+
+The following flagship platforms have completed automated verification dry-runs, CI gating, and tag cuts:
+
+| Subsystem | Milestone Tag | Focus Area | Verification Surface |
+| :--- | :--- | :--- | :--- |
+| **[Settler](https://github.com/Hardonian/Settler)** | `v1.8.0` | Multi-Tenant Reconciliation Engine | 20+ CI gates, Next.js 16.4.1 bump, 315 pages built, 8 npm packages validated |
+| **[FORGE](https://github.com/Hardonian/FORGE)** | `v1.0.0` | Enterprise AI Systems Builder | Official GA release, full agent lifecycle verification |
+| **[zerokernel](https://github.com/Hardonian/zerokernel)** | `v1.0.0` | ZK-Proved eBPF Kernel Sandboxing | Official GA release, guest/host zero-knowledge verifier suite |
+| **[argon-engine](https://github.com/Hardonian/argon-engine)** | `v1.0.0` | Synaptic Regulation Core Runtime | Official LTS release, determinism and backpressure guarantees |
+| **[SAT-Frontier](https://github.com/Hardonian/SAT-Frontier)** | `v0.2.9` | Automated SAT Solving & Reasoning | Formal verification and automated theorem prover benchmarks |
+| **[deepinfer-serving](https://github.com/Hardonian/deepinfer-serving)** | `v0.1.0` | Cross-Platform Inference Runtime | Windows/Linux unified runtime, CUDA/ROCm guarded process lifecycle |
+| **[TokPulse](https://github.com/Hardonian/TokPulse)** | `v3.0.0` | Token & Inference Observability | Sub-millisecond stream ingestion, Prometheus & Grafana alerting |
+
+
 ## Architecture concerns
 
 - Define data ownership before extracting a bounded capability.
