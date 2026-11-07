@@ -1,17 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
-  <title id="title">Hardonia production AI systems map</title>
-  <desc id="desc">A production system loop spanning observation, control, execution, proof, and reconciliation.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="380" viewBox="0 0 960 380" role="img" aria-labelledby="title desc">
+  <title id="title">Hardonia Sovereign AI Systems Map</title>
+  <desc id="desc">Closed-loop production AI architecture spanning Observe (TokenGoblin), Control (ReadyLayer), Execute (zerokernel and Postgres RLS), Prove (veridag), and Reconcile (Settler).</desc>
   <defs>
-    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+    <style>
+      .sans { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      .mono { font-family: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+      .pulse-line {
+        stroke-dasharray: 6 8;
+        animation: flow 2.4s linear infinite;
+      }
+      @keyframes flow {
+        to { stroke-dashoffset: -56; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .pulse-line { animation: none; }
+      }
+    </style>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#060a12"/>
+      <stop offset="50%" stop-color="#0b111e"/>
+      <stop offset="100%" stop-color="#070b14"/>
+    </linearGradient>
+    <radialGradient id="hero-glow" cx="28%" cy="32%" r="55%">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.16"/>
+      <stop offset="55%" stop-color="#14b8a6" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#060a12" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="card-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#131c2e"/>
+      <stop offset="100%" stop-color="#0b111d"/>
+    </linearGradient>
+    <linearGradient id="bus-grad" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#2dd4bf"/>
-      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="35%" stop-color="#38bdf8"/>
+      <stop offset="70%" stop-color="#a78bfa"/>
       <stop offset="100%" stop-color="#34d399"/>
     </linearGradient>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1" stroke-opacity="0.45"/>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#1e293b" stroke-width="0.8" stroke-opacity="0.5"/>
     </pattern>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -19,70 +48,88 @@
     </filter>
   </defs>
 
-  <!-- Spacious Dark Canvas -->
-  <rect width="960" height="360" rx="20" fill="#090d14"/>
-  <rect width="960" height="360" rx="20" fill="url(#grid)"/>
-  <rect x="1.5" y="1.5" width="957" height="357" rx="18.5" fill="none" stroke="#334155" stroke-width="2"/>
+  <!-- Canvas & Ambient Lighting -->
+  <rect width="960" height="380" rx="20" fill="url(#bg)"/>
+  <rect width="960" height="380" rx="20" fill="url(#hero-glow)"/>
+  <rect width="960" height="380" rx="20" fill="url(#grid)"/>
+  <rect x="1.5" y="1.5" width="957" height="377" rx="18.5" fill="none" stroke="#334155" stroke-width="2"/>
 
-  <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
-    <!-- Top Kicker -->
-    <text x="56" y="56" fill="#7dd3fc" font-size="14" font-weight="700" letter-spacing="4">SOVEREIGN AI SYSTEMS</text>
-
-    <!-- Main Hero Title -->
-    <text x="52" y="124" fill="#ffffff" font-size="68" font-weight="800" letter-spacing="-2.5">HARDONIA</text>
-    <text x="56" y="162" fill="#e2e8f0" font-size="20" font-weight="500">Local compute. Deterministic control. Verifiable outcomes.</text>
-
-    <!-- Minimal High-Contrast Pill (Top Right) -->
-    <g transform="translate(684, 48)">
-      <rect width="220" height="48" rx="24" fill="#06281e" stroke="#34d399" stroke-width="2"/>
-      <circle cx="28" cy="24" r="6" fill="#34d399" filter="url(#glow)"/>
-      <text x="46" y="29" fill="#ffffff" font-size="14" font-weight="700" letter-spacing="1.5">PUBLIC PROOF · CI</text>
-    </g>
-
-    <!-- =================================================================== -->
-    <!-- SPACIOUS 5-NODE PIPELINE (NO CROWDED TEXT BOXES)                    -->
-    <!-- =================================================================== -->
-    <line x1="104" y1="256" x2="856" y2="256" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
-    <line x1="104" y1="256" x2="856" y2="256" stroke="url(#line)" stroke-width="4" stroke-linecap="round"/>
-
-    <!-- Node 1: OBSERVE -->
-    <g transform="translate(104, 256)" text-anchor="middle">
-      <text y="-28" fill="#5eead4" font-size="16" font-weight="800" letter-spacing="1">OBSERVE</text>
-      <circle r="11" fill="#090d14" stroke="#2dd4bf" stroke-width="4"/>
-      <circle r="4" fill="#2dd4bf"/>
-      <text y="38" fill="#f1f5f9" font-size="15" font-weight="600">Spend &amp; Traces</text>
-    </g>
-
-    <!-- Node 2: CONTROL -->
-    <g transform="translate(292, 256)" text-anchor="middle">
-      <text y="-28" fill="#7dd3fc" font-size="16" font-weight="800" letter-spacing="1">CONTROL</text>
-      <circle r="11" fill="#090d14" stroke="#38bdf8" stroke-width="4"/>
-      <circle r="4" fill="#38bdf8"/>
-      <text y="38" fill="#f1f5f9" font-size="15" font-weight="600">MCP Policy Gate</text>
-    </g>
-
-    <!-- Node 3: EXECUTE -->
-    <g transform="translate(480, 256)" text-anchor="middle">
-      <text y="-28" fill="#ffffff" font-size="16" font-weight="800" letter-spacing="1">EXECUTE</text>
-      <circle r="13" fill="#090d14" stroke="#7dd3fc" stroke-width="4" filter="url(#glow)"/>
-      <circle r="5" fill="#ffffff"/>
-      <text y="38" fill="#ffffff" font-size="15" font-weight="700">Postgres RLS</text>
-    </g>
-
-    <!-- Node 4: PROVE -->
-    <g transform="translate(668, 256)" text-anchor="middle">
-      <text y="-28" fill="#c4b5fd" font-size="16" font-weight="800" letter-spacing="1">PROVE</text>
-      <circle r="11" fill="#090d14" stroke="#a78bfa" stroke-width="4"/>
-      <circle r="4" fill="#a78bfa"/>
-      <text y="38" fill="#f1f5f9" font-size="15" font-weight="600">Formal Models</text>
-    </g>
-
-    <!-- Node 5: RECONCILE -->
-    <g transform="translate(856, 256)" text-anchor="middle">
-      <text y="-28" fill="#6ee7b7" font-size="16" font-weight="800" letter-spacing="1">RECONCILE</text>
-      <circle r="11" fill="#090d14" stroke="#34d399" stroke-width="4"/>
-      <circle r="4" fill="#34d399"/>
-      <text y="38" fill="#f1f5f9" font-size="15" font-weight="600">Audit Ledger</text>
-    </g>
+  <!-- Top Telemetry Bar -->
+  <g transform="translate(44, 44)">
+    <circle cx="6" cy="-5" r="4.5" fill="#38bdf8" filter="url(#glow)"/>
+    <text x="20" y="0" class="mono" fill="#7dd3fc" font-size="13.5" font-weight="800" letter-spacing="3.2">HARDONIAN // SOVEREIGN AI SYSTEMS</text>
   </g>
+
+  <!-- Top Right Verification Pill -->
+  <g transform="translate(656, 22)">
+    <rect width="264" height="40" rx="20" fill="#06281e" stroke="#34d399" stroke-width="2"/>
+    <circle cx="24" cy="20" r="5.5" fill="#34d399" filter="url(#glow)"/>
+    <text x="144" y="25" class="mono" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle" letter-spacing="1.2">CI GATES · PUBLIC PROOF</text>
+  </g>
+
+  <!-- Hero Title & Thesis -->
+  <text x="42" y="118" class="sans" fill="#ffffff" font-size="66" font-weight="900" letter-spacing="-2.2">HARDONIA</text>
+  <text x="44" y="154" class="sans" fill="#f1f5f9" font-size="19.5" font-weight="500">Deterministic control planes, kernel isolation, and verifiable AI execution.</text>
+
+  <!-- =================================================================== -->
+  <!-- 5-STAGE CLOSED-LOOP PIPELINE (1:1 NATIVE SCALE, HIGH CONTRAST)      -->
+  <!-- =================================================================== -->
+
+  <!-- Horizontal Signal Bus Behind Nodes -->
+  <line x1="114" y1="238" x2="846" y2="238" stroke="#1e293b" stroke-width="8" stroke-linecap="round"/>
+  <line x1="114" y1="238" x2="846" y2="238" stroke="url(#bus-grad)" stroke-width="3.5" stroke-linecap="round" class="pulse-line"/>
+
+  <!-- Stage Connectors (Chevrons in 27px Gaps) -->
+  <g fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 202 232 L 209 238 L 202 244" stroke="#2dd4bf"/>
+    <path d="M 385 232 L 392 238 L 385 244" stroke="#38bdf8"/>
+    <path d="M 568 232 L 575 238 L 568 244" stroke="#7dd3fc"/>
+    <path d="M 751 232 L 758 238 L 751 244" stroke="#a78bfa"/>
+  </g>
+
+  <!-- STAGE 01: OBSERVE -->
+  <g transform="translate(36, 190)">
+    <rect width="156" height="96" rx="12" fill="url(#card-bg)" stroke="#2dd4bf" stroke-width="2"/>
+    <text x="78" y="27" class="mono" fill="#5eead4" font-size="13" font-weight="800" text-anchor="middle" letter-spacing="1">01 · OBSERVE</text>
+    <text x="78" y="55" class="sans" fill="#ffffff" font-size="15.5" font-weight="800" text-anchor="middle">Spend &amp; Traces</text>
+    <text x="78" y="79" class="mono" fill="#cbd5e1" font-size="12.5" font-weight="600" text-anchor="middle">TokenGoblin</text>
+  </g>
+
+  <!-- STAGE 02: CONTROL -->
+  <g transform="translate(219, 190)">
+    <rect width="156" height="96" rx="12" fill="url(#card-bg)" stroke="#38bdf8" stroke-width="2"/>
+    <text x="78" y="27" class="mono" fill="#7dd3fc" font-size="13" font-weight="800" text-anchor="middle" letter-spacing="1">02 · CONTROL</text>
+    <text x="78" y="55" class="sans" fill="#ffffff" font-size="15.5" font-weight="800" text-anchor="middle">MCP Policy Gate</text>
+    <text x="78" y="79" class="mono" fill="#cbd5e1" font-size="12.5" font-weight="600" text-anchor="middle">ReadyLayer</text>
+  </g>
+
+  <!-- STAGE 03: EXECUTE -->
+  <g transform="translate(402, 190)">
+    <rect width="156" height="96" rx="12" fill="#132038" stroke="#7dd3fc" stroke-width="2.5"/>
+    <text x="78" y="27" class="mono" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle" letter-spacing="1">03 · EXECUTE</text>
+    <text x="78" y="55" class="sans" fill="#ffffff" font-size="15.5" font-weight="800" text-anchor="middle">Postgres RLS</text>
+    <text x="78" y="79" class="mono" fill="#7dd3fc" font-size="12.5" font-weight="700" text-anchor="middle">zerokernel</text>
+  </g>
+
+  <!-- STAGE 04: PROVE -->
+  <g transform="translate(585, 190)">
+    <rect width="156" height="96" rx="12" fill="url(#card-bg)" stroke="#a78bfa" stroke-width="2"/>
+    <text x="78" y="27" class="mono" fill="#c4b5fd" font-size="13" font-weight="800" text-anchor="middle" letter-spacing="1">04 · PROVE</text>
+    <text x="78" y="55" class="sans" fill="#ffffff" font-size="15.5" font-weight="800" text-anchor="middle">Formal Models</text>
+    <text x="78" y="79" class="mono" fill="#cbd5e1" font-size="12.5" font-weight="600" text-anchor="middle">veridag · Lean 4</text>
+  </g>
+
+  <!-- STAGE 05: RECONCILE -->
+  <g transform="translate(768, 190)">
+    <rect width="156" height="96" rx="12" fill="url(#card-bg)" stroke="#34d399" stroke-width="2"/>
+    <text x="78" y="27" class="mono" fill="#6ee7b7" font-size="13" font-weight="800" text-anchor="middle" letter-spacing="1">05 · RECONCILE</text>
+    <text x="78" y="55" class="sans" fill="#ffffff" font-size="15.5" font-weight="800" text-anchor="middle">Audit Ledger</text>
+    <text x="78" y="79" class="mono" fill="#cbd5e1" font-size="12.5" font-weight="600" text-anchor="middle">Settler v1.8</text>
+  </g>
+
+  <!-- Closed-Loop Feedback Bus (Reconcile -> Observe) -->
+  <path d="M 846 286 L 846 336 L 114 336 L 114 290" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="5 5"/>
+  <path d="M 109 296 L 114 288 L 119 296" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="270" y="320" width="420" height="30" rx="15" fill="#0b111e" stroke="#334155" stroke-width="1.5"/>
+  <text x="480" y="340" class="mono" fill="#e2e8f0" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1.2">CLOSED-LOOP REPLAY · QUOTA &amp; POLICY FEEDBACK</text>
 </svg>

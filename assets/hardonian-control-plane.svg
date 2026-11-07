@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="cp-title cp-desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440" role="img" aria-labelledby="cp-title cp-desc">
   <title id="cp-title">Hardonian Control Plane Architecture</title>
-  <desc id="cp-desc">Clean four-node architecture flow connecting the Hardonian Control Plane, FutureOS and FORGE execution, PostgreSQL RLS and zerokernel isolation, and the Settler Audit Ledger.</desc>
+  <desc id="cp-desc">Four-plane deterministic architecture connecting the Hardonian Control Plane, FutureOS and FORGE execution workers, PostgreSQL RLS and zerokernel eBPF isolation, and the Settler cryptographic audit ledger.</desc>
 
   <defs>
     <style>
@@ -17,53 +17,81 @@
         .flow { animation: none; }
       }
     </style>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1" stroke-opacity="0.45"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#060a12"/>
+      <stop offset="50%" stop-color="#0b111e"/>
+      <stop offset="100%" stop-color="#070b14"/>
+    </linearGradient>
+    <linearGradient id="node-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#131c2e"/>
+      <stop offset="100%" stop-color="#0b111d"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#1e293b" stroke-width="0.8" stroke-opacity="0.5"/>
     </pattern>
   </defs>
 
   <!-- Spacious Dark Canvas -->
-  <rect width="960" height="420" rx="20" fill="#090d14"/>
-  <rect width="960" height="420" rx="20" fill="url(#grid)"/>
-  <rect x="1.5" y="1.5" width="957" height="417" rx="18.5" fill="none" stroke="#334155" stroke-width="2"/>
+  <rect width="960" height="440" rx="20" fill="url(#bg)"/>
+  <rect width="960" height="440" rx="20" fill="url(#grid)"/>
+  <rect x="1.5" y="1.5" width="957" height="437" rx="18.5" fill="none" stroke="#334155" stroke-width="2"/>
 
-  <!-- Flow Connectors -->
-  <g fill="none" stroke-linecap="round">
-    <!-- Top to Left & Right -->
-    <path d="M 340 118 L 250 118 L 250 166" stroke="#38bdf8" stroke-width="3.5" class="flow"/>
-    <path d="M 620 118 L 710 118 L 710 166" stroke="#818cf8" stroke-width="3.5" class="flow"/>
+  <!-- =================================================================== -->
+  <!-- ORTHOGONAL PORT-TO-PORT ROUTING (ZERO OVERLAP INSIDE BOXES)         -->
+  <!-- =================================================================== -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Static Base Tracks -->
+    <path d="M 330 120 L 330 146 L 240 146 L 240 172" stroke="#1e293b" stroke-width="6"/>
+    <path d="M 630 120 L 630 146 L 720 146 L 720 172" stroke="#1e293b" stroke-width="6"/>
+    <path d="M 240 268 L 240 294 L 330 294 L 330 320" stroke="#1e293b" stroke-width="6"/>
+    <path d="M 720 268 L 720 294 L 630 294 L 630 320" stroke="#1e293b" stroke-width="6"/>
 
-    <!-- Left & Right to Bottom -->
-    <path d="M 250 262 L 250 310 L 340 310" stroke="#34d399" stroke-width="3.5" class="flow"/>
-    <path d="M 710 262 L 710 310 L 620 310" stroke="#34d399" stroke-width="3.5" class="flow"/>
+    <!-- Animated Signal Traces -->
+    <path d="M 330 120 L 330 146 L 240 146 L 240 172" stroke="#38bdf8" stroke-width="3.5" class="flow"/>
+    <path d="M 630 120 L 630 146 L 720 146 L 720 172" stroke="#a78bfa" stroke-width="3.5" class="flow"/>
+    <path d="M 240 268 L 240 294 L 330 294 L 330 320" stroke="#34d399" stroke-width="3.5" class="flow"/>
+    <path d="M 720 268 L 720 294 L 630 294 L 630 320" stroke="#34d399" stroke-width="3.5" class="flow"/>
+
+    <!-- Port Entry Chevrons -->
+    <path d="M 234 164 L 240 172 L 246 164" stroke="#38bdf8" stroke-width="2.5"/>
+    <path d="M 714 164 L 720 172 L 726 164" stroke="#a78bfa" stroke-width="2.5"/>
+    <path d="M 324 312 L 330 320 L 336 312" stroke="#34d399" stroke-width="2.5"/>
+    <path d="M 624 312 L 630 320 L 636 312" stroke="#34d399" stroke-width="2.5"/>
   </g>
 
-  <!-- NODE 1: TOP (CONTROL PLANE) -->
-  <g transform="translate(240, 36)" text-anchor="middle">
-    <rect width="480" height="86" rx="14" fill="#111827" stroke="#2dd4bf" stroke-width="2.5"/>
-    <text x="240" y="38" class="sans" fill="#ffffff" font-size="21" font-weight="800">HARDONIAN CONTROL PLANE</text>
-    <text x="240" y="65" class="mono" fill="#5eead4" font-size="14.5" font-weight="600">MCP Policy Gate · Hard Quotas · Model Routing</text>
+  <!-- NODE 1: TOP (HARDONIAN CONTROL PLANE) -->
+  <g transform="translate(210, 28)" text-anchor="middle">
+    <rect width="540" height="92" rx="14" fill="url(#node-bg)" stroke="#2dd4bf" stroke-width="2.5"/>
+    <text x="270" y="28" class="mono" fill="#5eead4" font-size="12.5" font-weight="800" letter-spacing="1.5">01 // HARDONIAN CONTROL PLANE</text>
+    <text x="270" y="55" class="sans" fill="#ffffff" font-size="20" font-weight="800">MCP Policy Gateway &amp; Quota Router</text>
+    <text x="270" y="78" class="mono" fill="#e2e8f0" font-size="13.5" font-weight="600">ControlPlane v1.0 · ReadyLayer · TokenGoblin · TokPulse v3.0</text>
+    <circle cx="120" cy="92" r="4.5" fill="#0b111e" stroke="#38bdf8" stroke-width="2.5"/>
+    <circle cx="420" cy="92" r="4.5" fill="#0b111e" stroke="#a78bfa" stroke-width="2.5"/>
   </g>
 
-  <!-- NODE 2A: MIDDLE LEFT (EXECUTION) -->
-  <g transform="translate(60, 166)" text-anchor="middle">
-    <rect width="380" height="96" rx="14" fill="#111827" stroke="#38bdf8" stroke-width="2.5"/>
-    <text x="190" y="42" class="sans" fill="#ffffff" font-size="20" font-weight="800">FUTUREOS &amp; FORGE</text>
-    <text x="190" y="70" class="mono" fill="#7dd3fc" font-size="14.5" font-weight="600">Isolated Workers · Idempotent Jobs</text>
+  <!-- NODE 2A: MIDDLE LEFT (EXECUTION PLANE) -->
+  <g transform="translate(48, 172)" text-anchor="middle">
+    <rect width="384" height="96" rx="14" fill="url(#node-bg)" stroke="#38bdf8" stroke-width="2.5"/>
+    <text x="192" y="29" class="mono" fill="#7dd3fc" font-size="12.5" font-weight="800" letter-spacing="1.2">02A // DETERMINISTIC EXECUTION</text>
+    <text x="192" y="57" class="sans" fill="#ffffff" font-size="19.5" font-weight="800">FORGE v1.0 &amp; Causal DAGs</text>
+    <text x="192" y="81" class="mono" fill="#e2e8f0" font-size="13.5" font-weight="600">veridag · Quint Specs · Idempotent Jobs</text>
+    <circle cx="192" cy="96" r="4.5" fill="#0b111e" stroke="#34d399" stroke-width="2.5"/>
   </g>
 
   <!-- NODE 2B: MIDDLE RIGHT (KERNEL ISOLATION) -->
-  <g transform="translate(520, 166)" text-anchor="middle">
-    <rect width="380" height="96" rx="14" fill="#111827" stroke="#818cf8" stroke-width="2.5"/>
-    <text x="190" y="42" class="sans" fill="#ffffff" font-size="20" font-weight="800">POSTGRES RLS &amp; eBPF</text>
-    <text x="190" y="70" class="mono" fill="#c4b5fd" font-size="14.5" font-weight="600">Tenant Kernel Policy · ZK Sandboxing</text>
+  <g transform="translate(528, 172)" text-anchor="middle">
+    <rect width="384" height="96" rx="14" fill="url(#node-bg)" stroke="#a78bfa" stroke-width="2.5"/>
+    <text x="192" y="29" class="mono" fill="#c4b5fd" font-size="12.5" font-weight="800" letter-spacing="1.2">02B // KERNEL ISOLATION BOUNDARY</text>
+    <text x="192" y="57" class="sans" fill="#ffffff" font-size="19.5" font-weight="800">PostgreSQL RLS &amp; eBPF ZK-VM</text>
+    <text x="192" y="81" class="mono" fill="#e2e8f0" font-size="13.5" font-weight="600">FORCE RLS · zerokernel v1.0 · Zero Trust</text>
+    <circle cx="192" cy="96" r="4.5" fill="#0b111e" stroke="#34d399" stroke-width="2.5"/>
   </g>
 
-  <!-- NODE 3: BOTTOM (PROOF & LEDGER) -->
-  <g transform="translate(240, 298)" text-anchor="middle">
-    <rect width="480" height="86" rx="14" fill="#111827" stroke="#34d399" stroke-width="2.5"/>
-    <text x="240" y="38" class="sans" fill="#ffffff" font-size="21" font-weight="800">SETTLER AUDIT LEDGER</text>
-    <text x="240" y="65" class="mono" fill="#6ee7b7" font-size="14.5" font-weight="600">Cryptographic Proof · Reconciliation · Replay</text>
+  <!-- NODE 3: BOTTOM (PROOF & AUDIT LEDGER) -->
+  <g transform="translate(210, 320)" text-anchor="middle">
+    <rect width="540" height="92" rx="14" fill="url(#node-bg)" stroke="#34d399" stroke-width="2.5"/>
+    <text x="270" y="28" class="mono" fill="#6ee7b7" font-size="12.5" font-weight="800" letter-spacing="1.5">03 // CRYPTOGRAPHIC EVIDENCE &amp; RECONCILIATION</text>
+    <text x="270" y="55" class="sans" fill="#ffffff" font-size="20" font-weight="800">Settler v1.8 Audit Ledger &amp; Formal Proof</text>
+    <text x="270" y="78" class="mono" fill="#e2e8f0" font-size="13.5" font-weight="600">SHA-256 Trace Replay · Lean 4 Witnesses · 20+ CI Gates</text>
   </g>
 </svg>
-
