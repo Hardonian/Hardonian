@@ -87,6 +87,7 @@ The following flagship platforms have completed automated verification dry-runs,
 ## Related public surfaces
 
 - [Hardonian Profile](https://github.com/Hardonian/Hardonian)
+- [Executive & Technical Brief](../EXECUTIVE_BRIEF.md)
 - [ControlPlane (AI Operator & Control Plane Engine)](https://github.com/Hardonian/ControlPlane)
 - [ReadyLayer (Governance & Software Delivery)](https://github.com/Hardonian/ReadyLayer)
 - [Storefront & Evidence Console](https://github.com/Hardonian/storefront)

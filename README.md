@@ -14,14 +14,14 @@
 
 ### Senior / Staff Applied AI & Platform Engineer · Distributed Systems · Enterprise Architecture
 
-**Toronto, Canada** · [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) · [Email](mailto:scottrmhardie@gmail.com?subject=Role%20or%20systems%20conversation) · [Architecture Playbook](architecture-playbook/README.md)
+**Toronto, Canada** · [Executive Brief](EXECUTIVE_BRIEF.md) · [Architecture Playbook](architecture-playbook/README.md) · [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) · [Email](mailto:scottrmhardie@gmail.com?subject=Role%20or%20systems%20conversation)
 
 <p align="center">
   <strong>I build the deterministic infrastructure around foundation models that makes them safe to run in production:</strong><br />
   policy-gated tool execution, database-kernel tenant isolation, bounded inference economics, formal state verification, and cryptographically replayable audit trails.
 </p>
 
-[**Flagship Systems**](#what-i-build) · [**Control Plane Architecture**](#architecture-at-a-glance) · [**Failure Modes & Mitigations**](#production-failure-modes--kernel-mitigations) · [**Verified Proof Matrix**](#proof-backed-systems) · [**Technical Writing**](#technical-writing) · [**Stack & Compute Lab**](#working-stack) · [**About & Contact**](#about)
+[**Executive Brief**](EXECUTIVE_BRIEF.md) · [**Flagship Systems**](#what-i-build) · [**Control Plane Architecture**](#architecture-at-a-glance) · [**Failure Modes & Mitigations**](#production-failure-modes--kernel-mitigations) · [**Verified Proof Matrix**](#proof-backed-systems) · [**Technical Writing**](#technical-writing) · [**About & Contact**](#about)
 
 </div>
 
@@ -34,7 +34,11 @@
 | **Architecture ↔ Implementation** | Align executives, security, and product teams on system boundaries, then write the Rust, Go, TypeScript, Python, SQL, and CI gates that enforce those boundaries in code. | [ControlPlane (`v1.0.0`)](https://github.com/Hardonian/ControlPlane) · [FORGE (`v1.0.0`)](https://github.com/Hardonian/FORGE) |
 | **Probabilistic AI, Deterministic Kernels** | Treat the model as an unprivileged planner; enforce capability authorization in out-of-band MCP gateways, tenant isolation via PostgreSQL `FORCE ROW LEVEL SECURITY`, and code execution in ZK-proved eBPF sandboxes. | [ReadyLayer](https://github.com/Hardonian/ReadyLayer) · [Settler (`v1.8.0`)](https://github.com/Hardonian/Settler) · [zerokernel (`v1.0.0`)](https://github.com/Hardonian/zerokernel) |
 | **Machine-Checkable Proof Over Demos** | Back architectural claims with executable specifications, Quint state-machine models, Lean 4 kernel-checked proof witnesses (`Zero Axioms`), HLO compiler delta-minimizers, and negative security suites. | [veridag](https://github.com/Hardonian/veridag) · [GRAPH-Lab](https://github.com/Hardonian/GRAPH-Lab) · [XLAxiom](https://github.com/Hardonian/XLAxiom) |
-| **Enterprise Delivery & Inference FinOps** | Combine enterprise identity/compliance expertise (`OAuth 2.0`, `OIDC`, `SCIM`, `LTI 1.3`, `SOC 2`, `FERPA`) with sub-millisecond token telemetry and hard spend circuit breakers. | [TokenGoblin](https://github.com/Hardonian/TokenGoblin) · [TokPulse (`v3.0.0`)](https://github.com/Hardonian/TokPulse) |
+| **Enterprise Delivery & Inference FinOps** | Combine enterprise identity/compliance expertise (`OAuth 2.0`, `OIDC`, `SCIM`, `LTI 1.3`, `SOC 2`, `FERPA`) and commercial execution (**McGraw Hill Solutions Architect · President's Award**) with sub-millisecond token telemetry and hard spend circuit breakers. | [TokenGoblin](https://github.com/Hardonian/TokenGoblin) · [TokPulse (`v3.0.0`)](https://github.com/Hardonian/TokPulse) · [Executive Brief](EXECUTIVE_BRIEF.md) |
+
+| `< 1 ms` | `FORCE RLS` | `0 Syscalls` | `Zero Axioms` | `6 Releases` |
+| :---: | :---: | :---: | :---: | :---: |
+| **Token Telemetry & Quota Gate**<br />Sub-ms stream ingestion in Go ([TokenGoblin](https://github.com/Hardonian/TokenGoblin) · [TokPulse](https://github.com/Hardonian/TokPulse)) | **Kernel Tenant Isolation**<br />Session JWTs bound in PostgreSQL ([Settler `v1.8.0`](https://github.com/Hardonian/Settler)) | **Ambient Host Surface**<br />Deterministic eBPF ZK-VM sandboxing ([zerokernel `v1.0.0`](https://github.com/Hardonian/zerokernel)) | **Formal Verification**<br />Lean 4 kernel proofs & Quint specs ([GRAPH-Lab](https://github.com/Hardonian/GRAPH-Lab) · [veridag](https://github.com/Hardonian/veridag)) | **CI-Gated Production Tags**<br />`Settler`, `FORGE`, `zerokernel`, `ControlPlane`, `TokPulse`, `SAT-Frontier` |
 
 ---
 
@@ -173,13 +177,17 @@ I also contribute specialized part-time expertise to confidential frontier-AI ev
 
 ## Let’s talk
 
-Hiring managers, engineering leaders, and recruiting teams: the fastest way to reach me is via **[LinkedIn](https://www.linkedin.com/in/scottrmhardie/)** or **[Email](mailto:scottrmhardie@gmail.com?subject=Role%20or%20systems%20conversation)**.
+| Audience | Scope & Focus | Direct Channel |
+| :--- | :--- | :--- |
+| **Hiring Leaders & Executive Recruiters** | Senior / Staff / Principal Applied AI Engineer · AI Platform Engineer · Distributed Systems Engineer · Principal Solutions Architect | [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) · [Email](mailto:scottrmhardie@gmail.com?subject=Engineering%20or%20Architecture%20Role) · [Executive Brief](EXECUTIVE_BRIEF.md) |
+| **Founders, Investors & Technical Advisory** | AI control-plane architecture reviews, multi-tenant database isolation audits, LLM FinOps governance, and technical due diligence | [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) · [Email](mailto:scottrmhardie@gmail.com?subject=Architecture%20Advisory%20or%20Due%20Diligence) · [Architecture Playbook](architecture-playbook/README.md) |
 
 <div align="center">
 
+[![Read the Executive Brief](https://img.shields.io/badge/DOSSIER-EXECUTIVE_BRIEF-0369a1?style=for-the-badge&labelColor=0f172a)](EXECUTIVE_BRIEF.md)
+[![Explore the Architecture Playbook](https://img.shields.io/badge/PLAYBOOK-SYSTEM_ARCHITECTURE-047857?style=for-the-badge&labelColor=0f172a)](architecture-playbook/README.md)
 [![Connect with Scott Hardie on LinkedIn](https://img.shields.io/badge/LINKEDIN-SCOTT_HARDIE-0A66C2?style=for-the-badge&labelColor=0f172a&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
 [![Send an email to Scott Hardie](https://img.shields.io/badge/EMAIL-SCOTTRMHARDIE%40GMAIL.COM-4338ca?style=for-the-badge&labelColor=0f172a&logo=gmail&logoColor=white)](mailto:scottrmhardie@gmail.com?subject=Role%20or%20systems%20conversation)
-[![Explore the Architecture Playbook](https://img.shields.io/badge/PLAYBOOK-SYSTEM_ARCHITECTURE-047857?style=for-the-badge&labelColor=0f172a)](architecture-playbook/README.md)
 
 <br />
 
