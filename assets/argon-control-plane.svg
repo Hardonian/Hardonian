@@ -1,309 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="660" viewBox="0 0 1600 660" role="img" aria-labelledby="argon-title argon-desc">
-  <title id="argon-title">Hardonia FutureOS — Argon Synaptic Control Plane Architecture</title>
-  <desc id="argon-desc">Deterministic edge commerce engine and autonomous pipeline orchestrator connecting the Argon Synaptic Control Plane, Hardonia FutureOS Engine, Prisma-WASM Edge Data Plane, and Settler.dev Deterministic Reconciliation Ledger.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="argon-title argon-desc">
+  <title id="argon-title">Hardonia Control Plane Architecture</title>
+  <desc id="argon-desc">Clean four-node architecture flow connecting the Argon Control Plane, FutureOS and FORGE execution, PostgreSQL RLS and zerokernel isolation, and the Settler Audit Ledger.</desc>
 
   <defs>
     <style>
-      .mono { font-family: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
       .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-      .trace-flow {
-        stroke-dasharray: 6 10;
-        animation: pulse-flow 3.2s linear infinite;
+      .mono { font-family: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace; }
+      .flow {
+        stroke-dasharray: 8 10;
+        animation: move 2.6s linear infinite;
       }
-      .trace-feedback {
-        stroke-dasharray: 4 12;
-        animation: pulse-feedback 4.8s linear infinite;
-      }
-      .status-dot {
-        animation: status-breathe 2.8s ease-in-out infinite;
-      }
-      @keyframes pulse-flow {
-        to { stroke-dashoffset: -64; }
-      }
-      @keyframes pulse-feedback {
-        to { stroke-dashoffset: 64; }
-      }
-      @keyframes status-breathe {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.45; }
+      @keyframes move {
+        to { stroke-dashoffset: -72; }
       }
       @media (prefers-reduced-motion: reduce) {
-        .trace-flow, .trace-feedback, .status-dot { animation: none; }
+        .flow { animation: none; }
       }
     </style>
-
-    <linearGradient id="bg-grad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#06090f"/>
-      <stop offset="50%" stop-color="#090d16"/>
-      <stop offset="100%" stop-color="#06080e"/>
-    </linearGradient>
-
-    <linearGradient id="card-grad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#111827" stop-opacity="0.92"/>
-      <stop offset="100%" stop-color="#0b101b" stop-opacity="0.96"/>
-    </linearGradient>
-
-    <linearGradient id="cyan-accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#2dd4bf"/>
-      <stop offset="50%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="#818cf8"/>
-    </linearGradient>
-
-    <linearGradient id="emerald-accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#10b981"/>
-      <stop offset="50%" stop-color="#34d399"/>
-      <stop offset="100%" stop-color="#38bdf8"/>
-    </linearGradient>
-
-    <pattern id="minor-grid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.45"/>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1" stroke-opacity="0.45"/>
     </pattern>
-    <pattern id="major-grid" width="120" height="120" patternUnits="userSpaceOnUse">
-      <rect width="120" height="120" fill="url(#minor-grid)"/>
-      <path d="M 120 0 L 0 0 0 120" fill="none" stroke="#334155" stroke-width="0.9" stroke-opacity="0.4"/>
-    </pattern>
-
-    <filter id="subtle-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
 
-  <!-- Outer Chassis -->
-  <rect width="1600" height="660" rx="18" fill="url(#bg-grad)"/>
-  <rect width="1600" height="660" rx="18" fill="url(#major-grid)"/>
-  <rect x="1" y="1" width="1598" height="658" rx="17" fill="none" stroke="#1e293b" stroke-width="2"/>
-  <rect x="12" y="12" width="1576" height="636" rx="11" fill="none" stroke="#1e293b" stroke-width="1" stroke-opacity="0.6"/>
+  <!-- Spacious Dark Canvas -->
+  <rect width="960" height="420" rx="20" fill="#090d14"/>
+  <rect width="960" height="420" rx="20" fill="url(#grid)"/>
+  <rect x="1.5" y="1.5" width="957" height="417" rx="18.5" fill="none" stroke="#334155" stroke-width="2"/>
 
-  <!-- Corner Fiducial Crosshairs -->
-  <g stroke="#475569" stroke-width="1.2" opacity="0.7">
-    <path d="M 24 30 L 36 30 M 30 24 L 30 36"/>
-    <path d="M 1564 30 L 1576 30 M 1570 24 L 1570 36"/>
-    <path d="M 24 630 L 36 630 M 30 624 L 30 636"/>
-    <path d="M 1564 630 L 1576 630 M 1570 624 L 1570 636"/>
+  <!-- Flow Connectors -->
+  <g fill="none" stroke-linecap="round">
+    <!-- Top to Left & Right -->
+    <path d="M 340 118 L 250 118 L 250 166" stroke="#38bdf8" stroke-width="3.5" class="flow"/>
+    <path d="M 620 118 L 710 118 L 710 166" stroke="#818cf8" stroke-width="3.5" class="flow"/>
+
+    <!-- Left & Right to Bottom -->
+    <path d="M 250 262 L 250 310 L 340 310" stroke="#34d399" stroke-width="3.5" class="flow"/>
+    <path d="M 710 262 L 710 310 L 620 310" stroke="#34d399" stroke-width="3.5" class="flow"/>
   </g>
 
-  <!-- Top Telemetry Bar -->
-  <g transform="translate(52, 42)">
-    <rect x="0" y="-16" width="10" height="18" rx="2" fill="#2dd4bf"/>
-    <text x="20" y="-2" class="mono" fill="#94a3b8" font-size="13" font-weight="600" letter-spacing="2.5">HARDONIA // FUTUREOS · ARCHITECTURAL SCHEMATIC</text>
-    <text x="470" y="-2" class="mono" fill="#475569" font-size="12" letter-spacing="1.5">│  TARGET: AARCH64 · WASM32-EDGE  │  INVARIANT: LEVEL-5 ZERO-STUB</text>
-
-    <!-- Status Pill (Top Right) -->
-    <g transform="translate(1228, -22)">
-      <rect width="268" height="30" rx="6" fill="#091516" stroke="#14b8a6" stroke-width="1" stroke-opacity="0.6"/>
-      <circle cx="18" cy="15" r="4.5" fill="#2dd4bf" class="status-dot" filter="url(#subtle-glow)"/>
-      <text x="34" y="19" class="mono" fill="#99f6e4" font-size="11.5" font-weight="600" letter-spacing="1.5">SYNAPTIC CONTROL: ONLINE</text>
-    </g>
+  <!-- NODE 1: TOP (CONTROL PLANE) -->
+  <g transform="translate(240, 36)" text-anchor="middle">
+    <rect width="480" height="86" rx="14" fill="#111827" stroke="#2dd4bf" stroke-width="2.5"/>
+    <text x="240" y="38" class="sans" fill="#ffffff" font-size="21" font-weight="800">ARGON CONTROL PLANE</text>
+    <text x="240" y="65" class="mono" fill="#5eead4" font-size="14.5" font-weight="600">MCP Policy Gate · Hard Quotas · Model Routing</text>
   </g>
 
-  <line x1="52" y1="62" x2="1548" y2="62" stroke="#1e293b" stroke-width="1"/>
-
-  <!-- ======================================================================= -->
-  <!-- ORTHOGONAL SIGNAL BUS & FEEDBACK LOOPS                                  -->
-  <!-- ======================================================================= -->
-
-  <!-- Left & Right Homeostatic Feedback Loops (Tier 3 back to Tier 1) -->
-  <g fill="none">
-    <path d="M 260 545 L 92 545 Q 76 545 76 529 L 76 156 Q 76 140 92 140 L 260 140" stroke="#1e293b" stroke-width="2"/>
-    <path d="M 260 545 L 92 545 Q 76 545 76 529 L 76 156 Q 76 140 92 140 L 260 140" stroke="#f59e0b" stroke-width="1.5" stroke-opacity="0.55" class="trace-feedback"/>
-
-    <path d="M 1340 545 L 1508 545 Q 1524 545 1524 529 L 1524 156 Q 1524 140 1508 140 L 1340 140" stroke="#1e293b" stroke-width="2"/>
-    <path d="M 1340 545 L 1508 545 Q 1524 545 1524 529 L 1524 156 Q 1524 140 1508 140 L 1340 140" stroke="#f59e0b" stroke-width="1.5" stroke-opacity="0.55" class="trace-feedback"/>
+  <!-- NODE 2A: MIDDLE LEFT (EXECUTION) -->
+  <g transform="translate(60, 166)" text-anchor="middle">
+    <rect width="380" height="96" rx="14" fill="#111827" stroke="#38bdf8" stroke-width="2.5"/>
+    <text x="190" y="42" class="sans" fill="#ffffff" font-size="20" font-weight="800">FUTUREOS &amp; FORGE</text>
+    <text x="190" y="70" class="mono" fill="#7dd3fc" font-size="14.5" font-weight="600">Isolated Workers · Idempotent Jobs</text>
   </g>
 
-  <!-- Side Rail Labels -->
-  <g class="mono" font-size="10.5" fill="#d97706" letter-spacing="2" opacity="0.85">
-    <text transform="translate(62, 345) rotate(-90)" text-anchor="middle">HOMEOSTATIC BACKPRESSURE</text>
-    <text transform="translate(1542, 345) rotate(90)" text-anchor="middle">CRYPTOGRAPHIC AUDIT FEEDBACK</text>
+  <!-- NODE 2B: MIDDLE RIGHT (KERNEL ISOLATION) -->
+  <g transform="translate(520, 166)" text-anchor="middle">
+    <rect width="380" height="96" rx="14" fill="#111827" stroke="#818cf8" stroke-width="2.5"/>
+    <text x="190" y="42" class="sans" fill="#ffffff" font-size="20" font-weight="800">POSTGRES RLS &amp; eBPF</text>
+    <text x="190" y="70" class="mono" fill="#c4b5fd" font-size="14.5" font-weight="600">Tenant Kernel Policy · ZK Sandboxing</text>
   </g>
 
-  <!-- Primary Forward Dispatch Bus: Tier 1 -> Tier 2A & Tier 2B -->
-  <g fill="none">
-    <!-- Left Branch (Tier 1 -> Tier 2A) -->
-    <path d="M 540 206 L 540 236 Q 540 248 528 248 L 440 248 Q 428 248 428 260 L 428 278" stroke="#1e293b" stroke-width="3"/>
-    <path d="M 540 206 L 540 236 Q 540 248 528 248 L 440 248 Q 428 248 428 260 L 428 278" stroke="#38bdf8" stroke-width="2" class="trace-flow"/>
-
-    <!-- Right Branch (Tier 1 -> Tier 2B) -->
-    <path d="M 1060 206 L 1060 236 Q 1060 248 1072 248 L 1160 248 Q 1172 248 1172 260 L 1172 278" stroke="#1e293b" stroke-width="3"/>
-    <path d="M 1060 206 L 1060 236 Q 1060 248 1072 248 L 1160 248 Q 1172 248 1172 260 L 1172 278" stroke="#818cf8" stroke-width="2" class="trace-flow"/>
-
-    <!-- Cross-Plane Sync Bus (Tier 2A <-> Tier 2B) -->
-    <line x1="756" y1="356" x2="844" y2="356" stroke="#1e293b" stroke-width="3"/>
-    <line x1="756" y1="356" x2="844" y2="356" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4 4"/>
-
-    <!-- Convergence Bus (Tier 2A & 2B -> Tier 3) -->
-    <path d="M 428 434 L 428 454 Q 428 466 440 466 L 788 466 Q 800 466 800 478 L 800 492" stroke="#1e293b" stroke-width="3"/>
-    <path d="M 428 434 L 428 454 Q 428 466 440 466 L 788 466 Q 800 466 800 478 L 800 492" stroke="#34d399" stroke-width="2" class="trace-flow"/>
-
-    <path d="M 1172 434 L 1172 454 Q 1172 466 1160 466 L 812 466 Q 800 466 800 478 L 800 492" stroke="#1e293b" stroke-width="3"/>
-    <path d="M 1172 434 L 1172 454 Q 1172 466 1160 466 L 812 466 Q 800 466 800 478 L 800 492" stroke="#34d399" stroke-width="2" class="trace-flow"/>
-  </g>
-
-  <!-- Bus Callout Badges -->
-  <g transform="translate(800, 248)" text-anchor="middle">
-    <rect x="-132" y="-12" width="264" height="24" rx="4" fill="#0b101b" stroke="#1e293b" stroke-width="1"/>
-    <text x="0" y="4" class="mono" fill="#64748b" font-size="10.5" letter-spacing="1.5">STRICT DISCRIMINATED INTENT</text>
-  </g>
-  <g transform="translate(800, 356)" text-anchor="middle">
-    <rect x="-36" y="-11" width="72" height="22" rx="4" fill="#0b101b" stroke="#334155" stroke-width="1"/>
-    <text x="0" y="4" class="mono" fill="#94a3b8" font-size="10" font-weight="600" letter-spacing="1">STATE</text>
-  </g>
-
-  <!-- ======================================================================= -->
-  <!-- TIER 1: ARGON SYNAPTIC CONTROL PLANE                                    -->
-  <!-- ======================================================================= -->
-  <g transform="translate(260, 86)">
-    <rect width="1080" height="120" rx="10" fill="url(#card-grad)" stroke="#334155" stroke-width="1.5"/>
-    <rect x="0" y="0" width="1080" height="3" rx="1.5" fill="url(#cyan-accent)"/>
-
-    <!-- Header Row -->
-    <text x="28" y="32" class="mono" fill="#2dd4bf" font-size="12" font-weight="700" letter-spacing="2">01 // CONTROL PLANE</text>
-    <text x="230" y="32" class="sans" fill="#f8fafc" font-size="19" font-weight="700" letter-spacing="-0.3">ARGON SYNAPTIC CONTROL PLANE</text>
-    <text x="1052" y="32" class="mono" fill="#64748b" font-size="11.5" text-anchor="end" letter-spacing="1">RUST WORKSPACE · ZERO-PANIC LOOP</text>
-
-    <line x1="28" y1="46" x2="1052" y2="46" stroke="#1e293b" stroke-width="1"/>
-
-    <!-- 4 Sub-modules inside Tier 1 -->
-    <g transform="translate(28, 60)">
-      <rect width="242" height="44" rx="6" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
-      <text x="14" y="18" class="mono" fill="#38bdf8" font-size="11" font-weight="700">argon-kernel</text>
-      <text x="14" y="34" class="mono" fill="#94a3b8" font-size="10.5">Result&lt;T, E&gt; · No unwrap()</text>
-    </g>
-
-    <g transform="translate(288, 60)">
-      <rect width="242" height="44" rx="6" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
-      <text x="14" y="18" class="mono" fill="#38bdf8" font-size="11" font-weight="700">argon-runtime</text>
-      <text x="14" y="34" class="mono" fill="#94a3b8" font-size="10.5">Bounded Ring Buffers · WASI</text>
-    </g>
-
-    <g transform="translate(548, 60)">
-      <rect width="242" height="44" rx="6" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
-      <text x="14" y="18" class="mono" fill="#2dd4bf" font-size="11" font-weight="700">MCP Policy Gateway</text>
-      <text x="14" y="34" class="mono" fill="#94a3b8" font-size="10.5">Single-Use Capability Tokens</text>
-    </g>
-
-    <g transform="translate(808, 60)">
-      <rect width="244" height="44" rx="6" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
-      <text x="14" y="18" class="mono" fill="#a78bfa" font-size="11" font-weight="700">Synaptic Regulation</text>
-      <text x="14" y="34" class="mono" fill="#94a3b8" font-size="10.5">Quota &amp; Latency Backpressure</text>
-    </g>
-
-    <!-- Output Ports -->
-    <circle cx="280" cy="120" r="5" fill="#090d16" stroke="#38bdf8" stroke-width="2.5"/>
-    <circle cx="800" cy="120" r="5" fill="#090d16" stroke="#818cf8" stroke-width="2.5"/>
-  </g>
-
-  <!-- ======================================================================= -->
-  <!-- TIER 2A: HARDONIA FUTUREOS ENGINE (LEFT)                                -->
-  <!-- ======================================================================= -->
-  <g transform="translate(100, 278)">
-    <rect width="656" height="156" rx="10" fill="url(#card-grad)" stroke="#1e293b" stroke-width="1.5"/>
-    <path d="M 0 10 Q 0 0 10 0 L 646 0 Q 656 0 656 10" fill="none" stroke="#38bdf8" stroke-width="2.5"/>
-
-    <text x="26" y="32" class="mono" fill="#38bdf8" font-size="12" font-weight="700" letter-spacing="2">02A // EXECUTION ENGINE</text>
-    <text x="26" y="58" class="sans" fill="#f8fafc" font-size="20" font-weight="700" letter-spacing="-0.3">HARDONIA FUTUREOS PIPELINE</text>
-    <text x="630" y="32" class="mono" fill="#64748b" font-size="11" text-anchor="end">SHOPIFY 2.0 · AIOS</text>
-
-    <text x="26" y="82" class="sans" fill="#94a3b8" font-size="13.5">Zero-toil autonomous ad-to-conversion orchestration &amp; creative synthesis</text>
-
-    <!-- Metric / Spec Pills -->
-    <g transform="translate(26, 98)">
-      <rect width="192" height="38" rx="5" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
-      <text x="12" y="15" class="mono" fill="#64748b" font-size="9.5" letter-spacing="1">CREATIVE HOOKS</text>
-      <text x="12" y="30" class="mono" fill="#e2e8f0" font-size="11" font-weight="600">SPEAK · VISUAL · OVERLAY</text>
-    </g>
-    <g transform="translate(232, 98)">
-      <rect width="192" height="38" rx="5" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
-      <text x="12" y="15" class="mono" fill="#64748b" font-size="9.5" letter-spacing="1">TYPE INVARIANT</text>
-      <text x="12" y="30" class="mono" fill="#38bdf8" font-size="11" font-weight="600">Zero-Any · Guard Narrowed</text>
-    </g>
-    <g transform="translate(438, 98)">
-      <rect width="192" height="38" rx="5" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
-      <text x="12" y="15" class="mono" fill="#64748b" font-size="9.5" letter-spacing="1">TELEMETRY</text>
-      <text x="12" y="30" class="mono" fill="#e2e8f0" font-size="11" font-weight="600">CSPRNG Session · Edge Ingest</text>
-    </g>
-
-    <!-- Ports -->
-    <circle cx="328" cy="0" r="5" fill="#090d16" stroke="#38bdf8" stroke-width="2.5"/>
-    <circle cx="328" cy="156" r="5" fill="#090d16" stroke="#34d399" stroke-width="2.5"/>
-  </g>
-
-  <!-- ======================================================================= -->
-  <!-- TIER 2B: PRISMA-WASM / EDGE DATA PLANE (RIGHT)                          -->
-  <!-- ======================================================================= -->
-  <g transform="translate(844, 278)">
-    <rect width="656" height="156" rx="10" fill="url(#card-grad)" stroke="#1e293b" stroke-width="1.5"/>
-    <path d="M 0 10 Q 0 0 10 0 L 646 0 Q 656 0 656 10" fill="none" stroke="#818cf8" stroke-width="2.5"/>
-
-    <text x="26" y="32" class="mono" fill="#818cf8" font-size="12" font-weight="700" letter-spacing="2">02B // DATA &amp; RUNTIME PLANE</text>
-    <text x="26" y="58" class="sans" fill="#f8fafc" font-size="20" font-weight="700" letter-spacing="-0.3">PRISMA-WASM &amp; EDGE KERNEL</text>
-    <text x="630" y="32" class="mono" fill="#64748b" font-size="11" text-anchor="end">ZERO NATIVE BINARIES</text>
-
-    <text x="26" y="82" class="sans" fill="#94a3b8" font-size="13.5">Deterministic state hydration with kernel-enforced tenant boundaries</text>
-
-    <!-- Metric / Spec Pills -->
-    <g transform="translate(26, 98)">
-      <rect width="192" height="38" rx="5" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
-      <text x="12" y="15" class="mono" fill="#64748b" font-size="9.5" letter-spacing="1">QUERY ADAPTER</text>
-      <text x="12" y="30" class="mono" fill="#e2e8f0" font-size="11" font-weight="600">@prisma/client/wasm</text>
-    </g>
-    <g transform="translate(232, 98)">
-      <rect width="192" height="38" rx="5" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
-      <text x="12" y="15" class="mono" fill="#64748b" font-size="9.5" letter-spacing="1">KERNEL ISOLATION</text>
-      <text x="12" y="30" class="mono" fill="#818cf8" font-size="11" font-weight="600">PostgreSQL RLS Policy</text>
-    </g>
-    <g transform="translate(438, 98)">
-      <rect width="192" height="38" rx="5" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
-      <text x="12" y="15" class="mono" fill="#64748b" font-size="9.5" letter-spacing="1">DEV / PROD PARITY</text>
-      <text x="12" y="30" class="mono" fill="#e2e8f0" font-size="11" font-weight="600">Termux ARM64 ↔ Edge</text>
-    </g>
-
-    <!-- Ports -->
-    <circle cx="328" cy="0" r="5" fill="#090d16" stroke="#818cf8" stroke-width="2.5"/>
-    <circle cx="328" cy="156" r="5" fill="#090d16" stroke="#34d399" stroke-width="2.5"/>
-  </g>
-
-  <!-- ======================================================================= -->
-  <!-- TIER 3: SETTLER.DEV DETERMINISTIC RECONCILIATION LEDGER                 -->
-  <!-- ======================================================================= -->
-  <g transform="translate(260, 492)">
-    <rect width="1080" height="106" rx="10" fill="url(#card-grad)" stroke="#334155" stroke-width="1.5"/>
-    <rect x="0" y="0" width="1080" height="3" rx="1.5" fill="url(#emerald-accent)"/>
-
-    <text x="28" y="32" class="mono" fill="#34d399" font-size="12" font-weight="700" letter-spacing="2">03 // PROOF &amp; RECONCILIATION PLANE</text>
-    <text x="310" y="32" class="sans" fill="#f8fafc" font-size="19" font-weight="700" letter-spacing="-0.3">SETTLER.DEV DETERMINISTIC LEDGER</text>
-    <text x="1052" y="32" class="mono" fill="#34d399" font-size="11.5" text-anchor="end" letter-spacing="1">REPLAYABLE · AUDIT-VERIFIED</text>
-
-    <line x1="28" y1="46" x2="1052" y2="46" stroke="#1e293b" stroke-width="1"/>
-
-    <!-- Bottom Specs -->
-    <g transform="translate(28, 58)" class="mono" font-size="11.5">
-      <circle cx="6" cy="12" r="3.5" fill="#34d399"/>
-      <text x="18" y="16" fill="#cbd5e1">Cryptographic Trace Chain</text>
-
-      <circle cx="266" cy="12" r="3.5" fill="#34d399"/>
-      <text x="278" y="16" fill="#cbd5e1">Idempotent Batch Rollback</text>
-
-      <circle cx="526" cy="12" r="3.5" fill="#38bdf8"/>
-      <text x="538" y="16" fill="#cbd5e1">Quint / Lean 4 Conformance</text>
-
-      <circle cx="786" cy="12" r="3.5" fill="#f59e0b"/>
-      <text x="798" y="16" fill="#cbd5e1">Strict Accounting Invariants</text>
-    </g>
-
-    <!-- Input Port -->
-    <circle cx="540" cy="0" r="5" fill="#090d16" stroke="#34d399" stroke-width="2.5"/>
-  </g>
-
-  <!-- Bottom Telemetry Footer -->
-  <g transform="translate(52, 632)" class="mono" font-size="11" fill="#475569" letter-spacing="1.2">
-    <text x="0" y="0">SYS_TOPOLOGY: DETERMINISTIC_CLOSED_LOOP</text>
-    <text x="800" y="0" text-anchor="middle" fill="#64748b">OBSERVE  ──►  CONTROL  ──►  EXECUTE  ──►  PROVE  ──►  RECONCILE</text>
-    <text x="1496" y="0" text-anchor="end">HARDONIA // TORONTO, CA</text>
+  <!-- NODE 3: BOTTOM (PROOF & LEDGER) -->
+  <g transform="translate(240, 298)" text-anchor="middle">
+    <rect width="480" height="86" rx="14" fill="#111827" stroke="#34d399" stroke-width="2.5"/>
+    <text x="240" y="38" class="sans" fill="#ffffff" font-size="21" font-weight="800">SETTLER AUDIT LEDGER</text>
+    <text x="240" y="65" class="mono" fill="#6ee7b7" font-size="14.5" font-weight="600">Cryptographic Proof · Reconciliation · Replay</text>
   </g>
 </svg>
-

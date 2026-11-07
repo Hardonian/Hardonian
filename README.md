@@ -4,12 +4,10 @@
 
 <br />
 
-[![Engine: Argon Core](https://img.shields.io/badge/ENGINE-ARGON_CORE-2dd4bf?style=flat-square&labelColor=0b101b&logo=rust&logoColor=2dd4bf)](#architecture-at-a-glance)
-[![Runtime: Prisma WASM / Edge](https://img.shields.io/badge/RUNTIME-PRISMA_WASM_%7C_EDGE-38bdf8?style=flat-square&labelColor=0b101b&logo=webassembly&logoColor=38bdf8)](#architecture-at-a-glance)
-[![Architecture: AArch64 / Termux](https://img.shields.io/badge/ARCH-AARCH64_%7C_TERMUX-818cf8?style=flat-square&labelColor=0b101b&logo=linux&logoColor=818cf8)](#working-stack)
-[![Control: Synaptic Regulation](https://img.shields.io/badge/CONTROL-SYNAPTIC_REGULATION-34d399?style=flat-square&labelColor=0b101b)](#proof-backed-systems)
-[![Solutions Architect at McGraw Hill](https://img.shields.io/badge/MCGRAW_HILL-SOLUTIONS_ARCHITECT-94a3b8?style=flat-square&labelColor=0b101b)](#about)
-[![Connect with Scott Hardie on LinkedIn](https://img.shields.io/badge/LINKEDIN-SCOTTRMHARDIE-0A66C2?style=flat-square&labelColor=0b101b&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
+[![Focus: Applied AI & Platform Infrastructure](https://img.shields.io/badge/FOCUS-APPLIED_AI_%7C_PLATFORM_INFRA-0369a1?style=for-the-badge&labelColor=0f172a)](#what-i-build)
+[![Architecture: Postgres RLS & eBPF](https://img.shields.io/badge/ISOLATION-POSTGRES_RLS_%7C_eBPF-047857?style=for-the-badge&labelColor=0f172a)](#architecture-at-a-glance)
+[![Role: Solutions Architect at McGraw Hill](https://img.shields.io/badge/MCGRAW_HILL-SOLUTIONS_ARCHITECT-3730a3?style=for-the-badge&labelColor=0f172a)](#about)
+[![Connect with Scott Hardie on LinkedIn](https://img.shields.io/badge/LINKEDIN-SCOTTRMHARDIE-0A66C2?style=for-the-badge&labelColor=0f172a&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
 
 # Scott Hardie
 
@@ -23,7 +21,7 @@ Toronto, Canada · [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) · [Em
 
 **Interested in:** teams shipping high-assurance AI, developer platforms, agent infrastructure, and enterprise-scale systems.
 
-`APPLIED AI` · `DISTRIBUTED SYSTEMS` · `MCP` · `POSTGRESQL RLS` · `PRISMA WASM` · `FORMAL VERIFICATION`
+`APPLIED AI` · `DISTRIBUTED SYSTEMS` · `MCP` · `POSTGRESQL RLS` · `eBPF SANDBOXING` · `FORMAL VERIFICATION`
 
 </div>
 
@@ -38,26 +36,20 @@ Toronto, Canada · [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) · [Em
 
 ## What I build
 
-<div align="center">
-
-<img src="assets/hardonia-flagship-bento.svg" alt="Hardonia Flagship Engineering Portfolio — Six Production Systems" width="100%" />
-
-</div>
-
-| Area | How I approach it | Public proof |
+| Area | How I approach it | Public proof & releases |
 | --- | --- | --- |
-| **AI platform and agent infrastructure** | Keep the model unprivileged; put capability discovery, authorization, retries, budgets, and side effects behind explicit services. | [ReadyLayer](https://github.com/Hardonian/ReadyLayer) · [agent-infra](https://github.com/Hardonian/agent-infra) |
+| **AI platform and agent infrastructure** | Keep the model unprivileged; put capability discovery, authorization, retries, budgets, and side effects behind explicit services. | [ReadyLayer](https://github.com/Hardonian/ReadyLayer) · [FORGE (`v1.0.0`)](https://github.com/Hardonian/FORGE) · [agent-infra](https://github.com/Hardonian/agent-infra) |
 | **ML infrastructure and compiler quality** | Turn numerical discrepancies into minimized, reproducible, portable evidence for JAX/OpenXLA investigations. | [XLAxiom](https://github.com/Hardonian/XLAxiom) |
-| **Secure multi-tenant systems** | Enforce tenant boundaries in the database kernel with PostgreSQL RLS and test the negative cases automatically. | [Settler](https://github.com/Hardonian/Settler) |
-| **Inference economics and operations** | Measure tokens, latency, routing, and spend; use hard quotas and fallbacks to keep inference predictable. | [TokenGoblin](https://github.com/Hardonian/TokenGoblin) |
-| **Reliable distributed execution** | Specify state transitions, ordering, and capability rules; validate implementations against formal models and conformance vectors. | [veridag](https://github.com/Hardonian/veridag) |
-| **Formal methods and research software** | Combine exact computation, counterexample search, Python control planes, and Lean 4 kernel-checked witnesses. | [GRAPH-Lab](https://github.com/Hardonian/GRAPH-Lab) |
+| **Secure multi-tenant & kernel systems** | Enforce tenant boundaries in the database kernel with PostgreSQL RLS and isolate untrusted execution with ZK-proved eBPF sandboxes. | [Settler (`v1.8.0`)](https://github.com/Hardonian/Settler) · [zerokernel (`v1.0.0`)](https://github.com/Hardonian/zerokernel) |
+| **Inference economics and operations** | Measure tokens, latency, routing, and spend in sub-millisecond streams; use hard quotas and fallbacks to keep inference predictable. | [TokenGoblin](https://github.com/Hardonian/TokenGoblin) · [TokPulse (`v3.0.0`)](https://github.com/Hardonian/TokPulse) |
+| **Reliable distributed execution** | Specify state transitions, backpressure, ordering, and capability rules; validate implementations against Quint formal models. | [veridag](https://github.com/Hardonian/veridag) · [argon-engine (`v1.0.0`)](https://github.com/Hardonian/argon-engine) |
+| **Formal methods and automated reasoning** | Combine exact computation, SAT solving, counterexample search, and Lean 4 kernel-checked witnesses. | [GRAPH-Lab](https://github.com/Hardonian/GRAPH-Lab) · [SAT-Frontier (`v0.2.9`)](https://github.com/Hardonian/SAT-Frontier) |
 
 ## Start here
 
 If you are reviewing this profile for a role, these are the fastest paths to signal:
 
-- **[Flagship portfolio](#what-i-build)** — six systems spanning ML infrastructure, AI developer tooling, LLM operations, distributed execution, enterprise data, and formal methods.
+- **[Flagship portfolio](#what-i-build)** — systems spanning ML infrastructure, AI governance, LLM FinOps, distributed execution, enterprise data, and formal methods.
 - **[Architecture and technical writing](#technical-writing)** — how I reason about production AI beyond model selection.
 - **[Working stack](#working-stack)** — the languages, data systems, inference tooling, and infrastructure I use.
 - **[About and contact](#about)** — current role, enterprise background, and the best way to reach me.
@@ -70,38 +62,9 @@ Production AI needs deterministic boundaries around probabilistic components. Th
 
 <div align="center">
 
-<img src="assets/argon-control-plane.svg" alt="Hardonia FutureOS — Argon Synaptic Control Plane Architecture" width="100%" />
-
-<br /><br />
-
-<img src="assets/hardonia-live-trace.svg" alt="Hardonia Deterministic Request Trace — OpenTelemetry & Policy Waterfall" width="100%" />
+<img src="assets/argon-control-plane.svg" alt="Hardonia Control Plane Architecture" width="100%" />
 
 </div>
-
-<details>
-<summary><strong>View terminal / ASCII control-plane topology</strong></summary>
-
-```text
-┌─────────────────────────────────────────────────────────────────────────┐
-│                       ARGON SYNAPTIC CONTROL PLANE                      │
-│          Observe · Plan · MCP Policy Gateway · Synaptic Quotas          │
-└──────────────┬───────────────────────────┬──────────────────────────────┘
-               │                           │
-               ▼                           ▼
-┌──────────────────────────────┐ ┌────────────────────────────────────────┐
-│   HARDONIA FUTUREOS ENGINE   │ │     PRISMA-WASM / EDGE DATA PLANE      │
-│  Ad-to-Conversion · AIOS 2.0 │ │   Zero-Binary · Postgres RLS · AArch64 │
-└──────────────┬───────────────┘ └─────────┬──────────────────────────────┘
-               │                           │
-               └─────────────┬─────────────┘
-                             ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│               SETTLER.DEV DETERMINISTIC RECONCILIATION LEDGER           │
-│        Cryptographic Trace Audit · Homeostatic Backpressure · Zero-Toil │
-└─────────────────────────────────────────────────────────────────────────┘
-```
-
-</details>
 
 > **Intelligence can be probabilistic. Infrastructure cannot.**
 
@@ -122,10 +85,10 @@ Production AI needs deterministic boundaries around probabilistic components. Th
 | --- | --- | --- | --- |
 | **Prompt-injected cross-tenant read/write** | Application-layer `WHERE tenant_id = ?` filters can be omitted by generated queries or bypassed by tool bugs. | Session-scoped JWT claims enforced directly in the PostgreSQL kernel via `FORCE ROW LEVEL SECURITY` and verified by automated negative tests. | [Settler](https://github.com/Hardonian/Settler) · [RLS Note](OPENAI_CAMPAIGN/content/01_safe_multi_tenant_ai_agents_postgres_rls.md) |
 | **Unauthorized tool execution &amp; privilege creep** | Giving the model direct API credentials lets an injected prompt invoke destructive side effects. | Unprivileged planner emits typed intent; an external MCP policy gateway validates capability scope and mints single-use approval tokens. | [ReadyLayer](https://github.com/Hardonian/ReadyLayer) · [MCP Note](OPENAI_CAMPAIGN/content/02_enterprise_tool_calling_authorization_outside_model.md) |
-| **Runaway agent loops &amp; unmeasured token spend** | Retries and multi-step tool loops compound latency and cost before billing alerts fire. | Sub-millisecond token ingestion, tenant-level hard quota circuit breakers, and deterministic fallback model routing. | [TokenGoblin](https://github.com/Hardonian/TokenGoblin) |
-| **Out-of-order distributed state mutation** | Concurrent workers and network retries violate causal ordering when state transitions are implicit. | Quint state-machine specifications, capability-checked causal DAG transitions, and cross-language conformance test vectors. | [veridag](https://github.com/Hardonian/veridag) |
+| **Runaway agent loops &amp; unmeasured token spend** | Retries and multi-step tool loops compound latency and cost before billing alerts fire. | Sub-millisecond token ingestion, tenant-level hard quota circuit breakers, and deterministic fallback model routing. | [TokenGoblin](https://github.com/Hardonian/TokenGoblin) · [TokPulse](https://github.com/Hardonian/TokPulse) |
+| **Out-of-order distributed state mutation** | Concurrent workers and network retries violate causal ordering when state transitions are implicit. | Quint state-machine specifications, capability-checked causal DAG transitions, and cross-language conformance test vectors. | [veridag](https://github.com/Hardonian/veridag) · [argon-engine](https://github.com/Hardonian/argon-engine) |
 | **Silent compiler numerical divergence** | Floating-point discrepancies inside large JAX/OpenXLA graphs are intractable to debug manually. | Automated HLO graph delta-minimization that isolates minimal, portable numerical reproducers. | [XLAxiom](https://github.com/Hardonian/XLAxiom) |
-| **Unverified mathematical or algorithmic claims** | Heuristic search scripts can misreport extremal bounds without machine-checked proof obligations. | Python counterexample search paired with Lean 4 kernel-verified proof witnesses (`Zero Axioms`). | [GRAPH-Lab](https://github.com/Hardonian/GRAPH-Lab) |
+| **Unverified mathematical or algorithmic claims** | Heuristic search scripts can misreport extremal bounds without machine-checked proof obligations. | Python counterexample search and SAT solving paired with Lean 4 kernel-verified proof witnesses (`Zero Axioms`). | [GRAPH-Lab](https://github.com/Hardonian/GRAPH-Lab) · [SAT-Frontier](https://github.com/Hardonian/SAT-Frontier) |
 
 </details>
 
@@ -133,13 +96,7 @@ Production AI needs deterministic boundaries around probabilistic components. Th
 
 ## Proof-backed systems
 
-These four repositories are the most representative public evidence of how I work. Both the telemetry scorecard and table below are generated from a [versioned manifest](profile-projects.json), checked against GitHub weekly, and separate released, beta, and research work.
-
-<div align="center">
-
-<img src="assets/hardonia-proof-matrix.svg" alt="Hardonia Canonical Proof Scorecard — CI-Verified Evidence Matrix" width="100%" />
-
-</div>
+These four repositories are the most representative public evidence of how I work. The table is generated from a [versioned manifest](profile-projects.json), checked against GitHub weekly, and separates released, beta, and research work.
 
 <!-- profile-projects:start -->
 _Public project metadata last verified **2026-11-06** · [source manifest](profile-projects.json) · [verification policy](CONTRIBUTING.md#project-metadata)_
@@ -154,7 +111,7 @@ _Public project metadata last verified **2026-11-06** · [source manifest](profi
 
 <div align="center">
 
-[![View Profile evidence checks GitHub Actions workflow](https://img.shields.io/badge/profile_checks-passing-2ea44f/badge.svg?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml)
+[![View Profile evidence checks GitHub Actions workflow](https://img.shields.io/badge/PROFILE_CHECKS-PASSING-047857?style=for-the-badge&labelColor=0f172a&logo=githubactions&logoColor=white)](https://github.com/Hardonian/Hardonian/actions/workflows/profile-ci.yml)
 
 </div>
 
@@ -163,12 +120,6 @@ _Public project metadata last verified **2026-11-06** · [source manifest](profi
 ## Technical writing
 
 I publish architecture notes that are grounded in the systems above:
-
-<div align="center">
-
-<img src="assets/hardonia-writing-shelf.svg" alt="Hardonia Technical Writing & Architecture Monographs" width="100%" />
-
-</div>
 
 1. **[Building Safe Multi-Tenant AI Agents with Postgres RLS](OPENAI_CAMPAIGN/content/01_safe_multi_tenant_ai_agents_postgres_rls.md)** — why application-level filtering fails in autonomous workflows, and how to enforce tenant boundaries in PostgreSQL.
 2. **[Enterprise Tool Calling: Why Authorization Belongs Outside the Model](OPENAI_CAMPAIGN/content/02_enterprise_tool_calling_authorization_outside_model.md)** — policy-gated MCP reverse proxies, unprivileged planners, and single-use approval tokens.
@@ -182,41 +133,33 @@ I publish architecture notes that are grounded in the systems above:
 <div align="center">
 
 **Languages & systems**<br />
-![Rust](https://img.shields.io/badge/Rust-111827?style=flat-square&logo=rust&logoColor=white)
-![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-111827?style=for-the-badge&logo=rust&logoColor=white)
+![Go](https://img.shields.io/badge/Go-0369a1?style=for-the-badge&logo=go&logoColor=white)
+![Python](https://img.shields.io/badge/Python-1d4ed8?style=for-the-badge&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-1e40af?style=for-the-badge&logo=typescript&logoColor=white)
 
-<br /><br />
+<br />
 
 **Data, security & observability**<br />
-![PostgreSQL RLS](https://img.shields.io/badge/PostgreSQL_RLS-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
-![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-000000?style=flat-square&logo=opentelemetry&logoColor=white)
+![PostgreSQL RLS](https://img.shields.io/badge/PostgreSQL_RLS-1e3a8a?style=for-the-badge&logo=postgresql&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-065f46?style=for-the-badge&logo=supabase&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-991b1b?style=for-the-badge&logo=redis&logoColor=white)
+![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-111827?style=for-the-badge&logo=opentelemetry&logoColor=white)
 
-<br /><br />
+<br />
 
 **AI, agents & infrastructure**<br />
-![Model Context Protocol](https://img.shields.io/badge/MCP-Protocol-6d28d9?style=flat-square)
-![NVIDIA CUDA](https://img.shields.io/badge/NVIDIA_CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=111827)
+![Model Context Protocol](https://img.shields.io/badge/MCP_Protocol-4338ca?style=for-the-badge)
+![NVIDIA CUDA](https://img.shields.io/badge/NVIDIA_CUDA-15803d?style=for-the-badge&logo=nvidia&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-9a3412?style=for-the-badge&logo=pytorch&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-0369a1?style=for-the-badge&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-1d4ed8?style=for-the-badge&logo=kubernetes&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-111827?style=for-the-badge&logo=linux&logoColor=white)
 
 </div>
 
 <details>
 <summary><strong>Local compute and inference lab</strong></summary>
-
-<br />
-
-<div align="center">
-
-<img src="assets/hardonia-compute-rack.svg" alt="Hardonia Owned Compute & GPU Inference Lab Topology" width="100%" />
-
-</div>
 
 I run a private, owned testbed for local model routing, quantized inference, image/video workflows, and failure-mode testing. The hardware includes an AMD EPYC 7452 server, AMD Ryzen AI 9 HX370 NPU/GPU compute, NVIDIA V100/P40/RTX 3060 accelerators, Ollama-compatible routing, ComfyUI, containers, and Prometheus/Grafana-style observability.
 
@@ -226,14 +169,6 @@ Public implementation lives primarily in [model-tools](https://github.com/Hardon
 
 <details>
 <summary><strong>Verify the profile locally</strong></summary>
-
-<br />
-
-<div align="center">
-
-<img src="assets/hardonia-verification-hud.svg" alt="Hardonia Zero-Trust Local Verification Pipeline" width="100%" />
-
-</div>
 
 ```bash
 git clone https://github.com/Hardonian/Hardonian.git
@@ -273,7 +208,7 @@ If you are evaluating the engineering work first, start with [TokenGoblin](https
 <div align="center">
 
 [![Connect with Scott Hardie on LinkedIn](https://img.shields.io/badge/LINKEDIN-SCOTT_HARDIE-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/scottrmhardie/)
-[![Send an email to Scott Hardie](https://img.shields.io/badge/EMAIL-DIRECT-6d28d9?style=for-the-badge&logo=gmail&logoColor=white)](mailto:scottrmhardie@gmail.com?subject=Role%20or%20systems%20conversation)
+[![Send an email to Scott Hardie](https://img.shields.io/badge/EMAIL-DIRECT-4338ca?style=for-the-badge&logo=gmail&logoColor=white)](mailto:scottrmhardie@gmail.com?subject=Role%20or%20systems%20conversation)
 
 <br />
 

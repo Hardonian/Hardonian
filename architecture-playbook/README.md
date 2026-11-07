@@ -20,28 +20,16 @@ Migration Factory and the AI Lab Command Center sit primarily in the Control and
 
 <div align="center">
 
-<img src="../assets/argon-control-plane.svg" alt="Hardonia FutureOS — Argon Synaptic Control Plane Architecture" width="100%" />
-
-</div>
-
----
-
-## End-to-end deterministic execution trace
-
-Every privileged operation traverses five explicit system boundaries before mutating state or committing to the ledger:
-
-<div align="center">
-
-<img src="../assets/hardonia-live-trace.svg" alt="Hardonia Deterministic Request Trace — OpenTelemetry & Policy Waterfall" width="100%" />
+<img src="../assets/argon-control-plane.svg" alt="Hardonia Control Plane Architecture" width="100%" />
 
 </div>
 
 | Stage | Bounded Context | Enforced Invariant | Verification Artifact |
 | --- | --- | --- | --- |
 | **01 // Observe & Scope** | `Settler` · PostgreSQL Kernel | Session-scoped `app.current_tenant_id` enforced via `FORCE ROW LEVEL SECURITY`. | Negative cross-tenant security tests |
-| **02 // Quota & Routing** | `TokenGoblin` · Go Telemetry | Hard token spend ceiling & latency budget checked prior to model dispatch. | Sub-millisecond ingestion benchmarks |
-| **03 // Policy Gateway** | `ReadyLayer` · `agent-infra` | Unprivileged model emits candidate intent; MCP gateway mints 1-use capability token. | Policy contracts & CI security gates |
-| **04 // Causal Execution** | `veridag` · Rust + Quint | Preconditions and topological ordering verified against Quint formal state models. | Cross-language conformance vectors |
+| **02 // Quota & Routing** | `TokenGoblin` · `TokPulse` | Hard token spend ceiling & latency budget checked prior to model dispatch. | Sub-millisecond ingestion benchmarks |
+| **03 // Policy Gateway** | `ReadyLayer` · `FORGE` | Unprivileged model emits candidate intent; MCP gateway mints 1-use capability token. | Policy contracts & CI security gates |
+| **04 // Causal Execution** | `veridag` · `zerokernel` | Preconditions verified against Quint state models; isolated in ZK-proved eBPF sandboxes. | Cross-language conformance vectors |
 | **05 // Proof & Reconcile** | `Settler` · Audit Ledger | SHA-256 cryptographic trace leaf appended; 2-way ledger reconciliation verified. | Checked-in reconciliation snapshots |
 
 ---
@@ -59,14 +47,6 @@ Internal source paths and deployment filesystem locations are intentionally omit
 
 ---
 
-## Flagship bounded domains
-
-<div align="center">
-
-<img src="../assets/hardonia-flagship-bento.svg" alt="Hardonia Flagship Engineering Portfolio — Six Production Systems" width="100%" />
-
-</div>
-
 ## Verified Production Releases
 
 The following flagship platforms have completed automated verification dry-runs, CI gating, and tag cuts:
@@ -78,9 +58,9 @@ The following flagship platforms have completed automated verification dry-runs,
 | **[zerokernel](https://github.com/Hardonian/zerokernel)** | `v1.0.0` | ZK-Proved eBPF Kernel Sandboxing | Official GA release, guest/host zero-knowledge verifier suite |
 | **[argon-engine](https://github.com/Hardonian/argon-engine)** | `v1.0.0` | Synaptic Regulation Core Runtime | Official LTS release, determinism and backpressure guarantees |
 | **[SAT-Frontier](https://github.com/Hardonian/SAT-Frontier)** | `v0.2.9` | Automated SAT Solving & Reasoning | Formal verification and automated theorem prover benchmarks |
-| **[deepinfer-serving](https://github.com/Hardonian/deepinfer-serving)** | `v0.1.0` | Cross-Platform Inference Runtime | Windows/Linux unified runtime, CUDA/ROCm guarded process lifecycle |
 | **[TokPulse](https://github.com/Hardonian/TokPulse)** | `v3.0.0` | Token & Inference Observability | Sub-millisecond stream ingestion, Prometheus & Grafana alerting |
 
+---
 
 ## Architecture concerns
 
@@ -108,5 +88,5 @@ The following flagship platforms have completed automated verification dry-runs,
 
 ## Changelog
 
-- 2026-11-03: Added visual control-plane schematics, deterministic OpenTelemetry trace waterfall, and bounded-context invariant table.
+- 2026-11-06: Simplified visual schematics to 1:1 native scale and updated verified production release milestones.
 - 2026-08-02: Reframed as a public architecture reference and removed internal filesystem-path and route-fulfillment claims.
