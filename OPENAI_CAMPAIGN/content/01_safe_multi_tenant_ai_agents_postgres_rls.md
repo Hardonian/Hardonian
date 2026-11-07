@@ -1,8 +1,9 @@
-# Building Safe Multi-Tenant AI Agents with Postgres Row-Level Security (RLS)
+# 01 // Building Safe Multi-Tenant AI Agents with Postgres Row-Level Security (RLS)
 
 **Author**: Scott Hardie  
-**Technical Domain**: Enterprise AI Systems, Multi-Tenant Architecture, Database Security  
-**Repository Reference**: [`Hardonian/Settler`](https://github.com/Hardonian/Settler) & [`Hardonian/ReadyLayer`](https://github.com/Hardonian/ReadyLayer)  
+**Technical Domain**: Enterprise AI Systems, Multi-Tenant Architecture, Database Kernel Security  
+**Repository Reference**: [`Hardonian/Settler` (`v1.8.0`)](https://github.com/Hardonian/Settler) & [`Hardonian/ReadyLayer`](https://github.com/Hardonian/ReadyLayer)  
+**Series Navigation**: [**Profile README**](../../README.md) · **01: Postgres RLS** · [02: MCP Authorization](02_enterprise_tool_calling_authorization_outside_model.md) · [03: Prototype to Production](03_from_prototype_to_production_enterprise_agents.md) · [04: ZK eBPF & Causal DAGs](04_zero_knowledge_ebpf_sandboxing_and_causal_dags.md) · [Architecture Playbook](../../architecture-playbook/README.md)  
 
 ---
 
@@ -253,3 +254,7 @@ describe('Postgres RLS Multi-Tenant Invariants', () => {
 ## 7. Conclusion
 
 By enforcing tenant boundaries in the database engine via PostgreSQL Row-Level Security, enterprise AI platforms achieve **mathematical tenant isolation**. Even if an LLM is compromised by adversarial prompt injection or issues reckless queries, it cannot read or modify data outside its authenticated tenant boundary.
+
+---
+
+**Next in the Hardonia Architecture Series →** [02 // Enterprise Tool Calling: Why Authorization Belongs Outside the Model](02_enterprise_tool_calling_authorization_outside_model.md) · [Return to Profile README](../../README.md)

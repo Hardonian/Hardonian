@@ -138,18 +138,23 @@ class ValidatingRedirectHandler(urllib.request.HTTPRedirectHandler):
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
-def resolve_link(raw: str, root: Path) -> tuple[str | None, Path | None]:
+def resolve_link(
+    raw: str, root: Path, doc_dir: Path | None = None
+) -> tuple[str | None, Path | None]:
     if not raw.strip():
         raise UnsafeURL(f"empty URL: '{raw}'")
     if raw.startswith(("http://", "https://")):
         return raw, None
 
     root = root.resolve()
+    base = (doc_dir or root).resolve()
     parsed = urlparse(raw)
     local_suffix = unquote(parsed.path).lstrip("/")
     if raw.startswith("/Hardonian/"):
         local_suffix = raw.split("/tree/main/", 1)[-1] if "/tree/main/" in raw else raw.split("/Hardonian/", 1)[-1]
-    local = (root / local_suffix).resolve()
+        local = (root / local_suffix).resolve()
+    else:
+        local = (base / local_suffix).resolve()
 
     if not local.is_relative_to(root):
         raise UnsafeURL(f"local path escapes repository: {raw}")
@@ -225,14 +230,16 @@ def check_url(
         return "fail", (raw, "ERROR", str(exc))
 
 
-def collect_and_validate_links(urls: list[str], root: Path) -> tuple[list[tuple[str, str]], list]:
+def collect_and_validate_links(
+    urls: list[str], root: Path, doc_dir: Path | None = None
+) -> tuple[list[tuple[str, str]], list]:
     failures = []
     external = []
     for raw in urls:
         if raw.startswith(("#", "mailto:")):
             continue
         try:
-            target, local = resolve_link(raw, root)
+            target, local = resolve_link(raw, root, doc_dir=doc_dir)
         except UnsafeURL as exc:
             failures.append((raw, "UNSAFE", str(exc)))
             continue
@@ -276,10 +283,11 @@ def report_results(urls_count: int, failures: list) -> int:
     return 0
 
 
-def audit(readme: Path = Path("README.md")) -> int:
-    root = readme.parent.resolve()
+def audit(readme: Path = Path("README.md"), repo_root: Path | None = None) -> int:
+    doc_dir = readme.parent.resolve()
+    root = (repo_root or doc_dir).resolve()
     urls = list(dict.fromkeys(extract_urls(readme.read_text(encoding="utf-8"))))
-    external, failures = collect_and_validate_links(urls, root)
+    external, failures = collect_and_validate_links(urls, root, doc_dir=doc_dir)
     failures.extend(check_external_links(external))
     return report_results(len(urls), failures)
 

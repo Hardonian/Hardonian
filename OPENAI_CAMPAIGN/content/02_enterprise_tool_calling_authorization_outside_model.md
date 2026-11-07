@@ -1,8 +1,9 @@
-# Enterprise Tool Calling: Why Authorization Belongs Outside the Model
+# 02 // Enterprise Tool Calling: Why Authorization Belongs Outside the Model
 
 **Author**: Scott Hardie  
 **Technical Domain**: AI Agent Governance, Model Context Protocol (MCP), Security Architecture  
-**Repository Reference**: [`Hardonian/AgentMesh`](https://github.com/Hardonian/AgentMesh)  
+**Repository Reference**: [`Hardonian/ReadyLayer`](https://github.com/Hardonian/ReadyLayer), [`Hardonian/ControlPlane` (`v1.0.0`)](https://github.com/Hardonian/ControlPlane) & [`Hardonian/FORGE` (`v1.0.0`)](https://github.com/Hardonian/FORGE)  
+**Series Navigation**: [**Profile README**](../../README.md) · [01: Postgres RLS](01_safe_multi_tenant_ai_agents_postgres_rls.md) · **02: MCP Authorization** · [03: Prototype to Production](03_from_prototype_to_production_enterprise_agents.md) · [04: ZK eBPF & Causal DAGs](04_zero_knowledge_ebpf_sandboxing_and_causal_dags.md) · [Architecture Playbook](../../architecture-playbook/README.md)  
 
 ---
 
@@ -44,7 +45,8 @@ No tool should ever execute simply because a model generated a valid JSON functi
          │                                                   │    ("billing.refund", $500)
          │                                                   ▼
          │                              ┌────────────────────────────────────────┐
-         │                              │       AGENTMESH MCP GATEWAY            │
+         │                              │        HARDONIAN MCP GATEWAY           │
+         │                              │     (ReadyLayer / ControlPlane)        │
          │                              │                                        │
          │                              │  3. Policy Authorization Check         │
          │                              │     [Effect: RequireApproval]          │
@@ -60,7 +62,8 @@ No tool should ever execute simply because a model generated a valid JSON functi
 └─────────────────┘                             │
                                                 ▼
                                 ┌────────────────────────────────────────┐
-                                │       AGENTMESH MCP GATEWAY            │
+                                │        HARDONIAN MCP GATEWAY           │
+                                │     (ReadyLayer / ControlPlane)        │
                                 │                                        │
                                 │  7. Validate Token & Arg Hash          │
                                 │  8. Execute Privileged Action          │
@@ -88,7 +91,7 @@ Enterprise tools must be explicitly categorized by side-effect risk:
 
 ## 4. Implementation: The Go MCP Gateway Guard
 
-As implemented in `AgentMesh` (`internal/mcp/gateway.go`), the gateway intercepts every `tools/call` JSON-RPC message before delegating to the tool driver.
+As implemented in `ReadyLayer` and the Hardonian MCP Gateway (`internal/mcp/gateway.go`), the gateway intercepts every `tools/call` JSON-RPC message before delegating to the tool driver.
 
 ### 4.1 Policy Evaluation & Approval Gating
 
@@ -186,7 +189,7 @@ A subtle vulnerability in approval systems is **parameter tampering**:
 2. Supervisor reviews and approves the $10.00 refund.
 3. Attacker alters the payload to `{ "amount": 10000.00 }` and re-submits the approval token.
 
-In `AgentMesh` (`internal/approval/approval.go`), the approval request computes a canonical SHA-256 hash over the sorted JSON representation of the arguments:
+In `ReadyLayer` and `ControlPlane` (`internal/approval/approval.go`), the approval request computes a canonical SHA-256 hash over the sorted JSON representation of the arguments:
 
 ```go
 func computeParametersHash(params map[string]any) string {
@@ -222,3 +225,7 @@ func (s *Service) ConsumeApproval(requestID, tenantID, agentID, tool string, par
 1. **Defense-in-Depth**: Treat LLM tool calls as untrusted user input from the public internet. Apply input sanitization, schema validation, and authorization checks.
 2. **Single-Use Tokens**: High-risk operations must require nonces that expire quickly and cannot be replayed.
 3. **Decoupled Policies**: Policies must be declaratively version-controlled, auditable by compliance officers, and independent of model prompts.
+
+---
+
+**Next in the Hardonia Architecture Series →** [03 // From Prototype to Production: Architecture for Enterprise AI Agents](03_from_prototype_to_production_enterprise_agents.md) · [Return to Profile README](../../README.md)

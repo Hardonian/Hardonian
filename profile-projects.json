@@ -42,6 +42,7 @@
       "name": "Settler",
       "role": "Reconcile",
       "maturity": "stable",
+      "release_tag": "v1.8.0",
       "language": "TypeScript",
       "problem": "Payment, banking, and operational records diverge unless matching and evidence rules are explicit.",
       "proof": "Multi-tenant reconciliation engine v1.8.0, 20+ CI gates, public benchmark suite, and cryptographically verified release artifacts.",

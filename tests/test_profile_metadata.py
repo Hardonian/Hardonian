@@ -53,6 +53,23 @@ class ProfileMetadataTests(unittest.TestCase):
         for index in range(4):
             self.assertIn(f"Example{index}", svg)
 
+    def test_renders_and_verifies_optional_release_tag(self):
+        manifest = valid_manifest()
+        manifest["projects"][3]["release_tag"] = "v1.8.0"
+        metadata.validate_manifest(manifest, today=dt.date(2026, 9, 19))
+        output = metadata.render(manifest)
+        self.assertIn("[`v1.8.0`](https://github.com/Hardonian/Example3/releases/tag/v1.8.0)", output)
+        svg = metadata.render_svg(manifest)
+        self.assertIn("v1.8.0", svg)
+        requested_urls = []
+        with unittest.mock.patch.object(metadata, "request", side_effect=requested_urls.append):
+            metadata.verify_remote(manifest)
+        self.assertEqual(len(requested_urls), 17)
+        self.assertIn(
+            "https://api.github.com/repos/Hardonian/Example3/releases/tags/v1.8.0",
+            requested_urls,
+        )
+
     def test_rejects_stale_metadata(self):
         manifest = valid_manifest()
         with self.assertRaisesRegex(metadata.MetadataError, "stale"):

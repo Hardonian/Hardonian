@@ -49,6 +49,12 @@ Internal source paths and deployment filesystem locations are intentionally omit
 
 ## Verified Production Releases
 
+<div align="center">
+
+<img src="../assets/hardonia-proof-matrix.svg" alt="Hardonia Canonical Proof Scorecard" width="100%" />
+
+</div>
+
 The following flagship platforms have completed automated verification dry-runs, CI gating, and tag cuts:
 
 | Subsystem | Milestone Tag | Focus Area | Verification Surface |
@@ -70,6 +76,13 @@ The following flagship platforms have completed automated verification dry-runs,
 - Emit evidence for decisions, releases, fulfillment, and rollback.
 - Keep tenant, identity, entitlement, payment, and webhook boundaries explicit.
 - Separate technical readiness from provider-backed payment and realized revenue evidence.
+
+## Architecture Monograph Series
+
+- [01 // Building Safe Multi-Tenant AI Agents with Postgres RLS](../OPENAI_CAMPAIGN/content/01_safe_multi_tenant_ai_agents_postgres_rls.md)
+- [02 // Enterprise Tool Calling: Why Authorization Belongs Outside the Model](../OPENAI_CAMPAIGN/content/02_enterprise_tool_calling_authorization_outside_model.md)
+- [03 // From Prototype to Production: Architecture for Enterprise AI Agents](../OPENAI_CAMPAIGN/content/03_from_prototype_to_production_enterprise_agents.md)
+- [04 // Zero-Knowledge eBPF Sandboxing & Causal DAG Execution](../OPENAI_CAMPAIGN/content/04_zero_knowledge_ebpf_sandboxing_and_causal_dags.md)
 
 ## Related public surfaces
 

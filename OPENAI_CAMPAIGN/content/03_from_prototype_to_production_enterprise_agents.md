@@ -1,8 +1,9 @@
-# From Prototype to Production: Architecture for Enterprise AI Agents
+# 03 // From Prototype to Production: Architecture for Enterprise AI Agents
 
 **Author**: Scott Hardie  
 **Technical Domain**: Enterprise AI Systems, Applied AI Architecture, Platform Engineering  
-**Repository Reference**: [`Hardonian/AgentMesh`](https://github.com/Hardonian/AgentMesh) & [`Hardonian/Settler`](https://github.com/Hardonian/Settler)  
+**Repository Reference**: [`Hardonian/ControlPlane` (`v1.0.0`)](https://github.com/Hardonian/ControlPlane), [`Hardonian/TokenGoblin`](https://github.com/Hardonian/TokenGoblin), [`Hardonian/TokPulse` (`v3.0.0`)](https://github.com/Hardonian/TokPulse) & [`Hardonian/Settler` (`v1.8.0`)](https://github.com/Hardonian/Settler)  
+**Series Navigation**: [**Profile README**](../../README.md) · [01: Postgres RLS](01_safe_multi_tenant_ai_agents_postgres_rls.md) · [02: MCP Authorization](02_enterprise_tool_calling_authorization_outside_model.md) · **03: Prototype to Production** · [04: ZK eBPF & Causal DAGs](04_zero_knowledge_ebpf_sandboxing_and_causal_dags.md) · [Architecture Playbook](../../architecture-playbook/README.md)  
 
 ---
 
@@ -110,7 +111,7 @@ Every model invocation must report exact token consumption (`PromptTokens`, `Com
 
 ## 6. Pillar 4: Automated Continuous Evaluation (Evals in CI/CD)
 
-You cannot deploy changes to prompts, model versions, or tools without automated quality gates. In `AgentMesh`, evaluations are treated like integration tests in CI:
+You cannot deploy changes to prompts, model versions, or tools without automated quality gates. In `ReadyLayer` and `ControlPlane`, evaluations are treated like integration tests in CI:
 
 ```bash
 # Executable Evaluation Battery
@@ -142,3 +143,7 @@ Enterprise compliance (SOC2, HIPAA, GDPR) prohibits logging raw PII, auth header
 - [x] **Model Redundancy**: Provider abstraction with automatic retry and policy-checked fallback.
 - [x] **Cost Controls**: Hard token and dollar budgets enforced before tool dispatch.
 - [x] **Continuous Evals**: Quality, safety, and tool accuracy scored automatically on every pull request.
+
+---
+
+**Next in the Hardonia Architecture Series →** [04 // Zero-Knowledge eBPF Sandboxing & Causal DAG Execution](04_zero_knowledge_ebpf_sandboxing_and_causal_dags.md) · [Return to Profile README](../../README.md)

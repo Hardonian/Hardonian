@@ -88,6 +88,10 @@ def validate_manifest(
             raise MetadataError(f"unexpected repository URL for {project['name']}")
         if "/" in project["ci_workflow"] or not project["ci_workflow"].endswith((".yml", ".yaml")):
             raise MetadataError(f"invalid CI workflow name for {project['name']}")
+        if "release_tag" in project:
+            tag = project["release_tag"]
+            if not isinstance(tag, str) or not tag.strip() or "/" in tag:
+                raise MetadataError(f"invalid release_tag for {project['name']}")
 
 
 def render(manifest: dict) -> str:
@@ -111,9 +115,13 @@ def render(manifest: dict) -> str:
             "https://img.shields.io/badge/CI-passing-2ea44f/badge.svg"
             "?style=flat-square&logo=githubactions&logoColor=white"
         )
+        release_suffix = ""
+        if project.get("release_tag"):
+            tag = project["release_tag"]
+            release_suffix = f" · [`{tag}`]({repo}/releases/tag/{quote(tag, safe='')})"
         project_cell = (
             f"**[{name}]({repo})** · {project['language']}<br />"
-            f"{project['role']} · `{project['maturity']}`<br />"
+            f"{project['role']} · `{project['maturity']}`{release_suffix}<br />"
             f"[![View {name} GitHub Actions CI workflow]({ci_badge})]({ci_page})"
         )
         evidence_cell = (
@@ -148,6 +156,8 @@ def render_svg(manifest: dict) -> str:
         name = escape(project["name"])
         lang = escape(project["language"])
         maturity = escape(project["maturity"])
+        if project.get("release_tag"):
+            maturity = f"{maturity} · {escape(project['release_tag'])}"
         workflow = escape(project["ci_workflow"])
         cards.append(
             f"""  <g transform="translate({x}, 82)">
@@ -248,6 +258,9 @@ def verify_remote(manifest: dict) -> None:
         )
         urls.append(github_api_url(project["documentation"]))
         urls.append(github_api_url(project["evidence"]))
+        if project.get("release_tag"):
+            tag_url = f"{project['repository']}/releases/tag/{project['release_tag']}"
+            urls.append(github_api_url(tag_url))
 
     if not urls:
         return
