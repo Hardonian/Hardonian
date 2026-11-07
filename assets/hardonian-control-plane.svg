@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="argon-title argon-desc">
-  <title id="argon-title">Hardonia Control Plane Architecture</title>
-  <desc id="argon-desc">Clean four-node architecture flow connecting the Argon Control Plane, FutureOS and FORGE execution, PostgreSQL RLS and zerokernel isolation, and the Settler Audit Ledger.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="cp-title cp-desc">
+  <title id="cp-title">Hardonian Control Plane Architecture</title>
+  <desc id="cp-desc">Clean four-node architecture flow connecting the Hardonian Control Plane, FutureOS and FORGE execution, PostgreSQL RLS and zerokernel isolation, and the Settler Audit Ledger.</desc>
 
   <defs>
     <style>
@@ -41,7 +41,7 @@
   <!-- NODE 1: TOP (CONTROL PLANE) -->
   <g transform="translate(240, 36)" text-anchor="middle">
     <rect width="480" height="86" rx="14" fill="#111827" stroke="#2dd4bf" stroke-width="2.5"/>
-    <text x="240" y="38" class="sans" fill="#ffffff" font-size="21" font-weight="800">ARGON CONTROL PLANE</text>
+    <text x="240" y="38" class="sans" fill="#ffffff" font-size="21" font-weight="800">HARDONIAN CONTROL PLANE</text>
     <text x="240" y="65" class="mono" fill="#5eead4" font-size="14.5" font-weight="600">MCP Policy Gate · Hard Quotas · Model Routing</text>
   </g>
 
@@ -66,3 +66,4 @@
     <text x="240" y="65" class="mono" fill="#6ee7b7" font-size="14.5" font-weight="600">Cryptographic Proof · Reconciliation · Replay</text>
   </g>
 </svg>
+

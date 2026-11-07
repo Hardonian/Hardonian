@@ -20,7 +20,7 @@ Migration Factory and the AI Lab Command Center sit primarily in the Control and
 
 <div align="center">
 
-<img src="../assets/argon-control-plane.svg" alt="Hardonia Control Plane Architecture" width="100%" />
+<img src="../assets/hardonian-control-plane.svg" alt="Hardonian Control Plane Architecture" width="100%" />
 
 </div>
 
@@ -56,7 +56,7 @@ The following flagship platforms have completed automated verification dry-runs,
 | **[Settler](https://github.com/Hardonian/Settler)** | `v1.8.0` | Multi-Tenant Reconciliation Engine | 20+ CI gates, Next.js 16.4.1 bump, 315 pages built, 8 npm packages validated |
 | **[FORGE](https://github.com/Hardonian/FORGE)** | `v1.0.0` | Enterprise AI Systems Builder | Official GA release, full agent lifecycle verification |
 | **[zerokernel](https://github.com/Hardonian/zerokernel)** | `v1.0.0` | ZK-Proved eBPF Kernel Sandboxing | Official GA release, guest/host zero-knowledge verifier suite |
-| **[argon-engine](https://github.com/Hardonian/argon-engine)** | `v1.0.0` | Synaptic Regulation Core Runtime | Official LTS release, determinism and backpressure guarantees |
+| **[ControlPlane](https://github.com/Hardonian/ControlPlane)** | `v1.0.0` | Hardonian Control Plane Runtime | Official LTS release, determinism and backpressure guarantees |
 | **[SAT-Frontier](https://github.com/Hardonian/SAT-Frontier)** | `v0.2.9` | Automated SAT Solving & Reasoning | Formal verification and automated theorem prover benchmarks |
 | **[TokPulse](https://github.com/Hardonian/TokPulse)** | `v3.0.0` | Token & Inference Observability | Sub-millisecond stream ingestion, Prometheus & Grafana alerting |
 

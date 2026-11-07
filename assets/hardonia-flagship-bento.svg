@@ -122,7 +122,7 @@
       <text x="194" y="22" class="mono" fill="#e0e7ff" font-size="12.5" font-weight="700" text-anchor="middle">QUINT SPEC ✓ ──► ZK eBPF SANDBOX ──► CONFORMANCE</text>
     </g>
 
-    <text x="22" y="186" class="mono" fill="#c4b5fd" font-size="13" font-weight="700">REPOS: veridag · zerokernel (v1.0) · argon-engine (v1.0)</text>
+    <text x="22" y="186" class="mono" fill="#c4b5fd" font-size="13" font-weight="700">REPOS: veridag · zerokernel (v1.0) · ControlPlane</text>
   </g>
 
   <!-- ======================================================================= -->

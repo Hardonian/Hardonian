@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "name": "argon-high-antigravity",
+  "name": "hardonian-control-plane",
   "version": "1.0.0",
   "context": {
-    "engine": "Argon Core (Rust / TypeScript WASM)",
+    "engine": "Hardonian Control Plane (Rust / TypeScript WASM)",
     "runtime": "Termux AArch64 & Edge Functions",
     "strictness": "level-5-zero-stub"
   },

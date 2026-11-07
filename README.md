@@ -42,7 +42,7 @@ Toronto, Canada · [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) · [Em
 | **ML infrastructure and compiler quality** | Turn numerical discrepancies into minimized, reproducible, portable evidence for JAX/OpenXLA investigations. | [XLAxiom](https://github.com/Hardonian/XLAxiom) |
 | **Secure multi-tenant & kernel systems** | Enforce tenant boundaries in the database kernel with PostgreSQL RLS and isolate untrusted execution with ZK-proved eBPF sandboxes. | [Settler (`v1.8.0`)](https://github.com/Hardonian/Settler) · [zerokernel (`v1.0.0`)](https://github.com/Hardonian/zerokernel) |
 | **Inference economics and operations** | Measure tokens, latency, routing, and spend in sub-millisecond streams; use hard quotas and fallbacks to keep inference predictable. | [TokenGoblin](https://github.com/Hardonian/TokenGoblin) · [TokPulse (`v3.0.0`)](https://github.com/Hardonian/TokPulse) |
-| **Reliable distributed execution** | Specify state transitions, backpressure, ordering, and capability rules; validate implementations against Quint formal models. | [veridag](https://github.com/Hardonian/veridag) · [argon-engine (`v1.0.0`)](https://github.com/Hardonian/argon-engine) |
+| **Reliable distributed execution** | Specify state transitions, backpressure, ordering, and capability rules; validate implementations against Quint formal models. | [veridag](https://github.com/Hardonian/veridag) · [ControlPlane](https://github.com/Hardonian/ControlPlane) |
 | **Formal methods and automated reasoning** | Combine exact computation, SAT solving, counterexample search, and Lean 4 kernel-checked witnesses. | [GRAPH-Lab](https://github.com/Hardonian/GRAPH-Lab) · [SAT-Frontier (`v0.2.9`)](https://github.com/Hardonian/SAT-Frontier) |
 
 ## Start here
@@ -62,7 +62,7 @@ Production AI needs deterministic boundaries around probabilistic components. Th
 
 <div align="center">
 
-<img src="assets/argon-control-plane.svg" alt="Hardonia Control Plane Architecture" width="100%" />
+<img src="assets/hardonian-control-plane.svg" alt="Hardonian Control Plane Architecture" width="100%" />
 
 </div>
 
@@ -86,7 +86,7 @@ Production AI needs deterministic boundaries around probabilistic components. Th
 | **Prompt-injected cross-tenant read/write** | Application-layer `WHERE tenant_id = ?` filters can be omitted by generated queries or bypassed by tool bugs. | Session-scoped JWT claims enforced directly in the PostgreSQL kernel via `FORCE ROW LEVEL SECURITY` and verified by automated negative tests. | [Settler](https://github.com/Hardonian/Settler) · [RLS Note](OPENAI_CAMPAIGN/content/01_safe_multi_tenant_ai_agents_postgres_rls.md) |
 | **Unauthorized tool execution &amp; privilege creep** | Giving the model direct API credentials lets an injected prompt invoke destructive side effects. | Unprivileged planner emits typed intent; an external MCP policy gateway validates capability scope and mints single-use approval tokens. | [ReadyLayer](https://github.com/Hardonian/ReadyLayer) · [MCP Note](OPENAI_CAMPAIGN/content/02_enterprise_tool_calling_authorization_outside_model.md) |
 | **Runaway agent loops &amp; unmeasured token spend** | Retries and multi-step tool loops compound latency and cost before billing alerts fire. | Sub-millisecond token ingestion, tenant-level hard quota circuit breakers, and deterministic fallback model routing. | [TokenGoblin](https://github.com/Hardonian/TokenGoblin) · [TokPulse](https://github.com/Hardonian/TokPulse) |
-| **Out-of-order distributed state mutation** | Concurrent workers and network retries violate causal ordering when state transitions are implicit. | Quint state-machine specifications, capability-checked causal DAG transitions, and cross-language conformance test vectors. | [veridag](https://github.com/Hardonian/veridag) · [argon-engine](https://github.com/Hardonian/argon-engine) |
+| **Out-of-order distributed state mutation** | Concurrent workers and network retries violate causal ordering when state transitions are implicit. | Quint state-machine specifications, capability-checked causal DAG transitions, and cross-language conformance test vectors. | [veridag](https://github.com/Hardonian/veridag) · [ControlPlane](https://github.com/Hardonian/ControlPlane) |
 | **Silent compiler numerical divergence** | Floating-point discrepancies inside large JAX/OpenXLA graphs are intractable to debug manually. | Automated HLO graph delta-minimization that isolates minimal, portable numerical reproducers. | [XLAxiom](https://github.com/Hardonian/XLAxiom) |
 | **Unverified mathematical or algorithmic claims** | Heuristic search scripts can misreport extremal bounds without machine-checked proof obligations. | Python counterexample search and SAT solving paired with Lean 4 kernel-verified proof witnesses (`Zero Axioms`). | [GRAPH-Lab](https://github.com/Hardonian/GRAPH-Lab) · [SAT-Frontier](https://github.com/Hardonian/SAT-Frontier) |
 
