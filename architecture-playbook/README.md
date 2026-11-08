@@ -14,9 +14,9 @@ This page explains the migration and product-operations patterns behind the plat
 
 ## Platform position
 
-`Observe → Control → Operate → Prove → Monetize`
+`Observe → Control → Execute → Prove → Reconcile`
 
-Migration Factory and the AI Lab Command Center sit primarily in the Control and Operate layers. The shared evidence envelope supplies the Prove layer; checkout, audit, compute, and implementation surfaces supply the Monetize layer.
+The Hardonia architecture separates probabilistic model inference from deterministic system boundaries. Telemetry and quota routers supply the **Observe** layer; out-of-band MCP policy gateways supply the **Control** layer; PostgreSQL `FORCE RLS`, `zerokernel` eBPF ZK-VMs, and `WorldVM` WASM sandboxes supply the **Execute** layer; Quint formal specs, Lean 4 proof witnesses, and `AgentAxiom` regression contracts supply the **Prove** layer; and `Settler` supplies the **Reconcile** audit ledger.
 
 <div align="center">
 
@@ -26,11 +26,11 @@ Migration Factory and the AI Lab Command Center sit primarily in the Control and
 
 | Stage | Bounded Context | Enforced Invariant | Verification Artifact |
 | --- | --- | --- | --- |
-| **01 // Observe & Scope** | `Settler` · PostgreSQL Kernel | Session-scoped `app.current_tenant_id` enforced via `FORCE ROW LEVEL SECURITY`. | Negative cross-tenant security tests |
-| **02 // Quota & Routing** | `TokenGoblin` · `TokPulse` | Hard token spend ceiling & latency budget checked prior to model dispatch. | Sub-millisecond ingestion benchmarks |
-| **03 // Policy Gateway** | `ReadyLayer` · `FORGE` | Unprivileged model emits candidate intent; MCP gateway mints 1-use capability token. | Policy contracts & CI security gates |
-| **04 // Causal Execution** | `veridag` · `zerokernel` | Preconditions verified against Quint state models; isolated in ZK-proved eBPF sandboxes. | Cross-language conformance vectors |
-| **05 // Proof & Reconcile** | `Settler` · Audit Ledger | SHA-256 cryptographic trace leaf appended; 2-way ledger reconciliation verified. | Checked-in reconciliation snapshots |
+| **01 // Observe** | `TokenGoblin` · `TokPulse` | Sub-millisecond token stream accounting & hard spend ceiling checked prior to model dispatch. | Sub-millisecond ingestion benchmarks |
+| **02 // Control** | `ReadyLayer` · `ControlPlane` · `FORGE` | Unprivileged model emits candidate intent; MCP gateway mints single-use capability token. | Policy contracts & CI security gates |
+| **03 // Execute** | `Settler` · `zerokernel` · `WorldVM` | Session-scoped `app.current_tenant_id` enforced via PostgreSQL `FORCE RLS`; untrusted code isolated in ZK-eBPF & WASM sandboxes. | Negative cross-tenant & sandbox tests |
+| **04 // Prove** | `veridag` · `GRAPH-Lab` · `AgentAxiom` · `XLAxiom` | Causal DAG preconditions checked in Quint; mathematical bounds proved in Lean 4 (`Zero Axioms`); agent & XLA regressions delta-minimized. | Formal models & conformance vectors |
+| **05 // Reconcile** | `Settler` · Audit Ledger | SHA-256 cryptographic trace leaf appended; 2-way financial/operational ledger reconciliation verified. | Checked-in reconciliation snapshots |
 
 ---
 
@@ -104,5 +104,6 @@ The following flagship platforms have completed automated verification dry-runs,
 
 ## Changelog
 
+- 2026-11-07: Unified 5-stage (`Observe → Control → Execute → Prove → Reconcile`) terminology, embedded the manifest-verified proof scorecard, and added Monographs `04`–`06`.
 - 2026-11-06: Simplified visual schematics to 1:1 native scale and updated verified production release milestones.
 - 2026-08-02: Reframed as a public architecture reference and removed internal filesystem-path and route-fulfillment claims.

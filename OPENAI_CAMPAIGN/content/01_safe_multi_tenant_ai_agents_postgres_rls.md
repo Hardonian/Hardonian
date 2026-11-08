@@ -3,7 +3,7 @@
 **Author**: Scott Hardie  
 **Technical Domain**: Enterprise AI Systems, Multi-Tenant Architecture, Database Kernel Security  
 **Repository Reference**: [`Hardonian/Settler` (`v1.8.0`)](https://github.com/Hardonian/Settler) & [`Hardonian/ReadyLayer`](https://github.com/Hardonian/ReadyLayer)  
-**Series Navigation**: [**Profile README**](../../README.md) · **01: Postgres RLS** · [02: MCP Authorization](02_enterprise_tool_calling_authorization_outside_model.md) · [03: Prototype to Production](03_from_prototype_to_production_enterprise_agents.md) · [04: ZK eBPF & Causal DAGs](04_zero_knowledge_ebpf_sandboxing_and_causal_dags.md) · [Architecture Playbook](../../architecture-playbook/README.md)  
+**Series Navigation**: [**Profile README**](../../README.md) · **01: Postgres RLS** · [02: MCP Authorization](02_enterprise_tool_calling_authorization_outside_model.md) · [03: Prototype to Production](03_from_prototype_to_production_enterprise_agents.md) · [04: ZK eBPF & Causal DAGs](04_zero_knowledge_ebpf_sandboxing_and_causal_dags.md) · [05: Hybrid RAG & Provenance](05_permission_aware_hybrid_rag_and_citation_provenance.md) · [06: GPU Roofline & KV-Cache](06_gpu_kv_cache_roofline_and_serving_topology.md)  
 
 ---
 
@@ -138,6 +138,7 @@ export class TenantContextDatabase {
   constructor(private pool: Pool) {}
 
   /**
+
    * Executes a database operation within an unbreakable tenant boundary.
    */
   async withTenant<T>(

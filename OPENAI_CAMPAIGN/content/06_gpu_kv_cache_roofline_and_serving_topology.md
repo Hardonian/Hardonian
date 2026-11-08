@@ -56,7 +56,6 @@ Because autoregressive decode is memory-bandwidth-bound ($\mathcal{I} \ll \mathc
 import triton
 import triton.language as tl
 
-
 @triton.jit
 def fused_int4_dequant_gemv_kernel(
     x_ptr,          # [K] FP16 activation vector
@@ -102,4 +101,3 @@ python -m unittest tests/test_kv_roofline_compiler.py -v
 ---
 
 **Series Complete · Explore Further →** [Hardonia Architecture Playbook](../../architecture-playbook/README.md) · [Executive & Technical Brief](../../EXECUTIVE_BRIEF.md) · [Return to Profile README](../../README.md)
-

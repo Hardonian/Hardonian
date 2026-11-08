@@ -3,7 +3,7 @@
 **Author**: Scott Hardie  
 **Technical Domain**: AI Agent Governance, Model Context Protocol (MCP), Security Architecture  
 **Repository Reference**: [`Hardonian/ReadyLayer`](https://github.com/Hardonian/ReadyLayer), [`Hardonian/ControlPlane` (`v1.0.0`)](https://github.com/Hardonian/ControlPlane) & [`Hardonian/FORGE` (`v1.0.0`)](https://github.com/Hardonian/FORGE)  
-**Series Navigation**: [**Profile README**](../../README.md) · [01: Postgres RLS](01_safe_multi_tenant_ai_agents_postgres_rls.md) · **02: MCP Authorization** · [03: Prototype to Production](03_from_prototype_to_production_enterprise_agents.md) · [04: ZK eBPF & Causal DAGs](04_zero_knowledge_ebpf_sandboxing_and_causal_dags.md) · [Architecture Playbook](../../architecture-playbook/README.md)  
+**Series Navigation**: [**Profile README**](../../README.md) · [01: Postgres RLS](01_safe_multi_tenant_ai_agents_postgres_rls.md) · **02: MCP Authorization** · [03: Prototype to Production](03_from_prototype_to_production_enterprise_agents.md) · [04: ZK eBPF & Causal DAGs](04_zero_knowledge_ebpf_sandboxing_and_causal_dags.md) · [05: Hybrid RAG & Provenance](05_permission_aware_hybrid_rag_and_citation_provenance.md) · [06: GPU Roofline & KV-Cache](06_gpu_kv_cache_roofline_and_serving_topology.md)  
 
 ---
 
@@ -19,6 +19,7 @@ Never issue a refund greater than $50 without explicit manager approval.
 ```
 
 In production, relying on an LLM to self-police authorization is an immediate security vulnerability:
+
 1. **Direct & Indirect Prompt Injection**: An adversarial prompt or malicious document retrieved via RAG can instruct the model to ignore prior instructions and execute the privileged tool.
 2. **Context Window Degradation**: As conversations extend and system prompts are compressed, negative constraints ("never do X") suffer higher failure rates.
 3. **The Confused Deputy Problem**: The model acts on behalf of the end user, but executes tools with the system's ambient service credentials, inadvertently allowing privilege escalation.
@@ -185,6 +186,7 @@ func (g *Gateway) executeToolCall(ctx context.Context, reqID any, tenantID, agen
 ## 5. Preventing Parameter Tampering with Cryptographic Hashes
 
 A subtle vulnerability in approval systems is **parameter tampering**:
+
 1. Agent requests approval for `billing.issue_refund` with `{ "amount": 10.00 }`.
 2. Supervisor reviews and approves the $10.00 refund.
 3. Attacker alters the payload to `{ "amount": 10000.00 }` and re-submits the approval token.

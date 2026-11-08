@@ -3,7 +3,7 @@
 **Author**: Scott Hardie  
 **Technical Domain**: Enterprise AI Systems, Applied AI Architecture, Platform Engineering  
 **Repository Reference**: [`Hardonian/ControlPlane` (`v1.0.0`)](https://github.com/Hardonian/ControlPlane), [`Hardonian/TokenGoblin`](https://github.com/Hardonian/TokenGoblin), [`Hardonian/TokPulse` (`v3.0.0`)](https://github.com/Hardonian/TokPulse) & [`Hardonian/Settler` (`v1.8.0`)](https://github.com/Hardonian/Settler)  
-**Series Navigation**: [**Profile README**](../../README.md) · [01: Postgres RLS](01_safe_multi_tenant_ai_agents_postgres_rls.md) · [02: MCP Authorization](02_enterprise_tool_calling_authorization_outside_model.md) · **03: Prototype to Production** · [04: ZK eBPF & Causal DAGs](04_zero_knowledge_ebpf_sandboxing_and_causal_dags.md) · [Architecture Playbook](../../architecture-playbook/README.md)  
+**Series Navigation**: [**Profile README**](../../README.md) · [01: Postgres RLS](01_safe_multi_tenant_ai_agents_postgres_rls.md) · [02: MCP Authorization](02_enterprise_tool_calling_authorization_outside_model.md) · **03: Prototype to Production** · [04: ZK eBPF & Causal DAGs](04_zero_knowledge_ebpf_sandboxing_and_causal_dags.md) · [05: Hybrid RAG & Provenance](05_permission_aware_hybrid_rag_and_citation_provenance.md) · [06: GPU Roofline & KV-Cache](06_gpu_kv_cache_roofline_and_serving_topology.md)  
 
 ---
 
@@ -119,6 +119,7 @@ go test -v ./internal/evaluation -run TestOpenAI_EnterpriseAgentEvaluation
 ```
 
 ### Essential Evaluation Scenarios:
+
 1. **Tool Selection Accuracy**: Given an ambiguous prompt, does the model select the exact correct tool?
 2. **Parameter Grounding**: Are all arguments strictly grounded in the user's prompt or context, rather than hallucinated?
 3. **Authorization Refusal**: Does the agent refuse to execute tools outside its role?

@@ -3,7 +3,7 @@
 **Author**: Scott Hardie  
 **Technical Domain**: Kernel Isolation, Formal State Machines (Quint), Zero-Knowledge Proofs, Distributed Control Planes  
 **Repository Reference**: [`Hardonian/zerokernel` (`v1.0.0`)](https://github.com/Hardonian/zerokernel), [`Hardonian/veridag`](https://github.com/Hardonian/veridag), [`Hardonian/ControlPlane` (`v1.0.0`)](https://github.com/Hardonian/ControlPlane) & [`Hardonian/Settler` (`v1.8.0`)](https://github.com/Hardonian/Settler)  
-**Series Navigation**: [**Profile README**](../../README.md) · [01: Postgres RLS](01_safe_multi_tenant_ai_agents_postgres_rls.md) · [02: MCP Authorization](02_enterprise_tool_calling_authorization_outside_model.md) · [03: Prototype to Production](03_from_prototype_to_production_enterprise_agents.md) · **04: ZK eBPF & Causal DAGs** · [Architecture Playbook](../../architecture-playbook/README.md)
+**Series Navigation**: [**Profile README**](../../README.md) · [01: Postgres RLS](01_safe_multi_tenant_ai_agents_postgres_rls.md) · [02: MCP Authorization](02_enterprise_tool_calling_authorization_outside_model.md) · [03: Prototype to Production](03_from_prototype_to_production_enterprise_agents.md) · **04: ZK eBPF & Causal DAGs** · [05: Hybrid RAG & Provenance](05_permission_aware_hybrid_rag_and_citation_provenance.md) · [06: GPU Roofline & KV-Cache](06_gpu_kv_cache_roofline_and_serving_topology.md)
 
 ---
 
@@ -250,4 +250,3 @@ Every completed operation produces a canonical, machine-verifiable JSON evidence
 ---
 
 **Next in the Hardonia Architecture Series →** [05 // Permission-Aware Hybrid RAG & Cryptographic Citation Provenance](05_permission_aware_hybrid_rag_and_citation_provenance.md) · [Return to Profile README](../../README.md)
-

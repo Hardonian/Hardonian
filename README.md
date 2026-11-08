@@ -118,6 +118,7 @@ Architecture monographs and reference specifications grounded directly in the pr
 
 ![Rust](https://img.shields.io/badge/Rust-111827?style=for-the-badge&logo=rust&logoColor=white)
 ![Go](https://img.shields.io/badge/Go-0369a1?style=for-the-badge&logo=go&logoColor=white)
+![C++](https://img.shields.io/badge/C%2B%2B-1e3a8a?style=for-the-badge&logo=cplusplus&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-1e40af?style=for-the-badge&logo=typescript&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-1d4ed8?style=for-the-badge&logo=python&logoColor=white)
 ![Lean 4 & Quint](https://img.shields.io/badge/Lean_4_%7C_Quint-3730a3?style=for-the-badge)
@@ -127,8 +128,9 @@ Architecture monographs and reference specifications grounded directly in the pr
 ![Redis](https://img.shields.io/badge/Redis-991b1b?style=for-the-badge&logo=redis&logoColor=white)
 ![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-111827?style=for-the-badge&logo=opentelemetry&logoColor=white)
 ![MCP Protocol](https://img.shields.io/badge/MCP_Gateway-4338ca?style=for-the-badge)
+![WebAssembly](https://img.shields.io/badge/Wasmtime_%7C_WASM-3730a3?style=for-the-badge&logo=webassembly&logoColor=white)
 
-![NVIDIA CUDA](https://img.shields.io/badge/NVIDIA_CUDA-15803d?style=for-the-badge&logo=nvidia&logoColor=white)
+![NVIDIA CUDA](https://img.shields.io/badge/NVIDIA_CUDA_%7C_Triton-15803d?style=for-the-badge&logo=nvidia&logoColor=white)
 ![PyTorch & JAX](https://img.shields.io/badge/PyTorch_%7C_OpenXLA-9a3412?style=for-the-badge&logo=pytorch&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-0369a1?style=for-the-badge&logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-1d4ed8?style=for-the-badge&logo=kubernetes&logoColor=white)
@@ -142,8 +144,8 @@ I operate a dedicated hardware lab for local model routing, quantized inference 
 
 | Compute Tier | Hardware / Runtime Specification | Public Tooling & Workloads |
 | :--- | :--- | :--- |
-| **Server & Accelerator Rack** | **AMD EPYC 7452** (32C/64T server host) · **NVIDIA Tesla V100 / P40 / RTX 3060** multi-GPU array | Quantized LLM serving, OpenXLA compiler bisecting, high-concurrency FinOps load generation |
-| **Edge & NPU Workstation** | **AMD Ryzen AI 9 HX370** (XDNA 2 NPU + Radeon 890M) · `aarch64` / Linux container parity | Local agent control loops, low-latency MCP gateway testing, multimodal pipelines |
+| **Server & Accelerator Rack** | **AMD EPYC 7452** (32C/64T server host) · **NVIDIA Tesla V100 / P40 / RTX 3060** multi-GPU array | Quantized LLM serving, OpenXLA compiler bisecting, [KV Roofline Compiler](scripts/kv_roofline_compiler.py) |
+| **Edge & NPU Workstation** | **AMD Ryzen AI 9 HX370** (XDNA 2 NPU + Radeon 890M) · `aarch64` / Linux container parity | Local agent control loops, low-latency MCP gateway testing, [RAG Citation Verifier](scripts/rag_citation_verifier.py) |
 | **Routing & Observability Plane** | Ollama-compatible model routers · Docker/OCI · Prometheus & OpenTelemetry collectors | [model-tools](https://github.com/Hardonian/model-tools) · [autopilot](https://github.com/Hardonian/autopilot) · [api-tools](https://github.com/Hardonian/api-tools) |
 
 <details>

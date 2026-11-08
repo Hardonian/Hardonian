@@ -83,4 +83,3 @@ python -m unittest tests/test_rag_citation_verifier.py -v
 ---
 
 **Next in the Hardonia Architecture Series →** [06 // GPU KV-Cache Roofline Modeling & Deterministic Serving Topology](06_gpu_kv_cache_roofline_and_serving_topology.md) · [Return to Profile README](../../README.md)
-
