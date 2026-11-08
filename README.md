@@ -12,7 +12,7 @@
 
 # Scott Hardie
 
-### Senior / Staff Applied AI & Platform Engineer · Distributed Systems · Enterprise Architecture
+## Senior / Staff Applied AI & Platform Engineer · Distributed Systems · Enterprise Architecture
 
 **Toronto, Canada** · [Executive Brief](EXECUTIVE_BRIEF.md) · [Architecture Playbook](architecture-playbook/README.md) · [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) · [Email](mailto:scottrmhardie@gmail.com?subject=Role%20or%20systems%20conversation)
 
