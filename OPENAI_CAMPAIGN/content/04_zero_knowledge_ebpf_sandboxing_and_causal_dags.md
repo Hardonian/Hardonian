@@ -249,5 +249,5 @@ Every completed operation produces a canonical, machine-verifiable JSON evidence
 
 ---
 
-**Series Complete · Explore Further →** [Hardonia Architecture Playbook](../../architecture-playbook/README.md) · [Return to Profile README](../../README.md)
+**Next in the Hardonia Architecture Series →** [05 // Permission-Aware Hybrid RAG & Cryptographic Citation Provenance](05_permission_aware_hybrid_rag_and_citation_provenance.md) · [Return to Profile README](../../README.md)
 

@@ -83,6 +83,8 @@ The following flagship platforms have completed automated verification dry-runs,
 - [02 // Enterprise Tool Calling: Why Authorization Belongs Outside the Model](../OPENAI_CAMPAIGN/content/02_enterprise_tool_calling_authorization_outside_model.md)
 - [03 // From Prototype to Production: Architecture for Enterprise AI Agents](../OPENAI_CAMPAIGN/content/03_from_prototype_to_production_enterprise_agents.md)
 - [04 // Zero-Knowledge eBPF Sandboxing & Causal DAG Execution](../OPENAI_CAMPAIGN/content/04_zero_knowledge_ebpf_sandboxing_and_causal_dags.md)
+- [05 // Permission-Aware Hybrid RAG & Cryptographic Citation Provenance](../OPENAI_CAMPAIGN/content/05_permission_aware_hybrid_rag_and_citation_provenance.md)
+- [06 // GPU KV-Cache Roofline Modeling & Deterministic Serving Topology](../OPENAI_CAMPAIGN/content/06_gpu_kv_cache_roofline_and_serving_topology.md)
 
 ## Related public surfaces
 
