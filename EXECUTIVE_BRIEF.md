@@ -17,6 +17,7 @@
 **Scott Hardie** is a **Solutions Architect at McGraw Hill** (President's Award for Sales Excellence recipient) and the creator of **Hardonia**, an open-source portfolio of deterministic control planes, kernel isolation layers, inference FinOps routers, and formal verification tooling built from Toronto, Canada.
 
 He operates at the intersection of two disciplines that rarely overlap:
+
 1. **Hands-on systems and AI platform engineering:** designing and implementing production software in Rust, Go, TypeScript, Python, PostgreSQL, eBPF, Quint, and Lean 4.
 2. **Enterprise technical strategy and commercial delivery:** leading architecture, identity integration (`OAuth 2.0`, `OIDC`, `SCIM`, `LTI 1.3`, `OneRoster 1.2`), security review (`SOC 2`, `FERPA`), and executive stakeholder alignment for large institutional deployments.
 
@@ -25,6 +26,7 @@ He operates at the intersection of two disciplines that rarely overlap:
 ## 2. Core Technical Thesis
 
 Enterprise AI projects rarely fail because the underlying foundation model is weak. They stall in security review, audit, or production operations because teams wrap probabilistic models in thin application code that cannot guarantee:
+
 - **Tenant isolation:** application-level `WHERE tenant_id = ?` filters can be omitted by generated queries or bypassed by tool bugs.
 - **Least-privilege tool execution:** passing raw API credentials or broad tool schemas to a model allows prompt injection to trigger unauthorized side effects.
 - **Predictable inference economics:** recursive agent retries and multi-step tool loops compound latency and token spend before billing alerts fire.
@@ -87,4 +89,3 @@ Every public repository separates released (`stable`), functional (`beta`), and 
 | :--- | :--- | :--- |
 | **Hiring Leaders & Executive Recruiters** | Senior / Staff / Principal Applied AI Engineer · AI Platform Engineer · Distributed Systems Engineer · Principal Solutions Architect | [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) · [Email](mailto:scottrmhardie@gmail.com?subject=Engineering%20or%20Architecture%20Role) |
 | **Founders, Investors & Technical Advisory** | AI control-plane architecture reviews, multi-tenant database isolation audits, LLM FinOps governance, and technical due diligence | [LinkedIn](https://www.linkedin.com/in/scottrmhardie/) · [Email](mailto:scottrmhardie@gmail.com?subject=Architecture%20Advisory%20or%20Due%20Diligence) |
-
